@@ -1,7 +1,10 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const router = express.Router();
 const User = require('../../models/User');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 // @route GET api/users/test
 // @access Public
@@ -28,6 +31,46 @@ router.post('/register', (req, res) => {
         });
       });
     }
+  });
+});
+
+// @route GET api/users/login
+// @desc Login User / Returning JWT
+// @access Public
+router.post('/login', (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  //Find user by email
+  User.findOne({ email }).then(user => {
+    //Check for user
+    if (!user) {
+      return res.status(404).json({ email: 'User not found' });
+    }
+
+    //Check Password
+    bcrypt.compare(password, user.password).then(isMatch => {
+      if (isMatch) {
+        //User Matched
+        const payload = { id: user._id, name: user.name };
+
+        //Sign Token
+        jwt.sign(
+          payload,
+          process.env.SECRET_OR_KEY,
+          { expiresIn: 7200 },
+          (err, token) => {
+            if (err) throw err;
+            res.json({
+              success: true,
+              token: 'Bearer ' + token
+            });
+          }
+        );
+      } else {
+        return res.status(400).json({ password: 'Password incorrect' });
+      }
+    });
   });
 });
 
