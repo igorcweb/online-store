@@ -2,10 +2,10 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
 const users = require('./routes/api/users');
 const account = require('./routes/api/account');
 const products = require('./routes/api/products');
-const passport = require('passport');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -25,6 +25,12 @@ mongoose
   )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
+
+// Passport middleware
+app.use(passport.initialize());
+
+//Passport Config
+require('./config/passport')(passport);
 
 app.use('/api/users', users);
 app.use('/api/account', account);
