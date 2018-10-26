@@ -9,10 +9,6 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-// @route GET api/users/test
-// @access Public
-router.get('/test', (req, res) => res.json({ message: 'users route works' }));
-
 // @route GET api/users/register
 // @access Public
 router.post('/register', (req, res) => {

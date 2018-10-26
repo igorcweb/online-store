@@ -17,13 +17,22 @@ const UserSchema = new Schema({
   },
 
   prime: {
-    type: Boolean,
-    default: false
+    member: {
+      type: Boolean,
+      default: false
+    },
+    date: {
+      type: Date
+    },
+    fee: {
+      type: Number
+    }
   },
+
   orders: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Product'
+      ref: 'products'
     }
   ]
 });
