@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const Product = require('../models/Product');
 mongoose.Promise = global.Promise;
 
-// This file empties the products collection and inserts the books below
-const db = process.env.MONGODB_URI;
+// This file empties the products collection and inserts the products below
+const db = process.env.MONGODB_URI || 'mongodb://localhost/online-store';
 mongoose
   .connect(
     db,
@@ -19,6 +19,7 @@ const products = [
     name: 'widget1',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
+    imgUrl: 'https://via.placeholder.com/200',
     inStock: 20,
     price: 19.99
   },
@@ -26,6 +27,7 @@ const products = [
     name: 'widget2',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
+    imgUrl: 'https://via.placeholder.com/200',
     inStock: 20,
     price: 19.99
   },
@@ -33,6 +35,7 @@ const products = [
     name: 'widget3',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
+    imgUrl: 'https://via.placeholder.com/200',
     inStock: 20,
     price: 19.99
   },
@@ -40,6 +43,7 @@ const products = [
     name: 'widget4',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
+    imgUrl: 'https://via.placeholder.com/200',
     inStock: 20,
     price: 19.99
   },
@@ -47,6 +51,7 @@ const products = [
     name: 'widget5',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
+    imgUrl: 'https://via.placeholder.com/200',
     inStock: 20,
     price: 19.99
   },
@@ -54,6 +59,7 @@ const products = [
     name: 'widget6',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
+    imgUrl: 'https://via.placeholder.com/200',
     inStock: 20,
     price: 19.99
   },
@@ -61,6 +67,7 @@ const products = [
     name: 'widget7',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
+    imgUrl: 'https://via.placeholder.com/200',
     inStock: 20,
     price: 19.99
   },
@@ -68,6 +75,7 @@ const products = [
     name: 'widget8',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
+    imgUrl: 'https://via.placeholder.com/200',
     inStock: 20,
     price: 19.99
   },
@@ -75,6 +83,7 @@ const products = [
     name: 'widget9',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
+    imgUrl: 'https://via.placeholder.com/200',
     inStock: 20,
     price: 19.99
   },
@@ -82,6 +91,7 @@ const products = [
     name: 'widget10',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
+    imgUrl: 'https://via.placeholder.com/200',
     inStock: 20,
     price: 19.99
   }

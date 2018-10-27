@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const Product = require('../../models/Product');
+const db = require('../../models/');
 
 // @route GET api/products
 // @access Public
 router.get('/', (req, res) => {
-  Product.find({}, (err, products) => {
+  db.Product.find({}, (err, products) => {
     if (err) {
       throw err;
     } else {

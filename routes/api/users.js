@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const router = express.Router();
-const User = require('../../models/User');
+const db = require('../../models/');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
@@ -19,7 +19,7 @@ router.post('/register', (req, res) => {
     return res.status(400).json(errors);
   }
   //Check if user exists
-  User.findOne({ email: req.body.email }).then(user => {
+  db.User.findOne({ email: req.body.email }).then(user => {
     if (user) {
       errors.email = 'Email already exists';
       return res.status(400).json(errors);
@@ -56,7 +56,7 @@ router.post('/login', (req, res) => {
   const password = req.body.password;
 
   //Find user by email
-  User.findOne({ email }).then(user => {
+  db.User.findOne({ email }).then(user => {
     //Check for user
     if (!user) {
       errors.email = 'User not found';
@@ -97,11 +97,12 @@ router.get(
   '/current',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    User.findById(req.user._id)
+    db.User.findById(req.user._id)
       .populate('orders')
       .exec()
       .then(user => res.json(user))
       .catch(err => res.json(err));
+    // res.json(req.user);
   }
 );
 
