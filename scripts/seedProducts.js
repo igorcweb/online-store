@@ -90,7 +90,7 @@ const products = [
 Product.remove({})
   .then(() => Product.collection.insertMany(products))
   .then(data => {
-    console.log(data.insertedIds.length + ' records inserted!');
+    console.log(data.insertedCount + ' records inserted!');
     process.exit(0);
   })
   .catch(err => {
