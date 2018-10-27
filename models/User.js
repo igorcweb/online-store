@@ -15,7 +15,6 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-
   prime: {
     member: {
       type: Boolean,
@@ -28,11 +27,10 @@ const UserSchema = new Schema({
       type: Number
     }
   },
-
   orders: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'products'
+      ref: 'Product'
     }
   ]
 });

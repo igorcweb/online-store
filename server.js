@@ -4,7 +4,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const users = require('./routes/api/users');
-const account = require('./routes/api/account');
 const products = require('./routes/api/products');
 
 const app = express();
@@ -15,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // DB Config
-const db = process.env.MONGO_URI || 'mongodb://localhost/online-store';
+const db = process.env.MONGODB_URI || 'mongodb://localhost/online-store';
 
 // Connect to MongoDB
 mongoose
@@ -33,7 +32,6 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 app.use('/api/users', users);
-app.use('/api/account', account);
 app.use('/api/products', products);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

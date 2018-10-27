@@ -93,12 +93,15 @@ router.post('/login', (req, res) => {
 // @route GET api/users/current
 // @desc Return current user
 // @access Private
-
 router.get(
   '/current',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    res.json(req.user);
+    User.findById(req.user._id)
+      .populate('orders')
+      .exec()
+      .then(user => res.json(user))
+      .catch(err => res.json(err));
   }
 );
 
