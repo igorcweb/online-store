@@ -6,6 +6,7 @@ const db = require('../../models/');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
+const moment = require('moment');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
@@ -105,5 +106,23 @@ router.get(
     // res.json(req.user);
   }
 );
+
+// @route GET api/users/prime/:id
+// @desc sign up for prime membership
+router.put('/prime/:id', (req, res) => {
+  const id = req.params.id;
+
+  db.User.findByIdAndUpdate(id, {
+    $set: {
+      'prime.member': true,
+      'prime.nextPayment': moment()
+        .add(1, 'year')
+        .format('MMMM Do, YYYY'),
+      'prime.fee': 59.99
+    }
+  })
+    .then(() => res.json({ msg: 'success' }))
+    .catch(err => res.json({ err }));
+});
 
 module.exports = router;

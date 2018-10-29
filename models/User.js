@@ -20,8 +20,8 @@ const UserSchema = new Schema({
       type: Boolean,
       default: false
     },
-    date: {
-      type: Date
+    nextPayment: {
+      type: String
     },
     fee: {
       type: Number
