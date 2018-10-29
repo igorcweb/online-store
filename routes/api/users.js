@@ -111,7 +111,6 @@ router.get(
 // @desc sign up for prime membership
 router.put('/prime/:id', (req, res) => {
   const id = req.params.id;
-
   db.User.findByIdAndUpdate(id, {
     $set: {
       'prime.member': true,
