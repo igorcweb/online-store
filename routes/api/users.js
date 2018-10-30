@@ -124,4 +124,25 @@ router.put('/prime/:id', (req, res) => {
     .catch(err => res.json({ err }));
 });
 
+// @route GET api/users/order/:id
+// @desc place an order (make a purchase)
+router.put('/order/:id', (req, res) => {
+  const id = req.params.id;
+  const productId = '5bd7dc7b0d1c518f4957f922';
+  const quantity = 1;
+  db.User.findByIdAndUpdate(id, {
+    $push: { orders: productId }
+  })
+    .populate('orders')
+    .then(() => res.json({ msg: 'success' }))
+    .then(() => {
+      // Update inStock value
+      db.Product.findByIdAndUpdate(productId, {
+        $inc: { inStock: -1 * quantity }
+      }).then(() => {
+        console.log('success');
+      });
+    })
+    .catch(err => res.json({ msg: err }));
+});
 module.exports = router;

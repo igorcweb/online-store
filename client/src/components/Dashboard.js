@@ -3,12 +3,11 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 
 class Dashboard extends Component {
-  // componentDidMount() {
-  //   if (!this.props.auth.isAuthenticated) {
-  //     this.props.history.push('/');
-  //   }
-  // }
-
+  componentDidMount() {
+    if (!this.props.auth.isAuthenticated) {
+      this.props.history.push('/');
+    }
+  }
   render() {
     return (
       <div className="landing">

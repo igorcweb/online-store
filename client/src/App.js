@@ -10,7 +10,7 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
-import Dashboard from './components/auth/Dashboard';
+import Dashboard from './components/Dashboard';
 import './App.scss';
 
 //Check for token
