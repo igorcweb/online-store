@@ -10,6 +10,20 @@ const moment = require('moment');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
+// @route GET api/users
+// @access Public
+router.get('/', (req, res) => {
+  db.User.find({})
+    .populate('orders')
+    .exec((err, users) => {
+      if (err) {
+        throw err;
+      } else {
+        res.json(users);
+      }
+    });
+});
+
 // @route GET api/users/register
 // @access Public
 router.post('/register', (req, res) => {

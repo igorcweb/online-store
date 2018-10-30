@@ -9,6 +9,7 @@ class Dashboard extends Component {
     }
   }
   render() {
+    console.log(this.props.auth.user);
     return (
       <div className="landing">
         <h1>Dashboard</h1>
