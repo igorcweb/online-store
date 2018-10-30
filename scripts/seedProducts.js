@@ -17,6 +17,7 @@ mongoose
 const products = [
   {
     name: 'widget1',
+    brand: 'adsfasdf',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
     imgUrl: 'https://via.placeholder.com/200',
@@ -25,6 +26,7 @@ const products = [
   },
   {
     name: 'widget2',
+    brand: 'adsfasdf',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
     imgUrl: 'https://via.placeholder.com/200',
@@ -33,6 +35,7 @@ const products = [
   },
   {
     name: 'widget3',
+    brand: 'adsfasdf',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
     imgUrl: 'https://via.placeholder.com/200',
@@ -41,6 +44,7 @@ const products = [
   },
   {
     name: 'widget4',
+    brand: 'adsfasdf',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
     imgUrl: 'https://via.placeholder.com/200',
@@ -49,6 +53,7 @@ const products = [
   },
   {
     name: 'widget5',
+    brand: 'adsfasdf',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
     imgUrl: 'https://via.placeholder.com/200',
@@ -57,6 +62,7 @@ const products = [
   },
   {
     name: 'widget6',
+    brand: 'adsfasdf',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
     imgUrl: 'https://via.placeholder.com/200',
@@ -65,6 +71,7 @@ const products = [
   },
   {
     name: 'widget7',
+    brand: 'adsfasdf',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
     imgUrl: 'https://via.placeholder.com/200',
@@ -73,6 +80,7 @@ const products = [
   },
   {
     name: 'widget8',
+    brand: 'adsfasdf',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
     imgUrl: 'https://via.placeholder.com/200',
@@ -81,6 +89,7 @@ const products = [
   },
   {
     name: 'widget9',
+    brand: 'adsfasdf',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
     imgUrl: 'https://via.placeholder.com/200',
@@ -89,6 +98,7 @@ const products = [
   },
   {
     name: 'widget10',
+    brand: 'adsfasdf',
     category: 'widgets',
     description: 'a;lsdkfjas;ldfj',
     imgUrl: 'https://via.placeholder.com/200',

@@ -47,6 +47,7 @@ router.post('/register', (req, res) => {
             throw err;
           }
           newUser.password = hash;
+          newUser.date = moment().format('MMMM Do, YYYY');
           newUser
             .save()
             .then(user => res.json(user))

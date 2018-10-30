@@ -7,6 +7,7 @@ const ProductSchema = new Schema({
     type: String,
     required: true
   },
+  brand: String,
   category: {
     type: String,
     required: true
@@ -25,7 +26,16 @@ const ProductSchema = new Schema({
   price: {
     type: Number,
     required: true
-  }
+  },
+  rating: {
+    type: Number
+  },
+  productReviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'users'
+    }
+  ]
 });
 
 module.exports = Product = mongoose.model('products', ProductSchema);
