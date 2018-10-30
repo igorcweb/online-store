@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// @route GET api/users/register
+// @route POST api/users/register
 // @access Public
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -57,7 +57,7 @@ router.post('/register', (req, res) => {
   });
 });
 
-// @route GET api/users/login
+// @route POST api/users/login
 // @desc Login User / Returning JWT
 // @access Public
 router.post('/login', (req, res) => {
@@ -106,7 +106,7 @@ router.post('/login', (req, res) => {
 });
 
 // @route GET api/users/current
-// @desc Return current user
+// @desc Return current user (only for testing with postman)
 // @access Private
 router.get(
   '/current',
@@ -120,6 +120,17 @@ router.get(
     // res.json(req.user);
   }
 );
+
+// @route GET api/users/:id
+// @desc get current user data
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  db.User.findById(id)
+    .populate('orders')
+    .exec()
+    .then(user => res.json(user))
+    .catch(err => res.render({ err }));
+});
 
 // @route GET api/users/prime/:id
 // @desc sign up for prime membership
