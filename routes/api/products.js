@@ -14,4 +14,15 @@ router.get('/', (req, res) => {
   });
 });
 
+// @route GET api/products/:id
+// @access Public
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  db.Product.findById(id)
+    .populate('productReviews')
+    .exec()
+    .then(product => res.json(product))
+    .catch(err => res.render({ err }));
+});
+
 module.exports = router;
