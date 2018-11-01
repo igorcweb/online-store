@@ -37,6 +37,7 @@ const UserSchema = new Schema({
       ref: 'products'
     }
   ],
+  rate: {},
   userReviews: [
     {
       type: Schema.Types.ObjectId,
