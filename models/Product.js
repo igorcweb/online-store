@@ -26,16 +26,7 @@ const ProductSchema = new Schema({
   price: {
     type: Number,
     required: true
-  },
-  rating: {
-    type: Number
-  },
-  productReviews: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'reviews'
-    }
-  ]
+  }
 });
 
 module.exports = Product = mongoose.model('products', ProductSchema);

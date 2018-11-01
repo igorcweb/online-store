@@ -36,13 +36,6 @@ const UserSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'products'
     }
-  ],
-  rate: {},
-  userReviews: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'reviews'
-    }
   ]
 });
 
