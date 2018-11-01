@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 
-class Landing extends Component {
+class Footer extends Component {
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push('/dashboard');
@@ -11,12 +11,12 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className="landing" id="home-section">
-        <div className="overlay">
-          <div className="home-inner">
-            <div className="container">
-              <div className="row  text-center">
-                <h1 className="display-3 pt-5">Organic Fitness World</h1>
+      <div className="footer text-muted bg-white fixed-bottom">
+        <div className="container">
+          <div className="row">
+            <div className="col text-center">
+              <div className="py-4">
+                <p>Copyright &copy; 2018</p>
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@ class Landing extends Component {
   }
 }
 
-Landing.propTypes = {
+Footer.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
@@ -34,4 +34,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps)(Landing);
+export default connect(mapStateToProps)(Footer);

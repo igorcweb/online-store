@@ -1,7 +1,44 @@
+$bg-color: rgb(255, 255, 255);
+$font-color: #fff;
+$primary-color: #008ed6;
+$dark-overlay: rgba(144, 182, 169, 0.5);
+$icon-size: 30px;
+
+body {
+  background: $bg-color;
+  color: $font-color;
+  margin-top: 90px;
+}
+
 span.nav-link {
   cursor: pointer;
 }
 
 span.name {
   color: lightgray;
+}
+#navbar {
+  .nav-link {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+#home-section {
+  background: url('./images/bg-1.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 700px;
+
+  .overlay {
+    background-color: $dark-overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 700px;
+  }
+
+  .home-inner {
+    padding-top: 150px;
+  }
 }
