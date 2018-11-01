@@ -11,8 +11,16 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className="landing">
-        <h1>Landing Page</h1>
+      <div className="landing" id="home-section">
+        <div className="overlay">
+          <div className="home-inner">
+            <div className="container">
+              <div className="row  text-center">
+                <h1 className="display-3 pt-5">Organic Fitness World</h1>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
