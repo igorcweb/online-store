@@ -154,7 +154,7 @@ router.put('/prime/:id', (req, res) => {
 // @desc place an order (make a purchase)
 router.put('/order/:id', (req, res) => {
   const id = req.params.id;
-  const productId = '5bd7dc7b0d1c518f4957f922';
+  const productId = '5bd93783104b56aec5faf1a3';
   const quantity = 1;
   db.User.findByIdAndUpdate(id, {
     $push: { orders: productId }

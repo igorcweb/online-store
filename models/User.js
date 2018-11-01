@@ -40,7 +40,7 @@ const UserSchema = new Schema({
   userReviews: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'products'
+      ref: 'reviews'
     }
   ]
 });
