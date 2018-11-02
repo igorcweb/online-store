@@ -154,8 +154,12 @@ router.put('/prime/:id', (req, res) => {
 // @desc place an order (make a purchase)
 router.put('/order/:id', (req, res) => {
   const id = req.params.id;
-  const quantity = 1;
-  const products = [['5bda8b283e864607a7402247', quantity]];
+  let quantity = 1;
+  const products = [
+    ['5bdc854ab8e66315f3d7382e', quantity],
+    ['5bdc854ab8e66315f3d7382f', quantity],
+    ['5bdc854ab8e66315f3d73830', quantity]
+  ];
   products.forEach(product => {
     const productId = product[0];
     const quantity = product[1];
@@ -180,7 +184,7 @@ router.put('/order/:id', (req, res) => {
 // @desc rate a product
 router.post('/rating/:id', (req, res) => {
   const userId = req.params.id;
-  const productId = '5bda8b283e864607a7402247';
+  const productId = '5bdc854ab8e66315f3d7382e';
   const value = 4;
   db.Rating.create({ user: userId, product: productId, value })
     .then(result => res.json(result))
@@ -192,6 +196,18 @@ router.post('/rating/:id', (req, res) => {
 router.get('/rating/:id', (req, res) => {
   const userId = req.params.id;
   db.Rating.find({ user: userId })
+    .populate('product')
+    .exec()
+    .then(result => res.json(result))
+    .catch(err => res.json({ err }));
+});
+
+// @route get api/users/product-rating/:id
+// @desc get product rating data
+
+router.get('/product-rating/:id', (req, res) => {
+  const productId = req.params.id;
+  db.Rating.find({ user: productId })
     .populate('product')
     .exec()
     .then(result => res.json(result))
