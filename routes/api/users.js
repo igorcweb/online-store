@@ -154,21 +154,47 @@ router.put('/prime/:id', (req, res) => {
 // @desc place an order (make a purchase)
 router.put('/order/:id', (req, res) => {
   const id = req.params.id;
-  const productId = '5bd93783104b56aec5faf1a3';
   const quantity = 1;
-  db.User.findByIdAndUpdate(id, {
-    $push: { orders: productId }
-  })
-    .populate('orders')
-    .then(() => res.json({ msg: 'success' }))
-    .then(() => {
-      // Update inStock value
-      db.Product.findByIdAndUpdate(productId, {
-        $inc: { inStock: -1 * quantity }
-      }).then(() => {
-        console.log('success');
-      });
+  const products = [['5bda8b283e864607a7402247', quantity]];
+  products.forEach(product => {
+    const productId = product[0];
+    const quantity = product[1];
+    db.User.findByIdAndUpdate(id, {
+      $push: { orders: productId }
     })
-    .catch(err => res.json({ msg: err }));
+      .populate('orders')
+      .then(() => res.json({ msg: 'success' }))
+      .then(() => {
+        // Update inStock value
+        db.Product.findByIdAndUpdate(productId, {
+          $inc: { inStock: -1 * quantity }
+        }).then(() => {
+          console.log('inStock property updated');
+        });
+      })
+      .catch(err => res.json({ msg: err }));
+  });
+});
+
+// @route POST api/users/rating/:id
+// @desc rate a product
+router.post('/rating/:id', (req, res) => {
+  const userId = req.params.id;
+  const productId = '5bda8b283e864607a7402247';
+  const value = 4;
+  db.Rating.create({ user: userId, product: productId, value })
+    .then(result => res.json(result))
+    .catch(err => res.json({ err }));
+});
+
+// @route get api/users/rating/:id
+// @desc get user rating data
+router.get('/rating/:id', (req, res) => {
+  const userId = req.params.id;
+  db.Rating.find({ user: userId })
+    .populate('product')
+    .exec()
+    .then(result => res.json(result))
+    .catch(err => res.json({ err }));
 });
 module.exports = router;

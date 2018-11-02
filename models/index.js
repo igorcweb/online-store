@@ -1,5 +1,6 @@
 module.exports = {
   Product: require('./Product'),
-  User: require('./User'),
-  Review: require('./Review')
+  Rating: require('./Rating'),
+  Review: require('./Review'),
+  User: require('./User')
 };

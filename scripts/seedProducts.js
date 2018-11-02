@@ -18,7 +18,7 @@ const products = [
   {
     name: 'Organic Italian Extra Virgin Olive Oil',
     brand: 'Simple Truth®',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Organically Grown. No Preservatives., Kosher, USDA Organic, Non-GMO, Serving Size: 1 Tablespoon (15 mL)Servings per Container: About 34',
     imgUrl:
@@ -29,7 +29,7 @@ const products = [
   {
     name: 'Extra Virgin Certified Organic Coconut Oil',
     brand: 'Vitacost',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Certified organic, unrefined, non-GMO coconut oil. Cold pressed without the use of heat or chemicals and packaged in BPA-free jars., Nutrition Facts Serving Size: 1 Tablespoon (15 mL), Servings per Container: 108',
     imgUrl:
@@ -40,7 +40,7 @@ const products = [
   {
     name: '100% Cranberry Juice -- 32 fl oz',
     brand: 'Simple Truth®',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'From Concentrate Free From 101+ Artificial Preservatives & Ingredients, Kosher, Pasteurized. Per 8 oz fl Serving: 70 Calories, 0g Sat Fat, 35mg Sodium, 7g Sugar Refrigerate After Opening',
     imgUrl:
@@ -51,7 +51,7 @@ const products = [
   {
     name: 'Dark Chocolate 88% Cocoa Bar Vegan Gluten Free -- 3 oz',
     brand: 'Endangered Species',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'With 88% Cocoa Rainforest Alliance Certified Cocoa, Non-GMO verified, Certified Gluten Free, Natural, Serving Size: 1/2 Bar (43 g), Servings per Container: About 2',
     imgUrl:
@@ -62,7 +62,7 @@ const products = [
   {
     name: 'Organic Raw Almonds -- 8 oz (227 g)',
     brand: 'Vitacost',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Organic, Unsalted, Certified kosher, Serving Size: 1/4 Cup (30 g),Servings per Container: 8',
     imgUrl:
@@ -73,7 +73,7 @@ const products = [
   {
     name: 'Organic Green Tea Strawberry Rose -- 25 Tea Bags',
     brand: 'St. Dalfour',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Premium Certified Organic Green Tea, Selected And Blended Under The Direction Of The Tea Experts Of St. Dalford France,Enhanced By The Natural Flavour Of Strawberry & Rose,Individually Sealed In Envelopes, Serving Size: 1 Tea Bag Servings per Container: 25',
     imgUrl:
@@ -84,7 +84,7 @@ const products = [
   {
     name: 'Himalayan Pink Salt - Fine -- 32 oz (907 g)',
     brand: 'Vitacost',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Gluten Free, Vegan, BPA Free, Serving Size: 1/4 tsp (Approx 1.5 g), Servings per Container: 605',
     imgUrl:
@@ -95,7 +95,7 @@ const products = [
   {
     name: 'Organic Walnuts Halves & Pieces -- 5.5 oz',
     brand: 'Woodstock',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Walnuts Halves & Pieces, 5g of Protein Per Serving, Kosher • Vegan • USDA, Organic. Non-GMO, Project Verified. BPA-NI, Bag Product of USA, Resealable Package, Serving Size: 1/4 Cup (30 g), Servings per Container: About 5',
     imgUrl:
@@ -106,7 +106,7 @@ const products = [
   {
     name: 'Organic Dried Cranberries -- 10 oz',
     brand: 'Patience Fruit & Co',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Slowly, Grown, Classic • Gently Sweetened,USDA Organic, Non GMO, Project Verified, Serving Size: 1/4 Cup (40 g), Servings per Container: About 7',
     imgUrl:
@@ -117,7 +117,7 @@ const products = [
   {
     name: '100% Pomegranate Juice -- 32 fl oz',
     brand: 'Simple Truth®',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'From Concentrate With Other Added Ingredients, Serving Size: 8 fl oz (240 mL), Servings per Container: 4, Free From 101+ Artificial Preservatives and Ingredients: Pasteurized,Per 8 fl oz Serving: 160 Calories, 0g Sat Fat, 35 mg Sodium, 40g Sugars,Kosher,Refrigerate After Opening',
     imgUrl:
@@ -128,7 +128,7 @@ const products = [
   {
     name: 'Organic Whole Leaf Black Tea Sachets Assam -- 15 Tea Bags',
     brand: 'Two Leaves and a Bud',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Whole Leaf Organic Tea Sachets, Non-GMO, Kosher, Gluten Free, Some Caffeine',
     imgUrl:
@@ -139,7 +139,7 @@ const products = [
   {
     name: 'Real Yogurt Starter Culture Greek -- 2 Packets',
     brand: 'Cultures For Health',
-    category: 'Food',
+    category: 'Groceries',
     description:
       '2 Packets of Starter Culture, Non-GMO,Gluten-Free, Serving Size: 0.6 g, Servings per Container: 2',
     imgUrl:
@@ -150,7 +150,7 @@ const products = [
   {
     name: 'Organic French Agen Mini Plums -- 1.76 oz',
     brand: 'Fruit Bliss',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Dried Fruit Reinvented!, Serving Size: 1 Pouch (50 g), Servings per Container: 1, No Added Sugar, • Unsulfured, Deliciously Juicy - Whole Fruit, Sun Sweetened and Infused with Water, USDA Organic • Non-GMO Verified, Gluten Free • Vegan • Kosher',
     imgUrl:
@@ -161,7 +161,7 @@ const products = [
   {
     name: 'Certified Organic Quinoa - Non-GMO -- 12 oz (340 g)',
     brand: 'Vitacost',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Whole food, non-GMO quinoa, No additives or preservatives, Certified organic, Naturally, gluten free, 6 grams of protein + 3 grams fiber per quarter-cup serving, Serving Size: 1/4 Cup (Approx 45 g)Servings per Container: 8',
     imgUrl:
@@ -172,7 +172,7 @@ const products = [
   {
     name: 'Organic Silken Tofu Firm -- 12.3 oz',
     brand: 'Mori-Nu',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'For Entrees, Salads and Desserts,Certified Gluten Free, Kosher, Non-GMO Project Verified,No Perservatives, Serving Size: 3 oz, Servings per Container: About 4',
     imgUrl:
@@ -183,7 +183,7 @@ const products = [
   {
     name: 'Organic Certified Acai Berry Juice Blend -- 33.8 fl oz',
     brand: 'Dynamic Health',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Certified Organic Acai Blend, Euterpe Oleracea, Dynamic Health Organic, Certified Acai (Euterpe oleracea). Blend is a delicious proprietary Acai juice supplement that is formulated with Goji, Pomegranate, Blueberry and Mangosteen. Serving Size: 2 Tbsp. (30 Tbsp. mL),Servings per Container: 34',
     imgUrl:
@@ -194,7 +194,7 @@ const products = [
   {
     name: 'Organic Coconut Water Original -- 16.9 fl oz',
     brand: 'Simple Truth®',
-    category: 'Food',
+    category: 'Groceries',
     description:
       'Not From Concentrate, Serving Size: 1 Container (500 mL), Organically Grown, No Preservatives,Original, USDA, Organic, Non-GMO, Fair Trade, Certified, Kosher',
     imgUrl:
@@ -205,7 +205,7 @@ const products = [
   {
     name: ' Sunflower Seed Bread -- 17.6 oz',
     brand: 'Mestemacher',
-    category: 'Food',
+    category: 'Groceries',
     description:
       "With Whole Rye Kernels, Also Delicious Toasted, Ideal for cholesterol conscious diet. Freshly ground in their own Mestemacher's own mill from whole grains. Kosher, No Preservatives. High Fiber, Cholesterol Free. Natural Ingredients. Long Shelf Life. Wheat Free,  Serving Size: 1 Piece (72 g),Servings per Container: 7",
     imgUrl:
@@ -216,7 +216,7 @@ const products = [
   {
     name: ' Organic Long Grain Brown Rice -- 32 oz',
     brand: 'Simple Truth®',
-    category: 'Food',
+    category: 'Groceries',
     description:
       '100% Whole Grain, Organically Grown, No Preservatives, USDA, Organic, Non-GMO, Kosher, 2 lb, Serving Size: 1/4 Cup Dry (45 g), Servings per Container: About 20',
     imgUrl:
