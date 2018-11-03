@@ -207,7 +207,7 @@ router.get('/rating/:id', (req, res) => {
 
 router.get('/product-rating/:id', (req, res) => {
   const productId = req.params.id;
-  db.Rating.find({ user: productId })
+  db.Rating.find({ product: productId })
     .populate('product')
     .exec()
     .then(result => res.json(result))
