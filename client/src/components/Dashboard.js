@@ -24,7 +24,8 @@ class Dashboard extends Component {
 }
 
 Dashboard.propTypes = {
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  getCurrentUser: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

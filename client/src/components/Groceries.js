@@ -29,11 +29,9 @@ class Groceries extends Component {
 }
 
 Groceries.propTypes = {
-  auth: PropTypes.object.isRequired
-};
-
-Groceries.propTypes = {
-  getProductsByCategory: PropTypes.func.isRequired
+  auth: PropTypes.object.isRequired,
+  getProductsByCategory: PropTypes.func.isRequired,
+  getCurrentUser: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

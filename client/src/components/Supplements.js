@@ -29,16 +29,15 @@ class Supplements extends Component {
 }
 
 Supplements.propTypes = {
-  auth: PropTypes.object.isRequired
-};
-
-Supplements.propTypes = {
-  getProductsByCategory: PropTypes.func.isRequired
+  auth: PropTypes.object.isRequired,
+  getProductsByCategory: PropTypes.func.isRequired,
+  getCurrentUser: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   products: state.products,
-  auth: state.auth
+  auth: state.auth,
+  user: state.user
 });
 
 export default connect(
