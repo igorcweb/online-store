@@ -203,7 +203,7 @@ const products = [
     price: 1.99
   },
   {
-    name: ' Sunflower Seed Bread -- 17.6 oz',
+    name: 'Sunflower Seed Bread -- 17.6 oz',
     brand: 'Mestemacher',
     category: 'Groceries',
     description:
@@ -214,7 +214,7 @@ const products = [
     price: 2.81
   },
   {
-    name: ' Organic Long Grain Brown Rice -- 32 oz',
+    name: 'Organic Long Grain Brown Rice -- 32 oz',
     brand: 'Simple Truth®',
     category: 'Groceries',
     description:

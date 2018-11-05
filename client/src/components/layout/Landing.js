@@ -16,7 +16,9 @@ class Landing extends Component {
           <div className="home-inner">
             <div className="container">
               <div className="row  text-center">
-                <h1 className="display-3 pt-5">Organic Fitness World</h1>
+                <h1 className="display-3 pt-5 text-white">
+                  Organic Fitness World
+                </h1>
               </div>
             </div>
           </div>
