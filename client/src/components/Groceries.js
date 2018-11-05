@@ -2,18 +2,24 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getProductsByCategory } from '../actions/productActions';
+import { getCurrentUser } from '../actions/userActions';
 
 class Groceries extends Component {
   componentDidMount() {
     const category = this.props.location.pathname.replace('/', '');
     this.props.getProductsByCategory(category);
+    if (this.props.auth.isAuthenticated) {
+      const { id } = this.props.auth.user;
+      this.props.getCurrentUser(id);
+    }
   }
 
   render() {
     const { products } = this.props;
-    const { user } = this.props.auth;
+    const { user } = this.props;
+    console.log('user:', user);
     console.log('groceries:', products);
-    console.log(user);
+
     return (
       <div className="products">
         <h1>Groceries</h1>
@@ -32,10 +38,11 @@ Groceries.propTypes = {
 
 const mapStateToProps = state => ({
   products: state.products,
-  auth: state.auth
+  auth: state.auth,
+  user: state.user
 });
 
 export default connect(
   mapStateToProps,
-  { getProductsByCategory }
+  { getProductsByCategory, getCurrentUser }
 )(Groceries);

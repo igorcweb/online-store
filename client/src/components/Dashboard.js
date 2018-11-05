@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
+import { getCurrentUser } from '../actions/userActions';
 
 class Dashboard extends Component {
   componentDidMount() {
     if (!this.props.auth.isAuthenticated) {
       this.props.history.push('/');
+    } else {
+      const { id } = this.props.auth.user;
+      this.props.getCurrentUser(id);
     }
   }
   render() {
-    console.log(this.props.auth.user);
+    const { user } = this.props;
+    console.log(user);
     return (
       <div className="landing">
         <h1>Dashboard</h1>
@@ -23,7 +28,11 @@ Dashboard.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  user: state.user
 });
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(
+  mapStateToProps,
+  { getCurrentUser }
+)(Dashboard);
