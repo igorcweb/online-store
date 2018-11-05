@@ -21,9 +21,11 @@ class Supplements extends Component {
     console.log('supplements:', products);
 
     return (
-      <div className="products">
-        <h1>Supplements</h1>
-      </div>
+      <ul className="products">
+        {products.map(product => (
+          <li key={product._id}>{product.name}</li>
+        ))}
+      </ul>
     );
   }
 }

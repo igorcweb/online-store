@@ -21,9 +21,11 @@ class Groceries extends Component {
     console.log('groceries:', products);
 
     return (
-      <div className="products">
-        <h1>Groceries</h1>
-      </div>
+      <ul className="products">
+        {products.map(product => (
+          <li key={product._id}>{product.name}</li>
+        ))}
+      </ul>
     );
   }
 }
