@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
+import {
+  incrementCartItems,
+  decrementCartItems
+} from '../../actions/cartActions';
 
 class Navbar extends Component {
   onLogoutClick = e => {
@@ -12,6 +16,8 @@ class Navbar extends Component {
   };
 
   render() {
+    const cartItems = this.props.cart.cartItems;
+    console.log(cartItems);
     const { isAuthenticated, user } = this.props.auth;
     const navbarLogo = (
       <Link to="/" className="navbar-brand mx-auto">
@@ -43,7 +49,12 @@ class Navbar extends Component {
     const authLinks = (
       <div className="ml-auto navbar-collapse">
         <ul className="navbar-nav ml-auto">
+          <li className="nav-item mt-2 mr-sm-3">
+            <i className="fas fa-shopping-cart" />
+            <span className="class-items ml-1">{cartItems}</span>
+          </li>
           <span className="name pt-2">{user.name}</span>
+
           <li className="nav-item">
             <span className="nav-link" onClick={this.onLogoutClick}>
               Logout
@@ -80,14 +91,16 @@ class Navbar extends Component {
 
 Navbar.propTypes = {
   logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  cart: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  cart: state.cart
 });
 
 export default connect(
   mapStateToProps,
-  { logoutUser }
+  { logoutUser, incrementCartItems, decrementCartItems }
 )(Navbar);

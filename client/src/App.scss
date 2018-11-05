@@ -15,7 +15,7 @@ span.nav-link {
 }
 
 span.name {
-  color: lightgray;
+  color: gray;
 }
 #navbar {
   .nav-link {
@@ -41,4 +41,13 @@ span.name {
   .home-inner {
     padding-top: 150px;
   }
+}
+
+.fa-shopping-cart,
+span.class-items {
+  color: gray;
+}
+
+.fa-shopping-cart {
+  cursor: pointer;
 }
