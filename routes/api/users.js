@@ -10,6 +10,18 @@ const moment = require('moment');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
+// async function asyncForEach(array, callback) {
+//   for (let index = 0; index < array.length; index++) {
+//     await callback(array[index], index, array);
+//   }
+// }
+
+// Array.prototype.asyncForEach = async function(array, callback) {
+//   for (let index = 0; index < array.length; index++) {
+//     await callback(array[index], index, array);
+//   }
+// };
+
 // @route GET api/users
 // @access Public
 router.get('/', (req, res) => {
@@ -156,9 +168,9 @@ router.put('/order/:id', (req, res) => {
   const id = req.params.id;
   let quantity = 1;
   const products = [
-    ['5bdc854ab8e66315f3d7382e', quantity],
-    ['5bdc854ab8e66315f3d7382f', quantity],
-    ['5bdc854ab8e66315f3d73830', quantity]
+    ['5bddeb007ef2473253227904', quantity],
+    ['5bddeb007ef2473253227905', quantity],
+    ['5bddeb007ef2473253227906', quantity]
   ];
   products.forEach(product => {
     const productId = product[0];
@@ -168,7 +180,7 @@ router.put('/order/:id', (req, res) => {
     })
       .populate('orders')
       .then(() => res.json({ msg: 'success' }))
-      .then(() => {
+      .finally(() => {
         // Update inStock value
         db.Product.findByIdAndUpdate(productId, {
           $inc: { inStock: -1 * quantity }

@@ -14,27 +14,27 @@ class Navbar extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth;
     const navbarLogo = (
-      <a href="/" className="navbar-brand mx-auto">
+      <Link to="/" className="navbar-brand mx-auto">
         <img src="../assets/images/logoos.png" width="75" alt="" />
-      </a>
+      </Link>
     );
     const navMenu = (
       <div className="collapse navbar-collapse" id="navbar">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a href="/" className="nav-link">
+            <Link to="/groceries" className="nav-link">
               GROCERIES
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href="/" className="nav-link">
+            <Link to="/supplements" className="nav-link">
               SUPPLEMENTS
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href="/" className="nav-link">
+            <Link to="/clothing" className="nav-link">
               CLOTHING
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

@@ -9,5 +9,7 @@ export default {
   getProduct: id => axios.get('/api/products/' + id),
   rateProdict: id => axios.post('/api/users/rating/' + id),
   getUserRatings: id => axios.get('/api/users/rating/' + id),
-  getProductRatings: id => axios.get('/api/users/product-rating' + id)
+  getProductRatings: id => axios.get('/api/users/product-rating' + id),
+  getProducts: () => axios.get('/api/products'),
+  getProductsByCategory: category => axios.get('/api/products/' + category)
 };
