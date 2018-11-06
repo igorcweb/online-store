@@ -15,6 +15,7 @@ import Footer from './components/layout/Footer';
 import Groceries from './components/Groceries';
 import Supplements from './components/Supplements';
 import Clothing from './components/Clothing';
+import Search from './components/Search';
 import './App.scss';
 
 //Check for token
@@ -39,7 +40,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar />
+            <Route path="/" component={Navbar} />
             <Route exact path="/" component={Landing} />
             <div className="container">
               <Route exact path="/register" component={Register} />
@@ -48,6 +49,7 @@ class App extends Component {
               <Route exact path="/groceries" component={Groceries} />
               <Route exact path="/supplements" component={Supplements} />
               <Route exact path="/clothing" component={Clothing} />
+              <Route path="/search" component={Search} />
             </div>
             <Footer />
           </div>

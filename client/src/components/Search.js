@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { getProductsByCategory } from '../actions/productActions';
 import { getCurrentUser } from '../actions/userActions';
 
-class Groceries extends Component {
+class Search extends Component {
   componentDidMount() {
-    const category = this.props.location.pathname.replace('/', '');
-    this.props.getProductsByCategory(category);
+    const query = this.props.history.location.pathname
+      .replace('/search/', '')
+      .toLowerCase();
+    console.log(query);
     if (this.props.auth.isAuthenticated) {
       const { id } = this.props.auth.user;
       this.props.getCurrentUser(id);
@@ -48,9 +49,8 @@ class Groceries extends Component {
   }
 }
 
-Groceries.propTypes = {
+Search.propTypes = {
   auth: PropTypes.object.isRequired,
-  getProductsByCategory: PropTypes.func.isRequired,
   getCurrentUser: PropTypes.func.isRequired
 };
 
@@ -62,5 +62,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getProductsByCategory, getCurrentUser }
-)(Groceries);
+  { getCurrentUser }
+)(Search);
