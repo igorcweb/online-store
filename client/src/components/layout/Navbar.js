@@ -82,7 +82,16 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-light bg-white mb-4 fixed-top">
         <div className="container-fluid">
-          {navbarLogo} {navMenu} {isAuthenticated ? authLinks : guestLinks}
+          {navbarLogo}
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          {navMenu} {isAuthenticated ? authLinks : guestLinks}
         </div>
       </nav>
     );

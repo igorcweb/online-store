@@ -14,6 +14,11 @@ class Groceries extends Component {
     }
   }
 
+  addToCart = (_id, name, price) => {
+    // const { name, price } = e.target;
+    console.log(_id, name, price);
+  };
+
   render() {
     const { products } = this.props;
     const { user } = this.props;
@@ -22,9 +27,23 @@ class Groceries extends Component {
 
     return (
       <ul className="products">
-        {products.map(product => (
-          <li key={product._id}>{product.name}</li>
-        ))}
+        {products.map(product => {
+          const { _id, name, price } = product;
+          return (
+            <li key={product._id}>
+              {product.name}
+              {this.props.auth.isAuthenticated ? (
+                <button
+                  key={_id}
+                  className="btn d-block"
+                  onClick={() => this.addToCart(_id, name, price)}
+                >
+                  add
+                </button>
+              ) : null}
+            </li>
+          );
+        })}
       </ul>
     );
   }
