@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/userActions';
+import { searchProducts } from '../actions/productActions';
 
 class Search extends Component {
-  componentDidMount() {
-    const query = this.props.history.location.pathname
-      .replace('/search/', '')
-      .toLowerCase();
-    console.log(query);
+  componentWillMount() {
     if (this.props.auth.isAuthenticated) {
       const { id } = this.props.auth.user;
       this.props.getCurrentUser(id);
     }
+    const query = this.props.history.location.pathname
+      .replace('/search/', '')
+      .toLowerCase();
+    console.log(query);
+    this.props.searchProducts(query);
   }
 
   addToCart = (_id, name, price) => {
@@ -23,7 +25,7 @@ class Search extends Component {
     const { products } = this.props;
     const { user } = this.props;
     console.log('user:', user);
-    console.log('groceries:', products);
+    console.log('searched:', this);
 
     return (
       <ul className="products">
@@ -51,7 +53,8 @@ class Search extends Component {
 
 Search.propTypes = {
   auth: PropTypes.object.isRequired,
-  getCurrentUser: PropTypes.func.isRequired
+  getCurrentUser: PropTypes.func.isRequired,
+  searchProducts: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -62,5 +65,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCurrentUser }
+  { getCurrentUser, searchProducts }
 )(Search);

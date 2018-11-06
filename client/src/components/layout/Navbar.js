@@ -24,9 +24,11 @@ class Navbar extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state.search);
-    this.props.history.push('/search/' + this.state.search);
-    this.setState({ search: '' });
+    this.props.history.push('/');
+    setTimeout(() => {
+      this.props.history.push('/search/' + this.state.search);
+      this.setState({ search: '' });
+    }, 0.001);
   };
 
   render() {
