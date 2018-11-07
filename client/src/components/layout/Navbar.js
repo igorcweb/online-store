@@ -35,6 +35,7 @@ class Navbar extends Component {
         <img src="../assets/images/logoos.png" width="75" alt="" />
       </Link>
     );
+
     const searchBar = (
       <form onSubmit={this.onSubmit}>
         <div className="mr-sm-3">
@@ -112,20 +113,14 @@ class Navbar extends Component {
       </div>
     );
     return (
-      <nav className="navbar navbar-expand-sm navbar-light bg-white mb-4 fixed-top">
-        <div className="container-fluid">
-          {navbarLogo}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          {navMenu} {isAuthenticated ? authLinks : guestLinks}
-        </div>
-      </nav>
+      <div>
+        <nav className="navbar navbar-expand-sm navbar-light bg-white mb-4 fixed-top">
+          <div className="container-fluid">
+            {navbarLogo}
+            {navMenu} {isAuthenticated ? authLinks : guestLinks}
+          </div>
+        </nav>
+      </div>
     );
   }
 }

@@ -55,23 +55,41 @@ class Groceries extends Component {
     console.log('user:', user);
     console.log('groceries:', products);
     return (
-      <ul className="products">
-        {products.map(product => {
-          const { _id, name, description, price } = product;
-          return (
-            <li key={product._id}>
-              {product.name}
-              <button
-                key={_id}
-                className="btn d-block"
-                onClick={() => this.addToCart(_id, name, description, price)}
-              >
-                add
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="products">
+        <div className="row" key={products._id}>
+          {products.map(product => {
+            const { _id, name, description, imgUrl, price } = product;
+            return (
+              <div className="col-md-4" key={_id}>
+                <div className="card shadow-sm align-items-center">
+                  <img src={imgUrl} alt="" className="CardImg" />
+                </div>
+                <div className="card-body">
+                  <h6 className="block2-name dis-block s-text3 p-b-5">
+                    {name}
+                  </h6>
+                  <div className="d-flex justify-content-between align-items-center mb-5">
+                    <div className="btn-group">
+                      <button className="btn btn-sm btn-outline-secondary">
+                        Read Description
+                      </button>
+                      <button
+                        className="btn btn-sm btn-success ml-2"
+                        onClick={() =>
+                          this.addToCart(_id, name, description, price)
+                        }
+                      >
+                        Add to cart
+                      </button>
+                    </div>
+                    <span className="block2-price m-text6 p-r-5">${price}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     );
   }
 }
