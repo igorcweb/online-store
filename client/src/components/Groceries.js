@@ -3,6 +3,8 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getProductsByCategory } from '../actions/productActions';
 import { getCurrentUser } from '../actions/userActions';
+import { removeDuplicates } from '../utils/removeDuplicates';
+import { updateCartItems } from '../actions/cartActions';
 
 class Groceries extends Component {
   componentDidMount() {
@@ -14,17 +16,61 @@ class Groceries extends Component {
     }
   }
 
+  addToCart = (_id, name, description, price) => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log(cart);
+    const item = {
+      _id,
+      name,
+      description,
+      price,
+      quantity: 1
+    };
+    if (cart.length) {
+      cart.forEach(stored => {
+        if (stored._id === item._id) {
+          stored.quantity += 1;
+          item.quantity += 1;
+        }
+      });
+    }
+
+    cart.push(item);
+    //Remove duplicates
+    const newCart = removeDuplicates(cart, '_id');
+    console.log(newCart);
+    const cartItems = newCart.reduce((acc, item) => {
+      return acc + item.quantity;
+    }, 0);
+    localStorage.setItem('cartItems', cartItems);
+    console.log(cartItems);
+    this.props.updateCartItems(cartItems);
+    const serializedCart = JSON.stringify(newCart);
+    localStorage.setItem('cart', serializedCart);
+    console.log(('local storage', localStorage));
+  };
+
   render() {
-    const { products } = this.props;
-    const { user } = this.props;
+    const { products, user } = this.props;
     console.log('user:', user);
     console.log('groceries:', products);
-
     return (
       <ul className="products">
-        {products.map(product => (
-          <li key={product._id}>{product.name}</li>
-        ))}
+        {products.map(product => {
+          const { _id, name, description, price } = product;
+          return (
+            <li key={product._id}>
+              {product.name}
+              <button
+                key={_id}
+                className="btn d-block"
+                onClick={() => this.addToCart(_id, name, description, price)}
+              >
+                add
+              </button>
+            </li>
+          );
+        })}
       </ul>
     );
   }
@@ -39,10 +85,11 @@ Groceries.propTypes = {
 const mapStateToProps = state => ({
   products: state.products,
   auth: state.auth,
-  user: state.user
+  user: state.user,
+  cart: state.cart
 });
 
 export default connect(
   mapStateToProps,
-  { getProductsByCategory, getCurrentUser }
+  { getProductsByCategory, getCurrentUser, updateCartItems }
 )(Groceries);

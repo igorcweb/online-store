@@ -3,26 +3,52 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import {
-  incrementCartItems,
-  decrementCartItems
-} from '../../actions/cartActions';
 
 class Navbar extends Component {
+  state = {
+    search: ''
+  };
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
-    window.location.replace('/');
+    this.props.history.push('/');
+  };
+
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+    this.props.history.push('/loading');
+    setTimeout(() => {
+      this.props.history.push('/search/' + this.state.search);
+      this.setState({ search: '' });
+    }, 0.001);
   };
 
   render() {
     const cartItems = this.props.cart.cartItems;
-    console.log(cartItems);
     const { isAuthenticated, user } = this.props.auth;
     const navbarLogo = (
       <Link to="/" className="navbar-brand mx-auto">
         <img src="../assets/images/logoos.png" width="75" alt="" />
       </Link>
+    );
+    const searchBar = (
+      <form onSubmit={this.onSubmit}>
+        <div className="mr-sm-3">
+          <input
+            className="form-control search"
+            type="text"
+            placeholder="Search Products"
+            aria-label="Search"
+            name="search"
+            value={this.state.search}
+            onChange={this.onChange}
+          />
+        </div>
+      </form>
     );
     const navMenu = (
       <div className="collapse navbar-collapse" id="navbar">
@@ -49,6 +75,7 @@ class Navbar extends Component {
     const authLinks = (
       <div className="ml-auto navbar-collapse">
         <ul className="navbar-nav ml-auto">
+          {searchBar}
           <li className="nav-item mt-2 mr-sm-3">
             <i className="fas fa-shopping-cart" />
             <span className="class-items ml-1">{cartItems}</span>
@@ -66,6 +93,11 @@ class Navbar extends Component {
     const guestLinks = (
       <div className="ml-auto navbar-collapse">
         <ul className="navbar-nav ml-auto">
+          {searchBar}
+          <li className="nav-item mt-2 mr-sm-3">
+            <i className="fas fa-shopping-cart" />
+            <span className="class-items ml-1">{cartItems}</span>
+          </li>
           <li className="nav-item">
             <Link className="nav-link" to="/register">
               Register
@@ -82,7 +114,16 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-light bg-white mb-4 fixed-top">
         <div className="container-fluid">
-          {navbarLogo} {navMenu} {isAuthenticated ? authLinks : guestLinks}
+          {navbarLogo}
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          {navMenu} {isAuthenticated ? authLinks : guestLinks}
         </div>
       </nav>
     );
@@ -102,5 +143,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { logoutUser, incrementCartItems, decrementCartItems }
+  { logoutUser }
 )(Navbar);

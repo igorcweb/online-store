@@ -11,5 +11,6 @@ export default {
   getUserRatings: id => axios.get('/api/users/rating/' + id),
   getProductRatings: id => axios.get('/api/users/product-rating' + id),
   getProducts: () => axios.get('/api/products'),
-  getProductsByCategory: category => axios.get('/api/products/' + category)
+  getProductsByCategory: category => axios.get('/api/products/' + category),
+  searchProducts: query => axios.get('/api/products/search/' + query)
 };

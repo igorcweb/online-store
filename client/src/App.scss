@@ -51,3 +51,45 @@ span.class-items {
 .fa-shopping-cart {
   cursor: pointer;
 }
+
+input:focus {
+  box-shadow: none !important;
+  border-color: lightgray !important;
+}
+
+.login,
+.register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .login,
+  .register {
+    width: 75%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .login,
+  .register {
+    width: 60%;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .login,
+  .register {
+    width: 50%;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}

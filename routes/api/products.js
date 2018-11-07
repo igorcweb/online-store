@@ -27,6 +27,28 @@ router.get('/:category', (req, res) => {
   });
 });
 
+// @route GET api/products/:query
+// @access Public
+
+router.get('/search/:query', (req, res) => {
+  const query = req.params.query;
+  db.Product.find({})
+    .then(products => {
+      const results = [];
+      products.forEach(product => {
+        if (
+          product.name.toLowerCase().includes(query) ||
+          product.category.toLowerCase().includes(query) ||
+          product.description.toLowerCase().includes(query)
+        ) {
+          results.push(product);
+        }
+      });
+      res.json(results);
+    })
+    .catch(err => res.json({ err }));
+});
+
 // @route GET api/products/:id
 // @access Public
 router.get('/:id', (req, res) => {
