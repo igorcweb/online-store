@@ -20,7 +20,7 @@ class Navbar extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.props.history.push('/');
+    this.props.history.push('/loading');
     setTimeout(() => {
       this.props.history.push('/search/' + this.state.search);
       this.setState({ search: '' });

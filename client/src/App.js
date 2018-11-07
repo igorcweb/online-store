@@ -16,6 +16,7 @@ import Groceries from './components/Groceries';
 import Supplements from './components/Supplements';
 import Clothing from './components/Clothing';
 import Search from './components/Search';
+import Spinner from './components/Spinner';
 import './App.scss';
 
 //Check for token
@@ -50,6 +51,7 @@ class App extends Component {
               <Route exact path="/supplements" component={Supplements} />
               <Route exact path="/clothing" component={Clothing} />
               <Route path="/search" component={Search} />
+              <Route exact path="/loading" component={Spinner} />
             </div>
             <Footer />
           </div>
