@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getProductsByCategory } from '../actions/productActions';
 import { getCurrentUser } from '../actions/userActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
+import { updateCartItems } from '../actions/cartActions';
 
 class Groceries extends Component {
   componentDidMount() {
@@ -38,6 +39,12 @@ class Groceries extends Component {
     //Remove duplicates
     const newCart = removeDuplicates(cart, '_id');
     console.log(newCart);
+    const cartItems = newCart.reduce((acc, item) => {
+      return acc + item.quantity;
+    }, 0);
+    localStorage.setItem('cartItems', cartItems);
+    console.log(cartItems);
+    this.props.updateCartItems(cartItems);
     const serializedCart = JSON.stringify(newCart);
     localStorage.setItem('cart', serializedCart);
     console.log(('local storage', localStorage));
@@ -47,7 +54,6 @@ class Groceries extends Component {
     const { products, user } = this.props;
     console.log('user:', user);
     console.log('groceries:', products);
-
     return (
       <ul className="products">
         {products.map(product => {
@@ -55,15 +61,13 @@ class Groceries extends Component {
           return (
             <li key={product._id}>
               {product.name}
-              {this.props.auth.isAuthenticated ? (
-                <button
-                  key={_id}
-                  className="btn d-block"
-                  onClick={() => this.addToCart(_id, name, description, price)}
-                >
-                  add
-                </button>
-              ) : null}
+              <button
+                key={_id}
+                className="btn d-block"
+                onClick={() => this.addToCart(_id, name, description, price)}
+              >
+                add
+              </button>
             </li>
           );
         })}
@@ -81,10 +85,11 @@ Groceries.propTypes = {
 const mapStateToProps = state => ({
   products: state.products,
   auth: state.auth,
-  user: state.user
+  user: state.user,
+  cart: state.cart
 });
 
 export default connect(
   mapStateToProps,
-  { getProductsByCategory, getCurrentUser }
+  { getProductsByCategory, getCurrentUser, updateCartItems }
 )(Groceries);

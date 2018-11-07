@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import {
-  incrementCartItems,
-  decrementCartItems
-} from '../../actions/cartActions';
 
 class Navbar extends Component {
   state = {
@@ -98,6 +94,10 @@ class Navbar extends Component {
       <div className="ml-auto navbar-collapse">
         <ul className="navbar-nav ml-auto">
           {searchBar}
+          <li className="nav-item mt-2 mr-sm-3">
+            <i className="fas fa-shopping-cart" />
+            <span className="class-items ml-1">{cartItems}</span>
+          </li>
           <li className="nav-item">
             <Link className="nav-link" to="/register">
               Register
@@ -143,5 +143,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { logoutUser, incrementCartItems, decrementCartItems }
+  { logoutUser }
 )(Navbar);
