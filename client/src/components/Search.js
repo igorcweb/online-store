@@ -62,7 +62,7 @@ class Search extends Component {
     console.log('user:', user);
     console.log('groceries:', products);
     return (
-      <div className="products">
+      <div className="products content">
         <div className="row" key={products._id}>
           {products.map(product => {
             const { _id, name, description, imgUrl, price } = product;

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class Footer extends Component {
   render() {
     return (
-      <div className="footer text-muted bg-white fixed-bottom">
+      <div className="footer text-muted bg-white">
         <div className="container">
           <div className="row">
             <div className="col text-center">

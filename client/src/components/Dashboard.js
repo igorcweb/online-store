@@ -47,7 +47,7 @@ class Dashboard extends Component {
         orderMessage = '';
       }
       dashboardContent = (
-        <div>
+        <div className="content">
           <h3 className="lead text-muted">Welcome {name}!</h3>
           <h3 className="lead text-muted">Customer since {date}!</h3>
           {primeMessage}

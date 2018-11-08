@@ -18,6 +18,7 @@ client/.env
 .env.test.local
 .env.production.local
 .vscode
+*footer.js
 playground.js
 
 npm-debug.log*
