@@ -53,10 +53,9 @@ class Groceries extends Component {
   render() {
     const { products, user } = this.props;
     console.log('user:', user);
-    console.log('groceries:', products);
     return (
       <div className="products">
-        <div className="row" key={products._id}>
+        <div className="row">
           {products.map(product => {
             const { _id, name, description, imgUrl, price } = product;
             return (

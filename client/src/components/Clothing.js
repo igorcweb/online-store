@@ -54,7 +54,7 @@ class Clothing extends Component {
     console.log('groceries:', products);
     return (
       <div className="products">
-        <div className="row" key={products._id}>
+        <div className="row">
           {products.map(product => {
             const { _id, name, description, imgUrl, price } = product;
             return (

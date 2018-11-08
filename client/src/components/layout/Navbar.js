@@ -83,7 +83,7 @@ class Navbar extends Component {
       <div className="ml-auto navbar-collapse">
         <ul className="navbar-nav ml-auto">
           {searchBar}
-          <li className="nav-item mt-2 mr-sm-3">
+          <li className="nav-item mt-2 mr-sm-3" onClick={this.onCartClick}>
             <i className="fas fa-shopping-cart" />
             <span className="class-items ml-1">{cartItems}</span>
           </li>
