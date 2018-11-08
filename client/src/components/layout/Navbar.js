@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
+import { toggleCart } from '../../actions/cartActions';
+import Cart from '../Cart';
 
 class Navbar extends Component {
   state = {
     search: ''
+  };
+
+  onCartClick = () => {
+    this.props.toggleCart();
   };
   onLogoutClick = e => {
     e.preventDefault();
@@ -95,7 +101,7 @@ class Navbar extends Component {
       <div className="ml-auto navbar-collapse">
         <ul className="navbar-nav ml-auto">
           {searchBar}
-          <li className="nav-item mt-2 mr-sm-3">
+          <li className="nav-item mt-2 mr-sm-3" onClick={this.onCartClick}>
             <i className="fas fa-shopping-cart" />
             <span className="class-items ml-1">{cartItems}</span>
           </li>
@@ -112,8 +118,10 @@ class Navbar extends Component {
         </ul>
       </div>
     );
+    console.log('state:', this.state);
     return (
       <div>
+        <Cart isShowing={true} />
         <nav className="navbar navbar-expand-sm navbar-light bg-white mb-4 fixed-top">
           <div className="container-fluid">
             {navbarLogo}
@@ -138,5 +146,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { logoutUser }
+  { logoutUser, toggleCart }
 )(Navbar);

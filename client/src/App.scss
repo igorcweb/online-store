@@ -63,3 +63,18 @@ span.class-items {
 .content {
   min-height: calc(100vh - 180px);
 }
+
+.cart {
+  transform: translateX(100%);
+  height: auto;
+  z-index: 10;
+  position: fixed;
+  top: 5.6rem;
+  right: 0;
+  height: 100%;
+  width: 300px;
+  transition: 0.3s ease-in-out;
+}
+.cart.isShowing {
+  transform: none;
+}

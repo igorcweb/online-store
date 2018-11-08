@@ -45,7 +45,7 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="login">
+      <div className="login content">
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <input
