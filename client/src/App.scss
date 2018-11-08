@@ -60,10 +60,6 @@ span.class-items {
   }
 }
 
-.content {
-  min-height: calc(100vh - 180px);
-}
-
 .cart {
   transform: translateX(100%);
   height: auto;
@@ -72,9 +68,45 @@ span.class-items {
   top: 5.6rem;
   right: 0;
   height: 100%;
-  width: 300px;
+  width: 350px;
   transition: 0.3s ease-in-out;
 }
 .cart.isShowing {
   transform: none;
+}
+
+.login,
+.register {
+  margin: 0 auto;
+  padding-top: 100px;
+  width: 370px;
+}
+
+//Sticky footer
+.content {
+  min-height: calc(100vh - 180px);
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .login,
+  .register {
+    width: 400px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .login,
+  .register {
+    width: 500px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
 }
