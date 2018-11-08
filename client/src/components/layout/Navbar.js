@@ -118,10 +118,9 @@ class Navbar extends Component {
         </ul>
       </div>
     );
-    console.log('state:', this.state);
     return (
       <div>
-        <Cart isShowing={true} />
+        <Cart />
         <nav className="navbar navbar-expand-sm navbar-light bg-white mb-4 fixed-top">
           <div className="container-fluid">
             {navbarLogo}
