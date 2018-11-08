@@ -2,12 +2,18 @@ $bg-color: rgb(255, 255, 255);
 $font-color: #fff;
 $primary-color: #008ed6;
 $dark-overlay: rgba(144, 182, 169, 0.5);
+$main-red: #ea2929d9;
+$main-red-hover: #ea2929;
 $icon-size: 30px;
 
 body {
   background: $bg-color;
   // color: $font-color;
   margin-top: 90px;
+}
+
+* {
+  list-style: none;
 }
 
 span.nav-link {
@@ -68,11 +74,41 @@ span.class-items {
   top: 5.6rem;
   right: 0;
   height: 100%;
-  width: 350px;
+  width: 550px;
   transition: 0.3s ease-in-out;
 }
 .cart.isShowing {
   transform: none;
+}
+
+.listItem {
+  width: 500px;
+}
+
+.fa-trash,
+.fa-minus {
+  color: $main-red;
+  cursor: pointer;
+}
+
+.fa-trash:hover {
+  color: $main-red-hover;
+}
+.fa-plus {
+  color: green;
+  cursor: pointer;
+}
+.fa-plus,
+.fa-minus,
+.fa-trash {
+  font-size: 0.8rem;
+}
+
+button.proceed {
+  position: absolute;
+  bottom: 5.5rem;
+  width: 90%;
+  text-align: center;
 }
 
 .login,

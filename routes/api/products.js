@@ -38,8 +38,7 @@ router.get('/search/:query', (req, res) => {
       products.forEach(product => {
         if (
           product.name.toLowerCase().includes(query) ||
-          product.category.toLowerCase().includes(query) ||
-          product.description.toLowerCase().includes(query)
+          product.category.toLowerCase().includes(query)
         ) {
           results.push(product);
         }

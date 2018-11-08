@@ -38,7 +38,6 @@ class Groceries extends Component {
     cart.push(item);
     //Remove duplicates
     const newCart = removeDuplicates(cart, '_id');
-    console.log(newCart);
     const cartItems = newCart.reduce((acc, item) => {
       return acc + item.quantity;
     }, 0);
