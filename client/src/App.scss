@@ -20,7 +20,11 @@ body {
     color: white !important;
   }
 }
-
+.register {
+  i {
+    color: green;
+  }
+}
 .text {
   color: rgb(83, 83, 83);
 }
@@ -141,14 +145,24 @@ button.proceed {
   width: 90%;
   text-align: center;
 }
-
-.login,
-.register {
-  margin: 0 auto;
-  padding-top: 100px;
-  width: 370px;
+.label {
+  font-size: 12px;
+  font-weight: 900;
+}
+// .login,
+// .register {
+//   margin: 0 auto;
+//   padding-top: 100px;
+//   width: 370px;
+// }
+.brown {
+  background: #afa381;
+  color: white;
 }
 
+.text-under {
+  margin-top: -400px;
+}
 //Sticky footer
 .content {
   min-height: calc(100vh - 180px);
@@ -161,10 +175,10 @@ button.proceed {
 }
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .login,
-  .register {
-    width: 400px;
-  }
+  // .login,
+  // .register {
+  //   width: 400px;
+  // }
   .nav-cont {
     margin-right: -20px;
   }
@@ -172,10 +186,10 @@ button.proceed {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .login,
-  .register {
-    width: 500px;
-  }
+  // .login,
+  // .register {
+  //   width: 500px;
+  // }
   .nav-cont {
     margin-right: -20px;
   }
