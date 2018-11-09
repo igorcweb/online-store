@@ -5,6 +5,7 @@ import { getProductsByCategory } from '../actions/productActions';
 import { getCurrentUser } from '../actions/userActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
 import { updateCartItems } from '../actions/cartActions';
+import Spinner from '../images/spinner.gif';
 
 class Groceries extends Component {
   componentDidMount() {
