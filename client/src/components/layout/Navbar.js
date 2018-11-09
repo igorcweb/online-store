@@ -113,10 +113,12 @@ class Navbar extends Component {
           <i className="fas fa-shopping-cart" />
           <span className="class-items ml-1">{cartItems}</span>
         </li>
-        <span className="name px-4">{user.name}</span>
+        <Link to="/dashboard">
+          <span className="name px-4">{user.name}</span>
+        </Link>
 
         <li className="d-inline pl-2">
-          <span className="nav-link1" onClick={this.onLogoutClick}>
+          <span className="nav-link1 logout" onClick={this.onLogoutClick}>
             Logout
           </span>
         </li>

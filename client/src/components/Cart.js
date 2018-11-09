@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/userActions';
-import { updateCartItems, updateCart } from '../actions/cartActions';
+import {
+  updateCartItems,
+  updateCart,
+  toggleCart
+} from '../actions/cartActions';
 import classnames from 'classnames';
 
 class Cart extends Component {
@@ -37,12 +41,16 @@ class Cart extends Component {
     this.props.updateCart(JSON.parse(localStorage.getItem('cart')));
     localStorage.setItem('cartItems', parseInt(cartItems) - 1);
     this.props.updateCartItems(localStorage.getItem('cartItems'));
+    setTimeout(() => {
+      if (this.props.cart.cartItems === '0') {
+        this.props.toggleCart();
+      }
+    }, 1);
   };
   onTrash = (_id, cart, cartItems) => {
     let newCart = cart.map(item => {
       if (item._id === _id) {
         localStorage.setItem('cartItems', cartItems - item.quantity);
-        console.log(cartItems - item.quantity);
         item.quantity = 0;
       }
       return item;
@@ -51,6 +59,11 @@ class Cart extends Component {
     localStorage.setItem('cart', JSON.stringify(newCart));
     this.props.updateCart(JSON.parse(localStorage.getItem('cart')));
     this.props.updateCartItems(localStorage.getItem('cartItems'));
+    setTimeout(() => {
+      if (this.props.cart.cartItems === '0') {
+        this.props.toggleCart();
+      }
+    }, 1);
   };
 
   render() {
@@ -68,7 +81,6 @@ class Cart extends Component {
     }
 
     const items = this.props.cart.cartItems === '1' ? 'Item' : 'Items';
-
     return (
       <div
         className={classnames('card cart shadow-lg bg-white rounded', {
@@ -122,6 +134,7 @@ class Cart extends Component {
                         </div>
                       );
                     }
+                    return false;
                   })
                 : null}
             </ul>
@@ -149,5 +162,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCurrentUser, updateCartItems, updateCart }
+  { getCurrentUser, updateCartItems, updateCart, toggleCart }
 )(Cart);

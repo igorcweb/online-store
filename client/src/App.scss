@@ -27,6 +27,11 @@ body {
 
 .name {
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logout {
+  cursor: pointer;
 }
 
 .success {
@@ -48,6 +53,11 @@ body {
 
 * {
   list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 span.nav-link {
