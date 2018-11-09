@@ -5,11 +5,45 @@ $dark-overlay: rgba(144, 182, 169, 0.5);
 $main-red: #ea2929d9;
 $main-red-hover: #ea2929;
 $icon-size: 30px;
+$mainbgcolor: rgba(236, 240, 239, 0.5);
 
 body {
-  background: $bg-color;
-  // color: $font-color;
-  margin-top: 90px;
+  background: $mainbgcolor;
+}
+
+.nav-top {
+  background: #afa381;
+  color: white;
+  a,
+  i,
+  span {
+    color: white !important;
+  }
+}
+
+.text {
+  color: rgb(83, 83, 83);
+}
+
+.name {
+  text-transform: uppercase;
+}
+
+.success {
+  background: #badbdf;
+  color: #3b2314;
+}
+
+.orange {
+  color: #ff332b;
+}
+
+.navbar-brand {
+  margin-top: -48px;
+}
+
+.navMsg {
+  margin-left: 195px;
 }
 
 * {
@@ -23,22 +57,18 @@ span.nav-link {
 span.name {
   color: gray;
 }
-#navbar {
-  .nav-link {
-    font-family: 'Roboto', sans-serif;
-  }
-}
 
 #home-section {
   background: url('./images/bg-1.jpg') no-repeat;
+  top: 138px;
   background-size: cover;
   background-attachment: fixed;
   min-height: 700px;
 
   .overlay {
     background-color: $dark-overlay;
-    position: absolute;
-    top: 0;
+
+    top: 183px;
     left: 0;
     width: 100%;
     min-height: 700px;
@@ -59,6 +89,7 @@ span.class-items {
 }
 
 .card {
+  border: none;
   .CardImg {
     height: 225px;
     width: 50%;
@@ -123,11 +154,19 @@ button.proceed {
   min-height: calc(100vh - 180px);
 }
 
+@media (min-width: 480px) {
+  .nav-cont {
+    margin-right: -47px;
+  }
+}
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .login,
   .register {
     width: 400px;
+  }
+  .nav-cont {
+    margin-right: -20px;
   }
 }
 
@@ -137,10 +176,16 @@ button.proceed {
   .register {
     width: 500px;
   }
+  .nav-cont {
+    margin-right: -20px;
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .nav-cont {
+    margin-right: -20px;
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
