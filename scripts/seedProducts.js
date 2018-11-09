@@ -308,7 +308,7 @@ const products = [
     description:
       'A USDA Organic and Vegan Vitamin D Tablets made from lichen! Each serving contains 2,000 IU of vegan vitamin D3 and includes organic sunflower lecithin to enhance absorption. 30 tablets, 30 servings (1 month supply).',
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0767/1029/products/VITD-SF-TAB-UNF_1500x1500_172a7dd2-28cb-4a14-9a98-2a4cb60f7a85.png?v=1522077375',
+      'https://cdn.shopify.com/s/files/1/0767/1029/products/solfood_front.png?v=1541113166',
     inStock: 200,
     price: 29.99
   },
