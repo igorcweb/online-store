@@ -16,7 +16,7 @@ mongoose
 
 const products = [
   {
-    name: 'Organic Italian Extra Virgin Olive Oil',
+    name: 'Italian Extra Virgin Olive Oil',
     brand: 'Simple Truth®',
     category: 'Groceries',
     description:
@@ -27,7 +27,7 @@ const products = [
     price: 5.99
   },
   {
-    name: 'Extra Virgin Certified Organic Coconut Oil',
+    name: 'Extra Virgin Coconut Oil',
     brand: 'Vitacost',
     category: 'Groceries',
     description:
@@ -38,106 +38,106 @@ const products = [
     price: 19.99
   },
   {
-    name: '100% Cranberry Juice -- 32 fl oz',
+    name: '100% Cranberry Juice',
     brand: 'Simple Truth®',
     category: 'Groceries',
     description:
-      'From Concentrate Free From 101+ Artificial Preservatives & Ingredients, Kosher, Pasteurized. Per 8 oz fl Serving: 70 Calories, 0g Sat Fat, 35mg Sodium, 7g Sugar Refrigerate After Opening',
+      'From Concentrate Free From 101+ Artificial Preservatives & Ingredients, Kosher, Pasteurized. 32 fl oz, Per 8 oz fl Serving: 70 Calories, 0g Sat Fat, 35mg Sodium, 7g Sugar Refrigerate After Opening',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Simple-Truth/Simple-Truth-100-Cranberry-Juice-011110836052.jpg',
     inStock: 200,
     price: 3.99
   },
   {
-    name: 'Dark Chocolate 88% Cocoa Bar Vegan Gluten Free -- 3 oz',
+    name: 'Dark Chocolate 88% Cocoa Bar',
     brand: 'Endangered Species',
     category: 'Groceries',
     description:
-      'With 88% Cocoa Rainforest Alliance Certified Cocoa, Non-GMO verified, Certified Gluten Free, Natural, Serving Size: 1/2 Bar (43 g), Servings per Container: About 2',
+      'With 88% Cocoa Rainforest Alliance Certified Cocoa, Non-GMO verified, Certified Gluten Free, Natural, 3 oz, Serving Size: 1/2 Bar (43 g), Servings per Container: About 2',
     imgUrl:
       'https://www.vitacost.com/Images/Products/200/Endangered-Species/Endangered-Species-Dark-Chocolate-88-Cocoa-Bar-Vegan-Gluten-Free-037014242478.jpg',
     inStock: 200,
     price: 2.84
   },
   {
-    name: 'Organic Raw Almonds -- 8 oz (227 g)',
+    name: 'Organic Raw Almonds',
     brand: 'Vitacost',
     category: 'Groceries',
     description:
-      'Organic, Unsalted, Certified kosher, Serving Size: 1/4 Cup (30 g),Servings per Container: 8',
+      'Organic, Unsalted, Certified kosher, 8 oz (227 g), Serving Size: 1/4 Cup (30 g), Servings per Container: 8',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Organic-Raw-Almonds-844197012107.jpg',
     inStock: 200,
     price: 7.91
   },
   {
-    name: 'Organic Green Tea Strawberry Rose -- 25 Tea Bags',
+    name: 'Green Tea Strawberry Rose',
     brand: 'St. Dalfour',
     category: 'Groceries',
     description:
-      'Premium Certified Organic Green Tea, Selected And Blended Under The Direction Of The Tea Experts Of St. Dalford France,Enhanced By The Natural Flavour Of Strawberry & Rose,Individually Sealed In Envelopes, Serving Size: 1 Tea Bag Servings per Container: 25',
+      'Premium Certified Organic Green Tea, Selected And Blended Under The Direction Of The Tea Experts Of St. Dalford France,Enhanced By The Natural Flavour Of Strawberry & Rose,Individually Sealed In Envelopes, 25 Tea Bags, Serving Size: 1 Tea Bag Servings per Container: 25',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/St-Dalfour/St-Dalfour-Organic-Green-Tea-Strawberry-Rose-084380969744.jpg',
     inStock: 200,
     price: 2.96
   },
   {
-    name: 'Himalayan Pink Salt - Fine -- 32 oz (907 g)',
+    name: 'Himalayan Pink Salt',
     brand: 'Vitacost',
     category: 'Groceries',
     description:
-      'Gluten Free, Vegan, BPA Free, Serving Size: 1/4 tsp (Approx 1.5 g), Servings per Container: 605',
+      'Gluten Free, Vegan, BPA Free, 32 oz (907 g), Serving Size: 1/4 tsp (Approx 1.5 g),  Servings per Container: 605',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Himalayan-Pink-Salt-Fine-844197025374.jpg',
     inStock: 200,
     price: 4.37
   },
   {
-    name: 'Organic Walnuts Halves & Pieces -- 5.5 oz',
+    name: 'Walnuts Halves & Pieces',
     brand: 'Woodstock',
     category: 'Groceries',
     description:
-      'Walnuts Halves & Pieces, 5g of Protein Per Serving, Kosher • Vegan • USDA, Organic. Non-GMO, Project Verified. BPA-NI, Bag Product of USA, Resealable Package, Serving Size: 1/4 Cup (30 g), Servings per Container: About 5',
+      'Walnuts Halves & Pieces, 5g of Protein Per Serving, Kosher • Vegan • USDA, Organic. Non-GMO, Project Verified. BPA-NI, Bag Product of USA, Resealable Package, 5.5 oz, Serving Size: 1/4 Cup (30 g), Servings per Container: About 5',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Woodstock/Woodstock-Organic-Walnuts-Halves-And-Pieces-042563008376.jpg',
     inStock: 200,
     price: 6.79
   },
   {
-    name: 'Organic Dried Cranberries -- 10 oz',
+    name: 'Dried Cranberries',
     brand: 'Patience Fruit & Co',
     category: 'Groceries',
     description:
-      'Slowly, Grown, Classic • Gently Sweetened,USDA Organic, Non GMO, Project Verified, Serving Size: 1/4 Cup (40 g), Servings per Container: About 7',
+      'Slowly, Grown, Classic • Gently Sweetened,USDA Organic, Non GMO, Project Verified, 10 oz, Serving Size: 1/4 Cup (40 g), Servings per Container: About 7',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Patience-Fruit-And-Co/Patience-Fruit-And-Co-Organic-Dried-Cranberries-662166664115.jpg',
     inStock: 200,
     price: 6.48
   },
   {
-    name: '100% Pomegranate Juice -- 32 fl oz',
+    name: '100% Pomegranate Juice',
     brand: 'Simple Truth®',
     category: 'Groceries',
     description:
-      'From Concentrate With Other Added Ingredients, Serving Size: 8 fl oz (240 mL), Servings per Container: 4, Free From 101+ Artificial Preservatives and Ingredients: Pasteurized,Per 8 fl oz Serving: 160 Calories, 0g Sat Fat, 35 mg Sodium, 40g Sugars,Kosher,Refrigerate After Opening',
+      'From Concentrate With Other Added Ingredients, 32 fl oz, Serving Size: 8 fl oz (240 mL), Servings per Container: 4, Free From 101+ Artificial Preservatives and Ingredients: Pasteurized,Per 8 fl oz Serving: 160 Calories, 0g Sat Fat, 35 mg Sodium, 40g Sugars,Kosher,Refrigerate After Opening',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Simple-Truth/Simple-Truth-100-Pomegranate-Juice-011110836106.jpg',
     inStock: 200,
     price: 3.99
   },
   {
-    name: 'Organic Whole Leaf Black Tea Sachets Assam -- 15 Tea Bags',
+    name: 'Whole Leaf Black Tea Sachets Assam',
     brand: 'Two Leaves and a Bud',
     category: 'Groceries',
     description:
-      'Whole Leaf Organic Tea Sachets, Non-GMO, Kosher, Gluten Free, Some Caffeine',
+      '15 Tea Bags, Whole Leaf Organic Tea Sachets, Non-GMO, Kosher, Gluten Free, Some Caffeine',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Two-Leaves-and-a-Bud/Two-Leaves-and-a-Bud-Organic-Whole-Leaf-Black-Tea-Sachets-Assam-894058000996.jpg',
     inStock: 200,
     price: 6.45
   },
   {
-    name: 'Real Yogurt Starter Culture Greek -- 2 Packets',
+    name: 'Real Yogurt Starter Culture Greek',
     brand: 'Cultures For Health',
     category: 'Groceries',
     description:
@@ -148,73 +148,73 @@ const products = [
     price: 12.99
   },
   {
-    name: 'Organic French Agen Mini Plums -- 1.76 oz',
+    name: 'French Agen Mini Plums',
     brand: 'Fruit Bliss',
     category: 'Groceries',
     description:
-      'Dried Fruit Reinvented!, Serving Size: 1 Pouch (50 g), Servings per Container: 1, No Added Sugar, • Unsulfured, Deliciously Juicy - Whole Fruit, Sun Sweetened and Infused with Water, USDA Organic • Non-GMO Verified, Gluten Free • Vegan • Kosher',
+      'Dried Fruit Reinvented!, 1.76 oz, Serving Size: 1 Pouch (50 g), Servings per Container: 1, No Added Sugar, • Unsulfured, Deliciously Juicy - Whole Fruit, Sun Sweetened and Infused with Water, USDA Organic • Non-GMO Verified, Gluten Free • Vegan • Kosher',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Fruit-Bliss/Fruit-Bliss-Organic-French-Agen-Mini-Plums-811406020031.jpg',
     inStock: 200,
     price: 2.09
   },
   {
-    name: 'Certified Organic Quinoa - Non-GMO -- 12 oz (340 g)',
+    name: 'Certified Organic Quinoa',
     brand: 'Vitacost',
     category: 'Groceries',
     description:
-      'Whole food, non-GMO quinoa, No additives or preservatives, Certified organic, Naturally, gluten free, 6 grams of protein + 3 grams fiber per quarter-cup serving, Serving Size: 1/4 Cup (Approx 45 g)Servings per Container: 8',
+      'Whole food, non-GMO quinoa, No additives or preservatives, Certified organic, Naturally, gluten free, 6 grams of protein + 3 grams fiber per quarter-cup serving, 12 oz (340 g), Serving Size: 1/4 Cup (Approx 45 g)Servings per Container: 8',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Fruit-Bliss/Fruit-Bliss-Organic-French-Agen-Mini-Plums-811406020031.jpg',
     inStock: 200,
     price: 3.99
   },
   {
-    name: 'Organic Silken Tofu Firm -- 12.3 oz',
+    name: 'Silken Tofu Firm',
     brand: 'Mori-Nu',
     category: 'Groceries',
     description:
-      'For Entrees, Salads and Desserts,Certified Gluten Free, Kosher, Non-GMO Project Verified,No Perservatives, Serving Size: 3 oz, Servings per Container: About 4',
+      'For Entrees, Salads and Desserts,Certified Gluten Free, Kosher, Non-GMO Project Verified, No Perservatives, 12.3 oz, Serving Size: 3 oz, Servings per Container: About 4',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Mori-Nu/Mori-Nu-Organic-Silken-Tofu-Firm-085696609201.jpg',
     inStock: 200,
     price: 1.93
   },
   {
-    name: 'Organic Certified Acai Berry Juice Blend -- 33.8 fl oz',
+    name: 'Acai Berry Juice Blend',
     brand: 'Dynamic Health',
     category: 'Groceries',
     description:
-      'Certified Organic Acai Blend, Euterpe Oleracea, Dynamic Health Organic, Certified Acai (Euterpe oleracea). Blend is a delicious proprietary Acai juice supplement that is formulated with Goji, Pomegranate, Blueberry and Mangosteen. Serving Size: 2 Tbsp. (30 Tbsp. mL),Servings per Container: 34',
+      'Certified Organic Acai Blend, Euterpe Oleracea, Dynamic Health Organic, Certified Acai (Euterpe oleracea). Blend is a delicious proprietary Acai juice supplement that is formulated with Goji, Pomegranate, Blueberry and Mangosteen. Serving Size: 2 Tbsp. (30 Tbsp. mL), 33.8 fl oz, Servings per Container: 34',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Dynamic-Health/Dynamic-Health-Organic-Certified-Acai-Berry-Juice-Blend-790223101119.jpg',
     inStock: 200,
     price: 16.74
   },
   {
-    name: 'Organic Coconut Water Original -- 16.9 fl oz',
+    name: 'Coconut Water Original',
     brand: 'Simple Truth®',
     category: 'Groceries',
     description:
-      'Not From Concentrate, Serving Size: 1 Container (500 mL), Organically Grown, No Preservatives,Original, USDA, Organic, Non-GMO, Fair Trade, Certified, Kosher',
+      'Not From Concentrate, 16.9 fl oz, Serving Size: 1 Container (500 mL), Organically Grown, No Preservatives,Original, USDA, Organic, Non-GMO, Fair Trade, Certified, Kosher',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Simple-Truth-Organic/Simple-Truth-Organic-Coconut-Water-Original-011110854865.jpg',
     inStock: 200,
     price: 1.99
   },
   {
-    name: 'Sunflower Seed Bread -- 17.6 oz',
+    name: 'Sunflower Seed Bread',
     brand: 'Mestemacher',
     category: 'Groceries',
     description:
-      "With Whole Rye Kernels, Also Delicious Toasted, Ideal for cholesterol conscious diet. Freshly ground in their own Mestemacher's own mill from whole grains. Kosher, No Preservatives. High Fiber, Cholesterol Free. Natural Ingredients. Long Shelf Life. Wheat Free,  Serving Size: 1 Piece (72 g),Servings per Container: 7",
+      "With Whole Rye Kernels, Also Delicious Toasted, Ideal for cholesterol conscious diet. Freshly ground in their own Mestemacher's own mill from whole grains. Kosher, No Preservatives. High Fiber, Cholesterol Free. Natural Ingredients. Long Shelf Life. Wheat Free, 17.6 oz, Serving Size: 1 Piece (72 g),Servings per Container: 7",
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Mestemacher/Mestemacher-Sunflower-Seed-Bread-084213000743.jpg',
     inStock: 200,
     price: 2.81
   },
   {
-    name: 'Organic Long Grain Brown Rice -- 32 oz',
+    name: 'Long Grain Brown Rice',
     brand: 'Simple Truth®',
     category: 'Groceries',
     description:
@@ -225,11 +225,11 @@ const products = [
     price: 3.19
   },
   {
-    name: 'Organic Vitamin C -- 250 mg - 60 Tablets',
+    name: 'Organic Vitamin C',
     brand: 'Healthy Origins ',
     category: 'Supplements',
     description:
-      'Non-GMO, Natural • Whole Food, Soy-Free, USDA, Organic, With Natural Bioflavonoids, Easy on the Stomach, Suitable for Vegetarians & Vegans, Serving Size: 1 Tablet Servings per Container: 60',
+      'Non-GMO, Natural • Whole Food, Soy-Free, USDA, Organic, With Natural Bioflavonoids, Easy on the Stomach, Suitable for Vegetarians & Vegans, 250 mg - 60 Tablets, Serving Size: 1 Tablet Servings per Container: 60',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Healthy-Origins/Healthy-Origins-Organic-Vitamin-C-603573683740.jpg',
     inStock: 200,
@@ -247,7 +247,7 @@ const products = [
     price: 24.95
   },
   {
-    name: 'Organic Vegan Protein Powder, Chocolate',
+    name: 'Protein Powder, Chocolate',
     brand: 'Ora Organic',
     category: 'Supplements',
     description:
@@ -258,7 +258,7 @@ const products = [
     price: 49.99
   },
   {
-    name: 'Organic Vegan Protein Powder, Vanilla',
+    name: 'Protein Powder, Vanilla',
     brand: 'Ora Organic',
     category: 'Supplements',
     description:
@@ -269,7 +269,7 @@ const products = [
     price: 49.99
   },
   {
-    name: 'Organic Pre-Workout Powder',
+    name: 'Pre-Workout Powder',
     brand: 'Ora Organic',
     category: 'Supplements',
     description:
@@ -280,7 +280,7 @@ const products = [
     price: 39.99
   },
   {
-    name: 'Organic Probiotics with Prebiotics Powder',
+    name: 'Probiotics with Prebiotics Powder',
     brand: 'Ora Organic',
     category: 'Supplements',
     description:
@@ -291,7 +291,7 @@ const products = [
     price: 39.99
   },
   {
-    name: 'Vegan Probiotics with Prebiotics Capsules',
+    name: 'Probiotics with Prebiotics Capsules',
     brand: 'Ora Organic',
     category: 'Supplements',
     description:
@@ -324,7 +324,7 @@ const products = [
     price: 18.99
   },
   {
-    name: 'Organic Vitamin C Powder for Immunity',
+    name: 'Vitamin C Powder for Immunity',
     brand: 'Ora Organic',
     category: 'Supplements',
     description:
@@ -357,11 +357,11 @@ const products = [
     price: 39.95
   },
   {
-    name: 'Acetyl-L-Carnitine -- 500 mg - 60 Vegetarian Capsules',
+    name: 'Acetyl-L-Carnitine',
     brand: 'Natural Factors',
     category: 'Supplements',
     description:
-      'Acetyl-L-Carnitine is a highly bioavailable form of L-Carnitine and is able to effectively cross the blood-brain barrier. Acetyl-L-Carnitine assists the critical conversion of choline into acetylcholine. Acetylcholine is a key chemical messenger in the brain and promotes normal and healthy brain function including memory and concentration. It also helps transform fats into energy and supports normal muscle movement. Natural Factors amino acids are the highest quality pharmaceutical grade products available. Serving Size: 2 Vegetarian Capsules. Servings per Container: 30',
+      'Acetyl-L-Carnitine is a highly bioavailable form of L-Carnitine and is able to effectively cross the blood-brain barrier. Acetyl-L-Carnitine assists the critical conversion of choline into acetylcholine. Acetylcholine is a key chemical messenger in the brain and promotes normal and healthy brain function including memory and concentration. It also helps transform fats into energy and supports normal muscle movement. Natural Factors amino acids are the highest quality pharmaceutical grade products available. 500 mg - 60 Vegetarian Capsules, Serving Size: 2 Vegetarian Capsules. Servings per Container: 30',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Natural-Factors/Natural-Factors-Acetyl-L-Carnitine-068958028002.jpg',
     inStock: 200,

@@ -36,15 +36,20 @@ class Navbar extends Component {
   render() {
     const cartItems = this.props.cart.cartItems;
     const { isAuthenticated, user } = this.props.auth;
+
     const navbarLogo = (
-      <Link to="/" className="navbar-brand mx-auto">
-        <img src="../assets/images/logoos.png" width="75" alt="" />
+      <Link to="/" className="navbar-brand ml-3">
+        <img
+          src="../assets/images/logoforonlinestore1.png"
+          width="100"
+          alt=""
+        />
       </Link>
     );
 
     const searchBar = (
-      <form onSubmit={this.onSubmit}>
-        <div className="mr-sm-3">
+      <form className="ml-3" onSubmit={this.onSubmit}>
+        <div>
           <input
             className="form-control search"
             type="text"
@@ -57,74 +62,101 @@ class Navbar extends Component {
         </div>
       </form>
     );
+
+    const burgerIcon = (
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span>
+          <i className="fas fa-bars" />
+        </span>
+      </button>
+    );
     const navMenu = (
-      <div className="collapse navbar-collapse" id="navbar">
+      <div className="collapse navbar-collapse mx-3" id="navbar">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
+          <li className="nav-item ml-4">
             <Link to="/groceries" className="nav-link">
               GROCERIES
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item ml-4">
             <Link to="/supplements" className="nav-link">
               SUPPLEMENTS
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/clothing" className="nav-link">
+          <li className="nav-item ml-4">
+            <Link to="/clothing" className="nav-link pb-3">
               CLOTHING
             </Link>
           </li>
         </ul>
+        {searchBar}
       </div>
+    );
+
+    const navMsg = (
+      <span className="d-none navMsg d-md-block">
+        <small>Free U.S. Shopping for Prime Members*</small>
+      </span>
     );
 
     const authLinks = (
-      <div className="ml-auto navbar-collapse">
-        <ul className="navbar-nav ml-auto">
-          {searchBar}
-          <li className="nav-item mt-2 mr-sm-3" onClick={this.onCartClick}>
-            <i className="fas fa-shopping-cart" />
-            <span className="class-items ml-1">{cartItems}</span>
-          </li>
-          <span className="name pt-2">{user.name}</span>
+      <ul className="ml-auto pr-5">
+        <li className="d-inline px-2" onClick={this.onCartClick}>
+          <i className="fas fa-shopping-cart" />
+          <span className="class-items ml-1">{cartItems}</span>
+        </li>
+        <span className="name px-4">{user.name}</span>
 
-          <li className="nav-item">
-            <span className="nav-link" onClick={this.onLogoutClick}>
-              Logout
-            </span>
-          </li>
-        </ul>
-      </div>
+        <li className="d-inline pl-2">
+          <span className="nav-link1" onClick={this.onLogoutClick}>
+            Logout
+          </span>
+        </li>
+      </ul>
     );
+
     const guestLinks = (
-      <div className="ml-auto navbar-collapse">
-        <ul className="navbar-nav ml-auto">
-          {searchBar}
-          <li className="nav-item mt-2 mr-sm-3" onClick={this.onCartClick}>
-            <i className="fas fa-shopping-cart" />
-            <span className="class-items ml-1">{cartItems}</span>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/register">
-              Register
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/login">
-              Login
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <ul className="ml-auto pr-5">
+        <li className="d-inline px-2" onClick={this.onCartClick}>
+          <i className="fas fa-shopping-cart" />
+          <span className="class-items ml-1">{cartItems}</span>
+        </li>
+        <li className="d-inline px-4">
+          <Link className="nav-link1" to="/register">
+            Register
+          </Link>
+        </li>
+        <li className="d-inline pl-2">
+          <Link className="nav-link1" to="/login">
+            Login
+          </Link>
+        </li>
+      </ul>
     );
+
     return (
       <div>
         <Cart />
-        <nav className="navbar navbar-expand-sm navbar-light bg-white mb-4 fixed-top">
+        <nav className="nav-top">
+          <div className="container-fluid">
+            <div className="d-flex nav-cont row pt-2">
+              {navMsg} {isAuthenticated ? authLinks : guestLinks}
+            </div>
+          </div>
+        </nav>
+        <nav className="navbar navbar-nav navbar-expand-sm navbar-light bg-white">
           <div className="container-fluid">
             {navbarLogo}
-            {navMenu} {isAuthenticated ? authLinks : guestLinks}
+            {burgerIcon}
+            {navMenu}
           </div>
         </nav>
       </div>
