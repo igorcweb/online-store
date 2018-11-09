@@ -90,12 +90,12 @@ class Cart extends Component {
             <ul className="mx-auto pl-0 ml-0">
               {cart
                 ? cart.map(item => {
-                    const { _id, name, quantity } = item;
+                    const { _id, name, quantity, price } = item;
                     if (quantity > 0) {
                       return (
                         <div key={_id} className="listItem">
                           <li>
-                            {name}
+                            {name} - ${price}
                             <span className="quantity float-right ">
                               {quantity}
                               <i

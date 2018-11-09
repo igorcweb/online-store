@@ -66,7 +66,7 @@ class Groceries extends Component {
                       this.addToCart(_id, name, description, price)
                     }
                   >
-                    <i class="fas fa-plus mr-2" />
+                    <i className="fas fa-plus mr-2" />
                     Add to cart
                   </button>
                   <img src={imgUrl} alt="" className="CardImg" />
