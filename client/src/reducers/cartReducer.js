@@ -1,12 +1,14 @@
 import {
   RESET_CART_ITEMS,
   UPDATE_CART_ITEMS,
-  TOGGLE_CART
+  TOGGLE_CART,
+  UPDATE_CART
 } from '../actions/types';
 
 const initialState = {
   cartItems: localStorage.getItem('cartItems') || 0,
-  cartShowing: false
+  cartShowing: false,
+  cart: JSON.parse(localStorage.getItem('cart')) || []
 };
 
 export default (state = initialState, action) => {
@@ -15,6 +17,8 @@ export default (state = initialState, action) => {
       return { ...state, cartItems: 0 };
     case UPDATE_CART_ITEMS:
       return { ...state, cartItems: action.payload };
+    case UPDATE_CART:
+      return { ...state, cart: action.payload };
     case TOGGLE_CART:
       return { ...state, cartShowing: !state.cartShowing };
     default:

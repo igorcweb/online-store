@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/userActions';
-import { updateCartItems } from '../actions/cartActions';
+import { updateCartItems, updateCart } from '../actions/cartActions';
 import classnames from 'classnames';
 
-class Groceries extends Component {
+class Cart extends Component {
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       const { id } = this.props.auth.user;
@@ -13,29 +13,50 @@ class Groceries extends Component {
     }
   }
 
-  onPlus = (_id, name, quantity, cart, cartItems) => {
+  onPlus = (_id, cart, cartItems) => {
     const newCart = cart.map(item => {
       if (item._id === _id) {
         item.quantity++;
       }
-      return cart;
+      return item;
     });
-    // localStorage.setItem('cart', JSON.stringify(newCart));
+    localStorage.setItem('cart', JSON.stringify(newCart));
+    this.props.updateCart(JSON.parse(localStorage.getItem('cart')));
     localStorage.setItem('cartItems', parseInt(cartItems) + 1);
     this.props.updateCartItems(localStorage.getItem('cartItems'));
-    console.log(_id, name, quantity, cart);
-    console.log(newCart);
   };
-  onMinus = (_id, name, quantity, cart) => {
-    console.log(_id, name, quantity, cart);
+  onMinus = (_id, cart, cartItems) => {
+    let newCart = cart.map(item => {
+      if (item._id === _id) {
+        item.quantity--;
+      }
+      return item;
+    });
+
+    localStorage.setItem('cart', JSON.stringify(newCart));
+    this.props.updateCart(JSON.parse(localStorage.getItem('cart')));
+    localStorage.setItem('cartItems', parseInt(cartItems) - 1);
+    this.props.updateCartItems(localStorage.getItem('cartItems'));
   };
-  onTrash = (_id, name, quantity, cart) => {
-    console.log(_id, name, quantity, cart);
+  onTrash = (_id, cart, cartItems) => {
+    let newCart = cart.map(item => {
+      if (item._id === _id) {
+        localStorage.setItem('cartItems', cartItems - item.quantity);
+        console.log(cartItems - item.quantity);
+        item.quantity = 0;
+      }
+      return item;
+    });
+
+    localStorage.setItem('cart', JSON.stringify(newCart));
+    this.props.updateCart(JSON.parse(localStorage.getItem('cart')));
+    this.props.updateCartItems(localStorage.getItem('cartItems'));
   };
 
   render() {
     // const { user } = this.props;
     // console.log('user:', user);
+
     const cart = JSON.parse(localStorage.getItem('cart'));
     const cartItems = localStorage.getItem('cartItems');
     let subtotal;
@@ -45,7 +66,9 @@ class Groceries extends Component {
         return acc + price;
       }, 0);
     }
-    console.log(this.props.cart.cartItems);
+
+    const items = this.props.cart.cartItems === '1' ? 'Item' : 'Items';
+
     return (
       <div
         className={classnames('card cart shadow-lg bg-white rounded', {
@@ -56,7 +79,7 @@ class Groceries extends Component {
           <div className="card-title-img">
             <div className="card-title">
               <h5 className="card-title-text text-center">
-                {this.props.cart.cartItems} Items Selected
+                {this.props.cart.cartItems} {items} Selected
               </h5>
               <h6 className="card-title-subtext mb-0 text-center">
                 Subtotal: ${subtotal ? subtotal.toFixed(2) : '0.00'}
@@ -68,53 +91,37 @@ class Groceries extends Component {
               {cart
                 ? cart.map(item => {
                     const { _id, name, quantity } = item;
-                    return (
-                      <div key={_id} className="listItem">
-                        <li>
-                          {name}
-                          <span className="quantity float-right ">
-                            {quantity}
-                            <i
-                              className="fas fa-minus ml-2"
-                              onClick={() =>
-                                this.onMinus(
-                                  _id,
-                                  name,
-                                  quantity,
-                                  cart,
-                                  cartItems
-                                )
-                              }
-                            />
-                            <i
-                              className="fas fa-plus ml-2"
-                              onClick={() =>
-                                this.onPlus(
-                                  _id,
-                                  name,
-                                  quantity,
-                                  cart,
-                                  cartItems
-                                )
-                              }
-                            />
-                            <i
-                              className="fas fa-trash mx-2"
-                              onClick={() =>
-                                this.onTrash(
-                                  _id,
-                                  name,
-                                  quantity,
-                                  cart,
-                                  cartItems
-                                )
-                              }
-                            />
-                          </span>
-                        </li>
-                        <hr className="my-2" />
-                      </div>
-                    );
+                    if (quantity > 0) {
+                      return (
+                        <div key={_id} className="listItem">
+                          <li>
+                            {name}
+                            <span className="quantity float-right ">
+                              {quantity}
+                              <i
+                                className="fas fa-minus ml-2"
+                                onClick={() =>
+                                  this.onMinus(_id, cart, cartItems)
+                                }
+                              />
+                              <i
+                                className="fas fa-plus ml-2"
+                                onClick={() =>
+                                  this.onPlus(_id, cart, cartItems)
+                                }
+                              />
+                              <i
+                                className="fas fa-trash mx-2"
+                                onClick={() =>
+                                  this.onTrash(_id, cart, cartItems)
+                                }
+                              />
+                            </span>
+                          </li>
+                          <hr className="my-2" />
+                        </div>
+                      );
+                    }
                   })
                 : null}
             </ul>
@@ -128,7 +135,7 @@ class Groceries extends Component {
   }
 }
 
-Groceries.propTypes = {
+Cart.propTypes = {
   auth: PropTypes.object.isRequired,
   getCurrentUser: PropTypes.func.isRequired
 };
@@ -142,5 +149,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCurrentUser, updateCartItems }
-)(Groceries);
+  { getCurrentUser, updateCartItems, updateCart }
+)(Cart);
