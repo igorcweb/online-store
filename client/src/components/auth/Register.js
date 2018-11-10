@@ -47,13 +47,13 @@ class Register extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="container my-4 pt-2">
+      <div className="container my-4 pt-2 content">
         <div className="row">
           <div className="offset-1 col-md-10">
             <div className="row">
               <div className="col-sm-12 col-md-6 col-lg-6">
-                <div className="card mb-5 px-1 pt-5 pb-1">
-                  <div className="register content">
+                <div className="card mb-5 px-1 pt-5 pb-4">
+                  <div className="register">
                     <i className="ml-4 fas fa-lock" />
                     <h5 className="d-inline card-title ml-2">Register</h5>
                     <div className="card-body">

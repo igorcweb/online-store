@@ -63,33 +63,27 @@ class Search extends Component {
     console.log('groceries:', products);
     return (
       <div className="products content">
-        <div className="row" key={products._id}>
+        <div className="row">
           {products.map(product => {
             const { _id, name, description, imgUrl, price } = product;
             return (
-              <div className="col-md-4" key={_id}>
-                <div className="card shadow-sm align-items-center">
+              <div className="col-md-4 my-5" key={_id}>
+                <div className="card align-items-center d-flex">
+                  <button
+                    className="btn success ml-auto mb-5"
+                    onClick={() =>
+                      this.addToCart(_id, name, description, price)
+                    }
+                  >
+                    <i className="fas fa-plus mr-2" />
+                    Add to cart
+                  </button>
                   <img src={imgUrl} alt="" className="CardImg" />
-                </div>
-                <div className="card-body">
-                  <h6 className="block2-name dis-block s-text3 p-b-5">
-                    {name}
-                  </h6>
-                  <div className="d-flex justify-content-between align-items-center mb-5">
-                    <div className="btn-group">
-                      <button className="btn btn-sm btn-outline-secondary">
-                        Read Description
-                      </button>
-                      <button
-                        className="btn btn-sm btn-success ml-2"
-                        onClick={() =>
-                          this.addToCart(_id, name, description, price)
-                        }
-                      >
-                        Add to cart
-                      </button>
-                    </div>
-                    <span className="block2-price m-text6 p-r-5">${price}</span>
+
+                  <div className="card-body text-center">
+                    <h6 className="name pb-2">{name}</h6>
+                    <p className="orange strong">${price}</p>
+                    <small className="text"> {description}</small>
                   </div>
                 </div>
               </div>
