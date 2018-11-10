@@ -111,13 +111,14 @@ class Cart extends Component {
       >
         {' '}
         <div className="card-title divup pt-3 pb-4">
-          <p className="h6 bold text-center text-dark d-inline">
+          <h6 className="bold text-center text-dark d-inline cart-header">
             {this.props.cart.cartItems} {items} Selected
-          </p>
+          </h6>
           <button
             type="button toggle-cart"
             className="close"
             aria-label="Close"
+            onClick={this.props.toggleCart}
           >
             <span aria-hidden="true">&times;</span>
           </button>
