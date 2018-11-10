@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { toggleCheckoutModal } from '../../actions/modalActions';
+import {
+  updateCartItems,
+  updateCart,
+  toggleCart
+} from '../../actions/cartActions';
 
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
@@ -12,6 +17,11 @@ class Checkout extends Component {
   };
 
   onOrder = () => {
+    localStorage.setItem('cartItems', 0);
+    this.props.updateCartItems(localStorage.getItem('cartItems'));
+    localStorage.setItem('cart', JSON.stringify([]));
+    this.props.updateCart(JSON.parse(localStorage.getItem('cart')));
+    this.props.toggleCart();
     this.props.toggleCheckoutModal();
   };
 
@@ -82,7 +92,10 @@ class Checkout extends Component {
 
 Checkout.propTypes = {
   auth: PropTypes.object.isRequired,
-  toggleCheckoutModal: PropTypes.func.isRequired
+  toggleCheckoutModal: PropTypes.func.isRequired,
+  updateCartItems: PropTypes.func.isRequired,
+  updateCart: PropTypes.func.isRequired,
+  toggleCart: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -95,5 +108,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { toggleCheckoutModal }
+  { toggleCheckoutModal, updateCartItems, updateCart, toggleCart }
 )(Checkout);
