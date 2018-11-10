@@ -49,9 +49,7 @@ class Clothing extends Component {
     console.log(('local storage', localStorage));
   };
   render() {
-    const { products, user } = this.props;
-    console.log('user:', user);
-    console.log('groceries:', products);
+    const { products } = this.props;
     return (
       <div className="products">
         <div className="row">

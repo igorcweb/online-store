@@ -11,7 +11,6 @@ import {
 } from '../actions/cartActions';
 import { toggleCheckoutModal } from '../actions/modalActions';
 import classnames from 'classnames';
-
 class Cart extends Component {
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
@@ -21,9 +20,9 @@ class Cart extends Component {
   }
 
   onCheckout = subtotal => {
+    const order = [];
     if (this.props.auth.isAuthenticated) {
-      const { cart } = this.props.cart;
-      const order = [];
+      const cart = JSON.parse(localStorage.getItem('cart'));
       cart.forEach(item => {
         if (item.quantity > 0) {
           order.push(item);
