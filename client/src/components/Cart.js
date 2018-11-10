@@ -121,8 +121,9 @@ class Cart extends Component {
             <ul className="mx-auto pl-0 ml-0">
               {cart
                 ? cart.map(item => {
-                    const { _id, name, quantity, price } = item;
+                    const { _id, name, brand, quantity, imgUrl, price } = item;
                     if (quantity > 0) {
+                      console.log(_id, name, brand, quantity, imgUrl, price);
                       return (
                         <div key={_id} className="listItem">
                           <li>
