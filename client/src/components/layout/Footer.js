@@ -5,16 +5,10 @@ import { connect } from 'react-redux';
 class Footer extends Component {
   render() {
     return (
-      <div className="footer text-muted bg-white">
-        <div className="container">
-          <div className="row">
-            <div className="col text-center">
-              <div className="py-4">
-                <p>Copyright &copy; {new Date().getFullYear()}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="footer text-muted bg-white pt-3 pb-1">
+        <p className="text-center">
+          Copyright &copy; {new Date().getFullYear()}
+        </p>
       </div>
     );
   }
