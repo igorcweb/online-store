@@ -16,7 +16,6 @@ class Dashboard extends Component {
   }
   render() {
     const { user } = this.props;
-    console.log(user);
     let dashboardContent;
     let primeMessage;
     let orderMessage;

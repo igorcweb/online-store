@@ -16,6 +16,8 @@ import Groceries from './components/Groceries';
 import Supplements from './components/Supplements';
 import Clothing from './components/Clothing';
 import Search from './components/Search';
+import Cart from './components/Cart';
+import Checkout from './components/modals/Checkout';
 import Spinner from './components/Spinner';
 import './App.scss';
 
@@ -42,6 +44,8 @@ class App extends Component {
         <Router>
           <div className="App">
             <Route path="/" component={Navbar} />
+            <Route path="/" component={Cart} />
+            <Route path="/" component={Checkout} />
             <Route exact path="/" component={Landing} />
             <div className="container">
               <Route exact path="/register" component={Register} />

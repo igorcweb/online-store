@@ -5,8 +5,11 @@ import { getCurrentUser } from '../actions/userActions';
 import {
   updateCartItems,
   updateCart,
-  toggleCart
+  toggleCart,
+  getFinalOrder,
+  getSubtotal
 } from '../actions/cartActions';
+import { toggleCheckoutModal } from '../actions/modalActions';
 import classnames from 'classnames';
 
 class Cart extends Component {
@@ -16,6 +19,25 @@ class Cart extends Component {
       this.props.getCurrentUser(id);
     }
   }
+
+  onCheckout = subtotal => {
+    if (this.props.auth.isAuthenticated) {
+      const { cart } = this.props.cart;
+      const order = [];
+      cart.forEach(item => {
+        if (item.quantity > 0) {
+          order.push(item);
+        }
+      });
+      console.log(subtotal);
+      this.props.getFinalOrder(order);
+      this.props.getSubtotal(subtotal);
+      this.props.toggleCheckoutModal();
+    } else {
+      this.props.toggleCart();
+      this.props.history.push('/login');
+    }
+  };
 
   onPlus = (_id, cart, cartItems) => {
     const newCart = cart.map(item => {
@@ -30,10 +52,12 @@ class Cart extends Component {
     this.props.updateCartItems(localStorage.getItem('cartItems'));
   };
   onMinus = (_id, cart, cartItems) => {
-    let newCart = cart.map(item => {
+    let newCart = cart.map((item, index) => {
       if (item._id === _id) {
         item.quantity--;
+        console.log(item.quantity);
       }
+
       return item;
     });
 
@@ -69,7 +93,6 @@ class Cart extends Component {
   render() {
     // const { user } = this.props;
     // console.log('user:', user);
-
     const cart = JSON.parse(localStorage.getItem('cart'));
     const cartItems = localStorage.getItem('cartItems');
     let subtotal;
@@ -138,7 +161,11 @@ class Cart extends Component {
                   })
                 : null}
             </ul>
-            <button className="proceed btn btn-sm bg-success text-white mb-3">
+            <button
+              className="proceed btn btn-sm bg-success text-white mb-3"
+              disabled={this.props.cart.cartItems === '0'}
+              onClick={() => this.onCheckout(subtotal)}
+            >
               PROCEED TO CHECKOUT
             </button>
           </div>
@@ -150,17 +177,32 @@ class Cart extends Component {
 
 Cart.propTypes = {
   auth: PropTypes.object.isRequired,
-  getCurrentUser: PropTypes.func.isRequired
+  getCurrentUser: PropTypes.func.isRequired,
+  updateCartItems: PropTypes.func.isRequired,
+  updateCart: PropTypes.func.isRequired,
+  toggleCart: PropTypes.func.isRequired,
+  toggleCheckoutModal: PropTypes.func.isRequired,
+  getFinalOrder: PropTypes.func.isRequired,
+  getSubtotal: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   products: state.products,
   auth: state.auth,
   user: state.user,
-  cart: state.cart
+  cart: state.cart,
+  subtotal: state.subtotal
 });
 
 export default connect(
   mapStateToProps,
-  { getCurrentUser, updateCartItems, updateCart, toggleCart }
+  {
+    getCurrentUser,
+    updateCartItems,
+    updateCart,
+    toggleCart,
+    toggleCheckoutModal,
+    getFinalOrder,
+    getSubtotal
+  }
 )(Cart);
