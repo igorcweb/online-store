@@ -35,6 +35,9 @@ class Checkout extends Component {
     if (this.props.auth.isAuthenticated) {
       if (!user.name) {
         checkoutContent = <Spinner />;
+      } else if (user.prime.member) {
+        shipping = 0;
+        shippingText = `$0.00 (prime rate)`;
       } else {
         shipping = ((this.props.cart.subtotal / 100) * 8 + 2.89).toFixed(2);
         shippingText = `$${shipping}`;
