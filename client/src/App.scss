@@ -11,6 +11,10 @@ body {
   background: #f1f1f1;
 }
 
+.bg-gray {
+  background: #f1f1f1;
+}
+
 .nav-top {
   background: #afa381;
   color: white;
@@ -232,4 +236,12 @@ button.proceed {
 
 .divup {
   border-bottom: 1px solid lightgray;
+}
+
+.card-border {
+  border: 2px solid lightgray;
+}
+
+.span-border {
+  border: 1px solid lightgray;
 }
