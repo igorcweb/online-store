@@ -27,7 +27,10 @@ class Checkout extends Component {
     });
     console.log(products);
     API.placeOrder(_id, { products })
-      .then(response => console.log(response))
+      .then(response => {
+        this.props.history.push('/dashboard');
+        console.log(response);
+      })
       .catch(err => console.log(err));
     localStorage.setItem('cartItems', 0);
     this.props.updateCartItems(localStorage.getItem('cartItems'));
@@ -35,7 +38,6 @@ class Checkout extends Component {
     this.props.updateCart(JSON.parse(localStorage.getItem('cart')));
     this.props.toggleCart();
     this.props.toggleCheckoutModal();
-    this.props.history.push('/dashboard');
   };
 
   render() {
