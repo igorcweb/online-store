@@ -113,7 +113,7 @@ class Navbar extends Component {
           <span className="class-items ml-1">{cartItems}</span>
         </li>
         <Link to="/dashboard">
-          <span className="name px-4">{user.name}</span>
+          <span className="name px-2 px-sm-3 px-md-4">{user.name}</span>
         </Link>
 
         <li className="d-inline pl-2">

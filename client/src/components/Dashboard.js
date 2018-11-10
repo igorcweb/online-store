@@ -65,7 +65,7 @@ class Dashboard extends Component {
         orderMessage = (
           <div className="orders">
             <h3 className="lead text-muted">Here are your resent orders:</h3>
-            <ul>
+            <ul className="pl-0">
               {orders.map(order => {
                 const { _id, name } = order;
                 return <li key={_id}>{name}</li>;
