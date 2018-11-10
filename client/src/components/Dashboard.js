@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/userActions';
+import { togglePrimeModal } from '../actions/modalActions';
 import Spinner from './Spinner';
 
 class Dashboard extends Component {
@@ -14,6 +14,11 @@ class Dashboard extends Component {
       this.props.getCurrentUser(id);
     }
   }
+
+  onPrime = () => {
+    this.props.togglePrimeModal();
+    console.log('prime');
+  };
   render() {
     const { user } = this.props;
     let dashboardContent;
@@ -23,13 +28,12 @@ class Dashboard extends Component {
       dashboardContent = <Spinner />;
     } else {
       const { name, date, prime, orders } = user;
-      console.log(orders);
       if (prime.member) {
         primeMessage = (
           <div className="my-4 pb-5">
             <div className="my-4 pb-5 divup">
               <i className="fas fa-certificate" />
-              <h5 className="d-inline card-title ml-2">Prime Member User!</h5>
+              <h5 className="d-inline card-title ml-2">Prime Member!</h5>
             </div>
 
             <p className="text-muted mt-3">
@@ -55,9 +59,12 @@ class Dashboard extends Component {
               Get free U.S shipping! Become a prime member today for only $59.99
               a year!
             </p>
-            <Link to="" className="btn btn-block brown text-caps mt-4">
+            <button
+              onClick={() => this.onPrime()}
+              className="btn btn-block brown text-caps mt-4"
+            >
               Become a Prime Member
-            </Link>
+            </button>
           </div>
         );
       }
@@ -128,7 +135,8 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   auth: PropTypes.object.isRequired,
-  getCurrentUser: PropTypes.func.isRequired
+  getCurrentUser: PropTypes.func.isRequired,
+  togglePrimeModal: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -138,5 +146,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCurrentUser }
+  { getCurrentUser, togglePrimeModal }
 )(Dashboard);

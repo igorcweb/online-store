@@ -123,7 +123,6 @@ class Cart extends Component {
                 ? cart.map(item => {
                     const { _id, name, brand, quantity, imgUrl, price } = item;
                     if (quantity > 0) {
-                      console.log(_id, name, brand, quantity, imgUrl, price);
                       return (
                         <div key={_id} className="listItem">
                           <li>

@@ -18,6 +18,7 @@ import Clothing from './components/Clothing';
 import Search from './components/Search';
 import Cart from './components/Cart';
 import Checkout from './components/modals/Checkout';
+import Prime from './components/modals/Prime';
 import Spinner from './components/Spinner';
 import './App.scss';
 
@@ -46,6 +47,7 @@ class App extends Component {
             <Route path="/" component={Navbar} />
             <Route path="/" component={Cart} />
             <Route path="/" component={Checkout} />
+            <Route path="/" component={Prime} />
             <Route exact path="/" component={Landing} />
             <div className="container">
               <Route exact path="/register" component={Register} />
