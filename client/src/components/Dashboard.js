@@ -74,7 +74,7 @@ class Dashboard extends Component {
               <div className="row">
                 <div className="col-sm-12 col-md-4 col-lg-4">
                   <i className="ml-4 fas fa-user" />
-                  <h5 class="d-inline card-title ml-2">Welcome {name}!</h5>
+                  <h5 className="d-inline card-title ml-2">Welcome {name}!</h5>
                   <div className="card mt-4 mb-4 px-4 pt-3 pb-1">
                     <div className="content">{primeMessage}</div>
                   </div>
@@ -94,7 +94,7 @@ class Dashboard extends Component {
                   <div className="card mt-5 mb-5 px-4 pt-3 pb-1">
                     <div className="content">
                       <div className="my-4 pb-5 divup">
-                        <i class="fas fa-user-cog" />
+                        <i className="fas fa-user-cog" />
                         <h5 className="d-inline card-title ml-2">
                           {' '}
                           User Profile!

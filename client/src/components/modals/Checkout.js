@@ -10,7 +10,6 @@ import {
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../Spinner';
-import API from '../../utils/API';
 // import API from '../../utils/API';
 
 class Checkout extends Component {
@@ -19,8 +18,8 @@ class Checkout extends Component {
   };
 
   onOrder = () => {
-    console.log(this.props.user);
-    const _id = this.props.user;
+    const { _id } = this.props.user;
+    console.log(_id);
     const { order } = this.props.cart;
     const products = [];
     order.forEach(product => {
