@@ -93,7 +93,6 @@ class Cart extends Component {
   render() {
     // const { user } = this.props;
     // console.log('user:', user);
-    console.log(this.props);
     const cart = JSON.parse(localStorage.getItem('cart'));
     const cartItems = localStorage.getItem('cartItems');
     let subtotal;

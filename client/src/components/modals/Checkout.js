@@ -11,6 +11,10 @@ class Checkout extends Component {
     this.props.toggleCheckoutModal();
   };
 
+  onOrder = () => {
+    this.props.toggleCheckoutModal();
+  };
+
   render() {
     const order = this.props.cart.order;
     const { user } = this.props;
@@ -58,7 +62,7 @@ class Checkout extends Component {
               </ul>
             </ModalBody>
             <ModalFooter>
-              <Button color="success" onClick={this.toggle}>
+              <Button color="success" onClick={this.onOrder}>
                 Place Your Order
               </Button>{' '}
               <Button color="danger" onClick={this.toggle}>

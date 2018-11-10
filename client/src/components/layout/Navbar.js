@@ -142,7 +142,6 @@ class Navbar extends Component {
         </li>
       </ul>
     );
-    console.log(this.props);
     return (
       <div>
         <nav className="nav-top">
