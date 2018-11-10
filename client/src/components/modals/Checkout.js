@@ -10,7 +10,7 @@ import {
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../Spinner';
-// import API from '../../utils/API';
+import API from '../../utils/API';
 
 class Checkout extends Component {
   toggle = () => {
@@ -26,15 +26,16 @@ class Checkout extends Component {
       products.push([product._id, product.quantity]);
     });
     console.log(products);
-    // API.placeOrder(_id, { products })
-    //   .then(response => console.log(response))
-    //   .catch(err => console.log(err));
+    API.placeOrder(_id, { products })
+      .then(response => console.log(response))
+      .catch(err => console.log(err));
     localStorage.setItem('cartItems', 0);
     this.props.updateCartItems(localStorage.getItem('cartItems'));
     localStorage.setItem('cart', JSON.stringify([]));
     this.props.updateCart(JSON.parse(localStorage.getItem('cart')));
     this.props.toggleCart();
     this.props.toggleCheckoutModal();
+    this.props.history.push('/dashboard');
   };
 
   render() {

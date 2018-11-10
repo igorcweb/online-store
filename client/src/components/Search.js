@@ -15,7 +15,6 @@ class Search extends Component {
     const query = this.props.history.location.pathname
       .replace('/search/', '')
       .toLowerCase();
-    console.log(query);
     this.props.searchProducts(query);
   }
 
@@ -58,9 +57,7 @@ class Search extends Component {
   };
 
   render() {
-    const { products, user } = this.props;
-    console.log('user:', user);
-    console.log('groceries:', products);
+    const { products } = this.props;
     return (
       <div className="products content">
         <div className="row" key={products._id}>

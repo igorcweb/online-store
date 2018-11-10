@@ -22,7 +22,8 @@ class Dashboard extends Component {
     if (!user.name) {
       dashboardContent = <Spinner />;
     } else {
-      const { name, date, prime } = user;
+      const { name, date, prime, orders } = user;
+      console.log(orders);
       if (prime.member) {
         primeMessage = (
           <div className="my-4 pb-5">
@@ -62,7 +63,15 @@ class Dashboard extends Component {
       }
       if (user.orders.length) {
         orderMessage = (
-          <h3 className="lead text-muted">Here are your resent orders:</h3>
+          <div className="orders">
+            <h3 className="lead text-muted">Here are your resent orders:</h3>
+            <ul>
+              {orders.map(order => {
+                const { _id, name } = order;
+                return <li key={_id}>{name}</li>;
+              })}
+            </ul>
+          </div>
         );
       } else {
         orderMessage = '';
@@ -85,8 +94,8 @@ class Dashboard extends Component {
                       <div className="my-4 pb-5 divup">
                         <i className="fas fa-box" />
                         <h5 className="d-inline card-title ml-2">Orders!</h5>
-                        {orderMessage}
                       </div>
+                      {orderMessage}
                     </div>
                   </div>
                 </div>
@@ -112,7 +121,8 @@ class Dashboard extends Component {
         </div>
       );
     }
-    return <div className="dashboard">{dashboardContent}</div>;
+
+    return <div className="dashboard content">{dashboardContent}</div>;
   }
 }
 

@@ -154,14 +154,7 @@ router.put('/prime/:id', (req, res) => {
 // @desc place an order (make a purchase)
 router.put('/order/:id', (req, res, { products }) => {
   const id = req.params.id;
-  console.log;
-  // let quantity = 1;
-  // const products = [
-  //   ['5bddeb007ef2473253227904', quantity],
-  //   ['5bddeb007ef2473253227905', quantity],
-  //   ['5bddeb007ef2473253227906', quantity]
-  // ];
-  products.forEach(product => {
+  req.body.products.forEach(product => {
     const productId = product[0];
     const quantity = product[1];
     db.User.findByIdAndUpdate(id, {
