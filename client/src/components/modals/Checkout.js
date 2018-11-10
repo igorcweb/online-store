@@ -50,11 +50,11 @@ class Checkout extends Component {
                   </li>
                 ))}
                 <li>Subtotal - ${this.props.cart.subtotal}</li>
-                <li>Tax - {tax}</li>
+                <li>Tax - ${tax}</li>
                 <li>Shipping - {shippingText}</li>
                 <hr />
                 <li>
-                  Total -{' '}
+                  Total - $
                   {this.props.cart.subtotal +
                     parseFloat(tax) +
                     parseFloat(shipping)}
