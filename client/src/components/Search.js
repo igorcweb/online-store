@@ -22,13 +22,14 @@ class Search extends Component {
     console.log(_id, name, price);
   };
 
-  addToCart = (_id, name, description, price) => {
+  addToCart = (_id, name, brand, description, imgUrl, price) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    console.log(cart);
     const item = {
       _id,
       name,
+      brand,
       description,
+      imgUrl,
       price,
       quantity: 1
     };
@@ -44,16 +45,13 @@ class Search extends Component {
     cart.push(item);
     //Remove duplicates
     const newCart = removeDuplicates(cart, '_id');
-    console.log(newCart);
     const cartItems = newCart.reduce((acc, item) => {
       return acc + item.quantity;
     }, 0);
     localStorage.setItem('cartItems', cartItems);
-    console.log(cartItems);
     this.props.updateCartItems(cartItems);
     const serializedCart = JSON.stringify(newCart);
     localStorage.setItem('cart', serializedCart);
-    console.log(('local storage', localStorage));
   };
 
   render() {
@@ -62,14 +60,14 @@ class Search extends Component {
       <div className="products content">
         <div className="row">
           {products.map(product => {
-            const { _id, name, description, imgUrl, price } = product;
+            const { _id, name, brand, description, imgUrl, price } = product;
             return (
               <div className="col-md-4 my-5" key={_id}>
                 <div className="card align-items-center d-flex">
                   <button
                     className="btn success ml-auto mb-5"
                     onClick={() =>
-                      this.addToCart(_id, name, description, price)
+                      this.addToCart(_id, name, brand, description, price)
                     }
                   >
                     <i className="fas fa-plus mr-2" />

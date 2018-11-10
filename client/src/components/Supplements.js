@@ -16,12 +16,14 @@ class Supplements extends Component {
     }
   }
 
-  addToCart = (_id, name, description, price) => {
+  addToCart = (_id, name, brand, description, imgUrl, price) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = {
       _id,
       name,
+      brand,
       description,
+      imgUrl,
       price,
       quantity: 1
     };
@@ -52,14 +54,21 @@ class Supplements extends Component {
       <div className="products">
         <div className="row">
           {products.map(product => {
-            const { _id, name, description, imgUrl, price } = product;
+            const { _id, name, brand, description, imgUrl, price } = product;
             return (
               <div className="col-md-4 my-5" key={_id}>
                 <div className="card align-items-center d-flex">
                   <button
                     className="btn success ml-auto mb-5"
                     onClick={() =>
-                      this.addToCart(_id, name, description, price)
+                      this.addToCart(
+                        _id,
+                        name,
+                        brand,
+                        description,
+                        imgUrl,
+                        price
+                      )
                     }
                   >
                     <i className="fas fa-plus mr-2" />
