@@ -12,7 +12,6 @@ class Checkout extends Component {
   };
 
   render() {
-    console.log(typeof this.props.cart.subtotal);
     const order = this.props.cart.order;
     const { user } = this.props;
     let shipping;
@@ -31,7 +30,6 @@ class Checkout extends Component {
         shippingText = `$${shipping}`;
       }
       tax = ((this.props.cart.subtotal / 100) * 6.05).toFixed(2);
-      console.log(tax);
       checkoutContent = (
         <div className="checkout">
           <Modal
@@ -50,14 +48,16 @@ class Checkout extends Component {
                   </li>
                 ))}
                 <li>Subtotal - ${this.props.cart.subtotal}</li>
-                <li>Tax - {tax}</li>
+                <li>Tax - ${tax}</li>
                 <li>Shipping - {shippingText}</li>
                 <hr />
                 <li>
-                  Total -{' '}
-                  {this.props.cart.subtotal +
+                  Total - $
+                  {(
+                    this.props.cart.subtotal +
                     parseFloat(tax) +
-                    parseFloat(shipping)}
+                    parseFloat(shipping)
+                  ).toFixed(2)}
                 </li>
               </ul>
             </ModalBody>
@@ -73,7 +73,10 @@ class Checkout extends Component {
         </div>
       );
     }
-    return <div className="checkout">{checkoutContent}</div>;
+    if (this.props.auth.isAuthenticated) {
+      return <div className="checkout">{checkoutContent}</div>;
+    }
+    return false;
   }
 }
 
