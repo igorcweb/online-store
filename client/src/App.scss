@@ -8,7 +8,7 @@ $icon-size: 30px;
 $mainbgcolor: rgba(236, 240, 239, 0.5);
 
 body {
-  background: $mainbgcolor;
+  background: #f1f1f1;
 }
 
 .nav-top {
@@ -140,7 +140,8 @@ span.class-items {
 .fa-trash:hover {
   color: $main-red-hover;
 }
-.fa-plus {
+.fa-plus,
+.fa-user {
   color: green;
   cursor: pointer;
 }
@@ -215,4 +216,16 @@ button.proceed {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+}
+
+.fa-certificate {
+  color: #afa381;
+}
+
+.text-caps {
+  text-transform: uppercase;
+}
+
+.divup {
+  border-bottom: 1px solid lightgray;
 }

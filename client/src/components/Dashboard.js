@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/userActions';
@@ -25,18 +26,39 @@ class Dashboard extends Component {
       const { name, date, prime } = user;
       if (prime.member) {
         primeMessage = (
-          <h3 className="lead text-muted">
-            As a prime member, you get free shipping on all U.S. orders! <br />
-            Your next prime membership payment of ${prime.fee} is due on{' '}
-            {prime.nextPayment}.
-          </h3>
+          <div className="my-4 pb-5">
+            <div className="my-4 pb-5 divup">
+              <i className="fas fa-certificate" />
+              <h5 className="d-inline card-title ml-2">Prime Member User!</h5>
+            </div>
+
+            <p className="text-muted mt-3">
+              As a prime member, you get free shipping on all U.S. orders!
+            </p>
+            <p className="text-muted mt-3">
+              Your next prime membership payment of ${prime.fee} is due on{' '}
+              {prime.nextPayment}.
+            </p>
+          </div>
         );
       } else {
         primeMessage = (
-          <h3 className="lead text-muted">
-            Get free U.S shipping! Become a prime member today for only $59.99 a
-            year!
-          </h3>
+          <div className="my-4 pb-5">
+            <div className="my-4 pb-5 divup">
+              <i className="fas fa-certificate" />
+              <h5 className="d-inline card-title ml-2">
+                Become a Prime Member!
+              </h5>
+            </div>
+
+            <p className="text-muted mt-3">
+              Get free U.S shipping! Become a prime member today for only $59.99
+              a year!
+            </p>
+            <Link to="" className="btn btn-block brown text-caps mt-4">
+              Become a Prime Member
+            </Link>
+          </div>
         );
       }
       if (user.orders.length) {
@@ -47,11 +69,47 @@ class Dashboard extends Component {
         orderMessage = '';
       }
       dashboardContent = (
-        <div className="content">
-          <h3 className="lead text-muted">Welcome {name}!</h3>
-          <h3 className="lead text-muted">Customer since {date}!</h3>
-          {primeMessage}
-          {orderMessage}
+        <div className="container-fluid mt-5 pt-2">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="row">
+                <div className="col-sm-12 col-md-4 col-lg-4">
+                  <i className="ml-4 fas fa-user" />
+                  <h5 class="d-inline card-title ml-2">Welcome {name}!</h5>
+                  <div className="card mt-4 mb-4 px-4 pt-3 pb-1">
+                    <div className="content">{primeMessage}</div>
+                  </div>
+                </div>
+                <div className="col-sm-12 col-md-4 col-lg-4">
+                  <div className="card mt-5 mb-5 px-4 pt-3 pb-1">
+                    <div className="content">
+                      <div className="my-4 pb-5 divup">
+                        <i className="fas fa-box" />
+                        <h5 className="d-inline card-title ml-2">Orders!</h5>
+                        {orderMessage}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-sm-12 col-md-4 col-lg-4">
+                  <div className="card mt-5 mb-5 px-4 pt-3 pb-1">
+                    <div className="content">
+                      <div className="my-4 pb-5 divup">
+                        <i class="fas fa-user-cog" />
+                        <h5 className="d-inline card-title ml-2">
+                          {' '}
+                          User Profile!
+                        </h5>
+                      </div>
+                      <h6 className="d-inline">Name:</h6> {name}
+                      <h6 className="py-4">Address:</h6>
+                      <small>Customer since {date}</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       );
     }
