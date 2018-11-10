@@ -55,11 +55,11 @@ class Register extends Component {
                 <div className="card mb-5 px-1 pt-5 pb-1">
                   <div className="register content">
                     <i className="ml-4 fas fa-lock" />
-                    <h5 class="d-inline card-title ml-2">Register</h5>
+                    <h5 className="d-inline card-title ml-2">Register</h5>
                     <div className="card-body">
                       <form onSubmit={this.onSubmit}>
                         <div className="form-group">
-                          <label for="Name" className="label">
+                          <label htmlFor="Name" className="label">
                             Full Name
                           </label>
                           <input
@@ -81,7 +81,7 @@ class Register extends Component {
                           )}
                         </div>
                         <div className="form-group">
-                          <label for="Email" className="label">
+                          <label htmlFor="Email" className="label">
                             Email Address
                           </label>
                           <input
@@ -103,7 +103,7 @@ class Register extends Component {
                           )}
                         </div>
                         <div className="form-group">
-                          <label for="Password" className="label">
+                          <label htmlFor="Password" className="label">
                             Password
                           </label>
                           <input
@@ -125,7 +125,7 @@ class Register extends Component {
                           )}
                         </div>
                         <div className="form-group">
-                          <label for="Password" className="label">
+                          <label htmlFor="Password" className="label">
                             Confirm Password
                           </label>
                           <input
@@ -162,7 +162,7 @@ class Register extends Component {
               </div>
               <div className="col-sm-12 col-md-6 col-lg-6">
                 <div className="card mb-5 py-5 px-1">
-                  <h5 class="card-title ml-3">Already have an account?</h5>
+                  <h5 className="card-title ml-3">Already have an account?</h5>
                   <div className="card-body pb-5">
                     <Link to="/login" className="btn success btn-block">
                       Sign In

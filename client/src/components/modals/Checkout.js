@@ -19,59 +19,63 @@ class Checkout extends Component {
     let shippingText;
     let checkoutContent;
     let tax;
-    if (!user.name) {
-      checkoutContent = <Spinner />;
-    } else {
-      const { prime } = user;
-      if (prime.member) {
-        shipping = 0;
-        shippingText = '$0.00 (prime rate)';
+    if (this.props.auth.isAuthenticated) {
+      if (!user.name) {
+        checkoutContent = <Spinner />;
       } else {
-        shipping = ((this.props.cart.subtotal / 100) * 8 + 2.89).toFixed(2);
-        shippingText = `$${shipping}`;
-      }
-      tax = ((this.props.cart.subtotal / 100) * 6.05).toFixed(2);
-      console.log(tax);
-      checkoutContent = (
-        <div className="checkout">
-          <Modal
-            isOpen={this.props.modal.checkoutModal}
-            toggle={this.toggle}
-            className={this.props.className}
-          >
-            <ModalHeader toggle={this.toggle}>Checkout </ModalHeader>
-            <ModalBody>
-              <ul className="pl-0">
-                {order.map(item => (
-                  <li key={item._id}>
-                    {item.name} - ${item.price}{' '}
-                    <span className="float-right"> {item.quantity}</span>
-                    <hr />
+        const { prime } = user;
+        if (prime.member) {
+          shipping = 0;
+          shippingText = '$0.00 (prime rate)';
+        } else {
+          shipping = ((this.props.cart.subtotal / 100) * 8 + 2.89).toFixed(2);
+          shippingText = `$${shipping}`;
+        }
+        tax = ((this.props.cart.subtotal / 100) * 6.05).toFixed(2);
+        console.log(tax);
+        checkoutContent = (
+          <div className="checkout">
+            <Modal
+              isOpen={this.props.modal.checkoutModal}
+              toggle={this.toggle}
+              className={this.props.className}
+            >
+              <ModalHeader toggle={this.toggle}>Checkout </ModalHeader>
+              <ModalBody>
+                <ul className="pl-0">
+                  {order.map(item => (
+                    <li key={item._id}>
+                      {item.name} - ${item.price}{' '}
+                      <span className="float-right"> {item.quantity}</span>
+                      <hr />
+                    </li>
+                  ))}
+                  <li>Subtotal - ${this.props.cart.subtotal}</li>
+                  <li>Tax - ${tax}</li>
+                  <li>Shipping - {shippingText}</li>
+                  <hr />
+                  <li>
+                    Total - $
+                    {this.props.cart.subtotal +
+                      parseFloat(tax) +
+                      parseFloat(shipping).toFixed(2)}
                   </li>
-                ))}
-                <li>Subtotal - ${this.props.cart.subtotal}</li>
-                <li>Tax - ${tax}</li>
-                <li>Shipping - {shippingText}</li>
-                <hr />
-                <li>
-                  Total - $
-                  {this.props.cart.subtotal +
-                    parseFloat(tax) +
-                    parseFloat(shipping)}
-                </li>
-              </ul>
-            </ModalBody>
-            <ModalFooter>
-              <Button color="success" onClick={this.toggle}>
-                Place Your Order
-              </Button>{' '}
-              <Button color="danger" onClick={this.toggle}>
-                Cancel
-              </Button>
-            </ModalFooter>
-          </Modal>
-        </div>
-      );
+                </ul>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="success" onClick={this.toggle}>
+                  Place Your Order
+                </Button>{' '}
+                <Button color="danger" onClick={this.toggle}>
+                  Cancel
+                </Button>
+              </ModalFooter>
+            </Modal>
+          </div>
+        );
+      }
+    } else {
+      return false;
     }
     return <div className="checkout">{checkoutContent}</div>;
   }
