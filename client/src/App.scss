@@ -11,6 +11,10 @@ body {
   background: #f1f1f1;
 }
 
+.bg-gray {
+  background: #f1f1f1;
+}
+
 .nav-top {
   background: #afa381;
   color: white;
@@ -114,13 +118,13 @@ span.class-items {
 
 .cart {
   transform: translateX(100%);
-  height: auto;
+  height: 710px;
+  overflow-y: auto;
   z-index: 10;
   position: fixed;
   top: 5.6rem;
   right: 0;
-  height: 100%;
-  width: 550px;
+  width: 450px;
   transition: 0.3s ease-in-out;
 }
 .cart.isShowing {
@@ -131,7 +135,10 @@ span.class-items {
   width: 510px;
 }
 
-.fa-trash,
+.fa-trash {
+  color: lightslategray;
+  cursor: pointer;
+}
 .fa-minus {
   color: $main-red;
   cursor: pointer;
@@ -152,9 +159,7 @@ span.class-items {
 }
 
 button.proceed {
-  position: absolute;
-  bottom: 5.5rem;
-  width: 90%;
+  width: 100%;
   text-align: center;
 }
 .label {
@@ -232,4 +237,29 @@ button.proceed {
 
 .divup {
   border-bottom: 1px solid lightgray;
+}
+
+.card-border {
+  border: 2px solid lightgray;
+}
+
+.span-border {
+  border: 1px solid lightgray;
+}
+
+.div-modal-img > img {
+  width: 55px;
+}
+
+.modal {
+  display: block !important;
+}
+
+/* Important part */
+.modal-dialog {
+  overflow-y: initial !important;
+}
+.modal-body {
+  height: 250px;
+  overflow-y: auto;
 }
