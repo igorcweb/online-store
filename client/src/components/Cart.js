@@ -109,27 +109,38 @@ class Cart extends Component {
           }
         )}
       >
-        <div className="card-body">
-          <div className="card-title-img">
-            <div className="card-title divup">
-              <p className="text-muted bold text-center">
-                {this.props.cart.cartItems} {items} Selected
-              </p>
-            </div>
-          </div>
-          <div className="container addedItems pl-0 mt-5">
-            <ul className="mx-auto pl-0 ml-0">
+        {' '}
+        <div className="card-title divup pt-3 pb-4">
+          <p className="h6 bold text-center text-dark d-inline">
+            {this.props.cart.cartItems} {items} Selected
+          </p>
+          <button
+            type="button toggle-cart"
+            className="close"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div className="card-body p-0 m-0 no-gutters">
+          <div className="container addedItems pl-0">
+            <div className="mx-auto pl-0 ml-0">
               {cart
                 ? cart.map(item => {
                     const { _id, name, brand, quantity, imgUrl, price } = item;
                     if (quantity > 0) {
                       console.log(_id, name, brand, quantity, imgUrl, price);
                       return (
-                        <div key={_id} className="listItem">
-                          <li>
+                        <div key={_id} className="d-flex flex-row divup pb-2">
+                          <div class="pr-4 pt-2 div-modal-img">
+                            <img src={imgUrl} alt="" />
+                          </div>
+                          <div class="align-self-end">
+                            <small className="text-muted">{brand}</small>
                             <h6>
                               {name} - ${price}
                             </h6>
+
                             <p className="quantity text-muted mt-2">
                               Qty:
                               <span className="bg-white span-border ml-1 py-1 pr-2 pl-2">
@@ -154,8 +165,7 @@ class Cart extends Component {
                                 }
                               />
                             </p>
-                          </li>
-                          <hr className="my-2" />
+                          </div>
                         </div>
                       );
                     }
@@ -163,16 +173,16 @@ class Cart extends Component {
                     return false;
                   })
                 : null}
-            </ul>
-            <p className="card-title-subtext mb-0 text-right">
+            </div>
+            <p className="card-title-subtext my-3 text-right">
               Subtotal: ${subtotal ? subtotal.toFixed(2) : '0.00'}
             </p>
             <button
-              className="proceed btn btn-sm success  mb-3 text-dark"
+              className="proceed btn success mt-5 pt-3 pb-2 text-dark btn-block"
               disabled={this.props.cart.cartItems === '0'}
               onClick={() => this.onCheckout(subtotal)}
             >
-              PROCEED TO CHECKOUT
+              <h6>PROCEED TO CHECKOUT</h6>
             </button>
           </div>
         </div>
