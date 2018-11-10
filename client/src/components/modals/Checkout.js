@@ -27,9 +27,9 @@ class Checkout extends Component {
       products.push([product._id, product.quantity]);
     });
     console.log(products);
-    API.placeOrder(_id, { products })
-      .then(response => console.log(response))
-      .catch(err => console.log(err));
+    // API.placeOrder(_id, { products })
+    //   .then(response => console.log(response))
+    //   .catch(err => console.log(err));
     localStorage.setItem('cartItems', 0);
     this.props.updateCartItems(localStorage.getItem('cartItems'));
     localStorage.setItem('cart', JSON.stringify([]));
