@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { toggleCart } from '../../actions/cartActions';
 import Cart from '../Cart';
+import Checkout from '../modals/Checkout';
 
 class Navbar extends Component {
   state = {
@@ -147,6 +148,7 @@ class Navbar extends Component {
     return (
       <div>
         <Cart />
+        <Checkout />
         <nav className="nav-top">
           <div className="container-fluid">
             <div className="d-flex nav-cont row pt-2">
