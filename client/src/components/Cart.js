@@ -21,17 +21,22 @@ class Cart extends Component {
   }
 
   onCheckout = subtotal => {
-    const { cart } = this.props.cart;
-    const order = [];
-    cart.forEach(item => {
-      if (item.quantity > 0) {
-        order.push(item);
-      }
-    });
-    console.log(subtotal);
-    this.props.getFinalOrder(order);
-    this.props.getSubtotal(subtotal);
-    this.props.toggleCheckoutModal();
+    if (this.props.auth.isAuthenticated) {
+      const { cart } = this.props.cart;
+      const order = [];
+      cart.forEach(item => {
+        if (item.quantity > 0) {
+          order.push(item);
+        }
+      });
+      console.log(subtotal);
+      this.props.getFinalOrder(order);
+      this.props.getSubtotal(subtotal);
+      this.props.toggleCheckoutModal();
+    } else {
+      this.props.toggleCart();
+      this.props.history.push('/login');
+    }
   };
 
   onPlus = (_id, cart, cartItems) => {
@@ -88,7 +93,7 @@ class Cart extends Component {
   render() {
     // const { user } = this.props;
     // console.log('user:', user);
-
+    console.log(this.props);
     const cart = JSON.parse(localStorage.getItem('cart'));
     const cartItems = localStorage.getItem('cartItems');
     let subtotal;
