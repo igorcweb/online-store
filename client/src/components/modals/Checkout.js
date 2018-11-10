@@ -43,7 +43,7 @@ class Checkout extends Component {
                     <hr />
                   </li>
                 ))}
-                <li>Subtotal - ${this.props.cart.subtotal}</li>
+                <li>Subtotal - ${this.props.cart.subtotal.toFixed(2)}</li>
                 <li>Tax - ${tax}</li>
                 <li>Shipping - {shippingText}</li>
                 <hr />
