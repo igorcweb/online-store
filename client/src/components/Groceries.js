@@ -19,7 +19,6 @@ class Groceries extends Component {
 
   addToCart = (_id, name, description, price) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    console.log(cart);
     const item = {
       _id,
       name,
@@ -43,16 +42,13 @@ class Groceries extends Component {
       return acc + item.quantity;
     }, 0);
     localStorage.setItem('cartItems', cartItems);
-    console.log(cartItems);
     this.props.updateCartItems(cartItems);
     const serializedCart = JSON.stringify(newCart);
     localStorage.setItem('cart', serializedCart);
-    console.log(('local storage', localStorage));
   };
 
   render() {
-    const { products, user } = this.props;
-    console.log('user:', user);
+    const { products } = this.props;
     return (
       <div className="products">
         <div className="row">

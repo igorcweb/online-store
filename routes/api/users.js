@@ -10,18 +10,6 @@ const moment = require('moment');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-// async function asyncForEach(array, callback) {
-//   for (let index = 0; index < array.length; index++) {
-//     await callback(array[index], index, array);
-//   }
-// }
-
-// Array.prototype.asyncForEach = async function(array, callback) {
-//   for (let index = 0; index < array.length; index++) {
-//     await callback(array[index], index, array);
-//   }
-// };
-
 // @route GET api/users
 // @access Public
 router.get('/', (req, res) => {
@@ -164,14 +152,15 @@ router.put('/prime/:id', (req, res) => {
 
 // @route GET api/users/order/:id
 // @desc place an order (make a purchase)
-router.put('/order/:id', (req, res) => {
+router.put('/order/:id', (req, res, { products }) => {
   const id = req.params.id;
-  let quantity = 1;
-  const products = [
-    ['5bddeb007ef2473253227904', quantity],
-    ['5bddeb007ef2473253227905', quantity],
-    ['5bddeb007ef2473253227906', quantity]
-  ];
+  console.log;
+  // let quantity = 1;
+  // const products = [
+  //   ['5bddeb007ef2473253227904', quantity],
+  //   ['5bddeb007ef2473253227905', quantity],
+  //   ['5bddeb007ef2473253227906', quantity]
+  // ];
   products.forEach(product => {
     const productId = product[0];
     const quantity = product[1];

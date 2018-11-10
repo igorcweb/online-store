@@ -29,7 +29,6 @@ class Cart extends Component {
           order.push(item);
         }
       });
-      console.log(subtotal);
       this.props.getFinalOrder(order);
       this.props.getSubtotal(subtotal);
       this.props.toggleCheckoutModal();
@@ -52,12 +51,10 @@ class Cart extends Component {
     this.props.updateCartItems(localStorage.getItem('cartItems'));
   };
   onMinus = (_id, cart, cartItems) => {
-    let newCart = cart.map((item, index) => {
+    let newCart = cart.map(item => {
       if (item._id === _id) {
         item.quantity--;
-        console.log(item.quantity);
       }
-
       return item;
     });
 

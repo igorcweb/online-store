@@ -10,6 +10,8 @@ import {
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../Spinner';
+import API from '../../utils/API';
+// import API from '../../utils/API';
 
 class Checkout extends Component {
   toggle = () => {
@@ -17,6 +19,17 @@ class Checkout extends Component {
   };
 
   onOrder = () => {
+    console.log(this.props.user);
+    const _id = this.props.user;
+    const { order } = this.props.cart;
+    const products = [];
+    order.forEach(product => {
+      products.push([product._id, product.quantity]);
+    });
+    console.log(products);
+    API.placeOrder(_id, { products })
+      .then(response => console.log(response))
+      .catch(err => console.log(err));
     localStorage.setItem('cartItems', 0);
     this.props.updateCartItems(localStorage.getItem('cartItems'));
     localStorage.setItem('cart', JSON.stringify([]));
@@ -75,7 +88,7 @@ class Checkout extends Component {
               </ul>
             </ModalBody>
             <ModalFooter>
-              <Button color="success" onClick={this.onOrder}>
+              <Button color="success" onClick={() => this.onOrder()}>
                 Place Your Order
               </Button>{' '}
               <Button color="danger" onClick={this.toggle}>
@@ -86,6 +99,7 @@ class Checkout extends Component {
         </div>
       );
     }
+
     if (this.props.auth.isAuthenticated) {
       return <div className="checkout">{checkoutContent}</div>;
     }
