@@ -123,9 +123,9 @@ class Cart extends Component {
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div className="card-body p-0 m-0 no-gutters">
-          <div className="container addedItems pl-0">
-            <div className="mx-auto pl-0 ml-0">
+        <div className="card-body px-0 mx-0">
+          <div className="container pl-0">
+            <div className="pl-0 ml-0 mb-1 pb-2">
               {cart
                 ? cart.map(item => {
                     const { _id, name, brand, quantity, imgUrl, price } = item;
@@ -137,9 +137,7 @@ class Cart extends Component {
                           </div>
                           <div class="align-self-end">
                             <small className="text-muted">{brand}</small>
-                            <h6>
-                              {name} - ${price}
-                            </h6>
+                            <h6>{name}</h6>
 
                             <p className="quantity text-muted mt-2">
                               Qty:
@@ -173,17 +171,19 @@ class Cart extends Component {
                     return false;
                   })
                 : null}
+
+              <p className="card-title-subtext mt-3 text-right">
+                Subtotal: ${subtotal ? subtotal.toFixed(2) : '0.00'}
+              </p>
+              <br />
+              <button
+                className="proceed success ml-2 pb-2 mb-2 pt-3  text-dark btn-block"
+                disabled={this.props.cart.cartItems === '0'}
+                onClick={() => this.onCheckout(subtotal)}
+              >
+                <h6>PROCEED TO CHECKOUT</h6>
+              </button>
             </div>
-            <p className="card-title-subtext my-3 text-right">
-              Subtotal: ${subtotal ? subtotal.toFixed(2) : '0.00'}
-            </p>
-            <button
-              className="proceed btn success mt-5 pt-3 pb-2 text-dark btn-block"
-              disabled={this.props.cart.cartItems === '0'}
-              onClick={() => this.onCheckout(subtotal)}
-            >
-              <h6>PROCEED TO CHECKOUT</h6>
-            </button>
           </div>
         </div>
       </div>
