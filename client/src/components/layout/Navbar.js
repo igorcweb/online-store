@@ -102,7 +102,7 @@ class Navbar extends Component {
 
     const navMsg = (
       <span className="d-none navMsg d-md-block">
-        <small>Free U.S. Shopping for Prime Members*</small>
+        <small>Free U.S. Shipping for Prime Members*</small>
       </span>
     );
 

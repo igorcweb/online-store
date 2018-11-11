@@ -28,6 +28,9 @@ class Dashboard extends Component {
       dashboardContent = <Spinner />;
     } else {
       const { name, date, prime, orders } = user;
+      // orders.forEach(order => {
+      //   console.log(order.date);
+      // });
       if (prime.member) {
         primeMessage = (
           <div className="my-4 pb-5">
@@ -73,9 +76,9 @@ class Dashboard extends Component {
           <div className="orders">
             <h3 className="lead text-muted">Here are your resent orders:</h3>
             <ul className="pl-0">
-              {orders.map(order => {
+              {orders.map((order, index) => {
                 const { _id, name } = order;
-                return <li key={_id}>{name}</li>;
+                return <li key={_id + index}>{name}</li>;
               })}
             </ul>
           </div>
