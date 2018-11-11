@@ -50,6 +50,7 @@ class Groceries extends Component {
 
   render() {
     const { products } = this.props;
+    console.log(this.props.cart.cartItems);
     return (
       <div className="products">
         <div className="row">

@@ -130,9 +130,7 @@ class Cart extends Component {
               {cart
                 ? cart.map(item => {
                     const { _id, name, brand, imgUrl, price, quantity } = item;
-                    console.log(item);
                     if (quantity > 0) {
-                      console.log(brand);
                       return (
                         <div key={_id} className="d-flex flex-row divup pb-2">
                           <div className="pr-4 pt-2 div-modal-img">

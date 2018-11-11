@@ -29,7 +29,6 @@ class Prime extends Component {
     let primeContent;
     if (this.props.auth.isAuthenticated) {
       const { user } = this.props;
-      console.log(user);
       primeContent = (
         <div className="prime">
           <Modal
@@ -54,7 +53,6 @@ class Prime extends Component {
       );
 
       if (this.props.auth.isAuthenticated) {
-        console.log(this.props);
         return <div className="prime">{primeContent}</div>;
       }
       return false;

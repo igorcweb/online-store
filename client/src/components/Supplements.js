@@ -50,6 +50,7 @@ class Supplements extends Component {
 
   render() {
     const { products } = this.props;
+    console.log(this.props);
     return (
       <div className="products">
         <div className="row">
