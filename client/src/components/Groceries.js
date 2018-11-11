@@ -5,7 +5,6 @@ import { getProductsByCategory } from '../actions/productActions';
 import { getCurrentUser } from '../actions/userActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
 import { updateCartItems } from '../actions/cartActions';
-// import Spinner from '../images/spinner.gif';
 
 class Groceries extends Component {
   componentDidMount() {
@@ -17,15 +16,15 @@ class Groceries extends Component {
     }
   }
 
-  addToCart = (_id, name, description, price, brand, imgUrl) => {
+  addToCart = (_id, name, brand, description, imgUrl, price) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = {
       _id,
       name,
-      description,
-      price,
       brand,
+      description,
       imgUrl,
+      price,
       quantity: 1
     };
     if (cart.length) {
@@ -55,7 +54,7 @@ class Groceries extends Component {
       <div className="products">
         <div className="row">
           {products.map(product => {
-            const { _id, name, description, brand, imgUrl, price } = product;
+            const { _id, name, brand, description, imgUrl, price } = product;
             return (
               <div className="col-md-4 my-5" key={_id}>
                 <div className="card align-items-center d-flex">
@@ -65,17 +64,17 @@ class Groceries extends Component {
                       this.addToCart(
                         _id,
                         name,
-                        description,
-                        price,
                         brand,
-                        imgUrl
+                        description,
+                        imgUrl,
+                        price
                       )
                     }
                   >
                     <i className="fas fa-plus mr-2" />
                     Add to cart
                   </button>
-                  <img src={imgUrl} alt="" className="CardImg" />
+                  <img src={imgUrl} alt={name} className="CardImg" />
 
                   <div className="card-body text-center">
                     <h6 className="name pb-2">{name}</h6>

@@ -93,6 +93,7 @@ class Cart extends Component {
     const cartItems = localStorage.getItem('cartItems');
     let subtotal;
     if (cart) {
+      cart.forEach(item => {});
       subtotal = cart.reduce((acc, item) => {
         const price = item.quantity * item.price;
         return acc + price;
@@ -128,14 +129,16 @@ class Cart extends Component {
             <div className="mx-auto pl-0 ml-0">
               {cart
                 ? cart.map(item => {
-                    const { _id, name, brand, quantity, imgUrl, price } = item;
+                    const { _id, name, brand, imgUrl, price, quantity } = item;
+                    console.log(item);
                     if (quantity > 0) {
+                      console.log(brand);
                       return (
                         <div key={_id} className="d-flex flex-row divup pb-2">
-                          <div class="pr-4 pt-2 div-modal-img">
+                          <div className="pr-4 pt-2 div-modal-img">
                             <img src={imgUrl} alt="" />
                           </div>
-                          <div class="align-self-end">
+                          <div className="align-self-end">
                             <small className="text-muted">{brand}</small>
                             <h6>
                               {name} - ${price}
