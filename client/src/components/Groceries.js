@@ -52,7 +52,7 @@ class Groceries extends Component {
     const { products } = this.props;
     console.log(this.props.cart.cartItems);
     return (
-      <div className="products">
+      <div className="products content">
         <div className="row">
           {products.map(product => {
             const { _id, name, brand, description, imgUrl, price } = product;

@@ -49,7 +49,7 @@ class Clothing extends Component {
   render() {
     const { products } = this.props;
     return (
-      <div className="products">
+      <div className="products content">
         <div className="row">
           {products.map(product => {
             const { _id, name, brand, description, imgUrl, price } = product;
