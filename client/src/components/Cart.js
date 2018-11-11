@@ -129,7 +129,7 @@ class Cart extends Component {
             <div className="pl-0 ml-0 mb-1 pb-2">
               {cart
                 ? cart.map(item => {
-                    const { _id, name, brand, imgUrl, price, quantity } = item;
+                    const { _id, name, brand, imgUrl, quantity } = item;
                     if (quantity > 0) {
                       return (
                         <div key={_id} className="d-flex flex-row divup pb-2">
@@ -182,7 +182,7 @@ class Cart extends Component {
                 disabled={this.props.cart.cartItems === '0'}
                 onClick={() => this.onCheckout(subtotal)}
               >
-                <h6>PROCEED TO CHECKOUT</h6>
+                <h6 class="proceed">PROCEED TO CHECKOUT</h6>
               </button>
             </div>
           </div>
