@@ -67,7 +67,14 @@ class Search extends Component {
                   <button
                     className="btn success ml-auto mb-5"
                     onClick={() =>
-                      this.addToCart(_id, name, brand, description, price)
+                      this.addToCart(
+                        _id,
+                        name,
+                        brand,
+                        description,
+                        imgUrl,
+                        price
+                      )
                     }
                   >
                     <i className="fas fa-plus mr-2" />
