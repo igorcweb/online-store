@@ -65,37 +65,95 @@ class Checkout extends Component {
             toggle={this.toggle}
             className={this.props.className}
           >
-            <ModalHeader toggle={this.toggle}>Checkout </ModalHeader>
+            <ModalHeader toggle={this.toggle} className="bg-gray">
+              <h6>ORDER SUMMARY</h6>
+            </ModalHeader>
             <ModalBody>
-              <ul className="pl-0">
-                {order.map(item => (
-                  <li key={item._id}>
-                    {item.name} - ${item.price}{' '}
-                    <span className="float-right"> {item.quantity}</span>
-                    <hr />
-                  </li>
-                ))}
-                <li>Subtotal - ${this.props.cart.subtotal.toFixed(2)}</li>
-                <li>Tax - ${tax}</li>
-                <li>Shipping - {shippingText}</li>
-                <hr />
-                <li>
-                  Total - $
-                  {(
-                    this.props.cart.subtotal +
-                    parseFloat(tax) +
-                    parseFloat(shipping)
-                  ).toFixed(2)}
-                </li>
-              </ul>
+              <table className="table">
+                <thead>
+                  <tr className="tex-white bg-darkgray">
+                    <th
+                      scope="col"
+                      className="bg-darkgray border-white text-center"
+                    >
+                      Item
+                    </th>
+                    <th
+                      scope="col"
+                      className="bg-darkgray border-white text-center"
+                    >
+                      Qty
+                    </th>
+                    <th
+                      scope="col"
+                      className="bg-darkgray border-white text-center"
+                    >
+                      Price
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {order.map(item => (
+                    <tr key={item._id} className="table">
+                      <td className="text-center text-muted">{item.name}</td>
+                      <td className="text-center text-muted">
+                        {item.quantity}
+                      </td>
+                      <td className="text-center text-muted">${item.price}</td>
+                    </tr>
+                  ))}
+                  <tr />
+                </tbody>
+              </table>
             </ModalBody>
-            <ModalFooter>
-              <Button color="success" onClick={() => this.onOrder()}>
-                Place Your Order
-              </Button>{' '}
-              <Button color="danger" onClick={this.toggle}>
-                Cancel
-              </Button>
+            <ModalFooter className="bg-gray ml-0 pl-0">
+              <div className="container">
+                <div className="row">
+                  <div className="col-sm-12">
+                    <ul className="ml-0 pl-0">
+                      <li className="text-muted">
+                        Subtotal{' '}
+                        <span className="float-right">
+                          ${this.props.cart.subtotal.toFixed(2)}
+                        </span>
+                      </li>
+                      <li className="text-muted">
+                        Tax <span className="float-right">${tax}</span>
+                      </li>
+                      <li className="text-muted">
+                        Shipping{' '}
+                        <span className="float-right">{shippingText}</span>
+                      </li>
+                      <hr />
+                      <li className="mb-5">
+                        <h4 className="d-inline">Total</h4>
+                        <span className="float-right h5">
+                          $
+                          {(
+                            this.props.cart.subtotal +
+                            parseFloat(tax) +
+                            parseFloat(shipping)
+                          ).toFixed(2)}
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="col-sm-12 ">
+                    <Button
+                      className="ml-2 px-4 success float-right order-last"
+                      onClick={() => this.onOrder()}
+                    >
+                      <h6 className="mt-1">Place Your Order</h6>
+                    </Button>
+                    <Button
+                      className="btn-danger float-right"
+                      onClick={this.toggle}
+                    >
+                      <h6 className="mt-1">Cancel</h6>
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </ModalFooter>
           </Modal>
         </div>
