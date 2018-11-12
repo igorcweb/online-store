@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/userActions';
-import { togglePrimeModal } from '../actions/modalActions';
+import { togglePrimeModal, toggleAddressModal } from '../actions/modalActions';
 import Spinner from './Spinner';
 import { removeDuplicates } from '../utils/removeDuplicates';
 
@@ -20,15 +20,48 @@ class Dashboard extends Component {
     this.props.togglePrimeModal();
     console.log('prime');
   };
+  onUpdateAddress = () => {
+    const checkout = false;
+    this.props.toggleAddressModal(checkout);
+    console.log('update');
+  };
   render() {
     const { user } = this.props;
     let dashboardContent;
     let primeMessage;
     let orderMessage;
+    let addressMessage;
+
     if (!user.name) {
       dashboardContent = <Spinner />;
     } else {
       const { name, date, prime, orders } = user;
+      if (user.address) {
+        const { street, city, state, zipcode } = user.address;
+        addressMessage = (
+          <div>
+            <h6 className="pt-4 pb-1">Address:</h6>
+            <p>
+              {street}, {city}, {state} {zipcode}
+            </p>
+            <button
+              onClick={this.onUpdateAddress}
+              className="btn btn-block brown text-caps mt-4"
+            >
+              Update Address
+            </button>
+          </div>
+        );
+      } else {
+        addressMessage = (
+          <button
+            onClick={this.onUpdateAddress}
+            className="btn btn-block brown text-caps mt-4"
+          >
+            Add Address
+          </button>
+        );
+      }
       if (prime.member) {
         primeMessage = (
           <div className="my-4 pb-5">
@@ -119,7 +152,7 @@ class Dashboard extends Component {
                         </h5>
                       </div>
                       <h6 className="d-inline">Name:</h6> {name}
-                      <h6 className="py-4">Address:</h6>
+                      {addressMessage}
                       <small>Customer since {date}</small>
                     </div>
                   </div>
@@ -138,7 +171,8 @@ class Dashboard extends Component {
 Dashboard.propTypes = {
   auth: PropTypes.object.isRequired,
   getCurrentUser: PropTypes.func.isRequired,
-  togglePrimeModal: PropTypes.func.isRequired
+  togglePrimeModal: PropTypes.func.isRequired,
+  toggleAddressModal: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -148,5 +182,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCurrentUser, togglePrimeModal }
+  { getCurrentUser, togglePrimeModal, toggleAddressModal }
 )(Dashboard);

@@ -19,7 +19,6 @@ import Search from './components/Search';
 import Cart from './components/Cart';
 import Checkout from './components/modals/Checkout';
 import Prime from './components/modals/Prime';
-import Address from './components/modals/Address';
 import Spinner from './components/Spinner';
 import './App.scss';
 
@@ -49,7 +48,6 @@ class App extends Component {
             <Route path="/" component={Cart} />
             <Route path="/" component={Checkout} />
             <Route path="/" component={Prime} />
-            <Route path="/" component={Address} />
             <Route exact path="/" component={Landing} />
             <div className="container">
               <Route exact path="/register" component={Register} />

@@ -27,11 +27,9 @@ class Checkout extends Component {
     });
     console.log(products);
     API.placeOrder(_id, { products })
-      .then(response => {
+      .then(() => {
         this.props.history.push('/loading');
         setTimeout(() => this.props.history.push('/dashboard'), 20);
-
-        console.log(response);
       })
       .catch(err => console.log(err));
     localStorage.setItem('cartItems', 0);

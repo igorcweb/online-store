@@ -27,10 +27,7 @@ class Address extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const func =
-      this.props.user.address === null
-        ? this.props.onCheckout()
-        : this.props.history.push('/');
+    const checkout = this.props.modal.checkout;
     const id = this.props.auth.user.id;
     console.log(id);
     const address = {
@@ -40,10 +37,19 @@ class Address extends Component {
       zipcode: this.state.zipcode
     };
     console.log(address);
-    API.addAddress(id, address).then(() => {
-      this.props.toggleAddressModal();
-      return func;
-    });
+    API.addAddress(id, address)
+      .then(() => {
+        if (!this.props.modal.checkout) {
+          this.props.toggleAddressModal(checkout);
+          this.props.history.push('/loading');
+          setTimeout(() => this.props.history.push('/dashboard'), 20);
+        } else {
+          this.props.onCheckout(this.props.subtotal);
+          this.props.toggleAddressModal();
+        }
+      })
+
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -183,6 +189,7 @@ class Address extends Component {
       );
 
       if (this.props.auth.isAuthenticated) {
+        // console.log(this.props.onCheckout);
         return <div className="address">{addressForm}</div>;
       }
       return false;
