@@ -29,14 +29,12 @@ class Address extends Component {
     e.preventDefault();
     const checkout = this.props.modal.checkout;
     const id = this.props.auth.user.id;
-    console.log(id);
     const address = {
       street: this.state.street,
       city: this.state.city,
       state: this.state.$state,
       zipcode: this.state.zipcode
     };
-    console.log(address);
     API.addAddress(id, address)
       .then(() => {
         if (!this.props.modal.checkout) {

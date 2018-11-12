@@ -23,7 +23,6 @@ class Dashboard extends Component {
   onUpdateAddress = () => {
     const checkout = false;
     this.props.toggleAddressModal(checkout);
-    console.log('update');
   };
   render() {
     const { user } = this.props;
