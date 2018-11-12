@@ -14,7 +14,7 @@ import {
   toggleAddressModal
 } from '../actions/modalActions';
 import classnames from 'classnames';
-import API from '../utils/API';
+// import API from '../utils/API';
 
 class Cart extends Component {
   componentDidMount() {
@@ -25,28 +25,31 @@ class Cart extends Component {
   }
 
   onCheckout = subtotal => {
-    const { id } = this.props.auth.user;
-    API.getUser(id).then(response => {
-      if (response.data.address) {
-        this.props.toggleAddressModal();
-      } else {
-        const order = [];
-        if (this.props.auth.isAuthenticated) {
-          const cart = JSON.parse(localStorage.getItem('cart'));
-          cart.forEach(item => {
-            if (item.quantity > 0) {
-              order.push(item);
-            }
-          });
-          this.props.getFinalOrder(order);
-          this.props.getSubtotal(subtotal);
-          this.props.toggleCheckoutModal();
-        } else {
-          this.props.toggleCart();
-          this.props.history.push('/login');
+    // if (this.props.auth.isAuthenticated) {
+
+    // }
+    // const { id } = this.props.auth.user;
+    // API.getUser(id).then(response => {
+    //   if (!response.data.address) {
+    //     this.props.toggleAddressModal();
+    //   } else {
+    const order = [];
+    if (this.props.auth.isAuthenticated) {
+      const cart = JSON.parse(localStorage.getItem('cart'));
+      cart.forEach(item => {
+        if (item.quantity > 0) {
+          order.push(item);
         }
-      }
-    });
+      });
+      this.props.getFinalOrder(order);
+      this.props.getSubtotal(subtotal);
+      this.props.toggleCheckoutModal();
+    } else {
+      this.props.toggleCart();
+      this.props.history.push('/login');
+    }
+    //   }
+    // });
   };
 
   onPlus = (_id, cart, cartItems) => {
