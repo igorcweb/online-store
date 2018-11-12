@@ -14,6 +14,7 @@ import {
   toggleAddressModal
 } from '../actions/modalActions';
 import classnames from 'classnames';
+import API from '../utils/API';
 // import API from '../utils/API';
 
 class Cart extends Component {
@@ -25,31 +26,31 @@ class Cart extends Component {
   }
 
   onCheckout = subtotal => {
-    // if (this.props.auth.isAuthenticated) {
-
-    // }
-    // const { id } = this.props.auth.user;
-    // API.getUser(id).then(response => {
-    //   if (!response.data.address) {
-    //     this.props.toggleAddressModal();
-    //   } else {
-    const order = [];
-    if (this.props.auth.isAuthenticated) {
-      const cart = JSON.parse(localStorage.getItem('cart'));
-      cart.forEach(item => {
-        if (item.quantity > 0) {
-          order.push(item);
-        }
-      });
-      this.props.getFinalOrder(order);
-      this.props.getSubtotal(subtotal);
-      this.props.toggleCheckoutModal();
-    } else {
+    if (!this.props.auth.isAuthenticated) {
       this.props.toggleCart();
       this.props.history.push('/login');
+    } else {
+      const { id } = this.props.auth.user;
+      console.log(id);
+      API.getUser(id).then(response => {
+        if (!response.data.address) {
+          this.props.toggleAddressModal();
+        } else {
+          const order = [];
+          if (this.props.auth.isAuthenticated) {
+            const cart = JSON.parse(localStorage.getItem('cart'));
+            cart.forEach(item => {
+              if (item.quantity > 0) {
+                order.push(item);
+              }
+            });
+            this.props.getFinalOrder(order);
+            this.props.getSubtotal(subtotal);
+            this.props.toggleCheckoutModal();
+          }
+        }
+      });
     }
-    //   }
-    // });
   };
 
   onPlus = (_id, cart, cartItems) => {

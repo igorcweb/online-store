@@ -183,7 +183,6 @@ class Address extends Component {
       );
 
       if (this.props.auth.isAuthenticated) {
-        console.log(this.props);
         return <div className="address">{addressForm}</div>;
       }
       return false;

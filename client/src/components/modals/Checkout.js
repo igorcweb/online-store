@@ -68,7 +68,7 @@ class Checkout extends Component {
             className={this.props.className}
           >
             <ModalHeader toggle={this.toggle} className="bg-gray">
-              <h6>ORDER SUMMARY</h6>
+              ORDER SUMMARY
             </ModalHeader>
             <ModalBody>
               <table className="table">
