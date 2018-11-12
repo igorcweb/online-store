@@ -19,10 +19,10 @@ const UserSchema = new Schema({
       street: {
         type: String
       },
-      state: {
+      city: {
         type: String
       },
-      city: {
+      state: {
         type: String
       },
       zipcode: {
