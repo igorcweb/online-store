@@ -9,8 +9,13 @@ import {
   getFinalOrder,
   getSubtotal
 } from '../actions/cartActions';
-import { toggleCheckoutModal } from '../actions/modalActions';
+import {
+  toggleCheckoutModal,
+  toggleAddressModal
+} from '../actions/modalActions';
 import classnames from 'classnames';
+import API from '../utils/API';
+
 class Cart extends Component {
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
@@ -20,21 +25,28 @@ class Cart extends Component {
   }
 
   onCheckout = subtotal => {
-    const order = [];
-    if (this.props.auth.isAuthenticated) {
-      const cart = JSON.parse(localStorage.getItem('cart'));
-      cart.forEach(item => {
-        if (item.quantity > 0) {
-          order.push(item);
+    const { id } = this.props.auth.user;
+    API.getUser(id).then(response => {
+      if (!response.data.address) {
+        this.props.toggleAddressModal();
+      } else {
+        const order = [];
+        if (this.props.auth.isAuthenticated) {
+          const cart = JSON.parse(localStorage.getItem('cart'));
+          cart.forEach(item => {
+            if (item.quantity > 0) {
+              order.push(item);
+            }
+          });
+          this.props.getFinalOrder(order);
+          this.props.getSubtotal(subtotal);
+          this.props.toggleCheckoutModal();
+        } else {
+          this.props.toggleCart();
+          this.props.history.push('/login');
         }
-      });
-      this.props.getFinalOrder(order);
-      this.props.getSubtotal(subtotal);
-      this.props.toggleCheckoutModal();
-    } else {
-      this.props.toggleCart();
-      this.props.history.push('/login');
-    }
+      }
+    });
   };
 
   onPlus = (_id, cart, cartItems) => {
@@ -199,6 +211,7 @@ Cart.propTypes = {
   updateCart: PropTypes.func.isRequired,
   toggleCart: PropTypes.func.isRequired,
   toggleCheckoutModal: PropTypes.func.isRequired,
+  toggleAddressModal: PropTypes.func.isRequired,
   getFinalOrder: PropTypes.func.isRequired,
   getSubtotal: PropTypes.func.isRequired
 };
@@ -219,6 +232,7 @@ export default connect(
     updateCart,
     toggleCart,
     toggleCheckoutModal,
+    toggleAddressModal,
     getFinalOrder,
     getSubtotal
   }

@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { togglePrimeModal } from '../../actions/modalActions';
-import {
-  updateCartItems,
-  updateCart,
-  toggleCart
-} from '../../actions/cartActions';
+import { toggleAddressModal } from '../../actions/modalActions';
 
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
@@ -13,7 +8,7 @@ import { connect } from 'react-redux';
 
 class Address extends Component {
   toggle = () => {
-    this.props.togglePrimeModal();
+    this.props.toggleAddressModal();
   };
 
   render() {
@@ -22,11 +17,7 @@ class Address extends Component {
       const { user } = this.props;
       primeContent = (
         <div className="prime">
-          <Modal
-            isOpen={this.props.modal.primeModal}
-            toggle={this.toggle}
-            className={this.props.className}
-          >
+          <Modal isOpen={this.props.modal.addressModal} toggle={this.toggle}>
             <ModalHeader toggle={this.toggle}>Prime Membership </ModalHeader>
             <ModalBody>
               <p>Anual Fee: $59.99</p>
@@ -44,6 +35,7 @@ class Address extends Component {
       );
 
       if (this.props.auth.isAuthenticated) {
+        console.log(this.props);
         return <div className="prime">{primeContent}</div>;
       }
       return false;
@@ -55,7 +47,7 @@ class Address extends Component {
 
 Address.propTypes = {
   auth: PropTypes.object.isRequired,
-  togglePrimeModal: PropTypes.func.isRequired
+  toggleAddressModal: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -68,5 +60,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { togglePrimeModal, updateCartItems, updateCart, toggleCart }
+  { toggleAddressModal }
 )(Address);
