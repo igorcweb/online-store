@@ -1,8 +1,13 @@
-import { TOGGLE_CHECKOUT_MODAL, TOGGLE_PRIME_MODAL } from '../actions/types';
+import {
+  TOGGLE_CHECKOUT_MODAL,
+  TOGGLE_PRIME_MODAL,
+  TOGGLE_ADDRESS_MODAL
+} from '../actions/types';
 
 const initialState = {
   checkoutModal: false,
-  primeModal: false
+  primeModal: false,
+  addressModal: false
 };
 
 export default (state = initialState, action) => {
@@ -11,6 +16,8 @@ export default (state = initialState, action) => {
       return { ...state, checkoutModal: !state.checkoutModal };
     case TOGGLE_PRIME_MODAL:
       return { ...state, primeModal: !state.primeModal };
+    case TOGGLE_ADDRESS_MODAL:
+      return { ...state, addressModal: !state.addressModal };
     default:
       return state;
   }

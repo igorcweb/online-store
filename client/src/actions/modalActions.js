@@ -1,4 +1,8 @@
-import { TOGGLE_CHECKOUT_MODAL, TOGGLE_PRIME_MODAL } from './types';
+import {
+  TOGGLE_CHECKOUT_MODAL,
+  TOGGLE_PRIME_MODAL,
+  TOGGLE_ADDRESS_MODAL
+} from './types';
 
 export const toggleCheckoutModal = () => {
   return {
@@ -8,5 +12,10 @@ export const toggleCheckoutModal = () => {
 export const togglePrimeModal = () => {
   return {
     type: TOGGLE_PRIME_MODAL
+  };
+};
+export const toggleAddressModal = () => {
+  return {
+    type: TOGGLE_ADDRESS_MODAL
   };
 };
