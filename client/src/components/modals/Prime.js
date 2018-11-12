@@ -36,18 +36,62 @@ class Prime extends Component {
             toggle={this.toggle}
             className={this.props.className}
           >
-            <ModalHeader toggle={this.toggle}>Prime Membership </ModalHeader>
+            <ModalHeader toggle={this.toggle} className="bg-gray">
+              Prime Membership{' '}
+            </ModalHeader>
             <ModalBody>
-              <p>Anual Fee: $59.99</p>
+              <p>
+                {' '}
+                <small>
+                  Becomming a Pirme Member pays for itself with exclusive
+                  savings on the things you need, the things you love, and all
+                  sorts of unexpected things.
+                </small>
+                <h6 className="mt-4">
+                  All <strong>Prime Members</strong> receive the next benefits:
+                </h6>
+                <div className="d-flex flex-row">
+                  <div className="pl-4 py-1 pr-1  align-self-start">
+                    <i className="fa fa-check" />
+                  </div>
+                  <div className="p-1 align-self-end text-gray">
+                    Extra offers on top of already low-prices
+                  </div>
+                </div>
+                <div className="d-flex flex-row">
+                  <div className="pl-4 py-1 pr-1 align-self-start">
+                    <i className="fa fa-check" />
+                  </div>
+                  <div className="p-1 align-self-end text-gray">
+                    Free Two-Day Shipping
+                  </div>
+                </div>
+              </p>
+              <p className="float-right">
+                Anual Fee: <span className="text-danger">$59.99</span>
+              </p>
             </ModalBody>
             <ModalFooter>
-              <Button color="success" onClick={() => this.onPrime(user._id)}>
-                Become a Prime Member
-              </Button>{' '}
-              <Button color="danger" onClick={this.toggle}>
-                Cancel
+              <Button
+                className="text-darkbrown bg-white btn-outline-light"
+                onClick={this.toggle}
+              >
+                No Thanks
               </Button>
+              <Button
+                className="success"
+                onClick={() => this.onPrime(user._id)}
+              >
+                Start Prime Membership
+              </Button>{' '}
             </ModalFooter>
+            <div className="px-4 py-2">
+              {' '}
+              <small className="text-gray">
+                By signing up, you authorize us to charge your default payment
+                method on file. Your Prime membership continues until cancelled.
+              </small>
+            </div>
           </Modal>
         </div>
       );
