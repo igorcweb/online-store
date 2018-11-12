@@ -34,7 +34,7 @@ class Dashboard extends Component {
           <div className="my-4 pb-5">
             <div className="my-4 pb-5 divup">
               <i className="fas fa-certificate" />
-              <h5 className="d-inline card-title ml-2">Prime Member!</h5>
+              <h5 className="d-inline card-title ml-2">Prime Member</h5>
             </div>
 
             <p className="text-muted mt-3">
@@ -73,7 +73,7 @@ class Dashboard extends Component {
         const uniqueOrders = removeDuplicates(orders, '_id');
         orderMessage = (
           <div className="orders">
-            <h3 className="lead text-muted">Here are your resent orders:</h3>
+            <h3 className="lead text-muted">Here are your resent purchases:</h3>
             <ul className="pl-0">
               {uniqueOrders.map((order, index) => {
                 const { _id, name } = order;
