@@ -126,7 +126,7 @@ class Cart extends Component {
         </div>
         <div className="card-body px-0 mx-0">
           <div className="container pl-0">
-            <div className="pl-0 ml-0 mb-1 pb-2">
+            <div className="pl-0 ml-0 mb-1 pb-2 cart-content">
               {cart
                 ? cart.map(item => {
                     const { _id, name, brand, imgUrl, quantity } = item;
@@ -134,7 +134,7 @@ class Cart extends Component {
                       return (
                         <div key={_id} className="d-flex flex-row divup pb-2">
                           <div className="pr-4 pt-2 div-modal-img">
-                            <img src={imgUrl} alt="" />
+                            <img src={imgUrl} alt={name} />
                           </div>
                           <div className="align-self-end">
                             <small className="text-muted">{brand}</small>
@@ -178,11 +178,11 @@ class Cart extends Component {
               </p>
               <br />
               <button
-                className="proceed success ml-2 pb-2 mb-2 pt-3  text-dark btn-block"
+                className="btn proceed success ml-2 pb-2 mb-2 pt-2  text-dark btn-block"
                 disabled={this.props.cart.cartItems === '0'}
                 onClick={() => this.onCheckout(subtotal)}
               >
-                <h6 className="proceed">PROCEED TO CHECKOUT</h6>
+                PROCEED TO CHECKOUT
               </button>
             </div>
           </div>

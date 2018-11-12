@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/userActions';
 import { togglePrimeModal } from '../actions/modalActions';
 import Spinner from './Spinner';
+import { removeDuplicates } from '../utils/removeDuplicates';
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -28,15 +29,12 @@ class Dashboard extends Component {
       dashboardContent = <Spinner />;
     } else {
       const { name, date, prime, orders } = user;
-      // orders.forEach(order => {
-      //   console.log(order.date);
-      // });
       if (prime.member) {
         primeMessage = (
           <div className="my-4 pb-5">
             <div className="my-4 pb-5 divup">
               <i className="fas fa-certificate" />
-              <h5 className="d-inline card-title ml-2">Prime Member!</h5>
+              <h5 className="d-inline card-title ml-2">Prime Member</h5>
             </div>
 
             <p className="text-muted mt-3">
@@ -72,11 +70,12 @@ class Dashboard extends Component {
         );
       }
       if (user.orders.length) {
+        const uniqueOrders = removeDuplicates(orders, '_id');
         orderMessage = (
           <div className="orders">
-            <h3 className="lead text-muted">Here are your resent orders:</h3>
+            <h3 className="lead text-muted">Here are your resent purchases:</h3>
             <ul className="pl-0">
-              {orders.map((order, index) => {
+              {uniqueOrders.map((order, index) => {
                 const { _id, name } = order;
                 return <li key={_id + index}>{name}</li>;
               })}
@@ -103,7 +102,7 @@ class Dashboard extends Component {
                     <div className="content">
                       <div className="my-4 pb-5 divup">
                         <i className="fas fa-box" />
-                        <h5 className="d-inline card-title ml-2">Orders!</h5>
+                        <h5 className="d-inline card-title ml-2">Orders</h5>
                       </div>
                       {orderMessage}
                     </div>
@@ -116,7 +115,7 @@ class Dashboard extends Component {
                         <i className="fas fa-user-cog" />
                         <h5 className="d-inline card-title ml-2">
                           {' '}
-                          User Profile!
+                          Customer Profile
                         </h5>
                       </div>
                       <h6 className="d-inline">Name:</h6> {name}
