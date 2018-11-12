@@ -14,6 +14,22 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  address: [
+    {
+      street: {
+        type: String
+      },
+      state: {
+        type: String
+      },
+      city: {
+        type: String
+      },
+      zipcode: {
+        type: String
+      }
+    }
+  ],
   date: {
     type: String,
     required: true
