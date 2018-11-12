@@ -27,7 +27,7 @@ class Cart extends Component {
   onCheckout = subtotal => {
     const { id } = this.props.auth.user;
     API.getUser(id).then(response => {
-      if (!response.data.address) {
+      if (response.data.address) {
         this.props.toggleAddressModal();
       } else {
         const order = [];
