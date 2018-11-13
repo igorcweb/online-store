@@ -108,7 +108,8 @@ class Dashboard extends Component {
             <h3 className="lead text-muted">Here are your resent purchases:</h3>
             <ul className="pl-0">
               {uniqueOrders.map((order, index) => {
-                const { _id, name } = order;
+                const { _id, name, brand, imgUrl } = order;
+                console.log(brand, imgUrl);
                 return <li key={_id + index}>{name}</li>;
               })}
             </ul>
