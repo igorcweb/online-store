@@ -133,7 +133,24 @@ router.get('/:id', (req, res) => {
     .catch(err => res.render({ err }));
 });
 
-// @route GET api/users/prime/:id
+// @route PUT api/users/address/:id
+// @desc sign up for prime membership
+router.put('/address/:id', (req, res) => {
+  const id = req.params.id;
+  const { street, city, state, zipcode } = req.body;
+  db.User.findByIdAndUpdate(id, {
+    $set: {
+      'address.street': street,
+      'address.city': city,
+      'address.state': state,
+      'address.zipcode': zipcode
+    }
+  })
+    .then(() => res.json({ msg: 'success' }))
+    .catch(err => res.json(err));
+});
+
+// @route PUT api/users/prime/:id
 // @desc sign up for prime membership
 router.put('/prime/:id', (req, res) => {
   const id = req.params.id;

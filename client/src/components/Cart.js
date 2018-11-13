@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
+import Address from './modals/Address';
 import { getCurrentUser } from '../actions/userActions';
 import {
   updateCartItems,
@@ -9,8 +10,14 @@ import {
   getFinalOrder,
   getSubtotal
 } from '../actions/cartActions';
-import { toggleCheckoutModal } from '../actions/modalActions';
+import {
+  toggleCheckoutModal,
+  toggleAddressModal
+} from '../actions/modalActions';
 import classnames from 'classnames';
+import API from '../utils/API';
+// import API from '../utils/API';
+
 class Cart extends Component {
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
@@ -20,20 +27,30 @@ class Cart extends Component {
   }
 
   onCheckout = subtotal => {
-    const order = [];
-    if (this.props.auth.isAuthenticated) {
-      const cart = JSON.parse(localStorage.getItem('cart'));
-      cart.forEach(item => {
-        if (item.quantity > 0) {
-          order.push(item);
-        }
-      });
-      this.props.getFinalOrder(order);
-      this.props.getSubtotal(subtotal);
-      this.props.toggleCheckoutModal();
-    } else {
+    console.log('onCheckout');
+    if (!this.props.auth.isAuthenticated) {
       this.props.toggleCart();
       this.props.history.push('/login');
+    } else {
+      const { id } = this.props.auth.user;
+      console.log(id);
+      API.getUser(id).then(response => {
+        if (!response.data.address) {
+          const checkout = true;
+          this.props.toggleAddressModal(checkout);
+        } else {
+          const order = [];
+          const cart = JSON.parse(localStorage.getItem('cart'));
+          cart.forEach(item => {
+            if (item.quantity > 0) {
+              order.push(item);
+            }
+          });
+          this.props.getFinalOrder(order);
+          this.props.getSubtotal(subtotal);
+          this.props.toggleCheckoutModal();
+        }
+      });
     }
   };
 
@@ -93,7 +110,6 @@ class Cart extends Component {
     const cartItems = localStorage.getItem('cartItems');
     let subtotal;
     if (cart) {
-      cart.forEach(item => {});
       subtotal = cart.reduce((acc, item) => {
         const price = item.quantity * item.price;
         return acc + price;
@@ -102,6 +118,7 @@ class Cart extends Component {
 
     const items = this.props.cart.cartItems === '1' ? 'Item' : 'Items';
     return (
+<<<<<<< HEAD
       <div
         className={classnames('card col-sm-12 cart card-border bg-gray', {
           isShowing: this.props.cart.cartShowing
@@ -161,15 +178,86 @@ class Cart extends Component {
                                 }
                               />
                             </p>
+=======
+      <React.Fragment>
+        <Address
+          subtotal={subtotal}
+          onCheckout={() => this.onCheckout(subtotal)}
+          history={this.props.history}
+        />
+        <div
+          className={classnames(
+            'card col-sm-12 cart card-border shadow-lg bg-gray rounded',
+            {
+              isShowing: this.props.cart.cartShowing
+            }
+          )}
+        >
+          {' '}
+          <div className="card-title divup pt-3 pb-4">
+            <h6 className="bold text-center text-dark d-inline cart-header">
+              {this.props.cart.cartItems} {items} Selected
+            </h6>
+            <button
+              type="button toggle-cart"
+              className="close"
+              aria-label="Close"
+              onClick={this.props.toggleCart}
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div className="card-body px-0 mx-0">
+            <div className="container pl-0">
+              <div className="pl-0 ml-0 mb-1 pb-2 cart-content">
+                {cart
+                  ? cart.map(item => {
+                      const { _id, name, brand, imgUrl, quantity } = item;
+                      if (quantity > 0) {
+                        return (
+                          <div key={_id} className="d-flex flex-row divup pb-2">
+                            <div className="pr-4 pt-2 div-modal-img">
+                              <img src={imgUrl} alt={name} />
+                            </div>
+                            <div className="align-self-end">
+                              <small className="text-muted">{brand}</small>
+                              <h6>{name}</h6>
+
+                              <p className="quantity text-muted mt-2">
+                                Qty:
+                                <span className="bg-white span-border ml-1 py-1 pr-2 pl-2">
+                                  {quantity}
+                                </span>
+                                <i
+                                  className="fas fa-minus ml-2"
+                                  onClick={() =>
+                                    this.onMinus(_id, cart, cartItems)
+                                  }
+                                />
+                                <i
+                                  className="fas fa-plus ml-2"
+                                  onClick={() =>
+                                    this.onPlus(_id, cart, cartItems)
+                                  }
+                                />
+                                <i
+                                  className="fas fa-trash mx-2"
+                                  onClick={() =>
+                                    this.onTrash(_id, cart, cartItems)
+                                  }
+                                />
+                              </p>
+                            </div>
+>>>>>>> master
                           </div>
-                        </div>
-                      );
-                    }
+                        );
+                      }
 
-                    return false;
-                  })
-                : null}
+                      return false;
+                    })
+                  : null}
 
+<<<<<<< HEAD
               <p className="card-title-subtext bold-light-gray mt-3 text-right">
                 Subtotal: ${subtotal ? subtotal.toFixed(2) : '0.00'}
               </p>
@@ -181,10 +269,24 @@ class Cart extends Component {
               >
                 PROCEED TO CHECKOUT
               </button>
+=======
+                <p className="card-title-subtext mt-3 text-right">
+                  Subtotal: ${subtotal ? subtotal.toFixed(2) : '0.00'}
+                </p>
+                <br />
+                <button
+                  className="btn proceed success ml-2 pb-2 mb-2 pt-2  text-dark btn-block"
+                  disabled={this.props.cart.cartItems === '0'}
+                  onClick={() => this.onCheckout(subtotal)}
+                >
+                  PROCEED TO CHECKOUT
+                </button>
+              </div>
+>>>>>>> master
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
@@ -196,6 +298,7 @@ Cart.propTypes = {
   updateCart: PropTypes.func.isRequired,
   toggleCart: PropTypes.func.isRequired,
   toggleCheckoutModal: PropTypes.func.isRequired,
+  toggleAddressModal: PropTypes.func.isRequired,
   getFinalOrder: PropTypes.func.isRequired,
   getSubtotal: PropTypes.func.isRequired
 };
@@ -205,7 +308,7 @@ const mapStateToProps = state => ({
   auth: state.auth,
   user: state.user,
   cart: state.cart,
-  subtotal: state.subtotal
+  modal: state.modal
 });
 
 export default connect(
@@ -216,6 +319,7 @@ export default connect(
     updateCart,
     toggleCart,
     toggleCheckoutModal,
+    toggleAddressModal,
     getFinalOrder,
     getSubtotal
   }

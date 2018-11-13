@@ -14,8 +14,9 @@ export const togglePrimeModal = () => {
     type: TOGGLE_PRIME_MODAL
   };
 };
-export const toggleAddressModal = () => {
+export const toggleAddressModal = payload => {
   return {
-    type: TOGGLE_ADDRESS_MODAL
+    type: TOGGLE_ADDRESS_MODAL,
+    payload
   };
 };

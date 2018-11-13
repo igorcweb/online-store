@@ -27,9 +27,9 @@ class Checkout extends Component {
     });
     console.log(products);
     API.placeOrder(_id, { products })
-      .then(response => {
-        this.props.history.push('/dashboard');
-        console.log(response);
+      .then(() => {
+        this.props.history.push('/loading');
+        setTimeout(() => this.props.history.push('/dashboard'), 20);
       })
       .catch(err => console.log(err));
     localStorage.setItem('cartItems', 0);
@@ -66,7 +66,11 @@ class Checkout extends Component {
             className={this.props.className}
           >
             <ModalHeader toggle={this.toggle} className="bg-gray">
+<<<<<<< HEAD
               <p className="bold-light-black pt-3">ORDER SUMMARY</p>
+=======
+              ORDER SUMMARY
+>>>>>>> master
             </ModalHeader>
             <ModalBody>
               <table className="table">
