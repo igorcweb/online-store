@@ -66,11 +66,7 @@ class Checkout extends Component {
             className={this.props.className}
           >
             <ModalHeader toggle={this.toggle} className="bg-gray">
-<<<<<<< HEAD
-              <p className="bold-light-black pt-3">ORDER SUMMARY</p>
-=======
               ORDER SUMMARY
->>>>>>> master
             </ModalHeader>
             <ModalBody>
               <table className="table">

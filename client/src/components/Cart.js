@@ -118,67 +118,6 @@ class Cart extends Component {
 
     const items = this.props.cart.cartItems === '1' ? 'Item' : 'Items';
     return (
-<<<<<<< HEAD
-      <div
-        className={classnames('card col-sm-12 cart card-border bg-gray', {
-          isShowing: this.props.cart.cartShowing
-        })}
-      >
-        {' '}
-        <div className="card-title divup py-3 mb-0">
-          <h6 className="text-center bold-light-gray d-inline cart-header">
-            {this.props.cart.cartItems} {items} Selected
-          </h6>
-          <button
-            type="button toggle-cart"
-            className="close"
-            aria-label="Close"
-            onClick={this.props.toggleCart}
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div className="card-body px-0 mx-0">
-          <div className="container pl-0">
-            <div className="pl-0 ml-0 mb-1 pb-2 cart-content">
-              {cart
-                ? cart.map(item => {
-                    const { _id, name, brand, imgUrl, quantity } = item;
-                    if (quantity > 0) {
-                      return (
-                        <div key={_id} className="d-flex flex-row divup pb-2">
-                          <div className="pr-4 pt-3 div-modal-img">
-                            <img src={imgUrl} alt={name} />
-                          </div>
-                          <div className="align-self-end pt-3">
-                            <h6 className="bold-light-gray small-height">
-                              {brand}
-                            </h6>
-                            <h6 className="font-small">{name}</h6>
-
-                            <p className="quantity bold-light-gray mt-2">
-                              Qty:
-                              <span className="py-1 pr-2 pl-1">{quantity}</span>
-                              <i
-                                className="fas fa-minus ml-2"
-                                onClick={() =>
-                                  this.onMinus(_id, cart, cartItems)
-                                }
-                              />
-                              <i
-                                className="fas fa-plus ml-2"
-                                onClick={() =>
-                                  this.onPlus(_id, cart, cartItems)
-                                }
-                              />
-                              <i
-                                className="far fa-trash-alt mx-3"
-                                onClick={() =>
-                                  this.onTrash(_id, cart, cartItems)
-                                }
-                              />
-                            </p>
-=======
       <React.Fragment>
         <Address
           subtotal={subtotal}
@@ -248,7 +187,6 @@ class Cart extends Component {
                                 />
                               </p>
                             </div>
->>>>>>> master
                           </div>
                         );
                       }
@@ -257,19 +195,6 @@ class Cart extends Component {
                     })
                   : null}
 
-<<<<<<< HEAD
-              <p className="card-title-subtext bold-light-gray mt-3 text-right">
-                Subtotal: ${subtotal ? subtotal.toFixed(2) : '0.00'}
-              </p>
-              <br />
-              <button
-                className="btn proceed success ml-2 pb-2 mb-2 pt-2  text-dark btn-block"
-                disabled={this.props.cart.cartItems === '0'}
-                onClick={() => this.onCheckout(subtotal)}
-              >
-                PROCEED TO CHECKOUT
-              </button>
-=======
                 <p className="card-title-subtext mt-3 text-right">
                   Subtotal: ${subtotal ? subtotal.toFixed(2) : '0.00'}
                 </p>
@@ -282,7 +207,6 @@ class Cart extends Component {
                   PROCEED TO CHECKOUT
                 </button>
               </div>
->>>>>>> master
             </div>
           </div>
         </div>
