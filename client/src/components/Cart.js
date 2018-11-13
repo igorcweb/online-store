@@ -103,16 +103,13 @@ class Cart extends Component {
     const items = this.props.cart.cartItems === '1' ? 'Item' : 'Items';
     return (
       <div
-        className={classnames(
-          'card col-sm-12 cart card-border shadow-lg bg-gray rounded',
-          {
-            isShowing: this.props.cart.cartShowing
-          }
-        )}
+        className={classnames('card col-sm-12 cart card-border bg-gray', {
+          isShowing: this.props.cart.cartShowing
+        })}
       >
         {' '}
-        <div className="card-title divup pt-3 pb-4">
-          <h6 className="bold text-center text-dark d-inline cart-header">
+        <div className="card-title divup py-3 mb-0">
+          <h6 className="text-center bold-light-gray d-inline cart-header">
             {this.props.cart.cartItems} {items} Selected
           </h6>
           <button
@@ -133,18 +130,18 @@ class Cart extends Component {
                     if (quantity > 0) {
                       return (
                         <div key={_id} className="d-flex flex-row divup pb-2">
-                          <div className="pr-4 pt-2 div-modal-img">
+                          <div className="pr-4 pt-3 div-modal-img">
                             <img src={imgUrl} alt={name} />
                           </div>
-                          <div className="align-self-end">
-                            <small className="text-muted">{brand}</small>
-                            <h6>{name}</h6>
+                          <div className="align-self-end pt-3">
+                            <h6 className="bold-light-gray small-height">
+                              {brand}
+                            </h6>
+                            <h6 className="font-small">{name}</h6>
 
-                            <p className="quantity text-muted mt-2">
+                            <p className="quantity bold-light-gray mt-2">
                               Qty:
-                              <span className="bg-white span-border ml-1 py-1 pr-2 pl-2">
-                                {quantity}
-                              </span>
+                              <span className="py-1 pr-2 pl-1">{quantity}</span>
                               <i
                                 className="fas fa-minus ml-2"
                                 onClick={() =>
@@ -158,7 +155,7 @@ class Cart extends Component {
                                 }
                               />
                               <i
-                                className="fas fa-trash mx-2"
+                                className="far fa-trash-alt mx-3"
                                 onClick={() =>
                                   this.onTrash(_id, cart, cartItems)
                                 }
@@ -173,7 +170,7 @@ class Cart extends Component {
                   })
                 : null}
 
-              <p className="card-title-subtext mt-3 text-right">
+              <p className="card-title-subtext bold-light-gray mt-3 text-right">
                 Subtotal: ${subtotal ? subtotal.toFixed(2) : '0.00'}
               </p>
               <br />

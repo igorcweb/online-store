@@ -15,10 +15,31 @@ class Landing extends Component {
         <div className="overlay">
           <div className="home-inner">
             <div className="container">
-              <div className="row  text-center">
-                <h1 className="display-3 pt-5 text-white">
-                  Organic Fitness World
-                </h1>
+              <div className="row">
+                <div className="col-lg-4">
+                  <div className="img-wrap-2">
+                    <img
+                      className="img-fluid"
+                      src="../assets/images/organic.jpg "
+                      alt="#"
+                    />
+                    <div className="img-caption">
+                      <h3>We care about the World</h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-8">
+                  <div className="img-wrap">
+                    <img
+                      className="img-fluid"
+                      src="../assets/images/clothingface.jpg"
+                      alt="#"
+                    />
+                    <div className="img-caption-2">
+                      <h3>Shop Clothing</h3>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

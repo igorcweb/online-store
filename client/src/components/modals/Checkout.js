@@ -66,68 +66,74 @@ class Checkout extends Component {
             className={this.props.className}
           >
             <ModalHeader toggle={this.toggle} className="bg-gray">
-              <h6>ORDER SUMMARY</h6>
+              <p className="bold-light-black pt-3">ORDER SUMMARY</p>
             </ModalHeader>
             <ModalBody>
               <table className="table">
                 <thead>
-                  <tr className="tex-white bg-darkgray">
+                  <tr className="tex-white no-padding">
                     <th
                       scope="col"
-                      className="bg-darkgray border-white text-center"
+                      className="  bg-darkgray border-white text-center pt-3 pb-0"
                     >
-                      Item
+                      <p className="small-heading"> Item</p>
                     </th>
                     <th
                       scope="col"
-                      className="bg-darkgray border-white text-center"
+                      className="bg-darkgray border-white text-center pt-3 pb-0"
                     >
-                      Qty
+                      <p className="small-heading"> Qty</p>
                     </th>
                     <th
                       scope="col"
-                      className="bg-darkgray border-white text-center"
+                      className="bg-darkgray border-white text-center pt-3 pb-0"
                     >
-                      Price
+                      <p className="small-heading"> Price</p>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   {order.map(item => (
                     <tr key={item._id} className="table">
-                      <td className="text-center text-muted">{item.name}</td>
-                      <td className="text-center text-muted">
-                        {item.quantity}
+                      <td className="text-center dark-gray medium-height">
+                        <small>{item.name}</small>
                       </td>
-                      <td className="text-center text-muted">${item.price}</td>
+                      <td className="text-center dark-gray medium-heigh">
+                        <small>{item.quantity}</small>
+                      </td>
+                      <td className="text-center dark-gray medium-heigh">
+                        <small>${item.price}</small>
+                      </td>
                     </tr>
                   ))}
                   <tr />
                 </tbody>
               </table>
             </ModalBody>
-            <ModalFooter className="bg-gray ml-0 pl-0">
+            <ModalFooter className="bg-gray ml-0">
               <div className="container">
                 <div className="row">
                   <div className="col-sm-12">
                     <ul className="ml-0 pl-0">
-                      <li className="text-muted">
+                      <li className="dark-gray font-small">
                         Subtotal{' '}
                         <span className="float-right">
                           ${this.props.cart.subtotal.toFixed(2)}
                         </span>
                       </li>
-                      <li className="text-muted">
+                      <li className="dark-gray font-small ">
                         Tax <span className="float-right">${tax}</span>
                       </li>
-                      <li className="text-muted">
+                      <li className="dark-gray font-small">
                         Shipping{' '}
                         <span className="float-right">{shippingText}</span>
                       </li>
                       <hr />
-                      <li className="mb-5">
-                        <h4 className="d-inline">Total</h4>
-                        <span className="float-right h5">
+                      <li className="mb-3 ">
+                        <h5 className="d-inline bold-light-black mt-0 pt-0">
+                          Total
+                        </h5>
+                        <span className="float-right bold-light-black">
                           $
                           {(
                             this.props.cart.subtotal +
@@ -138,18 +144,18 @@ class Checkout extends Component {
                       </li>
                     </ul>
                   </div>
-                  <div className="col-sm-12 ">
+                  <div className="col-sm-12">
                     <Button
-                      className="ml-2 px-4 success float-right order-last"
+                      className="btn-custom ml-2 px-4 success float-right order-last py-1"
                       onClick={() => this.onOrder()}
                     >
-                      <h6 className="mt-1">Place Your Order</h6>
+                      <h6 className="pt-1 pb-0">Place Your Order</h6>
                     </Button>
                     <Button
-                      className="btn-danger float-right"
+                      className=" btn-red btn-custom float-right py-1"
                       onClick={this.toggle}
                     >
-                      <h6 className="mt-1">Cancel</h6>
+                      <h6 className="pt-1 pb-0">Cancel</h6>
                     </Button>
                   </div>
                 </div>

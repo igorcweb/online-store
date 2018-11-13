@@ -80,18 +80,18 @@ class Navbar extends Component {
     const navMenu = (
       <div className="collapse navbar-collapse mx-3" id="navbar">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item ml-4">
-            <Link to="/groceries" className="nav-link">
+          <li className="nav-item ml-4 pt-1">
+            <Link to="/groceries" className="bold-light-gray">
               GROCERIES
             </Link>
           </li>
-          <li className="nav-item ml-4">
-            <Link to="/supplements" className="nav-link">
+          <li className="nav-item ml-4 pt-1">
+            <Link to="/supplements" className="bold-light-gray">
               SUPPLEMENTS
             </Link>
           </li>
-          <li className="nav-item ml-4">
-            <Link to="/clothing" className="nav-link pb-3">
+          <li className="nav-item ml-4 pt-1">
+            <Link to="/clothing" className="bold-light-gray pb-3">
               CLOTHING
             </Link>
           </li>
@@ -143,7 +143,7 @@ class Navbar extends Component {
       </ul>
     );
     return (
-      <div>
+      <div className="divup">
         <nav className="nav-top">
           <div className="container-fluid">
             <div className="d-flex nav-cont row pt-2">
