@@ -5,6 +5,8 @@ import { getCurrentUser } from '../actions/userActions';
 import { togglePrimeModal, toggleAddressModal } from '../actions/modalActions';
 import Spinner from './Spinner';
 import { removeDuplicates } from '../utils/removeDuplicates';
+import ReactStars from 'react-stars';
+// import API from '../utils/API';
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -15,6 +17,15 @@ class Dashboard extends Component {
       this.props.getCurrentUser(id);
     }
   }
+
+  ratingChanged = newRating => {
+    // const id = '5beb282c76eb9404958e2a42';
+    // API.rateProduct(id, { rating: newRating })
+    //   .then(() => console.log(newRating))
+    //   .catch(err => console.log(err));
+    console.log(newRating);
+    console.log(this);
+  };
 
   onPrime = () => {
     this.props.togglePrimeModal();
@@ -93,7 +104,7 @@ class Dashboard extends Component {
               a year!
             </p>
             <button
-              onClick={() => this.onPrime()}
+              onClick={this.onPrime}
               className="btn btn-block brown text-caps mt-4"
             >
               Become a Prime Member
@@ -107,10 +118,23 @@ class Dashboard extends Component {
           <div className="orders">
             <h3 className="lead text-muted">Here are your resent purchases:</h3>
             <ul className="pl-0">
-              {uniqueOrders.map((order, index) => {
-                const { _id, name, brand, imgUrl } = order;
+              {uniqueOrders.map(order => {
+                const { _id, name, brand, imgUrl, rating } = order;
                 console.log(brand, imgUrl);
-                return <li key={_id + index}>{name}</li>;
+                return (
+                  <li key={_id}>
+                    {name}
+                    <div>
+                      <ReactStars
+                        count={5}
+                        onChange={this.ratingChanged}
+                        size={20}
+                        color2={'#ffd700'}
+                        value={rating.total / rating.number}
+                      />
+                    </div>
+                  </li>
+                );
               })}
             </ul>
           </div>
