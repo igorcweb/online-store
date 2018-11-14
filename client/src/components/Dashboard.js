@@ -57,9 +57,9 @@ class Dashboard extends Component {
         addressMessage = (
           <button
             onClick={this.onUpdateAddress}
-            className="btn btn-block btn-outline-warning mt-4"
+            className="btn btn-block btn-brown-custom mt-4"
           >
-            <h6 className="btn-text pt-1"> Add Address</h6>
+            Add Address
           </button>
         );
       }
@@ -105,7 +105,7 @@ class Dashboard extends Component {
                 onClick={() => this.onPrime()}
                 className="btn btn-block btn-brown-custom mt-4"
               >
-                <h6 className="btn-text pt-1"> Become a Prime Member</h6>
+                Become a Prime Member
               </button>
             </div>
           </div>
@@ -190,7 +190,11 @@ class Dashboard extends Component {
                         <div className="pb-5">
                           <div className="pb-3 divup">
                             <h4>{name}</h4>
-                            <small> Customer since {date}</small>
+                            <p>
+                              {' '}
+                              Customer since <br />
+                              {date}
+                            </p>
                           </div>
                         </div>
                         <small>Email:</small>
