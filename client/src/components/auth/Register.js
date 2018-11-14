@@ -168,7 +168,7 @@ class Register extends Component {
                       to="/login"
                       className="btn btn-success-custom btn-block"
                     >
-                      <h6 className="btn-text pt-1">Sign In</h6>
+                      Sign In
                     </Link>
                   </div>
                 </div>

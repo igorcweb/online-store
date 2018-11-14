@@ -204,7 +204,7 @@ class Cart extends Component {
                   disabled={this.props.cart.cartItems === '0'}
                   onClick={() => this.onCheckout(subtotal)}
                 >
-                  <h6 className="btn-text pt-1">Proceed to checkout</h6>
+                  Proceed to checkout
                 </button>
               </div>
             </div>

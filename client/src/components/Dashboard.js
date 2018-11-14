@@ -39,19 +39,17 @@ class Dashboard extends Component {
         const { street, city, state, zipcode } = user.address;
         addressMessage = (
           <div className="mt-4 py-2 bg-gray">
-            <h6 className="text">Street Address:</h6>
-            <h5 className="pb-2">{street}</h5>
-            <h6 className="text">City:</h6>
-            <h5 className="pb-2">{city}</h5>
-            <h6 className="text">State:</h6>
-            <h5 className="pb-2">{state}</h5>
-            <h6 className="text">ZipCode:</h6>
-            <h5>{zipcode}</h5>
+            <h6 className="text my-3">Shipping Address:</h6>
+            <h6 className="pb-2">{street}</h6>
+            <h6 className="pb-2 mt-0 pt-0">
+              {city},{state} {zipcode}
+            </h6>
+
             <button
               onClick={this.onUpdateAddress}
-              className="btn bt-block btn-success-custom text-caps mt-4"
+              className="btn bt-block btn-success-custom text-caps my-3"
             >
-              <h6 className="btn-text pt-1">Update Address</h6>
+              Update Address
             </button>
           </div>
         );

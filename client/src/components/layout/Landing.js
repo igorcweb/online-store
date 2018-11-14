@@ -50,11 +50,6 @@ class Landing extends Component {
                 <h3 className="text-head dark-gray">
                   Take care of Yourself and the Planet
                 </h3>
-                <p className="font-italic times">
-                  Our mission is to make this world better.
-                  <br />
-                  All of our products come from Nature.
-                </p>
               </div>
               <div className="container-fluid">
                 <div className="row">
@@ -94,7 +89,7 @@ class Landing extends Component {
               <div className="container-fluid cards mt-5 pt-5">
                 <div className="row">
                   <div className="col-sm-12 col-md-4 col-lg-4 d-flex card-feature card align-items-center px-5 text-center text-gray">
-                    DRESS ORGANIC
+                    WEAR ORGANIC
                     <img
                       src="../assets/images/organic-01.png"
                       alt=""
@@ -108,7 +103,7 @@ class Landing extends Component {
                   </div>
 
                   <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center card-feature px-5 text-center text-gray border-y">
-                    EAT HEALTHIER
+                    EAT HEALTHY
                     <img
                       src="../assets/images/organic-02.png"
                       alt=""
@@ -122,7 +117,7 @@ class Landing extends Component {
                   </div>
 
                   <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 card-feature text-center text-gray">
-                    ENHACE YOUR DAY
+                    ENHACE YOUR LIFE
                     <img
                       src="../assets/images/organic-03.png"
                       alt=""
@@ -141,9 +136,9 @@ class Landing extends Component {
                   We are more than a fitness Store
                 </h3>
                 <p className="font-italic times">
-                  We believe in positively impacting communities,
+                  We believe in positively our community
                   <br />
-                  health, and the enviroment.
+                  and the enviroment.
                 </p>
               </div>
             </div>

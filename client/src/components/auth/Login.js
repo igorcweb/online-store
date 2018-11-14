@@ -119,7 +119,7 @@ class Login extends Component {
                       to="/register"
                       className="btn btn-success-custom  btn-block"
                     >
-                      <h6 className="btn-text pt-1">Register</h6>
+                      Register
                     </Link>
                   </div>
                 </div>
