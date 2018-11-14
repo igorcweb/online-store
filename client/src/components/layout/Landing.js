@@ -135,10 +135,9 @@ class Landing extends Component {
                 <h3 className="text-head dark-gray">
                   We are more than a fitness Store
                 </h3>
-                <p className="font-italic times">
-                  We believe in positively our community
-                  <br />
-                  and the enviroment.
+                <p className="font-italic times mx-auto bottom-text">
+                  We believe in positively impacting our community and the
+                  enviroment.
                 </p>
               </div>
             </div>

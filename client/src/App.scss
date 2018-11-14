@@ -444,6 +444,10 @@ button.proceed {
   border-right: 1px solid lightgray;
 }
 
+.bottom-text {
+  max-width: 25rem;
+}
+
 @media (min-width: 480px) {
   body {
     overflow-x: hidden;
