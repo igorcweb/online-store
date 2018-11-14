@@ -149,13 +149,13 @@ class Checkout extends Component {
                       className="btn-custom ml-2 px-4 btn-success-custom float-right order-last py-1"
                       onClick={() => this.onOrder()}
                     >
-                      <h6 className="pt-1 pb-0">Place Your Order</h6>
+                      Place Your Order
                     </Button>
                     <Button
                       className=" btn-red btn-custom float-right py-1"
                       onClick={this.toggle}
                     >
-                      <h6 className="pt-1 pb-0">Cancel</h6>
+                      Cancel
                     </Button>
                   </div>
                 </div>
