@@ -5,6 +5,7 @@ import { getProductsByCategory } from '../actions/productActions';
 import { getCurrentUser } from '../actions/userActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
 import { updateCartItems } from '../actions/cartActions';
+import ReactStars from 'react-stars';
 
 class Supplements extends Component {
   componentDidMount() {
@@ -54,7 +55,15 @@ class Supplements extends Component {
       <div className="products content">
         <div className="row">
           {products.map(product => {
-            const { _id, name, brand, description, imgUrl, price } = product;
+            const {
+              _id,
+              name,
+              brand,
+              description,
+              imgUrl,
+              price,
+              rating
+            } = product;
             return (
               <div className="col-sm-12 col-md-6 col-lg-4 my-5" key={_id}>
                 <div className="card align-items-center d-flex">
@@ -79,6 +88,14 @@ class Supplements extends Component {
                   <div className="card-body text-center">
                     <h6 className="name pb-2">{name}</h6>
                     <p className="orange strong">${price}</p>
+                    <ReactStars
+                      className="className= stars d-flex justify-content-center"
+                      count={5}
+                      size={20}
+                      color2={'#ffd700'}
+                      value={rating.total / rating.number}
+                      edit={false}
+                    />
                     <small className="text"> {description}</small>
                   </div>
                 </div>

@@ -8,9 +8,7 @@ export default {
   placeOrder: (id, body) => axios.put('/api/users/order/' + id, body),
   addAddress: (id, body) => axios.put('/api/users/address/' + id, body),
   getProduct: id => axios.get('/api/products/' + id),
-  rateProdict: id => axios.post('/api/users/rating/' + id),
-  getUserRatings: id => axios.get('/api/users/rating/' + id),
-  getProductRatings: id => axios.get('/api/users/product-rating' + id),
+  rateProduct: (id, body) => axios.put('/api/products/rating/' + id, body),
   getProducts: () => axios.get('/api/products'),
   getProductsByCategory: category => axios.get('/api/products/' + category),
   searchProducts: query => axios.get('/api/products/search/' + query)

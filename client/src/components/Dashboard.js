@@ -5,6 +5,8 @@ import { getCurrentUser } from '../actions/userActions';
 import { togglePrimeModal, toggleAddressModal } from '../actions/modalActions';
 import Spinner from './Spinner';
 import { removeDuplicates } from '../utils/removeDuplicates';
+import ReactStars from 'react-stars';
+// import API from '../utils/API';
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -15,6 +17,15 @@ class Dashboard extends Component {
       this.props.getCurrentUser(id);
     }
   }
+
+  ratingChanged = newRating => {
+    // const id = '5beb282c76eb9404958e2a42';
+    // API.rateProduct(id, { rating: newRating })
+    //   .then(() => console.log(newRating))
+    //   .catch(err => console.log(err));
+    console.log(newRating);
+    console.log(this);
+  };
 
   onPrime = () => {
     this.props.togglePrimeModal();
@@ -120,20 +131,25 @@ class Dashboard extends Component {
             </div>
 
             <div>
-              {uniqueOrders.map((order, index) => {
-                const { _id, name, brand, imgUrl } = order;
-                console.log(brand, imgUrl);
+              {uniqueOrders.map(order => {
+                const { _id, name, brand, imgUrl, rating } = order;
                 return (
-                  <div key={_id + index} className="d-flex flex-row">
+                  <div key={_id} className="d-flex flex-row">
                     <div className="div-modal-img mr-2">
                       <img src={imgUrl} alt={name} />
+                      <ReactStars
+                        className="className= stars d-flex justify-content-center my-2"
+                        count={5}
+                        size={20}
+                        color2={'#ffd700'}
+                        value={rating.total / rating.number}
+                      />
                     </div>
                     <div className="align-self-end">
                       <small className="text-muted">{brand}</small>
                       <h6> {name}</h6>
                     </div>
                   </div>
-                  // return <li key={_id + index}>{name}</li>;
                 );
               })}
             </div>

@@ -25,6 +25,18 @@ const ProductSchema = new Schema({
   price: {
     type: Number,
     required: true
+  },
+  rating: {
+    //Number of ratings
+    number: {
+      type: Number,
+      default: 0
+    },
+    total: {
+      //All ratings added together
+      type: Number,
+      default: 0
+    }
   }
 });
 
