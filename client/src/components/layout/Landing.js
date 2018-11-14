@@ -137,7 +137,7 @@ class Landing extends Component {
                 </h3>
                 <p className="font-italic times mx-auto bottom-text">
                   We believe in positively impacting our community and the
-                  enviroment.
+                  environment.
                 </p>
               </div>
             </div>
