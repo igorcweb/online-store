@@ -245,7 +245,7 @@ span.class-items {
   overflow-y: auto;
   z-index: 10;
   position: fixed;
-  top: 5.6rem;
+  top: 7rem;
   right: 0;
   width: 380px;
   transition: 0.3s ease-in-out;
@@ -582,7 +582,13 @@ button.proceed {
   }
 
   .wrap-1-of-2 {
+    position: relative;
     left: 0;
+    a {
+      position: absolute;
+      min-width: 135px;
+      right: 1rem;
+    }
   }
   .left-caption {
     right: 10px;
@@ -626,4 +632,13 @@ button.proceed {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .wrap-1-of-2 {
+    position: relative;
+    left: 0;
+    a {
+      position: absolute;
+      min-width: 135px;
+      right: 100px;
+    }
+  }
 }
