@@ -582,12 +582,13 @@ button.proceed {
   }
 
   .wrap-1-of-2 {
-    position: relative;
     left: 0;
-    a {
-      position: absolute;
-      min-width: 135px;
-      right: 1rem;
+  }
+
+  .field {
+    position: relative;
+    h3 {
+      display: none;
     }
   }
   .left-caption {
