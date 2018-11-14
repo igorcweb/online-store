@@ -153,7 +153,7 @@ class Register extends Component {
 
                         <input
                           type="submit"
-                          className="btn brown btn-block mt-4"
+                          className="btn btn-brown-custom  btn-block mt-4 py-2"
                         />
                       </form>
                     </div>
@@ -164,8 +164,11 @@ class Register extends Component {
                 <div className="card mb-5 py-5 px-1">
                   <h5 className="card-title ml-3">Already have an account?</h5>
                   <div className="card-body pb-5">
-                    <Link to="/login" className="btn success btn-block">
-                      Sign In
+                    <Link
+                      to="/login"
+                      className="btn btn-success-custom btn-block"
+                    >
+                      <h6 className="btn-text pt-1">Sign In</h6>
                     </Link>
                   </div>
                 </div>

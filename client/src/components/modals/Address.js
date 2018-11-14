@@ -57,7 +57,10 @@ class Address extends Component {
       addressForm = (
         <div className="address">
           <Modal isOpen={this.props.modal.addressModal} toggle={this.toggle}>
-            <ModalHeader toggle={this.toggle}>Shipping Address </ModalHeader>
+            <ModalHeader toggle={this.toggle} className="bg-gray">
+              <i className="ml-4 fas fa-address-book" />
+              <h5 className="d-inline ml-2">Shipping Address </h5>
+            </ModalHeader>
             <ModalBody>
               <div className="card-body">
                 <form onSubmit={this.onSubmit}>
@@ -177,7 +180,10 @@ class Address extends Component {
                     )}
                   </div>
 
-                  <input type="submit" className="btn brown btn-block mt-4" />
+                  <input
+                    type="submit"
+                    className="btn btn-success-custom  btn-block mt-4 py-2"
+                  />
                 </form>
               </div>
             </ModalBody>

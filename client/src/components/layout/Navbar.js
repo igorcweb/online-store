@@ -50,7 +50,7 @@ class Navbar extends Component {
       <form className="ml-3" onSubmit={this.onSubmit}>
         <div>
           <input
-            className="form-control search"
+            className="form-control pl-5 text-white search"
             type="text"
             placeholder="Search Products"
             aria-label="Search"
@@ -80,17 +80,17 @@ class Navbar extends Component {
     const navMenu = (
       <div className="collapse navbar-collapse mx-3" id="navbar">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item ml-4 pt-1">
+          <li className="nav-item custom-link ml-4 pt-1">
             <Link to="/groceries" className="bold-light-gray">
               GROCERIES
             </Link>
           </li>
-          <li className="nav-item ml-4 pt-1">
+          <li className="nav-item custom-link ml-4 pt-1">
             <Link to="/supplements" className="bold-light-gray">
               SUPPLEMENTS
             </Link>
           </li>
-          <li className="nav-item ml-4 pt-1">
+          <li className="nav-item  custom-link ml-4 pt-1">
             <Link to="/clothing" className="bold-light-gray pb-3">
               CLOTHING
             </Link>
@@ -151,7 +151,7 @@ class Navbar extends Component {
             </div>
           </div>
         </nav>
-        <nav className="navbar navbar-nav navbar-expand-sm navbar-light bg-white">
+        <nav className="navbar navbar-nav navbar-expand-md navbar-light bg-white">
           <div className="container-fluid">
             {navbarLogo}
             {burgerIcon}

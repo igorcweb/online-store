@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class Footer extends Component {
   render() {
     return (
-      <div className="footer text-muted bg-white pt-3 pb-1">
+      <div className="footer text-white  pt-3 pb-1">
         <p className="text-center">
           Copyright &copy; {new Date().getFullYear()}
         </p>

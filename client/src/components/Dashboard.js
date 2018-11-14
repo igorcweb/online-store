@@ -34,20 +34,24 @@ class Dashboard extends Component {
     if (!user.name) {
       dashboardContent = <Spinner />;
     } else {
-      const { name, date, prime, orders } = user;
+      const { name, email, date, prime, orders } = user;
       if (user.address) {
         const { street, city, state, zipcode } = user.address;
         addressMessage = (
-          <div>
-            <h6 className="pt-4 pb-1">Address:</h6>
-            <p>
-              {street}, {city}, {state} {zipcode}
-            </p>
+          <div className="mt-4 py-2 bg-gray">
+            <h6 className="text">Street Address:</h6>
+            <h5 className="pb-2">{street}</h5>
+            <h6 className="text">City:</h6>
+            <h5 className="pb-2">{city}</h5>
+            <h6 className="text">State:</h6>
+            <h5 className="pb-2">{state}</h5>
+            <h6 className="text">ZipCode:</h6>
+            <h5>{zipcode}</h5>
             <button
               onClick={this.onUpdateAddress}
-              className="btn btn-block brown text-caps mt-4"
+              className="btn bt-block btn-success-custom text-caps mt-4"
             >
-              Update Address
+              <h6 className="btn-text pt-1">Update Address</h6>
             </button>
           </div>
         );
@@ -55,49 +59,57 @@ class Dashboard extends Component {
         addressMessage = (
           <button
             onClick={this.onUpdateAddress}
-            className="btn btn-block brown text-caps mt-4"
+            className="btn btn-block btn-outline-warning mt-4"
           >
-            Add Address
+            <h6 className="btn-text pt-1"> Add Address</h6>
           </button>
         );
       }
       if (prime.member) {
         primeMessage = (
-          <div className="my-4 pb-5">
-            <div className="my-4 pb-5 divup">
-              <i className="fas fa-certificate" />
-              <h5 className="d-inline card-title ml-2">Prime Member</h5>
+          <div className="my-3">
+            <div className="my-4 pb-2 divup">
+              <h5 className="card-title ml-2">Prime Member</h5>
             </div>
 
-            <p className="text-muted mt-3">
-              As a prime member, you get free shipping on all U.S. orders!
-            </p>
-            <p className="text-muted mt-3">
-              Your next prime membership payment of ${prime.fee} is due on{' '}
-              {prime.nextPayment}.
-            </p>
+            <div className="my-4 px-3 py-5 bg-gray">
+              <i className="fas fa-certificate" />
+              <h5 className="my-5">
+                As a prime member, you get free shipping on all U.S. orders!
+              </h5>
+
+              <small>
+                {' '}
+                Your next prime membership payment of ${prime.fee} is due on{' '}
+                {prime.nextPayment}.
+              </small>
+            </div>
           </div>
         );
       } else {
         primeMessage = (
           <div className="my-4 pb-5">
-            <div className="my-4 pb-5 divup">
-              <i className="fas fa-certificate" />
+            <div className="my-4 pb-3 divup">
+              <i className="fas fa-award" />
               <h5 className="d-inline card-title ml-2">
+                {' '}
                 Become a Prime Member!
               </h5>
             </div>
 
-            <p className="text-muted mt-3">
-              Get free U.S shipping! Become a prime member today for only $59.99
-              a year!
-            </p>
-            <button
-              onClick={() => this.onPrime()}
-              className="btn btn-block brown text-caps mt-4"
-            >
-              Become a Prime Member
-            </button>
+            <div className="my-2 px-3 py-5 bg-gray">
+              <h5 className="my-5">
+                Get free U.S shipping! Become a prime member today for only
+                $59.99 a year!
+              </h5>
+
+              <button
+                onClick={() => this.onPrime()}
+                className="btn btn-block btn-brown-custom mt-4"
+              >
+                <h6 className="btn-text pt-1"> Become a Prime Member</h6>
+              </button>
+            </div>
           </div>
         );
       }
@@ -105,14 +117,28 @@ class Dashboard extends Component {
         const uniqueOrders = removeDuplicates(orders, '_id');
         orderMessage = (
           <div className="orders">
-            <h3 className="lead text-muted">Here are your resent purchases:</h3>
-            <ul className="pl-0">
+            <div className="divup py-3 mb-5 text-center">
+              <h5>Resent purchases:</h5>
+            </div>
+
+            <div>
               {uniqueOrders.map((order, index) => {
                 const { _id, name, brand, imgUrl } = order;
                 console.log(brand, imgUrl);
-                return <li key={_id + index}>{name}</li>;
+                return (
+                  <div key={_id + index} className="d-flex flex-row">
+                    <div className="div-modal-img mr-2">
+                      <img src={imgUrl} alt={name} />
+                    </div>
+                    <div className="align-self-end">
+                      <small className="text-muted">{brand}</small>
+                      <h6> {name}</h6>
+                    </div>
+                  </div>
+                  // return <li key={_id + index}>{name}</li>;
+                );
               })}
-            </ul>
+            </div>
           </div>
         );
       } else {
@@ -122,38 +148,57 @@ class Dashboard extends Component {
         <div className="container-fluid mt-5 pt-2">
           <div className="row">
             <div className="col-md-12">
+              <i className="ml-4 fas fa-user" />
+              <h5 className="d-inline card-title ml-2">Welcome {name}!</h5>
               <div className="row">
-                <div className="col-sm-12 col-md-4 col-lg-4">
-                  <i className="ml-4 fas fa-user" />
-                  <h5 className="d-inline card-title ml-2">Welcome {name}!</h5>
-                  <div className="card mt-4 mb-4 px-4 pt-3 pb-1">
-                    <div className="content">{primeMessage}</div>
-                  </div>
-                </div>
-                <div className="col-sm-12 col-md-4 col-lg-4">
-                  <div className="card mt-5 mb-5 px-4 pt-3 pb-1">
+                <div className="col-sm-12 col-md-4 col-lg-4 text-center">
+                  <div className="card my-5">
                     <div className="content">
-                      <div className="my-4 pb-5 divup">
-                        <i className="fas fa-box" />
-                        <h5 className="d-inline card-title ml-2">Orders</h5>
+                      <div className="card-title py-4 success">
+                        <i className="fas fa-user-cog" />
+                        <h5 className="d-inline card-title ml-2">
+                          {' '}
+                          Membership
+                        </h5>
                       </div>
-                      {orderMessage}
+                      <div className="card-body">{primeMessage}</div>
                     </div>
                   </div>
                 </div>
                 <div className="col-sm-12 col-md-4 col-lg-4">
-                  <div className="card mt-5 mb-5 px-4 pt-3 pb-1">
+                  <div className="card my-5">
                     <div className="content">
-                      <div className="my-4 pb-5 divup">
+                      <div className="card-title py-4 success text-center">
+                        <i className="fas fa-box" />
+                        <h5 className="d-inline card-title ml-2">Orders</h5>
+                      </div>
+
+                      <div className="card-body">{orderMessage}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-sm-12 col-md-4 col-lg-4 text-center">
+                  <div className="card my-5">
+                    <div className="content">
+                      <div className="card-title py-4 success">
                         <i className="fas fa-user-cog" />
                         <h5 className="d-inline card-title ml-2">
                           {' '}
                           Customer Profile
                         </h5>
                       </div>
-                      <h6 className="d-inline">Name:</h6> {name}
-                      {addressMessage}
-                      <small>Customer since {date}</small>
+                      <div className="card-body">
+                        <div className="pb-5">
+                          <div className="pb-3 divup">
+                            <h4>{name}</h4>
+                            <small> Customer since {date}</small>
+                          </div>
+                        </div>
+                        <small>Email:</small>
+                        <small className="text-muted"> {email}</small>
+                        {addressMessage}
+                      </div>
                     </div>
                   </div>
                 </div>

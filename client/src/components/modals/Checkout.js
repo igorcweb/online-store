@@ -146,7 +146,7 @@ class Checkout extends Component {
                   </div>
                   <div className="col-sm-12">
                     <Button
-                      className="btn-custom ml-2 px-4 success float-right order-last py-1"
+                      className="btn-custom ml-2 px-4 btn-success-custom float-right order-last py-1"
                       onClick={() => this.onOrder()}
                     >
                       <h6 className="pt-1 pb-0">Place Your Order</h6>

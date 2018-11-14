@@ -73,13 +73,13 @@ class Prime extends Component {
             </ModalBody>
             <ModalFooter>
               <Button
-                className="text-darkbrown bg-white btn-outline-light"
+                className="text-darkbrown mt-4 btn btn-outline-light"
                 onClick={this.toggle}
               >
                 No Thanks
               </Button>
               <Button
-                className="success"
+                className="btn btn-success-custom  btn-block mt-4 py-2"
                 onClick={() => this.onPrime(user._id)}
               >
                 Start Prime Membership

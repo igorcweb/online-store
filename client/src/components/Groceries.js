@@ -56,10 +56,10 @@ class Groceries extends Component {
           {products.map(product => {
             const { _id, name, brand, description, imgUrl, price } = product;
             return (
-              <div className="col-md-4 my-5" key={_id}>
-                <div className="card align-items-center d-flex">
+              <div className="col-sm-12 col-md-6 col-lg-4 my-5" key={_id}>
+                <div className="card align-items-center products-div d-flex">
                   <button
-                    className="btn success ml-auto mb-5"
+                    className="btn btn-success-custom-small ml-auto mb-5"
                     onClick={() =>
                       this.addToCart(
                         _id,

@@ -104,7 +104,7 @@ class Login extends Component {
                         </div>
                         <input
                           type="submit"
-                          className="btn brown btn-block mt-4"
+                          className="btn btn-brown-custom btn-block mt-5 py-2"
                         />
                       </form>
                     </div>
@@ -115,8 +115,11 @@ class Login extends Component {
                 <div className="card mb-5 py-5 px-1">
                   <h5 className="card-title ml-3">No account yet?</h5>
                   <div className="card-body pb-5">
-                    <Link to="/register" className="btn success btn-block">
-                      Register
+                    <Link
+                      to="/register"
+                      className="btn btn-success-custom  btn-block"
+                    >
+                      <h6 className="btn-text pt-1">Register</h6>
                     </Link>
                   </div>
                 </div>
