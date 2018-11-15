@@ -40,6 +40,15 @@ class Checkout extends Component {
     this.props.toggleCheckoutModal();
   };
 
+  onCancel = () => {
+    const pathname = this.props.history.location.pathname;
+    this.toggle();
+    this.props.history.push('/loading');
+    setTimeout(() => {
+      this.props.history.push(pathname);
+    }, 10);
+  };
+
   render() {
     const order = this.props.cart.order;
     const { user } = this.props;
@@ -153,7 +162,7 @@ class Checkout extends Component {
                     </Button>
                     <Button
                       className=" btn-red btn-custom float-right py-1"
-                      onClick={this.toggle}
+                      onClick={this.onCancel}
                     >
                       Cancel
                     </Button>
@@ -167,6 +176,7 @@ class Checkout extends Component {
     }
 
     if (this.props.auth.isAuthenticated) {
+      console.log(this.props.history.location.pathname);
       return <div className="checkout">{checkoutContent}</div>;
     }
     return false;

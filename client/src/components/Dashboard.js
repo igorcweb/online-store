@@ -11,7 +11,7 @@ import API from '../utils/API';
 class Dashboard extends Component {
   state = {
     rating: 0,
-    id: 0
+    id: ''
   };
   componentDidMount() {
     if (!this.props.auth.isAuthenticated) {
@@ -27,18 +27,21 @@ class Dashboard extends Component {
     this.setState({
       rating: newRating
     });
-    console.log(this);
   };
-  test = id => {
-    this.setState({
-      id: id
-    });
-    this.thirdFunction();
+  passId = id => {
+    this.setState({ id });
+    this.rateProduct();
   };
-  thirdFunction = () => {
-    API.rateProduct(this.state.id, { rating: this.state.rating })
-      .then(() => console.log(this.state.rating))
-      .catch(err => console.log(err));
+  rateProduct = () => {
+    const rate = () => {
+      const { id, rating } = this.state;
+      API.rateProduct(id, { rating })
+        .then(() => {
+          this.props.history.push('/');
+        })
+        .catch(err => console.log(err));
+    };
+    setTimeout(rate, 100);
   };
   onPrime = () => {
     this.props.togglePrimeModal();
@@ -126,7 +129,7 @@ class Dashboard extends Component {
               </h5>
 
               <button
-                onClick={() => this.onPrime()}
+                onClick={this.onPrime}
                 className="btn btn-block btn-brown-custom mt-4"
               >
                 Become a Prime Member
@@ -142,16 +145,14 @@ class Dashboard extends Component {
             <div className="divup py-3 mb-5 text-center">
               <h5>Resent purchases:</h5>
             </div>
-
             <div>
               {uniqueOrders.map(order => {
                 const { _id, name, brand, imgUrl, rating } = order;
-
                 return (
                   <div
                     key={_id}
                     onClick={() => {
-                      this.test(_id);
+                      this.passId(_id);
                     }}
                     className="d-flex flex-row"
                   >
@@ -159,7 +160,7 @@ class Dashboard extends Component {
                       <img src={imgUrl} alt={name} />
                       <ReactStars
                         className="className= stars d-flex justify-content-center my-2"
-                        test={_id}
+                        passId={_id}
                         count={5}
                         size={20}
                         color2={'#ffd700'}
