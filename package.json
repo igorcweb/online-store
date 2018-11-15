@@ -6,6 +6,7 @@
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
+    "start:prod": "node server.js",
     "server": "nodemon server.js",
     "seed": "node scripts/seedProducts.js",
     "client": "npm start --prefix client",
