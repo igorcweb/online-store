@@ -1,1 +1,1 @@
-yarn start:prod
+npm start:prod
