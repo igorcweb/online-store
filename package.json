@@ -4,6 +4,10 @@
   "main": "server.js",
   "homepage": "https://organic-fitness-world.herokuapp.com/",
   "description": "Organic Fitness Store",
+  "engines": {
+    "node": "10.9.0",
+    "yarn": "^1.10.1"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -13,7 +17,7 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Igor Chernyshev & Armando Gautreaux",
   "license": "MIT",
