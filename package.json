@@ -9,13 +9,14 @@
     "yarn": "1.10.1"
   },
   "scripts": {
-    "client-install": "npm install --prefix client",
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
     "seed": "node scripts/seedProducts.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "install": "cd client && yarn install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "author": "Igor Chernyshev & Armando Gautreaux",
   "license": "MIT",
