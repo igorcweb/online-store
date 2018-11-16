@@ -9,13 +9,12 @@
     "yarn": "^1.10.1"
   },
   "scripts": {
-    "client-install": "npm install --prefix client",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "server": "nodemon server.js",
-    "seed": "node scripts/seedProducts.js",
-    "client": "npm start --prefix client",
-    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && yarn install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
@@ -32,6 +31,5 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "validator": "^10.8.0"
-  },
-  "devDependencies": {}
+  }
 }
