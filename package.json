@@ -16,7 +16,7 @@
     "seed": "node scripts/seedProducts.js",
     "install": "cd client && yarn install",
     "build": "cd client && yarn build",
-    "heroku-postbuild": "yarn build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Igor Chernyshev & Armando Gautreaux",
   "license": "MIT",
