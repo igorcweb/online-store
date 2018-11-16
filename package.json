@@ -2,7 +2,6 @@
   "name": "oniine-store",
   "version": "1.0.0",
   "main": "server.js",
-  "homepage": "https://organic-fitness-world.herokuapp.com/",
   "description": "Organic Fitness Store",
   "engines": {
     "node": "v10.9.0",
