@@ -5,8 +5,8 @@
   "homepage": "https://organic-fitness-world.herokuapp.com/",
   "description": "Organic Fitness Store",
   "engines": {
-    "node": "10.9.0",
-    "yarn": "^1.10.1"
+    "node": "v10.9.0",
+    "yarn": "1.10.1"
   },
   "scripts": {
     "client-install": "npm install --prefix client",
