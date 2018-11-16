@@ -15,8 +15,7 @@
     "client": "npm start --prefix client",
     "seed": "node scripts/seedProducts.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Igor Chernyshev & Armando Gautreaux",
   "license": "MIT",
