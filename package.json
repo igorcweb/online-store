@@ -2,18 +2,19 @@
   "name": "oniine-store",
   "version": "1.0.0",
   "main": "server.js",
+  "homepage": "https://organic-fitness-world.herokuapp.com/",
   "description": "Organic Fitness Store",
   "engines": {
     "node": "v10.9.0",
     "yarn": "1.10.1"
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run dev",
-    "start:prod": "node server.js",
-    "dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
     "seed": "node scripts/seedProducts.js",
-    "install": "cd client && yarn install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
