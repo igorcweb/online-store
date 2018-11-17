@@ -125,9 +125,6 @@ button,
   margin-top: -48px;
 }
 
-.navMsg {
-  margin-left: 195px;
-}
 .no-padding {
   padding: 0 0 0 0;
   line-height: 30%;
@@ -287,12 +284,7 @@ button.proceed {
   font-size: 12px;
   font-weight: 900;
 }
-// .login,
-// .register {
-//   margin: 0 auto;
-//   padding-top: 100px;
-//   width: 370px;
-// }
+
 .brown {
   background: #afa381;
   color: white;
@@ -499,6 +491,10 @@ button.proceed {
   .nav-cont {
     margin-right: -20px;
   }
+  .navMsg {
+    margin-left: 9rem;
+    font-size: 1rem;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -574,6 +570,9 @@ button.proceed {
         font-size: 3.3rem;
         font-weight: 600;
       }
+    }
+    .navMsg {
+      margin-left: 15rem;
     }
   }
 

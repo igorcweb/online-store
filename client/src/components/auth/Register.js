@@ -49,7 +49,7 @@ class Register extends Component {
     return (
       <div className="container my-4 pt-2 content">
         <div className="row">
-          <div className="offset-1 col-md-10">
+          <div className="mx-auto col-md-12 col-lg-10">
             <div className="row">
               <div className="col-sm-12 col-md-6 col-lg-6">
                 <div className="card mb-5 px-1 pt-5 pb-4">
