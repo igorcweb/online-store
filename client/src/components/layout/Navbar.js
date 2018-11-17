@@ -50,7 +50,7 @@ class Navbar extends Component {
       <form className="ml-3" onSubmit={this.onSubmit}>
         <div>
           <input
-            className="form-control pl-5 text-white search"
+            className="form-control pl-2 pr-4 search"
             type="text"
             placeholder="Search Products"
             aria-label="Search"
