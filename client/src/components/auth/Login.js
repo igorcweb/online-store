@@ -47,81 +47,77 @@ class Login extends Component {
     const { errors } = this.state;
     return (
       <div className="container my-4 pt-2 content">
-        <div className="row">
-          <div className="mx-auto col-md-12 col-lg-10">
-            <div className="row">
-              <div className="col-sm-12 col-md-6 col-lg-6">
-                <div className="card mb-5 px-1 pt-5 pb-5">
-                  <div className="login">
-                    <i className="ml-4 fas fa-lock" />
-                    <h5 className="d-inline card-title ml-2">Log In</h5>
-                    <div className="card-body">
-                      <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                          <label htmlFor="name" className="label">
-                            {' '}
-                            Email Address
-                          </label>
-                          <input
-                            type="email"
-                            className={classnames(
-                              'form-control form-control-lg',
-                              {
-                                'is-invalid': errors.email
-                              }
-                            )}
-                            name="email"
-                            value={this.state.email}
-                            onChange={this.onChange}
-                          />
-                          {errors.email && (
-                            <div className="invalid-feedback">
-                              {errors.email}
-                            </div>
-                          )}
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="Password" className="label">
-                            Password
-                          </label>
-                          <input
-                            type="password"
-                            className={classnames(
-                              'form-control form-control-lg',
-                              {
-                                'is-invalid': errors.password
-                              }
-                            )}
-                            name="password"
-                            value={this.state.password}
-                            onChange={this.onChange}
-                          />
-                          {errors.password && (
-                            <div className="invalid-feedback">
-                              {errors.password}
-                            </div>
-                          )}
-                        </div>
+        <div className="mx-auto col-sm-12 col-md-12 col-lg-10">
+          <div className="row">
+            <div className="col-sm-12 col-md-6 col-lg-6">
+              <div className="card mb-5 px-1 pt-5 pb-5">
+                <div className="login">
+                  <i className="ml-4 fas fa-lock" />
+                  <h5 className="d-inline card-title ml-2">Log In</h5>
+                  <div className="card-body">
+                    <form onSubmit={this.onSubmit}>
+                      <div className="form-group">
+                        <label htmlFor="name" className="label">
+                          {' '}
+                          Email Address
+                        </label>
                         <input
-                          type="submit"
-                          className="btn btn-brown-custom btn-block mt-5 py-2"
+                          type="email"
+                          className={classnames(
+                            'form-control form-control-lg',
+                            {
+                              'is-invalid': errors.email
+                            }
+                          )}
+                          name="email"
+                          value={this.state.email}
+                          onChange={this.onChange}
                         />
-                      </form>
-                    </div>
+                        {errors.email && (
+                          <div className="invalid-feedback">{errors.email}</div>
+                        )}
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="Password" className="label">
+                          Password
+                        </label>
+                        <input
+                          type="password"
+                          className={classnames(
+                            'form-control form-control-lg',
+                            {
+                              'is-invalid': errors.password
+                            }
+                          )}
+                          name="password"
+                          value={this.state.password}
+                          onChange={this.onChange}
+                        />
+                        {errors.password && (
+                          <div className="invalid-feedback">
+                            {errors.password}
+                          </div>
+                        )}
+                      </div>
+                      <input
+                        type="submit"
+                        className="btn btn-brown-custom btn-block mt-4 py-2"
+                      />
+                    </form>
                   </div>
                 </div>
               </div>
-              <div className="col-sm-12 col-md-6 col-lg-6">
-                <div className="card mb-5 py-5 px-1">
-                  <h5 className="card-title ml-3">No account yet?</h5>
-                  <div className="card-body pb-5">
-                    <Link
-                      to="/register"
-                      className="btn btn-success-custom  btn-block"
-                    >
-                      Register
-                    </Link>
-                  </div>
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-6">
+              <div className="card mb-5 py-5 px-1">
+                <h5 className="card-title ml-3">No account yet?</h5>
+                <div className="card-body pb-5">
+                  <Link
+                    to="/register"
+                    className="btn btn-success-custom  btn-block"
+                  >
+                    Register
+                  </Link>
                 </div>
               </div>
             </div>
