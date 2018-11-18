@@ -42,7 +42,7 @@ app.use('/api/users', users);
 app.use('/api/products', products);
 
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
