@@ -1,6 +1,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
+var path = require('path');
 const router = express.Router();
 const db = require('../../models/');
 const bcrypt = require('bcryptjs');
