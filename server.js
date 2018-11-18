@@ -1,5 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
+const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -39,5 +40,9 @@ require('./config/passport')(passport);
 
 app.use('/api/users', users);
 app.use('/api/products', products);
+
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
