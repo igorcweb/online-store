@@ -1,8 +1,9 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const router = express.Router();
 const helper = require('sendgrid').mail;
 const async = require('async');
-
 router.post('/welcome', (req, res, next) => {
   function sendEmail(
     parentCallback,
@@ -14,9 +15,7 @@ router.post('/welcome', (req, res, next) => {
   ) {
     const errorEmails = [];
     const successfulEmails = [];
-    const sg = require('sendgrid')(
-      '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'
-    );
+    const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
     async.parallel(
       [
         function(callback) {
