@@ -12,5 +12,6 @@ export default {
   getProducts: () => axios.get('/api/products'),
   getProductsByCategory: category => axios.get('/api/products/' + category),
   searchProducts: query => axios.get('/api/products/search/' + query),
-  sendWelcome: userData => axios.post('/api/send/welcome', userData)
+  sendWelcome: userData => axios.post('/api/send/welcome', userData),
+  sendOrder: (id, body) => axios.post('/api/send/order/' + id, body)
 };

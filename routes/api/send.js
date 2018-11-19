@@ -77,7 +77,6 @@ router.post('/welcome', (req, res, next) => {
           'Welcome to Organic Fitness World!',
           `<p style="font-size: 28px;">Dear ${name},</p>
         <p style="font-size: 24px">Welcome to Organic Fitness World! <br />Click <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to access your account.</p>
-
           `
         );
       }
