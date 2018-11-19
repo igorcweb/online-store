@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const users = require('./routes/api/users');
 const products = require('./routes/api/products');
+const send = require('./routes/api/send');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -40,6 +41,7 @@ require('./config/passport')(passport);
 
 app.use('/api/users', users);
 app.use('/api/products', products);
+app.use('/api/send', send);
 
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));

@@ -1,5 +1,4 @@
 const express = require('express');
-var path = require('path');
 const router = express.Router();
 const db = require('../../models/');
 
@@ -76,10 +75,6 @@ router.put('/rating/:id', (req, res) => {
       .then(() => res.json({ msg: 'success' }))
       .catch(err => res.json(err));
   });
-});
-
-router.use(function(req, res) {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 module.exports = router;
