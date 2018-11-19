@@ -170,7 +170,7 @@ router.put('/prime/:id', (req, res) => {
 
 // @route GET api/users/order/:id
 // @desc place an order (make a purchase)
-router.put('/order/:id', (req, res, { products }) => {
+router.put('/order/:id', (req, res) => {
   const id = req.params.id;
   req.body.products.forEach(product => {
     const productId = product[0];

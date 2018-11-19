@@ -7,7 +7,15 @@ import { GET_ERRORS, SET_CURRENT_USER } from './types';
 // Register User
 export const registerUser = (userData, history) => dispatch => {
   API.registerUser(userData)
-    .then(res => history.push('/login'))
+    .then(() => {
+      API.sendWelcome(userData)
+        .then(() => {
+          console.log('userData:'.userData);
+          console.log('Welcome message sent');
+        })
+        .catch(err => console.log(err));
+      history.push('/login');
+    })
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
