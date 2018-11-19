@@ -8,7 +8,7 @@ const async = require('async');
 // @route POST api/send/welcome
 // @desc send welcome message
 router.post('/welcome', (req, res, next) => {
-  const { email } = req.body;
+  const { name, email } = req.body;
   console.log(email);
   function sendEmail(
     parentCallback,
@@ -72,11 +72,11 @@ router.post('/welcome', (req, res, next) => {
         sendEmail(
           callback,
           'organicfitnessworld@gmail.com',
-          ['igorchern07@gmail.com'],
+          [email],
           'Organic Fitness World',
           'Welcome to Organic Fitness World!',
-          `<p style="font-size: 32px;">Welcome to Organic Fitness World!</p>
-        <p style="font-size: 24px">Click <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to access your account.</p>
+          `<p style="font-size: 28px;">Dear ${name},</p>
+        <p style="font-size: 24px">Welcome to Organic Fitness World! <br />Click <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to access your account.</p>
 
           `
         );
@@ -161,7 +161,7 @@ router.post('/order', (req, res, next) => {
           [email],
           'Organic Fitness World',
           'Welcome to Organic Fitness World!',
-          '<p style="font-size: 32px;">Welcome to Organic Fitness World!</p>'
+          '<p style="font-size: 32px;">Thank you for your order!</p>'
         );
       }
     ],
