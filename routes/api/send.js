@@ -78,16 +78,17 @@ router.post('/welcome', (req, res) => {
           callback,
           'organicfitnessworld@gmail.com',
           [email],
-          'Organic Fitness World',
           'Welcome to Organic Fitness World!',
+          `Dear ${name}, Welcome to Organic Fitness World! Click here to access your account.`,
           `<p style="font-size: 28px;">Dear ${name},</p>
-        <p style="font-size: 24px">Welcome to Organic Fitness World! <br />Click <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to access your account.</p>
+        <p style="font-size: 22px">Welcome to Organic Fitness World!</p>
+        <p style="font-size: 22px">Click <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to access your account.</p>
           `
         );
       }
     ],
     function(err, results) {
-      res.json({
+      res.send({
         success: true,
         message: 'Emails sent',
         successfulEmails: results[0].successfulEmails,
@@ -107,100 +108,121 @@ router.post('/order/:id', (req, res) => {
 
   db.User.findById(id)
     .then(result => {
-      const { email } = result;
-      console.log(email);
+      const { email, name } = result;
+      console.log(email, name);
       const order = [];
       products.forEach(product => {
         const productId = product[0];
+        const quantity = product[1];
         db.Product.findById(productId)
-          .then(result => order.push(result))
+          .then(result => order.push([result.name, quantity]))
           .catch(err => console.log(err));
       });
       setTimeout(() => {
         console.log('order:', order);
+        const orderArr = order.map(
+          product =>
+            `<li style="font-size: 18px">${product[0]} - Qty: ${
+              product[1]
+            }</li>`
+        );
+        const orderDisplay = orderArr.join(',').replace(/,/g, '');
         console.log(email);
+        function sendEmail(
+          parentCallback,
+          fromEmail,
+          toEmails,
+          subject,
+          textContent,
+          htmlContent
+        ) {
+          const errorEmails = [];
+          const successfulEmails = [];
+          const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+          async.parallel(
+            [
+              function(callback) {
+                // Add to emails
+                for (let i = 0; i < toEmails.length; i += 1) {
+                  // Add from emails
+                  const senderEmail = new helper.Email(fromEmail);
+                  // Add to email
+                  const toEmail = new helper.Email(toEmails[i]);
+                  // HTML Content
+                  const content = new helper.Content('text/html', htmlContent);
+                  const mail = new helper.Mail(
+                    senderEmail,
+                    subject,
+                    toEmail,
+                    content
+                  );
+                  var request = sg.emptyRequest({
+                    method: 'POST',
+                    path: '/v3/mail/send',
+                    body: mail.toJSON()
+                  });
+                  sg.API(request, function(error, response) {
+                    console.log('SendGrid');
+                    if (error) {
+                      console.log('Error response received');
+                    }
+                    console.log(response.statusCode);
+                    console.log(response.body);
+                    console.log(response.headers);
+                  });
+                }
+                // return
+                callback(null, true);
+              }
+            ],
+            function(err, results) {
+              if (err) {
+                console.log(err);
+              } else {
+                console.log(results);
+              }
+            }
+          );
+          parentCallback(null, {
+            successfulEmails: successfulEmails,
+            errorEmails: errorEmails
+          });
+        }
+        async.parallel(
+          [
+            function(callback) {
+              sendEmail(
+                callback,
+                'organicfitnessworld@gmail.com',
+                [email],
+                'Thank you for your order!',
+                `Dear ${name}, Thank you for your order!  Here the order details: ${orderDisplay}. We are committed to your satifaction.  Click here to see your order and rate the products you purchased`,
+                `<p style="font-size: 28px;">Dear ${name},</p>
+                <p style="font-size: 22px">Thank you for your order!</p>  
+                <p style="font-size: 22px">
+                  Here are the order details:</p> 
+                  <ul style="list-style: none; padding-left: 0; margin-bottom: 0">
+                  ${orderDisplay}</ul>. 
+                  <p style="font-size: 22px"> We are committed to your satisfaction. <br />
+                    Click 
+                    <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to see your order and rate the products you purchased.
+                </p>
+          `
+              );
+            }
+          ],
+          function(err, results) {
+            res.send({
+              success: true,
+              message: 'Emails sent',
+              successfulEmails: results[0].successfulEmails,
+              errorEmails: results[0].errorEmails
+            });
+          }
+        );
       }, 200);
     })
     .catch(err => console.log(err));
-  // function sendEmail(
-  //   parentCallback,
-  //   fromEmail,
-  //   toEmails,
-  //   subject,
-  //   textContent,
-  //   htmlContent
-  // ) {
-  //   const errorEmails = [];
-  //   const successfulEmails = [];
-  //   const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-  //   async.parallel(
-  //     [
-  //       function(callback) {
-  //         // Add to emails
-  //         for (let i = 0; i < toEmails.length; i += 1) {
-  //           // Add from emails
-  //           const senderEmail = new helper.Email(fromEmail);
-  //           // Add to email
-  //           const toEmail = new helper.Email(toEmails[i]);
-  //           // HTML Content
-  //           const content = new helper.Content('text/html', htmlContent);
-  //           const mail = new helper.Mail(
-  //             senderEmail,
-  //             subject,
-  //             toEmail,
-  //             content
-  //           );
-  //           var request = sg.emptyRequest({
-  //             method: 'POST',
-  //             path: '/v3/mail/send',
-  //             body: mail.toJSON()
-  //           });
-  //           sg.API(request, function(error, response) {
-  //             console.log('SendGrid');
-  //             if (error) {
-  //               console.log('Error response received');
-  //             }
-  //             console.log(response.statusCode);
-  //             console.log(response.body);
-  //             console.log(response.headers);
-  //           });
-  //         }
-  //         // return
-  //         callback(null, true);
-  //       }
-  //     ],
-  //     function(err, results) {
-  //       console.log('Done');
-  //     }
-  //   );
-  //   parentCallback(null, {
-  //     successfulEmails: successfulEmails,
-  //     errorEmails: errorEmails
-  //   });
-  // }
-  // async.parallel(
-  //   [
-  //     function(callback) {
-  //       sendEmail(
-  //         callback,
-  //         'organicfitnessworld@gmail.com',
-  //         [email],
-  //         'Organic Fitness World',
-  //         'Welcome to Organic Fitness World!',
-  //         '<p style="font-size: 32px;">Thank you for your order!</p>'
-  //       );
-  //     }
-  //   ],
-  //   function(err, results) {
-  //     res.send({
-  //       success: true,
-  //       message: 'Emails sent',
-  //       successfulEmails: results[0].successfulEmails,
-  //       errorEmails: results[0].errorEmails
-  //     });
-  //   }
-  // );
-  res.json({ msg: 'hello' });
 });
 
 module.exports = router;
