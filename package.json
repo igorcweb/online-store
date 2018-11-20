@@ -21,7 +21,6 @@
   "author": "Igor Chernyshev & Armando Gautreaux",
   "license": "MIT",
   "dependencies": {
-    "@sendgrid/mail": "^6.3.1",
     "async": "^2.6.1",
     "bcryptjs": "^2.4.3",
     "concurrently": "^4.0.1",
