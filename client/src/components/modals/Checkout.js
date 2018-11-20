@@ -28,6 +28,10 @@ class Checkout extends Component {
     console.log(products);
     API.placeOrder(_id, { products })
       .then(() => {
+        API.sendOrder(_id, { products }).then(() => {
+          console.log(this);
+          console.log({ products });
+        });
         this.props.history.push('/loading');
         setTimeout(() => this.props.history.push('/dashboard'), 20);
       })

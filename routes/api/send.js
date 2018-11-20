@@ -7,7 +7,7 @@ const async = require('async');
 
 // @route POST api/send/welcome
 // @desc send welcome message
-router.post('/welcome', (req, res, next) => {
+router.post('/welcome', (req, res) => {
   const { name, email } = req.body;
   console.log(email);
   function sendEmail(
@@ -58,7 +58,11 @@ router.post('/welcome', (req, res, next) => {
         }
       ],
       function(err, results) {
-        console.log('Done');
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(results);
+        }
       }
     );
     parentCallback(null, {
@@ -82,7 +86,7 @@ router.post('/welcome', (req, res, next) => {
       }
     ],
     function(err, results) {
-      res.send({
+      res.json({
         success: true,
         message: 'Emails sent',
         successfulEmails: results[0].successfulEmails,
@@ -92,7 +96,10 @@ router.post('/welcome', (req, res, next) => {
   );
 });
 
-router.post('/order', (req, res, next) => {
+// @route POST api/send/order
+// @desc send welcome message
+
+router.post('/order', (req, res) => {
   function sendEmail(
     parentCallback,
     fromEmail,
@@ -103,9 +110,7 @@ router.post('/order', (req, res, next) => {
   ) {
     const errorEmails = [];
     const successfulEmails = [];
-    const sg = require('sendgrid')(
-      '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'
-    );
+    const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
     async.parallel(
       [
         function(callback) {
