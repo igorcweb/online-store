@@ -104,7 +104,7 @@ router.post('/order', (req, res, next) => {
     const errorEmails = [];
     const successfulEmails = [];
     const sg = require('sendgrid')(
-      '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'
+      process.env.SENDGRID_API_KEY
     );
     async.parallel(
       [
