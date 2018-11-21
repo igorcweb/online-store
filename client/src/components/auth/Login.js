@@ -98,7 +98,7 @@ class Login extends Component {
             </div>
           </div>
 
-          <div className="card mb-5 py-5 px-1 register col-md ml-md-3">
+          <div className="card h-25 mb-5 py-5 px-1 register col-md ml-md-3">
             <h5 className="card-title ml-3">No account yet?</h5>
             <div className="card-body pb-5">
               <Link

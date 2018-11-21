@@ -132,7 +132,7 @@ class Register extends Component {
             </div>
           </div>
 
-          <div className="card mb-5 py-5 px-1 col-md ml-md-3 login">
+          <div className="card mb-5 py-5 px-1 col-md ml-md-3 h-25 login">
             <h5 className="card-title ml-3">Already have an account?</h5>
             <div className="card-body pb-5">
               <Link to="/login" className="btn btn-success-custom btn-block">
