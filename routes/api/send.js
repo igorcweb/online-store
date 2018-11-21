@@ -98,7 +98,7 @@ router.post('/welcome', (req, res) => {
   );
 });
 
-// @route POST api/send/order
+// @route POST api/send/order/:id
 // @desc send welcome message
 
 router.post('/order/:id', (req, res) => {
@@ -199,13 +199,12 @@ router.post('/order/:id', (req, res) => {
                 `Dear ${name}, Thank you for your order!  Here the order details: ${orderDisplay}. We are committed to your satifaction.  Click here to see your order and rate the products you purchased`,
                 `<p style="font-size: 28px;">Dear ${name},</p>
                 <p style="font-size: 22px">Thank you for your order!</p>  
-                <p style="font-size: 22px">
-                  Here are the order details:</p> 
-                  <ul style="list-style: none; padding-left: 0; margin-bottom: 0">
-                  ${orderDisplay}</ul>. 
-                  <p style="font-size: 22px"> We are committed to your satisfaction. <br />
-                    Click 
-                    <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to see your order and rate the products you purchased.
+                <p style="font-size: 22px">Here are the order details:</p> 
+                <ul style="list-style: none; padding-left: 0; margin-bottom: 0">
+                  ${orderDisplay}
+                </ul>. 
+                <p style="font-size: 22px"> We are committed to your satisfaction.</p>
+                 <p style="font-size: 22px">Click <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to see your order and rate the products you purchased.
                 </p>
           `
               );
