@@ -28,13 +28,17 @@ export const getProducts = () => dispatch => {
     )
     .catch(err => console.log(err));
 };
-export const searchProducts = query => dispatch => {
+export const searchProducts = (query, history) => dispatch => {
   API.searchProducts(query)
-    .then(response =>
-      dispatch({
-        type: SEARCH_PRODUCTS,
-        payload: response.data
-      })
-    )
+    .then(response => {
+      if (response.data.length) {
+        dispatch({
+          type: SEARCH_PRODUCTS,
+          payload: response.data
+        });
+      } else {
+        history.push('/no-results');
+      }
+    })
     .catch(err => console.log(err));
 };

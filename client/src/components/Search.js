@@ -16,7 +16,7 @@ class Search extends Component {
     const query = this.props.history.location.pathname
       .replace('/search/', '')
       .toLowerCase();
-    this.props.searchProducts(query);
+    this.props.searchProducts(query, this.props.history);
   }
 
   addToCart = (_id, name, price) => {

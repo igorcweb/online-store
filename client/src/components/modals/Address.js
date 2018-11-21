@@ -58,8 +58,8 @@ class Address extends Component {
         <div className="address">
           <Modal isOpen={this.props.modal.addressModal} toggle={this.toggle}>
             <ModalHeader toggle={this.toggle} className="bg-gray">
-              <i className="ml-4 fas fa-address-book" />
-              <h5 className="d-inline ml-2">Shipping Address </h5>
+              <i className="ml-4 mr-2 fas fa-address-book" />
+              Shipping Address
             </ModalHeader>
             <ModalBody>
               <div className="card-body">

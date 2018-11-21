@@ -20,6 +20,7 @@ import Cart from './components/Cart';
 import Checkout from './components/modals/Checkout';
 import Prime from './components/modals/Prime';
 import Spinner from './components/Spinner';
+import NoResults from './components/NoResults';
 import './App.scss';
 
 //Check for token
@@ -58,6 +59,7 @@ class App extends Component {
               <Route exact path="/clothing" component={Clothing} />
               <Route path="/search" component={Search} />
               <Route exact path="/loading" component={Spinner} />
+              <Route exact path="/no-results" component={NoResults} />
             </div>
             <Footer />
           </div>
