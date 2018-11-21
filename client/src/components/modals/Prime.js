@@ -42,19 +42,20 @@ class Prime extends Component {
             <ModalBody>
               {' '}
               <small>
-                Becomming a Pirme Member pays for itself with exclusive savings
+                Becomming a Prime member pays for itself with exclusive savings
                 on the things you need, the things you love, and all sorts of
                 unexpected things.
               </small>
               <h6 className="mt-4">
-                All <strong>Prime Members</strong> receive the next benefits:
+                All <strong>Prime Members</strong> receive the following
+                benefits:
               </h6>
               <div className="d-flex flex-row">
                 <div className="pl-4 py-1 pr-1  align-self-start">
                   <i className="fa fa-check" />
                 </div>
                 <div className="p-1 align-self-end text-gray">
-                  Extra offers on top of already low-prices
+                  Extra offers on top of already low prices
                 </div>
               </div>
               <div className="d-flex flex-row">
@@ -62,7 +63,7 @@ class Prime extends Component {
                   <i className="fa fa-check" />
                 </div>
                 <div className="p-1 align-self-end text-gray">
-                  Free Two-Day Shipping
+                  Free two-day shipping
                 </div>
               </div>
               <p className="float-right">

@@ -44,6 +44,9 @@ body {
 }
 .register,
 .login {
+  width: 97%;
+  max-width: 450px;
+  margin: 0 auto;
   i {
     color: #31c082;
   }
@@ -301,6 +304,7 @@ button.proceed {
 .text-under {
   margin-top: -400px;
 }
+
 //Sticky footer
 .content {
   min-height: calc(100vh - 173px);
@@ -485,8 +489,8 @@ button.proceed {
 }
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  body {
-    overflow-x: hidden;
+  .login,
+  .register {
   }
   .nav-cont {
     margin-right: -20px;
@@ -499,8 +503,8 @@ button.proceed {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  body {
-    overflow-x: hidden;
+  .login {
+    // display: none;
   }
   .nav-cont {
     margin-right: -15px;
