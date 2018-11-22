@@ -50,7 +50,7 @@ class App extends Component {
             <Route path="/" component={Checkout} />
             <Route path="/" component={Prime} />
             <Route exact path="/" component={Landing} />
-            <div className="container">
+            <div className="container-fluid content">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/dashboard" component={Dashboard} />

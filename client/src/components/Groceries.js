@@ -52,7 +52,7 @@ class Groceries extends Component {
   render() {
     const { products } = this.props;
     return (
-      <div className="products content">
+      <div className="my-4 content mx-xl-5">
         <div className="row">
           {products.map(product => {
             const {
@@ -65,8 +65,8 @@ class Groceries extends Component {
               rating
             } = product;
             return (
-              <div className="col-sm-12 col-md-6 col-lg-4 my-5" key={_id}>
-                <div className="card align-items-center products-div d-flex">
+              <div className="col-md col-lg-4 mt-2 mb-4 mx-auto" key={_id}>
+                <div className="card align-items-center products d-flex">
                   <button
                     className="btn btn-success-custom-small ml-auto mb-5"
                     onClick={() =>

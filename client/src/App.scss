@@ -81,12 +81,18 @@ a {
 }
 .register,
 .login {
-  width: 97%;
+  width: 98%;
   max-width: 450px;
   margin: 0 auto;
   i {
     color: #31c082;
   }
+}
+
+.products {
+  width: 98%;
+  margin: 0 auto;
+  max-width: 380px;
 }
 
 .btn-brown-custom {
@@ -456,10 +462,6 @@ button.proceed {
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .login,
-  .register {
-  }
-
   .right-div {
     img {
       width: 100%;
@@ -469,10 +471,9 @@ button.proceed {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .login {
-    // display: none;
+  .products {
+    width: 315px;
   }
-
   .nav-top {
     a,
     i,
@@ -515,7 +516,10 @@ button.proceed {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  git asd.field {
+  .products {
+    width: 310px;
+  }
+  .field {
     position: relative;
     h3 {
       display: none;
@@ -529,4 +533,7 @@ button.proceed {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .products {
+    width: 350px;
+  }
 }
