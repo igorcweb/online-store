@@ -12,135 +12,117 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className="landing" id="home-section">
-        <div className="overlay">
-          <div className="home-inner">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-lg-4">
-                  <div className="img-wrap-overlap d-none d-lg-block">
-                    <img
-                      className=""
-                      src="../assets/images/organic.jpg "
-                      alt="#"
-                    />
-                    <div className="img-caption">
-                      <h5>Organic Fabrics</h5>
-                      <h1>Look good & feel good</h1>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-8">
-                  <div className="img-wrap pl-5">
-                    <img
-                      className="img-fluid float-right"
-                      src="../assets/images/clothingface.jpg"
-                      alt="#"
-                    />
-                    <div className="img-caption-2">
-                      <Link to="/clothing">
-                        {' '}
-                        <h3>Shop Clothing</h3>
-                      </Link>
-                    </div>
-                  </div>
+      <div className="landing home-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-4">
+              <div className="img-wrap-overlap d-none d-lg-block">
+                <img className="" src="../assets/images/organic.jpg " alt="#" />
+                <div className="img-caption">
+                  <h5>Organic Fabrics</h5>
+                  <h1>Look good & feel good</h1>
                 </div>
               </div>
-              <div className="container text-center light-gray mt-2 pt-2">
-                <h3 className="text-head dark-gray">
-                  Take care of Yourself and the Planet
-                </h3>
-              </div>
-              <div className="container-fluid">
-                <div className="row">
-                  <div className="wrap-1-of-2 col-sm-12  col-md-8 col-lg-8 mt-5 pl-5">
-                    <div className="">
-                      <img
-                        className="img-fluid"
-                        src="../assets/images/facefarm.jpg "
-                        alt="#"
-                      />
-                    </div>
-                    <div className="img-caption-2">
-                      <Link to="/groceries">
-                        <h3 className="left-caption">Shop Groceries</h3>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="wrap-2-of-2 col-sm-12 col-md-4 col-lg-4 mt-5 px-0 py-0 pr-4">
-                    <div className="">
-                      <div className="">
-                        <img
-                          className="img-fluid pl-0 pr-2"
-                          src="../assets/images/supplements1.jpg"
-                          alt="#"
-                        />
-                      </div>
-                      <div className="img-caption-2">
-                        <Link to="/supplements">
-                          {' '}
-                          <h3>Shop Supplements</h3>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+            <div className="col-lg-8">
+              <div className="img-wrap">
+                <img
+                  className="img-fluid float-right"
+                  src="../assets/images/clothingface.jpg"
+                  alt="#"
+                />
+                <div className="underline-effect text-right">
+                  <Link to="/clothing">
+                    {' '}
+                    <h3 className="pr-3">Shop Clothing</h3>
+                  </Link>
                 </div>
               </div>
-              <div className="container-fluid cards mt-5 pt-5">
-                <div className="row">
-                  <div className="col-sm-12 col-md-4 col-lg-4 d-flex card-feature card align-items-center px-5 text-center text-gray">
-                    WEAR ORGANIC
-                    <img
-                      src="../assets/images/organic-01.png"
-                      alt=""
-                      className="w-25 py-5"
-                    />
-                    <p className="small-par text-gray">
-                      Organic cotton is grown without the use of toxic
-                      pesticides, fertilizers and GMO’s that are proven to harm
-                      the environment, farmers, producers and the consumer.
-                    </p>
-                  </div>
+            </div>
+          </div>
+          <div className="container text-center mt-2 mb-5">
+            <h3 className="heading">Take care of Yourself and the Planet</h3>
+          </div>
+          <div className="row">
+            <div className="col-sm-12 col-md-8 col-lg-8 img-wrap">
+              <img
+                className="img-fluid"
+                src="../assets/images/facefarm.jpg "
+                alt="#"
+              />
+              <div className="underline-effect text-left">
+                <Link to="/groceries">
+                  <h3 className="pl-3">Shop Groceries</h3>
+                </Link>
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-4 col-lg-4 right-div img-wrap mt-3">
+              <img
+                className="img-fluid"
+                src="../assets/images/supplements1.jpg"
+                alt="#"
+              />
 
-                  <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center card-feature px-5 text-center text-gray border-y">
-                    EAT HEALTHY
-                    <img
-                      src="../assets/images/organic-02.png"
-                      alt=""
-                      className="w-25 py-5"
-                    />
-                    <p className="small-par">
-                      Organic farming in general features practices that strive
-                      to cycle resources, promote ecological balance, and
-                      conserve biodiversity.
-                    </p>
-                  </div>
-
-                  <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 card-feature text-center text-gray">
-                    ENHACE YOUR LIFE
-                    <img
-                      src="../assets/images/organic-03.png"
-                      alt=""
-                      className="w-25 py-5"
-                    />
-                    <p className="small-par">
-                      Certified organic dietary supplements provide nutrients in
-                      their most natural form, which means they are the most
-                      biologically active and beneficial they can be.
-                    </p>
-                  </div>
-                </div>
+              <div className="underline-effect text-right">
+                <Link to="/supplements">
+                  {' '}
+                  <h3 className="pr-3">Shop Supplements</h3>
+                </Link>
               </div>
-              <div className="container text-center heading light-gray mt-5 py-5">
-                <h3 className="text-head dark-gray">
-                  We are more than a fitness Store
-                </h3>
-                <p className="font-italic times mx-auto bottom-text">
-                  We believe in positively impacting our community and the
-                  environment.
+            </div>
+          </div>
+
+          <div className="container mt-5 pt-2">
+            <div className="row">
+              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 text-center">
+                WEAR ORGANIC
+                <img
+                  src="../assets/images/organic-01.png"
+                  alt=""
+                  className="w-25 py-5"
+                />
+                <p className="small-par">
+                  Organic cotton is grown without the use of toxic pesticides,
+                  fertilizers and GMO’s that are proven to harm the environment,
+                  farmers, producers and the consumer.
+                </p>
+              </div>
+
+              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center  px-5 text-center border-y">
+                EAT HEALTHY
+                <img
+                  src="../assets/images/organic-02.png"
+                  alt=""
+                  className="w-25 py-5"
+                />
+                <p className="small-par">
+                  Organic farming in general features practices that strive to
+                  cycle resources, promote ecological balance, and conserve
+                  biodiversity.
+                </p>
+              </div>
+
+              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 text-center">
+                ENHACE YOUR LIFE
+                <img
+                  src="../assets/images/organic-03.png"
+                  alt=""
+                  className="w-25 py-5"
+                />
+                <p className="small-par">
+                  Certified organic dietary supplements provide nutrients in
+                  their most natural form, which means they are the most
+                  biologically active and beneficial they can be.
                 </p>
               </div>
             </div>
+          </div>
+          <div className="text-center mt-5 py-3">
+            <h3 className="heading">We are more than a fitness Store</h3>
+            <p className="py-3 light-gray font-italic times mx-auto sm-width">
+              We believe in positively impacting our community and the
+              environment.
+            </p>
           </div>
         </div>
       </div>

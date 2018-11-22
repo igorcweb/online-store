@@ -94,7 +94,7 @@ class Clothing extends Component {
                       value={rating.total / rating.number}
                       edit={false}
                     />
-                    <small className="text"> {description}</small>
+                    <small className="text-gray"> {description}</small>
                   </div>
                 </div>
               </div>

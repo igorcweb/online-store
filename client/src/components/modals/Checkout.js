@@ -84,7 +84,7 @@ class Checkout extends Component {
             <ModalBody>
               <table className="table">
                 <thead>
-                  <tr className="tex-white no-padding">
+                  <tr className="tex-white">
                     <th
                       scope="col"
                       className="  bg-darkgray border-white text-center pt-3 pb-0"
@@ -159,13 +159,13 @@ class Checkout extends Component {
                   </div>
                   <div className="col-sm-12">
                     <Button
-                      className="btn-custom ml-2 px-4 btn-success-custom float-right order-last py-1"
+                      className="btn-custom ml-2 px-4 btn-success-custom float-right py-1"
                       onClick={() => this.onOrder()}
                     >
                       Place Your Order
                     </Button>
                     <Button
-                      className=" btn-red btn-custom float-right py-1"
+                      className="btn-red btn-custom float-right py-1"
                       onClick={this.onCancel}
                     >
                       Cancel

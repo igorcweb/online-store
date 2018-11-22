@@ -1,28 +1,46 @@
+// ----- 1. GENERAL STYLES ---- //
+// ----- 2. NAVBAR------------- //
+//------ 2.1 Top-Nav ---------- //
+//------ 2.2 Bottom-Nav ------- //
+//------ 2.1.1 Logo ----------- //
+//------ 2.2.2 Menu ----------- //
+//------ 2.2.3 Search Bar ----- //
+// ----- 3. FOOTER ------------ //
+// ----- 4. LANDING COMPONENT-- //
+// ----- 5. REGISTER AND LOGIN COMPONENT ---- //
+// ----- 6. CHECKOUT COMPONENT -------------- //
+// ----- 7. MODAL ADDRESS COMPONENT --------- //
+// ----- 8. DASHBOARD COMPONENT ------------- //
+// ----- 9. PRODUCTS ------------------------ //
+// ----- 10. CART --------------------------- //
+// ----- 11. OTHER MODAL STYLES ------------- //
+// ----- 12. CUSTOMIZED ICON COLORS AND SIZES ---- //
+// ----- 13. MEDIA QUERIES ----------------------- //
+
 $dark-overlay: rgba(144, 182, 169, 0.5);
 $main-red: #ea2929;
 $icon-size: 30px;
-$mainbgcolor: rgba(236, 240, 239, 0.5);
+$mainbgcolor: #f1f1f1;
+$darkgray: rgb(68, 68, 68);
+$lightgray: rgb(109, 108, 108);
 
+// ----- 1. GENERAL STYLES ---- //
 body {
-  background: #f1f1f1;
+  background: $mainbgcolor;
   overflow-x: hidden;
   box-sizing: border-box;
 }
-
-.bg-gray {
-  background: #f1f1f1;
+.content {
+  min-height: calc(100vh - 173px);
 }
 
-.bg-darkgray {
-  background: #666666;
-  color: white;
-}
-.border-white {
-  border: 3px solid white;
+* {
+  list-style: none;
+  text-decoration: none;
 }
 
-.text-darkbrown {
-  color: #764c29;
+a {
+  text-decoration: none !important;
 }
 
 .times {
@@ -30,23 +48,44 @@ body {
   font-size: 1.2rem;
 }
 
+.text-darkbrown {
+  color: #764c29;
+}
+
 .text-gray {
   color: #3d3c3c;
 }
-.nav-top {
-  background: darken(#c2b49a, 19%);
-  color: white;
-  a,
-  i,
-  span {
-    color: white !important;
-  }
+
+.light-gray {
+  color: $lightgray;
 }
-.register,
-.login {
-  i {
-    color: #31c082;
-  }
+
+.dark-gray {
+  color: $darkgray;
+  font-weight: 100;
+}
+
+.bold-light-black {
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.bg-gray {
+  background: $mainbgcolor;
+}
+
+.bg-darkgray {
+  background: #666666;
+  color: white;
+}
+
+.card {
+  border: none;
+}
+
+.divup {
+  border-bottom: 1px solid lightgray;
 }
 
 .btn-brown-custom {
@@ -62,10 +101,6 @@ body {
   color: black;
 }
 
-.fa-award {
-  color: #afa381;
-}
-
 button,
 .btn-success-custom-small {
   color: #3b2314;
@@ -78,6 +113,11 @@ button,
   color: white;
 }
 
+.btn-red {
+  border: none;
+  background: #ff332b;
+}
+
 .btn-success-custom {
   color: #3b2314;
   font-size: 1rem;
@@ -87,57 +127,207 @@ button,
   text-transform: uppercase;
 }
 
-.btn-text {
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
 .btn-success-custom:hover {
   background: lighten(#31c082, 4%);
   color: white;
 }
-.text {
-  color: rgb(83, 83, 83);
+
+// ----- 2. NAVBAR---- //
+
+//---- 2.1 Top-Nav ---- //
+.nav-top {
+  background: darken(#c2b49a, 19%);
+  color: white;
+  a,
+  i,
+  span {
+    color: white !important;
+    font-size: 0.8rem;
+  }
+
+  li {
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+
+  .name {
+    text-transform: uppercase;
+  }
+
+  .nav-cont {
+    margin-right: -45px;
+  }
+}
+//---- 2.2 Bottom-Nav ---- //
+.navbar {
+  //---- 2.1.1 Logo ---- //
+  .navbar-brand {
+    margin-top: -48px;
+  }
+
+  //---- 2.2.2 Menu ---- //
+  .navbar-collapse {
+    a {
+      color: rgb(109, 108, 108);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    a:hover {
+      color: #31c082;
+    }
+  }
+
+  //----- 2.2.3 Search Bar ---- //
+  .search {
+    font-size: 0.9rem;
+    font-weight: 100;
+  }
 }
 
-.name {
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.fa-certificate {
-  font-size: 5rem;
+// ---- 3. FOOTER ---- //
+
+.footer {
+  background: gray;
 }
 
-.logout {
-  cursor: pointer;
+// ---- 4. LANDING COMPONENT ---- //
+
+.home-section {
+  background: white;
+  background-size: cover;
+  padding-top: 3rem;
+
+  //Wrap first image just for big screen
+  .img-wrap-overlap {
+    position: absolute;
+    z-index: 10;
+    width: 720px;
+    height: 70%;
+    bottom: 85px;
+
+    img {
+      width: 70%;
+      height: 100%;
+    }
+
+    //Caption Img overlay
+    .img-caption {
+      position: relative;
+      left: 80px;
+      bottom: 180px;
+      h5,
+      h1 {
+        text-transform: uppercase;
+        color: white;
+      }
+    }
+  }
+
+  //All other Wraps with Images and Underline Captions
+  .img-wrap {
+    position: absoulute;
+
+    h3 {
+      bottom: 48px;
+      font-size: 15px;
+      color: black;
+      text-transform: uppercase;
+      display: inline;
+      position: relative;
+    }
+
+    .underline-effect {
+      width: 100%;
+      opacity: 0.9;
+      line-height: 60px;
+      h3 {
+        overflow: hidden;
+      }
+      h3:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        width: 0;
+        bottom: -5px;
+        background: #000;
+        height: 4px;
+        transition-property: width;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+      h3:hover:after,
+      h3:focus:after,
+      h3:active:after {
+        left: 0;
+        right: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  //Heading
+  .heading {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $darkgray;
+  }
+
+  //Cards at the bottom of the Landing Page
+  .card {
+    color: #3d3c3c;
+  }
+
+  .small-par {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  //Use in the middle card at the foot of the Landing page
+  .border-y {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+  }
+
+  //Bottom text of the lading page before the footer
+  .sm-width {
+    max-width: 17rem;
+  }
 }
 
-.success {
-  background: #badbdf;
-  color: #3b2314;
+// ---- 5. REGISTER AND LOGIN COMPONENT ---- //
+.register,
+.login {
+  i {
+    color: #31c082;
+  }
 }
 
-.orange {
-  color: #ff332b;
+// ---- 6. CHECKOUT COMPONENT ---- //
+.table {
+  thead {
+    tr {
+      padding: 0 0 0 0;
+      line-height: 30%;
+    }
+  }
 }
 
-.navbar-brand {
-  margin-top: -48px;
-}
-
-.no-padding {
-  padding: 0 0 0 0;
-  line-height: 30%;
-}
-.bold-light-gray {
-  color: rgb(109, 108, 108);
+.font-small {
   font-size: 14px;
-  font-weight: 600;
 }
-.bold-light-black {
-  color: rgb(0, 0, 0);
-  font-size: 15px;
-  font-weight: 600;
+
+.small-height {
+  line-height: 5px;
+}
+
+.medium-height {
+  line-height: 13px;
+}
+
+.border-white {
+  border: 3px solid white;
 }
 
 .small-heading {
@@ -146,91 +336,42 @@ button,
   line-height: 0%;
 }
 
-.font-small {
-  font-size: 14px;
+// ---- 7. MODAL ADDRESS COMPONENT ---- //
+
+.label {
+  font-size: 12px;
+  font-weight: 900;
 }
 
-.btn-custom {
-  border: none;
+// ---- 8. DASHBOARD COMPONENT ---- //
+.fa-certificate {
+  font-size: 5rem;
 }
 
-.btn-red {
-  background: #ff332b;
-}
-.small-height {
-  line-height: 5px;
+.success {
+  background: #badbdf;
+  color: #3b2314;
 }
 
-.medium-height {
-  line-height: 13px;
-}
-.light-gray {
-  color: rgb(109, 108, 108);
-}
-.dark-gray {
-  color: rgb(68, 68, 68);
-  font-weight: 100;
+.text-caps {
+  text-transform: uppercase;
 }
 
-.small-par {
-  font-size: 0.9rem;
-  font-weight: 400;
-}
-* {
-  list-style: none;
-  text-decoration: none;
-}
+// ---- 9. PRODUCTS ---- //
 
-a {
-  text-decoration: none !important;
-}
-
-span.nav-link {
-  cursor: pointer;
-}
-
-span.name {
-  color: gray;
-}
-
-#home-section {
-  // background: url('./images/bg.jpg') no-repeat;
-  background: #fff;
-  background-size: cover;
-  background-attachment: fixed;
-  // min-height: 700px;
-
-  // .overlay {
-  //   // background-color: $dark-overlay;
-
-  //   top: 183px;
-  //   left: 0;
-  //   width: 100%;
-  //   min-height: 700px;
-  // }
-
-  .home-inner {
-    padding-top: 150px;
+.products {
+  .orange {
+    color: #ff332b;
   }
-}
 
-.fa-shopping-cart,
-span.class-items {
-  color: gray;
-}
-
-.fa-shopping-cart {
-  cursor: pointer;
-}
-
-.card {
-  border: none;
   .CardImg {
     height: 225px;
     width: 50%;
     display: block;
   }
 }
+
+// ---- 10. CART ---- //
 
 .cart {
   transform: translateX(100%);
@@ -243,91 +384,6 @@ span.class-items {
   width: 380px;
   transition: 0.3s ease-in-out;
 }
-.cart.isShowing {
-  transform: none;
-}
-
-.listItem {
-  width: 510px;
-}
-
-.fa-trash {
-  color: lightslategray;
-  cursor: pointer;
-}
-.fa-minus {
-  color: $main-red;
-  cursor: pointer;
-}
-
-.fa-trash:hover {
-  color: $main-red;
-}
-.fa-plus,
-.fa-user {
-  color: green;
-  cursor: pointer;
-}
-.fa-plus,
-.fa-minus,
-.fa-trash {
-  font-size: 0.8rem;
-}
-
-button.proceed {
-  width: 100%;
-  text-align: center;
-  font-weight: 600;
-}
-
-.label {
-  font-size: 12px;
-  font-weight: 900;
-}
-
-.brown {
-  background: #afa381;
-  color: white;
-}
-.custom-link a:hover {
-  color: #31c082;
-}
-.search {
-  font-size: 0.9rem;
-  font-weight: 100;
-  padding-left: 0.7rem;
-}
-
-.text-under {
-  margin-top: -400px;
-}
-//Sticky footer
-.content {
-  min-height: calc(100vh - 173px);
-}
-
-.footer {
-  background: gray;
-}
-
-.nav-cont {
-  margin-right: -45px;
-}
-
-.fa-certificate {
-  color: #afa381;
-}
-
-.text-brown {
-  color: #afa381;
-}
-.text-caps {
-  text-transform: uppercase;
-}
-
-.divup {
-  border-bottom: 1px solid lightgray;
-}
 
 .card-border {
   border: 2px solid lightgray;
@@ -336,6 +392,12 @@ button.proceed {
 .span-border {
   border: 1px solid lightgray;
 }
+
+.cart.isShowing {
+  transform: none;
+}
+
+// ---- 11. OTHER MODAL STYLES ---- //
 
 .div-modal-img > img {
   width: 55px;
@@ -354,146 +416,53 @@ button.proceed {
   overflow-y: auto;
 }
 
-.img-wrap {
-  position: relative;
-  margin-top: -130px;
-  left: -30px;
+// ---- 12. CUSTOMIZED ICON COLORS AND SIZES ---- //
+
+.fa-plus,
+.fa-user {
+  color: green;
 }
 
-.img-wrap-overlap {
-  position: relative;
-
-  z-index: 10;
-
-  img {
-    width: 645px;
-    height: 380px;
-  }
+.fa-certificate,
+.fa-award {
+  color: #afa381;
 }
 
-.img-caption {
-  position: relative;
-
-  h5 {
-    text-transform: uppercase;
-    color: #fff;
-  }
-  h1 {
-    text-transform: uppercase;
-    color: #fff;
-  }
+.fa-minus {
+  color: $main-red;
 }
-.text-head {
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 1.6rem;
+.fa-trash {
+  color: lightslategray;
+}
+.fa-trash:hover {
+  color: $main-red;
 }
 
-.img-caption-2 {
+.fa-trash,
+.fa-minus,
+.fa-plus {
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+button.proceed {
   width: 100%;
-  bottom: 65px;
-  right: 50px;
-  opacity: 0.9;
-  position: relative;
-  text-align: right;
-  line-height: 60px;
-  h3 {
-    font-size: 15px;
-    color: black;
-    text-transform: uppercase;
-    display: inline;
-    position: relative;
-    overflow: hidden;
-  }
-  h3:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    width: 0;
-    bottom: -5px;
-    background: #000;
-    height: 4px;
-    transition-property: width;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
-  }
-  h3:hover:after,
-  h3:focus:after,
-  h3:active:after {
-    left: 0;
-    right: auto;
-    width: 100%;
-  }
+  text-align: center;
+  font-weight: 600;
 }
 
-.border-y {
-  border-left: 1px solid lightgray;
-  border-right: 1px solid lightgray;
-}
+// ---- 13. MEDIA QUERIES ---- //
 
-.bottom-text {
-  max-width: 25rem;
-}
-
-@media (min-width: 480px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .nav-cont {
-    margin-right: -47px;
-  }
-  .wrap-1-of-2 {
-    left: -18px;
-  }
-  .left-caption {
-    right: 10px;
-    left: -170px;
-    bottom: -15px;
-  }
-  .img-wrap {
-    position: relative;
-    padding: 0%;
-    margin-top: -90px;
-    left: -22px;
-    .img-caption-2 {
-      bottom: 65px;
-      right: 20px;
-    }
-  }
-
-  .wrap-2-of-2 {
-    left: 35px;
-    width: 405px;
-    bottom: 40px;
-  }
-
-  .cards {
-    position: relative;
-    bottom: 120px;
-
-    .card-feature {
-      padding-top: 50px;
-    }
-  }
-
-  .heading {
-    position: relative;
-    bottom: 80px;
-  }
-}
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   body {
     overflow-x: hidden;
   }
-  .nav-cont {
-    margin-right: -20px;
-  }
-  .navMsg {
-    margin-left: 9rem;
-    font-size: 1rem;
+
+  .right-div {
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -502,139 +471,61 @@ button.proceed {
   body {
     overflow-x: hidden;
   }
-  .nav-cont {
-    margin-right: -15px;
+
+  .nav-top {
+    a,
+    i,
+    span {
+      font-size: 0.9rem;
+    }
+
+    li {
+      font-size: 0.9rem;
+    }
+
+    .nav-cont {
+      padding-right: 30px;
+    }
   }
 
-  .wrap-1-of-2 {
-    left: -20px;
+  .right-div {
+    margin-top: 0 !important;
+    padding: 0 15px 15px 0 !important;
   }
-  .left-caption {
-    right: 10px;
-    left: -220px;
-    bottom: -15px;
+  .navMsg {
+    padding-left: 185px;
+    padding-top: 5px;
+    small {
+      font-size: 0.9rem;
+    }
   }
 
-  .img-wrap {
+  .ordersList {
     position: relative;
-    padding: 0%;
-    margin-top: -90px;
-    left: -22px;
-    .img-caption-2 {
-      bottom: 50px;
-      right: 30px;
-    }
-  }
-
-  .wrap-2-of-2 {
-    left: 10px;
-    width: 405px;
-    bottom: -2px;
-    .img-caption-2 {
-      bottom: 50px;
-      right: 30px;
-    }
+    height: 350px;
+    overflow-y: auto;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    width: 300px;
+    transition: 0.3s ease-in-out;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .nav-cont {
-    margin-right: -12px;
-  }
-  .img-wrap-overlap {
-    position: relative;
-    // top: -110px;
-    bottom: 88px;
-    // margin-left: 20px;
-    left: 50px;
-    z-index: 10;
-
-    img {
-      width: 610px;
-      height: 330px;
-    }
-    .img-caption {
-      width: 700px;
-      bottom: 30px;
-      margin-top: -220px;
-      bottom: 0;
-      left: 45px;
-      line-height: 60px;
-
-      h5 {
-        font-size: 1.5rem;
-        font-weight: 500;
-      }
-      h1 {
-        font-size: 3.3rem;
-        font-weight: 600;
-      }
-    }
-    .navMsg {
-      margin-left: 15rem;
-    }
-  }
-
-  .wrap-1-of-2 {
-    left: 0;
-  }
-
   git asd.field {
     position: relative;
     h3 {
       display: none;
     }
   }
-  .left-caption {
-    right: 10px;
-    left: -560px;
-    bottom: 0;
-  }
 
-  .img-wrap {
-    position: relative;
-    margin-top: -130px;
-    left: -30px;
-    .img-caption-2 {
-      bottom: 50px;
-      right: 30px;
-    }
-  }
-
-  .wrap-2-of-2 {
-    left: 0;
-    width: 405px;
-    bottom: -2px;
-    .img-caption-2 {
-      bottom: 70px;
-      right: 30px;
-    }
-  }
-
-  .cards {
-    position: relative;
-    bottom: 45px;
-
-    .card-feature {
-      padding-top: 50px;
-    }
-  }
-  .heading {
-    position: relative;
-    bottom: 20px;
+  .orders {
+    order: order-first;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .wrap-1-of-2 {
-    position: relative;
-    left: 0;
-    a {
-      position: absolute;
-      min-width: 135px;
-      right: 100px;
-    }
-  }
 }
