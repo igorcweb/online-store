@@ -81,21 +81,15 @@ class Navbar extends Component {
     );
     const navMenu = (
       <div className="collapse navbar-collapse mx-3" id="navbar">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item custom-link ml-4 pt-1">
-            <Link to="/groceries" className="bold-light-gray">
-              GROCERIES
-            </Link>
+        <ul className="navbar-nav mr-auto py-2">
+          <li className="nav-item ml-4 py-1">
+            <Link to="/groceries">GROCERIES</Link>
           </li>
-          <li className="nav-item custom-link ml-4 pt-1">
-            <Link to="/supplements" className="bold-light-gray">
-              SUPPLEMENTS
-            </Link>
+          <li className="nav-item ml-4 py-1">
+            <Link to="/supplements">SUPPLEMENTS</Link>
           </li>
-          <li className="nav-item  custom-link ml-4 pt-1">
-            <Link to="/clothing" className="bold-light-gray pb-3">
-              CLOTHING
-            </Link>
+          <li className="nav-item ml-4 py-1">
+            <Link to="/clothing">CLOTHING</Link>
           </li>
         </ul>
         {searchBar}
@@ -103,7 +97,7 @@ class Navbar extends Component {
     );
 
     const navMsg = (
-      <span className="d-none navMsg d-md-block">
+      <span className="d-none navMsg d-lg-block">
         <small>Free U.S. Shipping for Prime Members*</small>
       </span>
     );
@@ -119,7 +113,7 @@ class Navbar extends Component {
         </Link>
 
         <li className="d-inline pl-2">
-          <span className="nav-link1 logout" onClick={this.onLogoutClick}>
+          <span className="logout" onClick={this.onLogoutClick}>
             Logout
           </span>
         </li>
@@ -133,14 +127,10 @@ class Navbar extends Component {
           <span className="class-items ml-1">{cartItems}</span>
         </li>
         <li className="d-inline px-4">
-          <Link className="nav-link1" to="/register">
-            Register
-          </Link>
+          <Link to="/register">Register</Link>
         </li>
         <li className="d-inline pl-2">
-          <Link className="nav-link1" to="/login">
-            Login
-          </Link>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
     );

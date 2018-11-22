@@ -145,7 +145,7 @@ class Dashboard extends Component {
             <div className="divup py-3 mb-5 text-center">
               <h5>Resent purchases:</h5>
             </div>
-            <div>
+            <div className="ordersList">
               {uniqueOrders.map(order => {
                 const { _id, name, brand, imgUrl, rating } = order;
                 return (
@@ -202,9 +202,9 @@ class Dashboard extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-sm-12 col-md-4 col-lg-4">
-                  <div className="card my-5">
-                    <div className="content">
+                <div className="col-sm-12 col-md-4 order-lg-1 order-12 col-lg-4">
+                  <div className="card my-5 content">
+                    <div className="content-cards">
                       <div className="card-title py-4 success text-center">
                         <i className="fas fa-box" />
                         <h5 className="d-inline card-title ml-2">Orders</h5>
@@ -215,7 +215,7 @@ class Dashboard extends Component {
                   </div>
                 </div>
 
-                <div className="col-sm-12 col-md-4 col-lg-4 text-center">
+                <div className="col-sm-12 col-md-4 col-lg-4 order-1 order-lg-12 text-center">
                   <div className="card my-5">
                     <div className="content">
                       <div className="card-title py-4 success">
