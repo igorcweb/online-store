@@ -28,10 +28,7 @@ class Checkout extends Component {
     console.log(products);
     API.placeOrder(_id, { products })
       .then(() => {
-        API.sendOrder(_id, { products }).then(() => {
-          console.log(this);
-          console.log({ products });
-        });
+        API.sendOrder(_id, { products }).then(() => {});
         this.props.history.push('/loading');
         setTimeout(() => this.props.history.push('/dashboard'), 20);
       })
@@ -180,7 +177,6 @@ class Checkout extends Component {
     }
 
     if (this.props.auth.isAuthenticated) {
-      console.log(this.props.history.location.pathname);
       return <div className="checkout">{checkoutContent}</div>;
     }
     return false;
