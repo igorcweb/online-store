@@ -20,7 +20,9 @@ class Landing extends Component {
                 <img className="" src="../assets/images/organic.jpg " alt="#" />
                 <div className="img-caption">
                   <h5>Organic Fabrics</h5>
-                  <h1>Look good & feel good</h1>
+                  <h1>
+                    Look good & feel go<span className="text-dark">od</span>
+                  </h1>
                 </div>
               </div>
             </div>
@@ -31,10 +33,10 @@ class Landing extends Component {
                   src="../assets/images/clothingface.jpg"
                   alt="#"
                 />
-                <div className="underline-effect text-right">
-                  <Link to="/clothing">
+                <div className="text-right">
+                  <Link to="/clothing" className="underline-effect">
                     {' '}
-                    <h3 className="pr-3">Shop Clothing</h3>
+                    <h3 className="mr-3">Shop Clothing</h3>
                   </Link>
                 </div>
               </div>
@@ -52,7 +54,7 @@ class Landing extends Component {
               />
               <div className="underline-effect text-left">
                 <Link to="/groceries">
-                  <h3 className="pl-3">Shop Groceries</h3>
+                  <h3 className="ml-3">Shop Groceries</h3>
                 </Link>
               </div>
             </div>
@@ -66,7 +68,7 @@ class Landing extends Component {
               <div className="underline-effect text-right">
                 <Link to="/supplements">
                   {' '}
-                  <h3 className="pr-3">Shop Supplements</h3>
+                  <h3 className="mr-3">Shop Supplements</h3>
                 </Link>
               </div>
             </div>

@@ -95,6 +95,14 @@ a {
   max-width: 380px;
 }
 
+.card {
+  border: none;
+}
+
+.divup {
+  border-bottom: 1px solid lightgray;
+}
+
 .btn-brown-custom {
   background: lighten(#afa381, 4%);
   font-size: 1rem;
@@ -210,7 +218,7 @@ button,
     z-index: 10;
     width: 720px;
     height: 70%;
-    bottom: 85px;
+    bottom: 93px;
 
     img {
       width: 70%;
@@ -494,6 +502,7 @@ button.proceed {
     margin-top: 0 !important;
     padding: 0 15px 15px 0 !important;
   }
+
   .navMsg {
     padding-left: 185px;
     padding-top: 5px;
