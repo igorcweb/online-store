@@ -47,7 +47,7 @@ class Register extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="container-fluid my-4 pt-2">
+      <div className="container-fluid my-4 pt-2 content">
         <div className="row">
           <div className="card mb-5 px-1 pt-5 pb-5 col-md mr-md-3 register">
             <h5 className="card-title ml-2">
