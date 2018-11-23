@@ -80,15 +80,6 @@ a {
   background: #666666;
   color: white;
 }
-.register,
-.login {
-  width: 98%;
-  max-width: 450px;
-  margin: 0 auto;
-  i {
-    color: #31c082;
-  }
-}
 
 .products {
   width: 98%;
@@ -299,6 +290,15 @@ button,
 }
 
 // ---- 5. REGISTER AND LOGIN COMPONENT ---- //
+.register,
+.login {
+  width: 98%;
+  max-width: 450px;
+  margin: 0 auto;
+  i {
+    color: #31c082;
+  }
+}
 .register,
 .login {
   i {
