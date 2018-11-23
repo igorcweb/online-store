@@ -212,32 +212,6 @@ button,
   background-size: cover;
   padding-top: 3rem;
 
-  //Wrap first image just for big screen
-  .img-wrap-overlap {
-    position: absolute;
-    z-index: 10;
-    width: 720px;
-    height: 70%;
-    bottom: 93px;
-
-    img {
-      width: 70%;
-      height: 100%;
-    }
-
-    //Caption Img overlay
-    .img-caption {
-      position: relative;
-      left: 80px;
-      bottom: 180px;
-      h5,
-      h1 {
-        text-transform: uppercase;
-        color: white;
-      }
-    }
-  }
-
   //All other Wraps with Images and Underline Captions
   .img-wrap {
     position: absoulute;
@@ -525,9 +499,33 @@ button.proceed {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .img-wrap-overlap {
+    position: absolute;
+    z-index: 10;
+    width: 720px;
+    height: 70%;
+    top: 1.45rem;
+    img {
+      width: 70%;
+      height: 100%;
+    }
+
+    //Caption Img overlay
+    .img-caption {
+      position: relative;
+      left: 80px;
+      bottom: 180px;
+      h5,
+      h1 {
+        text-transform: uppercase;
+        color: white;
+      }
+    }
+  }
   .products {
     width: 310px;
   }
+
   .field {
     position: relative;
     h3 {
@@ -542,6 +540,9 @@ button.proceed {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .img-wrap-overlap {
+    top: 2rem;
+  }
   .products {
     width: 350px;
   }
