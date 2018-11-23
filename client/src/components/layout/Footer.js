@@ -1,25 +1,9 @@
-import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
-import { connect } from 'react-redux';
+import React from 'react';
 
-class Footer extends Component {
-  render() {
-    return (
-      <div className="footer text-white  pt-3 pb-1">
-        <p className="text-center">
-          Copyright &copy; {new Date().getFullYear()}
-        </p>
-      </div>
-    );
-  }
-}
-
-Footer.propTypes = {
-  auth: PropTypes.object.isRequired
+export default () => {
+  return (
+    <div className="footer text-white  pt-3 pb-1">
+      <p className="text-center">Copyright &copy; {new Date().getFullYear()}</p>
+    </div>
+  );
 };
-
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
-export default connect(mapStateToProps)(Footer);

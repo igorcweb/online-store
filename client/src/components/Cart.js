@@ -154,7 +154,10 @@ class Cart extends Component {
                       const { _id, name, brand, imgUrl, quantity } = item;
                       if (quantity > 0) {
                         return (
-                          <div key={_id} className="d-flex flex-row divup pb-2">
+                          <div
+                            key={_id}
+                            className="d-flex flex-row divup pb-2 mb-2"
+                          >
                             <div className="pr-4 pt-2 div-modal-img">
                               <img src={imgUrl} alt={name} />
                             </div>
@@ -162,7 +165,7 @@ class Cart extends Component {
                               <small className="text-muted">{brand}</small>
                               <h6>{name}</h6>
 
-                              <p className="quantity text-muted mt-2">
+                              <div className="quantity text-muted mt-2">
                                 Qty:
                                 <span className="bg-white span-border ml-1 py-1 pr-2 pl-2">
                                   {quantity}
@@ -185,7 +188,7 @@ class Cart extends Component {
                                     this.onTrash(_id, cart, cartItems)
                                   }
                                 />
-                              </p>
+                              </div>
                             </div>
                           </div>
                         );
@@ -200,7 +203,7 @@ class Cart extends Component {
                 </p>
                 <br />
                 <button
-                  className="btn proceed btn-success-custom  ml-2 pb-2 mb-2 pt-2 btn-block"
+                  className="btn proceed btn-success-custom  ml-2 pb-2 pt-2 btn-block"
                   disabled={this.props.cart.cartItems === '0'}
                   onClick={() => this.onCheckout(subtotal)}
                 >

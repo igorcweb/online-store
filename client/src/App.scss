@@ -382,11 +382,11 @@ button,
 
 .cart {
   transform: translateX(100%);
-  height: 650px;
+  max-height: 38rem;
   overflow-y: auto;
   z-index: 10;
   position: fixed;
-  top: 7rem;
+  top: 7.1rem;
   right: 0;
   width: 380px;
   transition: 0.3s ease-in-out;
