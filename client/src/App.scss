@@ -513,12 +513,15 @@ button.proceed {
     //Caption Img overlay
     .img-caption {
       position: relative;
-      left: 80px;
-      bottom: 180px;
+      left: 10.3rem;
+      bottom: 10.3rem;
       h5,
       h1 {
         text-transform: uppercase;
         color: white;
+      }
+      h1 {
+        font-size: 2rem;
       }
     }
   }
@@ -542,6 +545,13 @@ button.proceed {
 @media (min-width: 1200px) {
   .img-wrap-overlap {
     top: 2rem;
+    .img-caption {
+      bottom: 11.5rem;
+      left: 5rem;
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
   }
   .products {
     width: 350px;
