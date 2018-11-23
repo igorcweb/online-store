@@ -23,6 +23,7 @@ $icon-size: 30px;
 $mainbgcolor: #f1f1f1;
 $darkgray: rgb(68, 68, 68);
 $lightgray: rgb(109, 108, 108);
+$light-overlay: rgba(#cddbdc, 0.8);
 
 // ----- 1. GENERAL STYLES ---- //
 body {
@@ -213,6 +214,7 @@ button,
   padding-top: 3rem;
 
   //All other Wraps with Images and Underline Captions
+
   .img-wrap {
     position: absoulute;
 
@@ -253,6 +255,15 @@ button,
         width: 100%;
       }
     }
+    .facefarm {
+      right: 5px;
+      // bottom: 3rem;
+      font-weight: 700;
+      background-color: $light-overlay;
+
+      padding: 2px 5px;
+      margin-bottom: 0 !important;
+    }
   }
 
   //Heading
@@ -264,7 +275,7 @@ button,
   }
 
   //Cards at the bottom of the Landing Page
-  .card {
+  .card-bottom {
     color: #3d3c3c;
   }
 
@@ -274,7 +285,9 @@ button,
   }
 
   //Use in the middle card at the foot of the Landing page
+
   .border-y {
+    border-radius: 0;
     border-left: 1px solid lightgray;
     border-right: 1px solid lightgray;
   }

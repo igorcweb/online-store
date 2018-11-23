@@ -54,7 +54,7 @@ class Landing extends Component {
               />
               <div className="underline-effect text-left">
                 <Link to="/groceries">
-                  <h3 className="ml-3">Shop Groceries</h3>
+                  <h3 className="ml-3 facefarm">Shop Groceries</h3>
                 </Link>
               </div>
             </div>
@@ -90,7 +90,7 @@ class Landing extends Component {
                 </p>
               </div>
 
-              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center  px-5 text-center border-y">
+              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card card-bottom align-items-center  px-5 text-center border-y">
                 EAT HEALTHY
                 <img
                   src="../assets/images/organic-02.png"
