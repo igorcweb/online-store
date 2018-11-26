@@ -16,7 +16,6 @@ router.post('/welcome', (req, res) => {
     fromEmail,
     toEmails,
     subject,
-    textContent,
     htmlContent
   ) {
     const errorEmails = [];
@@ -79,7 +78,6 @@ router.post('/welcome', (req, res) => {
           'organicfitnessworld@gmail.com',
           [email],
           'Welcome to Organic Fitness World!',
-          `Dear ${name}, Welcome to Organic Fitness World! Click here to access your account.`,
           `<p style="font-size: 28px;">Dear ${name},</p>
         <p style="font-size: 22px">Welcome to Organic Fitness World!</p>
         <p style="font-size: 22px">Click <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to access your account.</p>
@@ -133,7 +131,6 @@ router.post('/order/:id', (req, res) => {
           fromEmail,
           toEmails,
           subject,
-          textContent,
           htmlContent
         ) {
           const errorEmails = [];
@@ -196,7 +193,6 @@ router.post('/order/:id', (req, res) => {
                 'organicfitnessworld@gmail.com',
                 [email],
                 'Thank you for your order!',
-                `Dear ${name}, Thank you for your order!  Here the order details: ${orderDisplay}. We are committed to your satifaction.  Click here to see your order and rate the products you purchased`,
                 `<p style="font-size: 28px;">Dear ${name},</p>
                 <p style="font-size: 22px">Thank you for your order!</p>  
                 <p style="font-size: 22px">Here are the order details:</p> 
