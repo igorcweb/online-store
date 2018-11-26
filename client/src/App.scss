@@ -211,8 +211,6 @@ button,
   //All other Wraps with Images and Underline Captions
 
   .img-wrap {
-    position: absoulute;
-
     h3 {
       bottom: 48px;
       font-size: 15px;
@@ -471,6 +469,10 @@ button.proceed {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  img.groceries,
+  img.supplements {
+    height: 14rem;
+  }
   .products {
     width: 315px;
   }
@@ -517,6 +519,10 @@ button.proceed {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  img.groceries,
+  img.supplements {
+    height: 19rem;
+  }
   .img-wrap-overlap {
     position: absolute;
     z-index: 10;
@@ -561,6 +567,10 @@ button.proceed {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  img.groceries,
+  img.supplements {
+    height: 22.8rem;
+  }
   .img-wrap-overlap {
     top: 2rem;
     .img-caption {
