@@ -143,7 +143,7 @@ class Navbar extends Component {
             </div>
           </div>
         </nav>
-        <nav className="navbar navbar-nav navbar-expand-md navbar-light bg-white">
+        <nav className="navbar navbar-nav navbar-expand-md navbar-light off-white">
           <div className="container-fluid">
             {navbarLogo}
             {burgerIcon}

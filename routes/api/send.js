@@ -276,7 +276,6 @@ router.post('/welcome', (req, res) => {
 
 // @route POST api/send/order/:id
 // @desc send welcome message
-
 router.post('/order/:id', (req, res) => {
   const id = req.params.id;
   console.log(id);

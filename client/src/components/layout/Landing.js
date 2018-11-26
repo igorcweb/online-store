@@ -76,7 +76,7 @@ class Landing extends Component {
 
           <div className="container mt-5 pt-2">
             <div className="row">
-              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 text-center">
+              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 text-center bg-gray">
                 WEAR ORGANIC
                 <img
                   src="../assets/images/organic-01.png"
@@ -90,7 +90,7 @@ class Landing extends Component {
                 </p>
               </div>
 
-              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card card-bottom align-items-center  px-5 text-center border-y">
+              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card card-bottom align-items-center px-5 text-center border-y">
                 EAT HEALTHY
                 <img
                   src="../assets/images/organic-02.png"
@@ -98,13 +98,13 @@ class Landing extends Component {
                   className="w-25 py-5"
                 />
                 <p className="small-par">
-                  Organic farming in general features practices that strive to
-                  cycle resources, promote ecological balance, and conserve
+                  Organic farming features practices that strive to cycle
+                  resources, promote ecological balance, and conserve
                   biodiversity.
                 </p>
               </div>
 
-              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 text-center">
+              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 text-center bg-gray">
                 ENHACE YOUR LIFE
                 <img
                   src="../assets/images/organic-03.png"

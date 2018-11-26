@@ -66,7 +66,7 @@ class Groceries extends Component {
             } = product;
             return (
               <div className="col-md col-lg-4 mt-2 mb-4 mx-auto" key={_id}>
-                <div className="card align-items-center products d-flex">
+                <div className="card align-items-center products d-flex shadow-sm">
                   <button
                     className="btn btn-success-custom-small ml-auto mb-5"
                     onClick={() =>

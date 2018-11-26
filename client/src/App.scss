@@ -53,6 +53,10 @@ a {
   color: #764c29;
 }
 
+.off-white {
+  background-color: #fafafa;
+}
+
 .text-gray {
   color: #3d3c3c;
 }
@@ -200,7 +204,7 @@ button,
 // ---- 4. LANDING COMPONENT ---- //
 
 .home-section {
-  background: white;
+  background: $mainbgcolor;
   background-size: cover;
   padding-top: 3rem;
 
@@ -268,6 +272,7 @@ button,
   //Cards at the bottom of the Landing Page
   .card-bottom {
     color: #3d3c3c;
+    background-color: $mainbgcolor;
   }
 
   .small-par {
@@ -279,8 +284,8 @@ button,
 
   .border-y {
     border-radius: 0;
-    border-left: 1px solid lightgray;
-    border-right: 1px solid lightgray;
+    border-left: 1px solid lighten(gray, 20%);
+    border-right: 1px solid lighten(gray, 20%);
   }
 
   //Bottom text of the lading page before the footer
