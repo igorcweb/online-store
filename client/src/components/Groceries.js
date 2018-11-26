@@ -108,7 +108,7 @@ class Groceries extends Component {
                       edit={false}
                     />
                     <button
-                      className="btn btn-sm btn-success-custom-small d-block mx-auto my-2"
+                      className="btn btn-sm btn-success-custom-small d-block mx-auto  my-3"
                       onClick={() => this.seeMore(_id)}
                     >
                       {this.state.description === _id ? 'See Less' : 'See More'}

@@ -6,6 +6,7 @@ import { getCurrentUser } from '../actions/userActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
 import { updateCartItems } from '../actions/cartActions';
 import ReactStars from 'react-stars';
+import classnames from 'classnames';
 
 class Clothing extends Component {
   componentDidMount() {
@@ -16,6 +17,17 @@ class Clothing extends Component {
       this.props.getCurrentUser(id);
     }
   }
+
+  state = {
+    description: ''
+  };
+
+  seeMore = _id => {
+    this.state.description === _id
+      ? this.setState({ description: '' })
+      : this.setState({ description: _id });
+  };
+
   addToCart = (_id, name, brand, description, imgUrl, price) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = {
@@ -94,7 +106,20 @@ class Clothing extends Component {
                       value={rating.total / rating.number}
                       edit={false}
                     />
-                    <small className="text-gray"> {description}</small>
+                    <button
+                      className="btn btn-sm btn-success-custom-small d-block mx-auto  my-3"
+                      onClick={() => this.seeMore(_id)}
+                    >
+                      {this.state.description === _id ? 'See Less' : 'See More'}
+                    </button>
+                    <small
+                      className={classnames('text-gray d-none', {
+                        'd-block': this.state.description === _id
+                      })}
+                    >
+                      {' '}
+                      {description}
+                    </small>
                   </div>
                 </div>
               </div>

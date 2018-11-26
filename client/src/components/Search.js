@@ -6,6 +6,7 @@ import { searchProducts } from '../actions/productActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
 import { updateCartItems } from '../actions/cartActions';
 import ReactStars from 'react-stars';
+import classnames from 'classnames';
 
 class Search extends Component {
   componentWillMount() {
@@ -18,6 +19,16 @@ class Search extends Component {
       .toLowerCase();
     this.props.searchProducts(query, this.props.history);
   }
+
+  state = {
+    description: ''
+  };
+
+  seeMore = _id => {
+    this.state.description === _id
+      ? this.setState({ description: '' })
+      : this.setState({ description: _id });
+  };
 
   addToCart = (_id, name, price) => {
     console.log(_id, name, price);
@@ -102,7 +113,20 @@ class Search extends Component {
                       value={rating.total / rating.number}
                       edit={false}
                     />
-                    <small className="text-gray"> {description}</small>
+                    <button
+                      className="btn btn-sm btn-success-custom-small d-block mx-auto  my-3"
+                      onClick={() => this.seeMore(_id)}
+                    >
+                      {this.state.description === _id ? 'See Less' : 'See More'}
+                    </button>
+                    <small
+                      className={classnames('text-gray d-none', {
+                        'd-block': this.state.description === _id
+                      })}
+                    >
+                      {' '}
+                      {description}
+                    </small>
                   </div>
                 </div>
               </div>
