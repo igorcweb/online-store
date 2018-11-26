@@ -125,6 +125,7 @@ class Search extends Component {
                       })}
                     >
                       {' '}
+                      <hr />
                       {description}
                     </small>
                   </div>

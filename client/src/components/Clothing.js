@@ -118,6 +118,7 @@ class Clothing extends Component {
                       })}
                     >
                       {' '}
+                      <hr />
                       {description}
                     </small>
                   </div>

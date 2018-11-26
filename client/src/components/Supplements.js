@@ -119,6 +119,7 @@ class Supplements extends Component {
                       })}
                     >
                       {' '}
+                      <hr />
                       {description}
                     </small>
                   </div>
