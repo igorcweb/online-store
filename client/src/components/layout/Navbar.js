@@ -43,7 +43,7 @@ class Navbar extends Component {
         <img
           src="../assets/images/logoforonlinestore1.png"
           width="100"
-          alt=""
+          alt="logo"
         />
       </Link>
     );
