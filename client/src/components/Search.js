@@ -120,8 +120,8 @@ class Search extends Component {
                       {this.state.description === _id ? 'See Less' : 'See More'}
                     </button>
                     <small
-                      className={classnames('text-gray d-none', {
-                        'd-block': this.state.description === _id
+                      className={classnames('text-gray isHidden', {
+                        isShown: this.state.description === _id
                       })}
                     >
                       {' '}
