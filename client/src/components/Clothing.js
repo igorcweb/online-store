@@ -97,7 +97,7 @@ class Clothing extends Component {
 
                   <div className="card-body text-center">
                     <h6 className="name pb-2">{name}</h6>
-                    <p className="orange strong">${price}</p>
+                    <p className="orange strong">${price.toFixed(2)}</p>
                     <ReactStars
                       className="className= stars d-flex justify-content-center"
                       count={5}
