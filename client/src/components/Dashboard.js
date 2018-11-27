@@ -182,71 +182,53 @@ class Dashboard extends Component {
         orderMessage = '';
       }
       dashboardContent = (
-        <div className="container-fluid mt-5 pt-2">
-          <div className="row">
-            <div className="col-md-12">
-              <i className="ml-4 fas fa-user" />
-              <h5 className="d-inline card-title ml-2">Welcome {name}!</h5>
-              <div className="row">
-                <div className="col-sm-12 col-md-4 col-lg-4 text-center">
-                  <div className="card my-5">
-                    <div className="content">
-                      <div className="card-title py-4 success">
-                        <i className="fas fa-user-cog" />
-                        <h5 className="d-inline card-title ml-2">
-                          {' '}
-                          Membership
-                        </h5>
-                      </div>
-                      <div className="card-body">{primeMessage}</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-sm-12 col-md-4 order-lg-1 order-12 col-lg-4">
-                  <div className="card my-5 content">
-                    <div className="content-cards">
-                      <div className="card-title py-4 success text-center">
-                        <i className="fas fa-box" />
-                        <h5 className="d-inline card-title ml-2">Orders</h5>
-                      </div>
-
-                      <div className="card-body">{orderMessage}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-sm-12 col-md-4 col-lg-4 order-1 order-lg-12 text-center">
-                  <div className="card my-5">
-                    <div className="content">
-                      <div className="card-title py-4 success">
-                        <i className="fas fa-user-cog" />
-                        <h5 className="d-inline card-title ml-2">
-                          {' '}
-                          Customer Profile
-                        </h5>
-                      </div>
-                      <div className="card-body">
-                        <div className="pb-5">
-                          <div className="pb-3 divup">
-                            <h4>{name}</h4>
-                            <p>
-                              {' '}
-                              Customer since <br />
-                              {date}
-                            </p>
+        <header id="home-section">
+          <div className="dark-overlay my-5">
+            <div className="home-inner">
+              <div className="container">
+                <header id="main-header">
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <div className="d-flex flex-column">
+                        <div className="d-flex flex-row align-items-stretch text-center">
+                          <div
+                            className="port-item mr-1 mb-1 py-4 bg-white text-black"
+                            data-toggle="collapse"
+                            data-target="#profile"
+                          >
+                            <i className="fas fa-user-cog" />
+                            <h4 className="d-inline ml-2">Profile</h4>
+                          </div>
+                          <div
+                            className="port-item mb-1 py-4 bg-light text-primary"
+                            data-toggle="collapse"
+                            data-target="#orders"
+                          >
+                            <i className="fas fa-box" />
+                            <h4 className="d-inline ml-2">Orders</h4>
                           </div>
                         </div>
-                        <small>Email:</small>
-                        <small className="text-muted"> {email}</small>
-                        {addressMessage}
+                      </div>
+
+                      <div id="profile" className="collapse px-5 show bg-white">
+                        <div className="d-flex flex-column">
+                          <div className="card my-5">
+                            <div className="card-title py-4 success" />
+                            <div className="card-body">{primeMessage}</div>{' '}
+                          </div>
+                        </div>
+
+                        <div className="mt-3 collapse show" id="orders">
+                          <form className="search-form-rt" />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </header>
               </div>
             </div>
           </div>
-        </div>
+        </header>
       );
     }
 
