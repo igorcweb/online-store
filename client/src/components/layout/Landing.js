@@ -17,7 +17,11 @@ class Landing extends Component {
           <div className="row">
             <div className="col-lg-4">
               <div className="img-wrap-overlap d-none d-lg-block">
-                <img className="" src="../assets/images/organic.jpg " alt="#" />
+                <img
+                  className=""
+                  src="../assets/images/organic.jpg "
+                  alt="organic fabrics"
+                />
                 <div className="img-caption">
                   <h5>Organic Fabrics</h5>
                   <h1>
@@ -31,7 +35,7 @@ class Landing extends Component {
                 <img
                   className="img-fluid float-right"
                   src="../assets/images/clothingface.jpg"
-                  alt="#"
+                  alt="shop clothing"
                 />
                 <div className="text-right">
                   <Link to="/clothing" className="underline-effect">
@@ -48,21 +52,21 @@ class Landing extends Component {
           <div className="row">
             <div className="col-sm-12 col-md-8 col-lg-8 img-wrap">
               <img
-                className="img-fluid"
+                className="img-fluid groceries"
                 src="../assets/images/facefarm.jpg "
-                alt="#"
+                alt="groceries"
               />
               <div className="underline-effect text-left">
                 <Link to="/groceries">
-                  <h3 className="ml-3">Shop Groceries</h3>
+                  <h3 className="ml-3 facefarm">Shop Groceries</h3>
                 </Link>
               </div>
             </div>
             <div className="col-sm-12 col-md-4 col-lg-4 right-div img-wrap mt-3">
               <img
-                className="img-fluid"
+                className="img-fluid supplements"
                 src="../assets/images/supplements1.jpg"
-                alt="#"
+                alt="supplements"
               />
 
               <div className="underline-effect text-right">
@@ -76,11 +80,11 @@ class Landing extends Component {
 
           <div className="container mt-5 pt-2">
             <div className="row">
-              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 text-center">
+              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 text-center bg-gray">
                 WEAR ORGANIC
                 <img
                   src="../assets/images/organic-01.png"
-                  alt=""
+                  alt="wear organic"
                   className="w-25 py-5"
                 />
                 <p className="small-par">
@@ -90,25 +94,25 @@ class Landing extends Component {
                 </p>
               </div>
 
-              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center  px-5 text-center border-y">
+              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card card-bottom align-items-center px-5 text-center border-y">
                 EAT HEALTHY
                 <img
                   src="../assets/images/organic-02.png"
-                  alt=""
+                  alt="eat healthy"
                   className="w-25 py-5"
                 />
                 <p className="small-par">
-                  Organic farming in general features practices that strive to
-                  cycle resources, promote ecological balance, and conserve
+                  Organic farming features practices that strive to cycle
+                  resources, promote ecological balance, and conserve
                   biodiversity.
                 </p>
               </div>
 
-              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 text-center">
+              <div className="col-sm-12 col-md-4 col-lg-4 d-flex card align-items-center px-5 text-center bg-gray">
                 ENHACE YOUR LIFE
                 <img
                   src="../assets/images/organic-03.png"
-                  alt=""
+                  alt="enhance your life"
                   className="w-25 py-5"
                 />
                 <p className="small-par">

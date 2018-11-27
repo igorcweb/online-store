@@ -46,9 +46,9 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="container-fluid my-4 pt-2">
+      <div className="container-fluid my-4 pt-2 content">
         <div className="row">
-          <div className="card mb-5 px-1 pt-5 pb-5 col-md mr-md-3 login">
+          <div className="card mb-5 px-1 pt-5 pb-5 col-md mr-md-3 login off-white shadow-sm">
             <h5 className="card-title ml-2">
               <i className="ml-3 mr-2 fas fa-lock" />
               Log In
@@ -98,7 +98,7 @@ class Login extends Component {
             </div>
           </div>
 
-          <div className="card h-25 mb-5 py-5 px-1 register col-md ml-md-3">
+          <div className="card h-25 mb-5 py-5 px-1 register col-md ml-md-3 off-white shadow-sm">
             <h5 className="card-title ml-3">No account yet?</h5>
             <div className="card-body pb-5">
               <Link

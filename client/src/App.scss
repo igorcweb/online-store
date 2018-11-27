@@ -23,6 +23,7 @@ $icon-size: 30px;
 $mainbgcolor: #f1f1f1;
 $darkgray: rgb(68, 68, 68);
 $lightgray: rgb(109, 108, 108);
+$light-overlay: rgba(#cddbdc, 0.8);
 
 // ----- 1. GENERAL STYLES ---- //
 body {
@@ -52,6 +53,10 @@ a {
   color: #764c29;
 }
 
+.off-white {
+  background-color: #fafafa;
+}
+
 .text-gray {
   color: #3d3c3c;
 }
@@ -78,15 +83,6 @@ a {
 .bg-darkgray {
   background: #666666;
   color: white;
-}
-.register,
-.login {
-  width: 98%;
-  max-width: 450px;
-  margin: 0 auto;
-  i {
-    color: #31c082;
-  }
 }
 
 .products {
@@ -208,14 +204,13 @@ button,
 // ---- 4. LANDING COMPONENT ---- //
 
 .home-section {
-  background: white;
+  background: $mainbgcolor;
   background-size: cover;
   padding-top: 3rem;
 
   //All other Wraps with Images and Underline Captions
-  .img-wrap {
-    position: absoulute;
 
+  .img-wrap {
     h3 {
       bottom: 48px;
       font-size: 15px;
@@ -253,6 +248,15 @@ button,
         width: 100%;
       }
     }
+    .facefarm {
+      right: 5px;
+      // bottom: 3rem;
+      font-weight: 700;
+      background-color: $light-overlay;
+
+      padding: 2px 5px;
+      margin-bottom: 0 !important;
+    }
   }
 
   //Heading
@@ -264,8 +268,9 @@ button,
   }
 
   //Cards at the bottom of the Landing Page
-  .card {
+  .card-bottom {
     color: #3d3c3c;
+    background-color: $mainbgcolor;
   }
 
   .small-par {
@@ -274,9 +279,11 @@ button,
   }
 
   //Use in the middle card at the foot of the Landing page
+
   .border-y {
-    border-left: 1px solid lightgray;
-    border-right: 1px solid lightgray;
+    border-radius: 0;
+    border-left: 1px solid lighten(gray, 23%);
+    border-right: 1px solid lighten(gray, 23%);
   }
 
   //Bottom text of the lading page before the footer
@@ -286,6 +293,15 @@ button,
 }
 
 // ---- 5. REGISTER AND LOGIN COMPONENT ---- //
+.register,
+.login {
+  width: 98%;
+  max-width: 450px;
+  margin: 0 auto;
+  i {
+    color: #31c082;
+  }
+}
 .register,
 .login {
   i {
@@ -456,6 +472,10 @@ button.proceed {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  img.groceries,
+  img.supplements {
+    height: 14rem;
+  }
   .products {
     width: 315px;
   }
@@ -502,6 +522,10 @@ button.proceed {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  img.groceries,
+  img.supplements {
+    height: 19rem;
+  }
   .img-wrap-overlap {
     position: absolute;
     z-index: 10;
@@ -546,6 +570,10 @@ button.proceed {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  img.groceries,
+  img.supplements {
+    height: 22.8rem;
+  }
   .img-wrap-overlap {
     top: 2rem;
     .img-caption {

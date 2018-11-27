@@ -43,7 +43,7 @@ class Navbar extends Component {
         <img
           src="../assets/images/logoforonlinestore1.png"
           width="100"
-          alt=""
+          alt="logo"
         />
       </Link>
     );
@@ -98,7 +98,7 @@ class Navbar extends Component {
 
     const navMsg = (
       <span className="d-none navMsg d-lg-block">
-        <small>Free U.S. Shipping for Prime Members*</small>
+        <small>Free U.S. Shipping for Prime Members</small>
       </span>
     );
 
@@ -143,7 +143,7 @@ class Navbar extends Component {
             </div>
           </div>
         </nav>
-        <nav className="navbar navbar-nav navbar-expand-md navbar-light bg-white">
+        <nav className="navbar navbar-nav navbar-expand-md navbar-light off-white">
           <div className="container-fluid">
             {navbarLogo}
             {burgerIcon}

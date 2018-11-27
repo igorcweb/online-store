@@ -16,7 +16,6 @@ router.post('/welcome', (req, res) => {
     fromEmail,
     toEmails,
     subject,
-    textContent,
     htmlContent
   ) {
     const errorEmails = [];
@@ -79,11 +78,188 @@ router.post('/welcome', (req, res) => {
           'organicfitnessworld@gmail.com',
           [email],
           'Welcome to Organic Fitness World!',
-          `Dear ${name}, Welcome to Organic Fitness World! Click here to access your account.`,
-          `<p style="font-size: 28px;">Dear ${name},</p>
-        <p style="font-size: 22px">Welcome to Organic Fitness World!</p>
-        <p style="font-size: 22px">Click <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to access your account.</p>
-          `
+          `<body
+    style="background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
+  >
+                    <style>
+      @media only screen and (max-width: 620px) {
+        table[class='body'] h1 {
+          font-size: 28px !important;
+          margin-bottom: 10px !important;
+        }
+
+        table[class='body'] p,
+        table[class='body'] ul,
+        table[class='body'] ol,
+        table[class='body'] td,
+        table[class='body'] span,
+        table[class='body'] a {
+          font-size: 16px !important;
+        }
+
+        table[class='body'] .wrapper,
+        table[class='body'] .article {
+          padding: 10px !important;
+        }
+
+        table[class='body'] .content {
+          padding: 0 !important;
+        }
+
+        table[class='body'] .container {
+          padding: 0 !important;
+          width: 100% !important;
+        }
+
+        table[class='body'] .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important;
+        }
+
+        table[class='body'] .btn table {
+          width: 100% !important;
+        }
+
+        table[class='body'] .btn a {
+          width: 100% !important;
+        }
+
+        table[class='body'] .img-responsive {
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important;
+        }
+      }
+
+      @media all {
+        .ExternalClass {
+          width: 100%;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%;
+        }
+
+
+
+        .btn-primary table td:hover {
+          background-color: #34495e !important;
+        }
+
+        .btn-primary a:hover {
+          background-color: #34495e !important;
+          border-color: #34495e !important;
+        }
+      }
+    </style>
+
+    <table
+      cellpadding="0"
+      cellspacing="0"
+      class="body"
+      style="border-collapse: separate; width: 100%; background-color: #f6f6f6;"
+    >
+      <tr>
+        <td
+          style="font-family: sans-serif; font-size: 14px; vertical-align: top;"
+        >
+          &nbsp;
+        </td>
+        <td
+          class="container"
+          style="font-family: sans-serif; font-size: 14px;  display: block; Margin: 0 auto; max-width: 580px; padding: 10px; width: 580px;"
+        >
+          <div
+            class="content"
+            style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 10px;"
+          >
+            <table
+              class="main"
+              style="border-collapse: separate; width: 100%; background: #ffffff; border-radius: 3px;"
+            >
+              <!-- START MAIN CONTENT AREA -->
+              <tr>
+                <td
+                  class="wrapper"
+                  style="font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;"
+                >
+                  <table
+                    cellpadding="0"
+                    cellspacing="0"
+                    style="border-collapse: separate;"
+                  >
+                    <tr>
+                      <td
+                        style="font-family: sans-serif; font-size: 14px; vertical-align: top;"
+                      >
+                        <p
+                          style="font-family: sans-serif; font-size: 18px; font-weight: normal; margin: 0; margin-bottom: 15px;"
+                        >
+                          Dear ${name},
+                        </p>
+                        <p
+                          style="font-family: sans-serif; font-size: 18px; font-weight: normal; margin: 0; margin-bottom: 15px;"
+                        >
+                          Welcome to Organic Fitness World!
+                        </p>
+                        <table
+                          cellpadding="0"
+                          cellspacing="0"
+                          class="btn btn-primary"
+                          style="border-collapse: separate; "
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;"
+                              >
+                                <table
+                                  cellpadding="0"
+                                  cellspacing="0"
+                                  style="border-collapse: separate; "
+                                >
+                                  <tbody>
+                                    <tr>
+                                      <td
+                                        style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: ##31c082; border-radius: 5px; text-align: center;"
+                                      >
+                                        <a
+                                          href="https://organic-fitness-world.herokuapp.com/login"
+                                          target="_blank"
+                                          style="display: inline-block; color: #ffffff; background-color: #31c082; border: solid 1px #31c082; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 16px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize;"
+                                          >Access Your Account Here</a
+                                        >
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <p
+                          style="font-family: sans-serif; font-size: 15px; font-weight: normal; margin: 0; margin: 15px 0;"
+                        >
+                          Organic Fitness World Team
+                        </p>
+       
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+      </tr>
+    </table>
+  </body>
+    `
         );
       }
     ],
@@ -100,7 +276,6 @@ router.post('/welcome', (req, res) => {
 
 // @route POST api/send/order/:id
 // @desc send welcome message
-
 router.post('/order/:id', (req, res) => {
   const id = req.params.id;
   console.log(id);
@@ -122,7 +297,7 @@ router.post('/order/:id', (req, res) => {
         console.log('order:', order);
         const orderArr = order.map(
           product =>
-            `<li style="font-size: 18px">${product[0]} - Qty: ${
+            `<li style="font-size: 16px">${product[0]} - Qty: ${
               product[1]
             }</li>`
         );
@@ -133,7 +308,6 @@ router.post('/order/:id', (req, res) => {
           fromEmail,
           toEmails,
           subject,
-          textContent,
           htmlContent
         ) {
           const errorEmails = [];
@@ -196,17 +370,200 @@ router.post('/order/:id', (req, res) => {
                 'organicfitnessworld@gmail.com',
                 [email],
                 'Thank you for your order!',
-                `Dear ${name}, Thank you for your order!  Here the order details: ${orderDisplay}. We are committed to your satifaction.  Click here to see your order and rate the products you purchased`,
-                `<p style="font-size: 28px;">Dear ${name},</p>
-                <p style="font-size: 22px">Thank you for your order!</p>  
-                <p style="font-size: 22px">Here are the order details:</p> 
-                <ul style="list-style: none; padding-left: 0; margin-bottom: 0">
-                  ${orderDisplay}
-                </ul>. 
-                <p style="font-size: 22px"> We are committed to your satisfaction.</p>
-                 <p style="font-size: 22px">Click <a href="https://organic-fitness-world.herokuapp.com/login">here</a> to see your order and rate the products you purchased.
-                </p>
-          `
+                `<body
+    style="background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"
+  >
+                    <style>
+      @media only screen and (max-width: 620px) {
+        table[class='body'] h1 {
+          font-size: 28px !important;
+          margin-bottom: 10px !important;
+        }
+
+        table[class='body'] p,
+        table[class='body'] ul,
+        table[class='body'] ol,
+        table[class='body'] td,
+        table[class='body'] span,
+        table[class='body'] a {
+          font-size: 16px !important;
+        }
+
+        table[class='body'] .wrapper,
+        table[class='body'] .article {
+          padding: 10px !important;
+        }
+
+        table[class='body'] .content {
+          padding: 0 !important;
+        }
+
+        table[class='body'] .container {
+          padding: 0 !important;
+          width: 100% !important;
+        }
+
+        table[class='body'] .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important;
+        }
+
+        table[class='body'] .btn table {
+          width: 100% !important;
+        }
+
+        table[class='body'] .btn a {
+          width: 100% !important;
+        }
+
+        table[class='body'] .img-responsive {
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important;
+        }
+      }
+
+      @media all {
+        .ExternalClass {
+          width: 100%;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%;
+        }
+
+
+
+        .btn-primary table td:hover {
+          background-color: #34495e !important;
+        }
+
+        .btn-primary a:hover {
+          background-color: #34495e !important;
+          border-color: #34495e !important;
+        }
+      }
+    </style>
+
+    <table
+      cellpadding="0"
+      cellspacing="0"
+      class="body"
+      style="border-collapse: separate; width: 100%; background-color: #f6f6f6;"
+    >
+      <tr>
+        <td
+          style="font-family: sans-serif; font-size: 14px; vertical-align: top;"
+        >
+          &nbsp;
+        </td>
+        <td
+          class="container"
+          style="font-family: sans-serif; font-size: 14px;  display: block; Margin: 0 auto; max-width: 580px; padding: 10px; width: 580px;"
+        >
+          <div
+            class="content"
+            style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 10px;"
+          >
+            <table
+              class="main"
+              style="border-collapse: separate; width: 100%; background: #ffffff; border-radius: 3px;"
+            >
+              <!-- START MAIN CONTENT AREA -->
+              <tr>
+                <td
+                  class="wrapper"
+                  style="font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;"
+                >
+                  <table
+                    cellpadding="0"
+                    cellspacing="0"
+                    style="border-collapse: separate;"
+                  >
+                    <tr>
+                      <td
+                        style="font-family: sans-serif; font-size: 14px; vertical-align: top;"
+                      >
+                        <p
+                          style="font-family: sans-serif; font-size: 18px; font-weight: normal; margin: 0; margin-bottom: 15px;"
+                        >
+                          Dear ${name},
+                        </p>
+                        <p
+                          style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px;"
+                        >
+                          Thank you for your order!
+                        </p>
+                        <p
+                          style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px;"
+                        >
+                          Here are the order details:
+                        </p>
+                        <ul style="list-style: none; padding-left: 0;">
+                          ${orderDisplay}
+                        </ul>
+
+                        <p style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin: 15px 0;">
+                          We are committed to your satisfaction.
+                        </p>
+                        <table
+                          cellpadding="0"
+                          cellspacing="0"
+                          class="btn btn-primary"
+                          style="border-collapse: separate; "
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;"
+                              >
+                                <table
+                                  cellpadding="0"
+                                  cellspacing="0"
+                                  style="border-collapse: separate; "
+                                >
+                                  <tbody>
+                                    <tr>
+                                      <td
+                                        style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: ##31c082; border-radius: 5px; text-align: center;"
+                                      >
+                                        <a
+                                          href="https://organic-fitness-world.herokuapp.com/login"
+                                          target="_blank"
+                                          style="display: inline-block; color: #ffffff; background-color: #31c082; border: solid 1px #31c082; border-radius: 5px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 16px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize;"
+                                          >See Your Order and Rate Your Purchases</a
+                                        >
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <p
+                          style="font-family: sans-serif; font-size: 15px; font-weight: normal; margin: 0; margin: 15px 0;"
+                        >
+                          Organic Fitness World Team
+                        </p>
+       
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+      </tr>
+    </table>
+  </body>
+    `
               );
             }
           ],

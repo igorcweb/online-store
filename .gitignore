@@ -19,7 +19,7 @@ client/.env
 .env.production.local
 .vscode
 *footer.js
-playground.js
+*playground*
 
 npm-debug.log*
 yarn-debug.log*

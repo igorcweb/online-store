@@ -6,6 +6,7 @@ import { getCurrentUser } from '../actions/userActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
 import { updateCartItems } from '../actions/cartActions';
 import ReactStars from 'react-stars';
+import classnames from 'classnames';
 
 class Groceries extends Component {
   componentDidMount() {
@@ -16,6 +17,16 @@ class Groceries extends Component {
       this.props.getCurrentUser(id);
     }
   }
+
+  state = {
+    description: ''
+  };
+
+  seeMore = _id => {
+    this.state.description === _id
+      ? this.setState({ description: '' })
+      : this.setState({ description: _id });
+  };
 
   addToCart = (_id, name, brand, description, imgUrl, price) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -66,7 +77,7 @@ class Groceries extends Component {
             } = product;
             return (
               <div className="col-md col-lg-4 mt-2 mb-4 mx-auto" key={_id}>
-                <div className="card align-items-center products d-flex">
+                <div className="card align-items-center products d-flex shadow-sm">
                   <button
                     className="btn btn-success-custom-small ml-auto mb-5"
                     onClick={() =>
@@ -87,7 +98,7 @@ class Groceries extends Component {
 
                   <div className="card-body text-center">
                     <h6 className="name pb-2">{name}</h6>
-                    <p className="orange strong">${price}</p>
+                    <p className="orange strong">${price.toFixed(2)}</p>
                     <ReactStars
                       className="className= stars d-flex justify-content-center"
                       count={5}
@@ -96,7 +107,21 @@ class Groceries extends Component {
                       value={rating.total / rating.number}
                       edit={false}
                     />
-                    <small className="text-gray"> {description}</small>
+                    <button
+                      className="btn btn-sm btn-outline-secondary d-block mx-auto  my-2"
+                      onClick={() => this.seeMore(_id)}
+                    >
+                      {this.state.description === _id ? 'See Less' : 'See More'}
+                    </button>
+                    <small
+                      className={classnames('text-gray d-none', {
+                        'd-block': this.state.description === _id
+                      })}
+                    >
+                      {' '}
+                      <hr />
+                      {description}
+                    </small>
                   </div>
                 </div>
               </div>
