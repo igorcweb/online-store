@@ -7,7 +7,6 @@ import Spinner from './Spinner';
 import { removeDuplicates } from '../utils/removeDuplicates';
 import ReactStars from 'react-stars';
 import API from '../utils/API';
-
 class Dashboard extends Component {
   state = {
     rating: 0,
@@ -51,6 +50,7 @@ class Dashboard extends Component {
     const checkout = false;
     this.props.toggleAddressModal(checkout);
   };
+
   render() {
     const { user } = this.props;
     let dashboardContent;
@@ -65,16 +65,14 @@ class Dashboard extends Component {
       if (user.address) {
         const { street, city, state, zipcode } = user.address;
         addressMessage = (
-          <div className="mt-4 py-2 bg-gray">
-            <h6 className="text my-3">Shipping Address:</h6>
-            <h6 className="pb-2">{street}</h6>
-            <h6 className="pb-2 mt-0 pt-0">
-              {city},{state} {zipcode}
-            </h6>
+          <div className="">
+            <p className="">
+              {street}, {city} {state}, {zipcode}
+            </p>
 
             <button
               onClick={this.onUpdateAddress}
-              className="btn bt-block btn-success-custom text-caps my-3"
+              className="btn bt-block btn-success-custom text-caps"
             >
               Update Address
             </button>
@@ -92,18 +90,12 @@ class Dashboard extends Component {
       }
       if (prime.member) {
         primeMessage = (
-          <div className="my-3">
-            <div className="my-4 pb-2 divup">
-              <h5 className="card-title ml-2">Prime Member</h5>
+          <div className="mt-0 pt-0 text-center mt-3 ">
+            <div className="p-2 thisj">
+              <i className="fas mt-2 fa-certificate"> Prime Member</i>
             </div>
-
-            <div className="my-4 px-3 py-5 bg-gray">
-              <i className="fas fa-certificate" />
-              <h5 className="my-5">
-                As a prime member, you get free shipping on all U.S. orders!
-              </h5>
-
-              <small>
+            <div className="">
+              <small className="">
                 {' '}
                 Your next prime membership payment of ${prime.fee} is due on{' '}
                 {prime.nextPayment}.
@@ -113,24 +105,23 @@ class Dashboard extends Component {
         );
       } else {
         primeMessage = (
-          <div className="my-4 pb-5">
-            <div className="my-4 pb-3 divup">
+          <div className="mt-0 pt-0 text-center mt-3 ">
+            <div className="p-2 thisj">
               <i className="fas fa-award" />
               <h5 className="d-inline card-title ml-2">
                 {' '}
                 Become a Prime Member!
               </h5>
             </div>
-
-            <div className="my-2 px-3 py-5 bg-gray">
-              <h5 className="my-5">
+            <div className="">
+              <small className="">
                 Get free U.S shipping! Become a prime member today for only
                 $59.99 a year!
-              </h5>
+              </small>
 
               <button
                 onClick={this.onPrime}
-                className="btn btn-block btn-brown-custom mt-4"
+                className="btn btn-brown-custom mt-4"
               >
                 Become a Prime Member
               </button>
@@ -141,11 +132,11 @@ class Dashboard extends Component {
       if (user.orders.length) {
         const uniqueOrders = removeDuplicates(orders, '_id');
         orderMessage = (
-          <div className="orders">
-            <div className="divup py-3 mb-5 text-center">
+          <div className="orders py-3">
+            <div className="pt-3 mt-3 mb-5 text-center">
               <h5>Resent purchases:</h5>
             </div>
-            <div className="ordersList">
+            <div className="mb-5">
               {uniqueOrders.map(order => {
                 const { _id, name, brand, imgUrl, rating } = order;
                 return (
@@ -154,12 +145,12 @@ class Dashboard extends Component {
                     onClick={() => {
                       this.passId(_id);
                     }}
-                    className="d-flex flex-row"
+                    className="d-flex flex-row border pb-4 pt-4 px-3 mb-4"
                   >
-                    <div className="div-modal-img mr-2">
+                    <div className="div-modal-img mr-5">
                       <img src={imgUrl} alt={name} />
                       <ReactStars
-                        className="className= stars d-flex justify-content-center my-2"
+                        className="className= stars d-flex justify-content-center"
                         passId={_id}
                         count={5}
                         size={20}
@@ -168,9 +159,14 @@ class Dashboard extends Component {
                         onChange={this.ratingChanged}
                       />
                     </div>
-                    <div className="align-self-end">
-                      <small className="text-muted">{brand}</small>
-                      <h6> {name}</h6>
+                    <div>
+                      <h6 className="pb-0 mb-0">{name}</h6>
+                      <small className="text-muted pt-0 mt-0">{brand}</small>
+                      <div>
+                        <button className="btn btn-light bg-warning mt-3">
+                          Order again
+                        </button>
+                      </div>
                     </div>
                   </div>
                 );
@@ -182,53 +178,112 @@ class Dashboard extends Component {
         orderMessage = '';
       }
       dashboardContent = (
-        <header id="home-section">
-          <div className="dark-overlay my-5">
-            <div className="home-inner">
-              <div className="container">
-                <header id="main-header">
-                  <div className="row">
-                    <div className="col-sm-12">
-                      <div className="d-flex flex-column">
-                        <div className="d-flex flex-row align-items-stretch text-center">
-                          <div
-                            className="port-item mr-1 mb-1 py-4 bg-white text-black"
-                            data-toggle="collapse"
-                            data-target="#profile"
-                          >
-                            <i className="fas fa-user-cog" />
-                            <h4 className="d-inline ml-2">Profile</h4>
-                          </div>
-                          <div
-                            className="port-item mb-1 py-4 bg-light text-primary"
-                            data-toggle="collapse"
-                            data-target="#orders"
-                          >
-                            <i className="fas fa-box" />
-                            <h4 className="d-inline ml-2">Orders</h4>
-                          </div>
-                        </div>
+        <div className="container my-5">
+          <div className="row">
+            <div className="col-12">
+              <div className="d-flex ">
+                <div className="d-flex flex-row my-3">
+                  <i className="fas fa-user-alt mr-3" />
+                  <div>
+                    <h4 className="bold heading-toggle">DASHBOARD</h4>
+                  </div>
+
+                  <div className="toggle-nav mt-4 pt-2">
+                    <nav>
+                      <div className="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a
+                          className="nav-item nav-link active"
+                          id="nav-profile-tab"
+                          data-toggle="tab"
+                          href="#nav-profile"
+                          role="tab"
+                          aria-controls="nav-profile"
+                          aria-selected="true"
+                        >
+                          Profile
+                        </a>
+                        <a
+                          className="nav-item nav-link"
+                          id="nav-orders-tab"
+                          data-toggle="tab"
+                          href="#nav-orders"
+                          role="tab"
+                          aria-controls="nav-orders"
+                          aria-selected="false"
+                        >
+                          Orders
+                        </a>
                       </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
 
-                      <div id="profile" className="collapse px-5 show bg-white">
-                        <div className="d-flex flex-column">
-                          <div className="card my-5">
-                            <div className="card-title py-4 success" />
-                            <div className="card-body">{primeMessage}</div>{' '}
+              <div className="tab-content mt-4 " id="nav-tabContent">
+                <div
+                  className="tab-pane p-5 show bg-white border fade show active"
+                  id="nav-profile"
+                  role="tabpanel"
+                  aria-labelledby="nav-profile-tab"
+                >
+                  <div className="d-flex flex-column">
+                    <div className="card my-4">
+                      <div className="card-body mt-0 pt-0">
+                        <div className="row">
+                          <div className="col-sm-12 col-md-12 col-lg-9 mt-1 text-center mb-3">
+                            <table className="table mt-5">
+                              <thead className="no-border">
+                                <tr>
+                                  <th scope="col" className="pt-3 pb-0">
+                                    <p className="small-heading-1">Name</p>
+                                  </th>
+                                  <th scope="col" className="pt-3 pb-0">
+                                    <p className="small-heading-1">Email</p>
+                                  </th>
+                                  <th scope="col" className="pt-3 pb-0">
+                                    <p className="small-heading-1">
+                                      Shipping Address
+                                    </p>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody className="border">
+                                <tr className="firstly">
+                                  <td className="">
+                                    <h6>{name}</h6>
+                                    <small>Member since {date}</small>
+                                  </td>
+                                  <td className="">
+                                    <small>{email}</small>
+                                  </td>
+
+                                  <td>
+                                    <small>{addressMessage}</small>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
-                        </div>
-
-                        <div className="mt-3 collapse show" id="orders">
-                          <form className="search-form-rt" />
+                          <div className="col-sm-12 col-md-12 col-lg-3">
+                            {primeMessage}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </header>
+                </div>
+                <div
+                  className="tab-pane collapse border px-5 bg-white fade"
+                  id="nav-orders"
+                  role="tabpanel"
+                  aria-labelledby="nav-orders-tab"
+                >
+                  <div className="col-sm-12">{orderMessage}</div>
+                </div>
               </div>
             </div>
           </div>
-        </header>
+        </div>
       );
     }
 

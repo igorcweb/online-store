@@ -349,22 +349,75 @@ button,
 }
 
 // ---- 8. DASHBOARD COMPONENT ---- //
-.fa-certificate {
-  font-size: 5rem;
+.dashboard {
+  .small-heading-1 {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 0%;
+    color: $lightgray;
+  }
+
+  .no-border {
+    th {
+      border: none;
+    }
+  }
+
+  .text-green {
+    color: #badbdf;
+  }
+
+  .firstly {
+    border-left: #badbdf 10px solid;
+  }
+
+  .fa-user-alt {
+    font-size: 4.5rem;
+    color: #badbdf;
+  }
+
+  .toggle-nav {
+    margin-left: -150px !important;
+    a {
+      color: #417a81;
+    }
+  }
+
+  .heading-toggle {
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    color: $lightgray;
+  }
+  .btn-warning {
+    background: rgb(250, 198, 103);
+  }
+
+  .table > tbody > tr > td,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > td,
+  .table > tfoot > tr > th,
+  .table > thead > tr > td,
+  .table > thead > tr > th {
+    display: block;
+    min-width: 100%;
+  }
+  .table > thead > tr > th {
+    display: none;
+  }
+
+  .table .filterBody span {
+    display: block;
+  }
+  .fa-certificate {
+    font-size: 1.7rem;
+  }
+
+  .text-caps {
+    text-transform: uppercase;
+  }
 }
 
-.success {
-  background: #badbdf;
-  color: #3b2314;
-}
-
-.text-caps {
-  text-transform: uppercase;
-}
-
-#main-header .port-item {
-  width: 50%;
-}
 // ---- 9. PRODUCTS ---- //
 
 .products {
@@ -472,6 +525,25 @@ button.proceed {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .dashboard {
+    .table > tbody > tr > td,
+    .table > tbody > tr > th,
+    .table > tfoot > tr > td,
+    .table > tfoot > tr > th,
+    .table > thead > tr > td,
+    .table > thead > tr > th {
+      display: table-cell;
+      min-width: 100%;
+    }
+    .table > thead > tr > th {
+      display: table-cell;
+    }
+
+    .table .filterBody span {
+      display: table;
+    }
+  }
+
   img.groceries,
   img.supplements {
     height: 14rem;
