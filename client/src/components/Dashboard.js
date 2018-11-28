@@ -113,15 +113,14 @@ class Dashboard extends Component {
                 Become a Prime Member!
               </h5>
             </div>
-            <div className="">
-              <small className="">
-                Get free U.S shipping! Become a prime member today for only
-                $59.99 a year!
-              </small>
-
+            <small className="">
+              Get free U.S shipping! Become a prime member for only $59.99 a
+              year!
+            </small>
+            <div>
               <button
                 onClick={this.onPrime}
-                className="btn btn-brown-custom mt-4"
+                className="btn btn-brown-custom mt-4 btn-medium-lg"
               >
                 Become a Prime Member
               </button>
