@@ -178,7 +178,7 @@ class Dashboard extends Component {
         orderMessage = '';
       }
       dashboardContent = (
-        <div className="container my-5">
+        <div className="container my-5 padding-container">
           <div className="row">
             <div className="col-12">
               <div className="d-flex ">
@@ -219,9 +219,9 @@ class Dashboard extends Component {
                 </div>
               </div>
 
-              <div className="tab-content mt-4 " id="nav-tabContent">
+              <div className="tab-content mt-4" id="nav-tabContent">
                 <div
-                  className="tab-pane p-5 show bg-white border fade show active"
+                  className="tab-pane p-2 show bg-white border fade show active"
                   id="nav-profile"
                   role="tabpanel"
                   aria-labelledby="nav-profile-tab"
@@ -230,7 +230,7 @@ class Dashboard extends Component {
                     <div className="card my-4">
                       <div className="card-body mt-0 pt-0">
                         <div className="row">
-                          <div className="col-sm-12 col-md-12 col-lg-9 mt-1 text-center mb-3">
+                          <div className="col-sm-12 col-md-12 col-lg-9 text-center">
                             <table className="table mt-5">
                               <thead className="no-border">
                                 <tr>
@@ -264,7 +264,7 @@ class Dashboard extends Component {
                               </tbody>
                             </table>
                           </div>
-                          <div className="col-sm-12 col-md-12 col-lg-3">
+                          <div className="col-sm-12 col-md-12 col-lg-3 mt-3">
                             {primeMessage}
                           </div>
                         </div>
@@ -273,7 +273,7 @@ class Dashboard extends Component {
                   </div>
                 </div>
                 <div
-                  className="tab-pane collapse border px-5 bg-white fade"
+                  className="tab-pane collapse border bg-white fade p-2"
                   id="nav-orders"
                   role="tabpanel"
                   aria-labelledby="nav-orders-tab"
