@@ -16,6 +16,62 @@ mongoose
 
 const products = [
   {
+    name: 'Vitacost Shirataki Rice',
+    brand: 'Vitacost',
+    category: 'Groceries',
+    description:
+      'Non-GMO and Gluten Free, Vegan, plant-based noodles, Serving Size: 3 oz (85 g), Servings per Container: 2.3',
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Shirataki-Rice-Non-GMO-and-Gluten-Free-844197023622.jpg',
+    inStock: 200,
+    price: 1.58
+  },
+  {
+    name: 'Brown Rice Pasta',
+    brand: 'Jovial',
+    category: 'Groceries',
+    description:
+      'Authentic, artisan crafted, traditional pasta from Tuscany that is worry free in every way. Made in a dedicated facility free of gluten, milk, eggs, tree nuts and peanuts, Jovial pasta is made with only one wholesome ingredient -100% organic whole grain rice grown exclusively in Italy. Serving Size: 2 oz (57 g), Servings per Container: 6',
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/Jovial/Jovial-Brown-Rice-Pasta-Spaghetti-Gluten-Free-815421011203.jpg',
+    inStock: 200,
+    price: 4.01
+  },
+
+  {
+    name: 'Stevia Extract',
+    brand: 'Vitacost',
+    category: 'Groceries',
+    description:
+      '4 fl oz, Serving Size: 7 Drops, Servings per Container: 590. Stevia is an all-natural sweetener that comes from the sweetest, most wholesome part of the stevia leaf, providing a pure, fresh taste that is twice as sweet as sugar. Add it to your favorite beverage, sprinkle it on your morning cereal or use it as a sugar substitute in your favorite recipes for guilt-free flavor you can enjoy any time.',
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Stevia-Extract-835003006861.jpg',
+    inStock: 200,
+    price: 11.99
+  },
+  {
+    name: 'Coconut Sugar Unrefined',
+    brand: 'Nutiva Organic',
+    category: 'Groceries',
+    description:
+      "1 lb,Serving Size: 1 Tsp. (5 g), Servings per Container: About 90. Nutiva's Organic Coconut Sugar is made from fresh coconut tree sap, collected from the cut flower buds. Excellent for baking or in beverages like coffee and tea, it has a subtly sweet taste that is similar to brown sugar with a hint of caramel. Even better, it has a lower glycemic index than cane sugar and is organic and non-GMO. Enjoy in all your favorite recipes!",
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/Nutiva/Nutiva-Organic-Coconut-Sugar-Unrefined-692752103018.jpg',
+    inStock: 200,
+    price: 4.69
+  },
+  {
+    name: 'Organic Coffee',
+    brand: 'Mount Hagen',
+    category: 'Groceries',
+    description:
+      "3.53 oz, Freeze Dried, USDA Organic. It might sound simple, but that is precisely our goal: perfect coffee. To us, it's far more than a matter of tasting great. We already take care of that as a matter of principle, since nothing but fresh Arabica beans from the best high-altitude regions, gently roasted, cultivated and refined, make it into our packages. To us, perfection means that we only procure ecologically cultivated coffees in their countries of origin from small-scale farmers at Fairtrade conditions.",
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/Mount-Hagen/Mount-Hagen-Organic-Fair-Trade-Instant-Coffee-819385023319.jpg',
+    inStock: 200,
+    price: 9.49
+  },
+  {
     name: 'Italian Extra Virgin Olive Oil',
     brand: 'Simple Truth®',
     category: 'Groceries',
@@ -226,7 +282,7 @@ const products = [
   },
   {
     name: 'Organic Vitamin C',
-    brand: 'Healthy Origins ',
+    brand: 'Healthy Origins ',
     category: 'Supplements',
     description:
       'Non-GMO, Natural • Whole Food, Soy-Free, USDA, Organic, With Natural Bioflavonoids, Easy on the Stomach, Suitable for Vegetarians & Vegans, 250 mg - 60 Tablets, Serving Size: 1 Tablet Servings per Container: 60',
@@ -240,7 +296,7 @@ const products = [
     brand: 'THE SYNERGY COMPANY™',
     category: 'Supplements',
     description:
-      'Multi Vita•Min offers a complete and balanced blend of essential nutrients made with organic ingredients — 200% of your RDA for vitamins and 100% for minerals. What’s more, each tablet not only contains vitamins and minerals, but also an assortment of natural enzymes, flavonoids, proteins, and other co-factors that coexist in living whole food. 60 Tablets',
+      'Multi Vita•Min offers a complete and balanced blend of essential nutrients made with organic ingredients — 200% of your RDA for vitamins and 100% for minerals. What’s more, each tablet not only contains vitamins and minerals, but also an assortment of natural enzymes, flavonoids, proteins, and other co-factors that coexist in living whole food. 60 Tablets',
     imgUrl:
       'https://magento-sxob1kexeiozpac.netdna-ssl.com/media/catalog/product/cache/1/thumbnail/645x425/9df78eab33525d08d6e5fb8d27136e95/m/u/multi_topcarousel_bottle_022118.jpg',
     inStock: 200,
@@ -366,6 +422,62 @@ const products = [
       'https://www.vitacost.com/Images/Products/500/Natural-Factors/Natural-Factors-Acetyl-L-Carnitine-068958028002.jpg',
     inStock: 200,
     price: 13.97
+  },
+  {
+    name: 'Vegan Multivitamin',
+    brand: 'Deva',
+    category: 'Supplements',
+    description:
+      '90 Coated Tablets, Serving Size: 1 Tablet, Servings per Container: 90. Free Of Yeast, wheat, gluten, milk, sugar, salt, starch, preservatives; animal products, byproducts or derivatives.',
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/Deva/Deva-Vegan-Multivitamin-And-Mineral-Supplement-895634000027.jpg',
+    inStock: 200,
+    price: 10.69
+  },
+  {
+    name: 'Taurine',
+    brand: 'NOW',
+    category: 'Supplements',
+    description:
+      '500 mg - 100 Capsules, Serving Size: 1 Capsule, Servings per Container: 100.Taurine is a conditionally essential amino acid which is not utilized in protein synthesis, but is mainly found free in most tissues, especially throughout the nervous system. It functions in tissues by stabilizing cell membranes, aiding the transport of potassium, sodium, calcium, and magnesium in and out of cells.',
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/NOW-Foods/NOW-Foods-Taurine-733739001405.jpg',
+    inStock: 200,
+    price: 10.69
+  },
+
+  {
+    name: 'One Daily Multi',
+    brand: 'New Chapter',
+    category: 'Supplements',
+    description:
+      '72 Tablets, Serving Size: 1 Tablet, Servings per Container: 72, Multiple benefits for women 40+ include Stress Support; Vitamin D3 for Bone Support; Vitamin C, Vitamin A & Zinc for Immune Support; B Vitamins for Energy Support',
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/New-Chapter/New-Chapter-Every-Womans-One-Daily-40-Plus-Multivitamin-727783003676.jpg',
+    inStock: 200,
+    price: 41.97
+  },
+  {
+    name: 'Prostate 5LX',
+    brand: 'New Chapter',
+    category: 'Supplements',
+    description:
+      '180 Vegetarian Capsules, Serving Size: 2 Capsules, Servings per Container: 90. Non-GMO Verified Formula, Holistic Prostate Support, 100% Vegetarian, Gluten Free, Helps Support Normal Urine Flow and Prostate Health, Made in the USA.',
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/New-Chapter/New-Chapter-Supercritical-Prostate-5LX-727783900692.jpg',
+    inStock: 200,
+    price: 50.37
+  },
+  {
+    name: 'GOLD Liquid Multi-Vitamin',
+    brand: "Nature's Plus",
+    category: 'Supplements',
+    description:
+      '30 fl oz, Serving Size: 2 Tablespoons 1 Capful (1 fl oz) (29.57 mL), Servings per Container: 30, Gluten Free, Vegetarian, Hypo-Allergenic',
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/Natures-Plus/Natures-Plus-Source-of-Life-GOLD-Liquid-Multi-Vitamin-Supplement-Tropical-Fruit-097467307018.jpg',
+    inStock: 200,
+    price: 47.35
   },
   {
     name: 'Cap Sleeve Eco-Jersey Crew T-Shirt for Women',

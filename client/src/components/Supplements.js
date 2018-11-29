@@ -97,8 +97,9 @@ class Supplements extends Component {
                   <img src={imgUrl} alt={name} className="CardImg" />
 
                   <div className="card-body text-center">
-                    <h6 className="name pb-2">{name}</h6>
-                    <p className="orange strong">${price.toFixed(2)}</p>
+                    <h6 className="name mb-1">{name}</h6>
+                    <p className="brand my-1 text-muted">{brand}</p>
+                    <p className="orange strong my-2">${price.toFixed(2)}</p>
                     <ReactStars
                       className="className= stars d-flex justify-content-center"
                       count={5}
@@ -108,7 +109,7 @@ class Supplements extends Component {
                       edit={false}
                     />
                     <button
-                      className="btn btn-sm btn-outline-secondary d-block mx-auto  my-3"
+                      className="btn btn-sm btn-outline-secondary d-block mx-auto  my-2"
                       onClick={() => this.seeMore(_id)}
                     >
                       {this.state.description === _id ? 'See Less' : 'See More'}
