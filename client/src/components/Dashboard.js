@@ -5,6 +5,7 @@ import { getCurrentUser } from '../actions/userActions';
 import { togglePrimeModal, toggleAddressModal } from '../actions/modalActions';
 import Spinner from './Spinner';
 import { removeDuplicates } from '../utils/removeDuplicates';
+import { updateCartItems } from '../actions/cartActions';
 import ReactStars from 'react-stars';
 import API from '../utils/API';
 class Dashboard extends Component {
@@ -49,6 +50,38 @@ class Dashboard extends Component {
   onUpdateAddress = () => {
     const checkout = false;
     this.props.toggleAddressModal(checkout);
+  };
+
+  addToCart = (_id, name, brand, description, imgUrl, price) => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const item = {
+      _id,
+      name,
+      brand,
+      description,
+      imgUrl,
+      price,
+      quantity: 1
+    };
+    if (cart.length) {
+      cart.forEach(stored => {
+        if (stored._id === item._id) {
+          stored.quantity += 1;
+          item.quantity += 1;
+        }
+      });
+    }
+
+    cart.push(item);
+    //Remove duplicates
+    const newCart = removeDuplicates(cart, '_id');
+    const cartItems = newCart.reduce((acc, item) => {
+      return acc + item.quantity;
+    }, 0);
+    localStorage.setItem('cartItems', cartItems);
+    this.props.updateCartItems(cartItems);
+    const serializedCart = JSON.stringify(newCart);
+    localStorage.setItem('cart', serializedCart);
   };
 
   render() {
@@ -137,7 +170,15 @@ class Dashboard extends Component {
             </div>
             <div className="mb-5">
               {uniqueOrders.map(order => {
-                const { _id, name, brand, imgUrl, rating } = order;
+                const {
+                  _id,
+                  name,
+                  brand,
+                  description,
+                  imgUrl,
+                  price,
+                  rating
+                } = order;
                 return (
                   <div
                     key={_id}
@@ -162,7 +203,19 @@ class Dashboard extends Component {
                       <h6 className="pb-0 mb-0">{name}</h6>
                       <small className="text-muted pt-0 mt-0">{brand}</small>
                       <div>
-                        <button className="btn btn-light bg-warning mt-3">
+                        <button
+                          onClick={() =>
+                            this.addToCart(
+                              _id,
+                              name,
+                              brand,
+                              description,
+                              imgUrl,
+                              price
+                            )
+                          }
+                          className="btn btn-light bg-warning mt-3"
+                        >
                           Order again
                         </button>
                       </div>
@@ -294,15 +347,17 @@ Dashboard.propTypes = {
   auth: PropTypes.object.isRequired,
   getCurrentUser: PropTypes.func.isRequired,
   togglePrimeModal: PropTypes.func.isRequired,
-  toggleAddressModal: PropTypes.func.isRequired
+  toggleAddressModal: PropTypes.func.isRequired,
+  updateCardItems: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  user: state.user
+  user: state.user,
+  cart: state.cart
 });
 
 export default connect(
   mapStateToProps,
-  { getCurrentUser, togglePrimeModal, toggleAddressModal }
+  { getCurrentUser, togglePrimeModal, toggleAddressModal, updateCartItems }
 )(Dashboard);
