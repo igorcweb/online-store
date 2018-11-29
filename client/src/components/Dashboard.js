@@ -287,14 +287,7 @@ class Dashboard extends Component {
                   </div>
                 </div>
 
-                <div
-                  className="tab-pane collapse border bg-white fade p-2"
-                  id="nav-orders"
-                  role="tabpanel"
-                  aria-labelledby="nav-orders-tab"
-                >
-                  <div className="col-sm-12">{orderMessage}</div>
-                </div>
+                <div className="col-sm-12">{orderMessage}</div>
               </div>
             </div>
           </div>
