@@ -141,19 +141,19 @@ class Dashboard extends Component {
           <div className="mt-0 pt-0 text-center mt-3 ">
             <div className="p-2 thisj">
               <i className="fas fa-award" />
-              <h5 className="d-inline card-title ml-2">
+              <h5 className="d-inline card-title ml-2 prime-title">
                 {' '}
                 Become a Prime Member!
               </h5>
             </div>
-            <small className="">
+            <p className="sub-text">
               Get free U.S shipping! Become a prime member for only $59.99 a
               year!
-            </small>
+            </p>
             <div>
               <button
                 onClick={this.onPrime}
-                className="btn btn-brown-custom mt-4 btn-medium-lg"
+                className="btn btn-brown-custom btn-prime"
               >
                 Become a Prime Member
               </button>
@@ -232,98 +232,61 @@ class Dashboard extends Component {
       dashboardContent = (
         <div className="container my-5 padding-container">
           <div className="row">
-            <div className="col-12">
-              <div className="d-flex ">
-                <div className="d-flex flex-row my-3">
-                  <i className="fas fa-user-alt mr-3" />
-                  <div>
-                    <h4 className="bold heading-toggle">DASHBOARD</h4>
-                  </div>
+            <div className="col">
+              <h4 className="heading-dashboard text-center text-lg-left">
+                <i className="fas fa-user-alt mr-2" />
+                Welcome {user.name}!
+              </h4>
+              <p className="text-center text-lg-left subheading">
+                Member since {date}
+              </p>
+              <div className="tab-content">
+                <div className="d-flex flex-column">
+                  <div className="card my-3">
+                    <div className="card-body mt-0 pt-0">
+                      <div className="row">
+                        <div className="col-sm-12 col-lg-3 mt-3">
+                          {primeMessage}
+                        </div>
+                        <div className="col-sm-12 col-md-12 col-lg-9 text-center">
+                          <table className="table mt-5">
+                            <thead className="no-border">
+                              <tr>
+                                <th scope="col" className="pt-3 pb-0">
+                                  <p className="small-heading-1">Name</p>
+                                </th>
+                                <th scope="col" className="pt-3 pb-0">
+                                  <p className="small-heading-1">Email</p>
+                                </th>
+                                <th scope="col" className="pt-3 pb-0">
+                                  <p className="small-heading-1">
+                                    Shipping Address
+                                  </p>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody className="border">
+                              <tr className="firstly">
+                                <td className="">
+                                  <h6>{name}</h6>
+                                  <small>Member since {date}</small>
+                                </td>
+                                <td className="">
+                                  <small>{email}</small>
+                                </td>
 
-                  <div className="toggle-nav mt-4 pt-2">
-                    <nav>
-                      <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                        <a
-                          className="nav-item nav-link active"
-                          id="nav-profile-tab"
-                          data-toggle="tab"
-                          href="#nav-profile"
-                          role="tab"
-                          aria-controls="nav-profile"
-                          aria-selected="true"
-                        >
-                          Profile
-                        </a>
-                        <a
-                          className="nav-item nav-link"
-                          id="nav-orders-tab"
-                          data-toggle="tab"
-                          href="#nav-orders"
-                          role="tab"
-                          aria-controls="nav-orders"
-                          aria-selected="false"
-                        >
-                          Orders
-                        </a>
-                      </div>
-                    </nav>
-                  </div>
-                </div>
-              </div>
-
-              <div className="tab-content mt-4" id="nav-tabContent">
-                <div
-                  className="tab-pane p-2 show bg-white border fade show active"
-                  id="nav-profile"
-                  role="tabpanel"
-                  aria-labelledby="nav-profile-tab"
-                >
-                  <div className="d-flex flex-column">
-                    <div className="card my-4">
-                      <div className="card-body mt-0 pt-0">
-                        <div className="row">
-                          <div className="col-sm-12 col-md-12 col-lg-9 text-center">
-                            <table className="table mt-5">
-                              <thead className="no-border">
-                                <tr>
-                                  <th scope="col" className="pt-3 pb-0">
-                                    <p className="small-heading-1">Name</p>
-                                  </th>
-                                  <th scope="col" className="pt-3 pb-0">
-                                    <p className="small-heading-1">Email</p>
-                                  </th>
-                                  <th scope="col" className="pt-3 pb-0">
-                                    <p className="small-heading-1">
-                                      Shipping Address
-                                    </p>
-                                  </th>
-                                </tr>
-                              </thead>
-                              <tbody className="border">
-                                <tr className="firstly">
-                                  <td className="">
-                                    <h6>{name}</h6>
-                                    <small>Member since {date}</small>
-                                  </td>
-                                  <td className="">
-                                    <small>{email}</small>
-                                  </td>
-
-                                  <td>
-                                    <small>{addressMessage}</small>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                          <div className="col-sm-12 col-md-12 col-lg-3 mt-3">
-                            {primeMessage}
-                          </div>
+                                <td>
+                                  <small>{addressMessage}</small>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
                 <div
                   className="tab-pane collapse border bg-white fade p-2"
                   id="nav-orders"

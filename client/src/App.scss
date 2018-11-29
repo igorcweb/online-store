@@ -357,6 +357,15 @@ button,
     color: $lightgray;
   }
 
+  .prime-title,
+  .sub-text {
+    color: $darkgray;
+  }
+
+  .btn-prime {
+    font-size: 0.9rem;
+  }
+
   .no-border {
     th {
       border: none;
@@ -372,8 +381,8 @@ button,
   }
 
   .fa-user-alt {
-    font-size: 4.5rem;
-    color: #badbdf;
+    font-size: 1.2rem;
+    color: lighten(#31c082, 4%);
   }
 
   .toggle-nav {
@@ -383,10 +392,9 @@ button,
     }
   }
 
-  .heading-toggle {
-    font-weight: 700;
-    font-size: 1.3rem;
-    letter-spacing: 0.1rem;
+  .heading-dashboard {
+    font-weight: 600;
+    font-size: 1.4rem;
     color: $lightgray;
   }
   .btn-warning {
@@ -503,6 +511,7 @@ p.brand {
 .fa-certificate,
 .fa-award {
   color: #afa381;
+  font-size: 1.2rem;
 }
 
 .fa-minus {
@@ -561,9 +570,6 @@ button.proceed {
     .padding-container {
       padding: 0px 50px 0px 50px;
     }
-    .btn-medium-lg {
-      font-size: 0.7rem;
-    }
   }
 
   img.groceries,
@@ -616,6 +622,9 @@ button.proceed {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  p.subheading {
+    margin-left: 1.8rem;
+  }
   img.groceries,
   img.supplements {
     height: 19rem;
