@@ -35,14 +35,17 @@ class Dashboard extends Component {
   rateProduct = () => {
     const rate = () => {
       const { id, rating } = this.state;
-      API.rateProduct(id, { rating })
-        .then(() => {
-          this.props.history.push('/');
-        })
-        .catch(err => console.log(err));
+      if (rating > 0) {
+        API.rateProduct(id, { rating })
+          .then(() => {
+            this.props.history.push('/');
+          })
+          .catch(err => console.log(err));
+      }
     };
     setTimeout(rate, 100);
   };
+
   onPrime = () => {
     this.props.togglePrimeModal();
     console.log('prime');
@@ -304,7 +307,7 @@ Dashboard.propTypes = {
   getCurrentUser: PropTypes.func.isRequired,
   togglePrimeModal: PropTypes.func.isRequired,
   toggleAddressModal: PropTypes.func.isRequired,
-  updateCardItems: PropTypes.func.isRequired
+  updateCartItems: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
