@@ -242,7 +242,7 @@ class Dashboard extends Component {
       dashboardContent = (
         <div className="container my-4">
           <div className="row account">
-            <div className="col-xl-4 col-lg-5 col-md-6 offset-md-3 offset-lg-0 px-lg-0 mx-lg-0">
+            <div className="col-xl-4 col-lg-5 col-md-6 offset-md-3 offset-lg-0 px-lg-0 mx-lg-0 welcome-message">
               <h4 className="heading-dashboard text-center text-lg-left mb-1">
                 <i className="fas fa-user-alt mr-2" />
                 Welcome {user.name}!

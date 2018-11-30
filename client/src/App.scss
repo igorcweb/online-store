@@ -428,7 +428,7 @@ button,
 
   .orders {
     background-color: #fff;
-    min-height: 5rem;
+    min-height: 4rem;
   }
   .purchases {
     max-width: 800px;
@@ -630,7 +630,11 @@ button.proceed {
     }
     .prime-message {
       position: relative;
-      right: 60px;
+      right: 4.9rem;
+    }
+    .welcome-message {
+      position: relative;
+      right: 0.35rem;
     }
   }
 
@@ -683,7 +687,8 @@ button.proceed {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .dashboard {
-    .prime-message {
+    .prime-message,
+    .welcome-message {
       position: static;
     }
   }
