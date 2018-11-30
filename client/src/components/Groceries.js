@@ -107,7 +107,6 @@ class Groceries extends Component {
                     )}
 
                     <img src={imgUrl} alt={name} className="CardImg mx-auto" />
-
                     <div className="card-body text-center">
                       <h6 className="name mb-1">{name}</h6>
                       <p className="brand my-1 text-muted">{brand}</p>
