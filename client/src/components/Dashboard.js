@@ -176,7 +176,7 @@ class Dashboard extends Component {
       if (user.orders.length) {
         const uniqueOrders = removeDuplicates(orders, '_id');
         orderMessage = (
-          <div className="mb-5">
+          <div className="mb-5 purchases">
             {uniqueOrders.map(order => {
               const {
                 _id,
@@ -194,10 +194,14 @@ class Dashboard extends Component {
                     onClick={() => {
                       this.passId(_id);
                     }}
-                    className="d-flex flex-row pb-1 pt-4 px-3 mb-4"
+                    className="d-flex pb-1 pt-4 px-3 mb-4"
                   >
                     <div className="div-modal-img mr-5">
-                      <img src={imgUrl} alt={name} />
+                      <img
+                        src={imgUrl}
+                        alt={name}
+                        className="d-block mx-auto mb-1"
+                      />
                       <ReactStars
                         className="className= stars d-flex justify-content-center"
                         passId={_id}
@@ -223,8 +227,9 @@ class Dashboard extends Component {
                               price
                             )
                           }
-                          className="btn btn-light bg-warning mt-3"
+                          className=" btn btn-success-custom-small ml-auto mt-3"
                         >
+                          <i className="fas fa-plus mr-2" />
                           Order again
                         </button>
                       </div>
@@ -265,9 +270,7 @@ class Dashboard extends Component {
               Recent Purchases
             </h5>
             <div className="orders mt-0">
-              <div className="col-sm-12 col-md-12 col-lg-9 text-center">
-                <div className="col-sm-12">{orderMessage}</div>
-              </div>
+              <div className="col-sm-12">{orderMessage}</div>
             </div>
           </div>
         </div>
