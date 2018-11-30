@@ -38,17 +38,17 @@ const products = [
     price: 4.01
   },
 
-  {
-    name: 'Stevia Extract',
-    brand: 'Vitacost',
-    category: 'Groceries',
-    description:
-      '4 fl oz, Serving Size: 7 Drops, Servings per Container: 590. Stevia is an all-natural sweetener that comes from the sweetest, most wholesome part of the stevia leaf, providing a pure, fresh taste that is twice as sweet as sugar. Add it to your favorite beverage, sprinkle it on your morning cereal or use it as a sugar substitute in your favorite recipes for guilt-free flavor you can enjoy any time.',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Stevia-Extract-835003006861.jpg',
-    inStock: 200,
-    price: 11.99
-  },
+  // {
+  //   name: 'Stevia Extract',
+  //   brand: 'Vitacost',
+  //   category: 'Groceries',
+  //   description:
+  //     '4 fl oz, Serving Size: 7 Drops, Servings per Container: 590. Stevia is an all-natural sweetener that comes from the sweetest, most wholesome part of the stevia leaf, providing a pure, fresh taste that is twice as sweet as sugar. Add it to your favorite beverage, sprinkle it on your morning cereal or use it as a sugar substitute in your favorite recipes for guilt-free flavor you can enjoy any time.',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Stevia-Extract-835003006861.jpg',
+  //   inStock: 200,
+  //   price: 11.99
+  // },
   {
     name: 'Coconut Sugar Unrefined',
     brand: 'Nutiva Organic',
@@ -60,17 +60,17 @@ const products = [
     inStock: 200,
     price: 4.69
   },
-  {
-    name: 'Organic Coffee',
-    brand: 'Mount Hagen',
-    category: 'Groceries',
-    description:
-      "3.53 oz, Freeze Dried, USDA Organic. It might sound simple, but that is precisely our goal: perfect coffee. To us, it's far more than a matter of tasting great. We already take care of that as a matter of principle, since nothing but fresh Arabica beans from the best high-altitude regions, gently roasted, cultivated and refined, make it into our packages. To us, perfection means that we only procure ecologically cultivated coffees in their countries of origin from small-scale farmers at Fairtrade conditions.",
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Mount-Hagen/Mount-Hagen-Organic-Fair-Trade-Instant-Coffee-819385023319.jpg',
-    inStock: 200,
-    price: 9.49
-  },
+  // {
+  //   name: 'Organic Coffee',
+  //   brand: 'Mount Hagen',
+  //   category: 'Groceries',
+  //   description:
+  //     "3.53 oz, Freeze Dried, USDA Organic. It might sound simple, but that is precisely our goal: perfect coffee. To us, it's far more than a matter of tasting great. We already take care of that as a matter of principle, since nothing but fresh Arabica beans from the best high-altitude regions, gently roasted, cultivated and refined, make it into our packages. To us, perfection means that we only procure ecologically cultivated coffees in their countries of origin from small-scale farmers at Fairtrade conditions.",
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/Mount-Hagen/Mount-Hagen-Organic-Fair-Trade-Instant-Coffee-819385023319.jpg',
+  //   inStock: 200,
+  //   price: 9.49
+  // },
   {
     name: 'Italian Extra Virgin Olive Oil',
     brand: 'Simple Truth®',
@@ -82,17 +82,17 @@ const products = [
     inStock: 200,
     price: 5.99
   },
-  {
-    name: 'Extra Virgin Coconut Oil',
-    brand: 'Vitacost',
-    category: 'Groceries',
-    description:
-      'Certified organic, unrefined, non-GMO coconut oil. Cold pressed without the use of heat or chemicals and packaged in BPA-free jars., Nutrition Facts Serving Size: 1 Tablespoon (15 mL), Servings per Container: 108',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Extra-Virgin-Certified-Organic-Coconut-Oil-Non-GMO-844197011568.jpg',
-    inStock: 200,
-    price: 19.99
-  },
+  // {
+  //   name: 'Extra Virgin Coconut Oil',
+  //   brand: 'Vitacost',
+  //   category: 'Groceries',
+  //   description:
+  //     'Certified organic, unrefined, non-GMO coconut oil. Cold pressed without the use of heat or chemicals and packaged in BPA-free jars., Nutrition Facts Serving Size: 1 Tablespoon (15 mL), Servings per Container: 108',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Extra-Virgin-Certified-Organic-Coconut-Oil-Non-GMO-844197011568.jpg',
+  //   inStock: 200,
+  //   price: 19.99
+  // },
   {
     name: '100% Cranberry Juice',
     brand: 'Simple Truth®',
@@ -104,17 +104,17 @@ const products = [
     inStock: 200,
     price: 3.99
   },
-  {
-    name: 'Dark Chocolate 88% Cocoa Bar',
-    brand: 'Endangered Species',
-    category: 'Groceries',
-    description:
-      'With 88% Cocoa Rainforest Alliance Certified Cocoa, Non-GMO verified, Certified Gluten Free, Natural, 3 oz, Serving Size: 1/2 Bar (43 g), Servings per Container: About 2',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/200/Endangered-Species/Endangered-Species-Dark-Chocolate-88-Cocoa-Bar-Vegan-Gluten-Free-037014242478.jpg',
-    inStock: 200,
-    price: 2.84
-  },
+  // {
+  //   name: 'Dark Chocolate 88% Cocoa Bar',
+  //   brand: 'Endangered Species',
+  //   category: 'Groceries',
+  //   description:
+  //     'With 88% Cocoa Rainforest Alliance Certified Cocoa, Non-GMO verified, Certified Gluten Free, Natural, 3 oz, Serving Size: 1/2 Bar (43 g), Servings per Container: About 2',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/200/Endangered-Species/Endangered-Species-Dark-Chocolate-88-Cocoa-Bar-Vegan-Gluten-Free-037014242478.jpg',
+  //   inStock: 200,
+  //   price: 2.84
+  // },
   {
     name: 'Organic Raw Almonds',
     brand: 'Vitacost',
@@ -192,17 +192,17 @@ const products = [
     inStock: 200,
     price: 6.45
   },
-  {
-    name: 'Real Yogurt Starter Culture Greek',
-    brand: 'Cultures For Health',
-    category: 'Groceries',
-    description:
-      '2 Packets of Starter Culture, Non-GMO,Gluten-Free, Serving Size: 0.6 g, Servings per Container: 2',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Cultures-For-Health/Cultures-For-Health-Real-Yogurt-Starter-Culture-Greek-814598020285.jpg',
-    inStock: 200,
-    price: 12.99
-  },
+  // {
+  //   name: 'Real Yogurt Starter Culture Greek',
+  //   brand: 'Cultures For Health',
+  //   category: 'Groceries',
+  //   description:
+  //     '2 Packets of Starter Culture, Non-GMO,Gluten-Free, Serving Size: 0.6 g, Servings per Container: 2',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/Cultures-For-Health/Cultures-For-Health-Real-Yogurt-Starter-Culture-Greek-814598020285.jpg',
+  //   inStock: 200,
+  //   price: 12.99
+  // },
   {
     name: 'French Agen Mini Plums',
     brand: 'Fruit Bliss',
@@ -247,17 +247,17 @@ const products = [
     inStock: 200,
     price: 16.74
   },
-  {
-    name: 'Coconut Water Original',
-    brand: 'Simple Truth®',
-    category: 'Groceries',
-    description:
-      'Not From Concentrate, 16.9 fl oz, Serving Size: 1 Container (500 mL), Organically Grown, No Preservatives,Original, USDA, Organic, Non-GMO, Fair Trade, Certified, Kosher',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Simple-Truth-Organic/Simple-Truth-Organic-Coconut-Water-Original-011110854865.jpg',
-    inStock: 200,
-    price: 1.99
-  },
+  // {
+  //   name: 'Coconut Water Original',
+  //   brand: 'Simple Truth®',
+  //   category: 'Groceries',
+  //   description:
+  //     'Not From Concentrate, 16.9 fl oz, Serving Size: 1 Container (500 mL), Organically Grown, No Preservatives,Original, USDA, Organic, Non-GMO, Fair Trade, Certified, Kosher',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/Simple-Truth-Organic/Simple-Truth-Organic-Coconut-Water-Original-011110854865.jpg',
+  //   inStock: 200,
+  //   price: 1.99
+  // },
   {
     name: 'Sunflower Seed Bread',
     brand: 'Mestemacher',
@@ -280,17 +280,17 @@ const products = [
     inStock: 200,
     price: 3.19
   },
-  {
-    name: 'Organic Vitamin C',
-    brand: 'Healthy Origins ',
-    category: 'Supplements',
-    description:
-      'Non-GMO, Natural • Whole Food, Soy-Free, USDA, Organic, With Natural Bioflavonoids, Easy on the Stomach, Suitable for Vegetarians & Vegans, 250 mg - 60 Tablets, Serving Size: 1 Tablet Servings per Container: 60',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Healthy-Origins/Healthy-Origins-Organic-Vitamin-C-603573683740.jpg',
-    inStock: 200,
-    price: 13.5
-  },
+  // {
+  //   name: 'Organic Vitamin C',
+  //   brand: 'Healthy Origins ',
+  //   category: 'Supplements',
+  //   description:
+  //     'Non-GMO, Natural • Whole Food, Soy-Free, USDA, Organic, With Natural Bioflavonoids, Easy on the Stomach, Suitable for Vegetarians & Vegans, 250 mg - 60 Tablets, Serving Size: 1 Tablet Servings per Container: 60',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/Healthy-Origins/Healthy-Origins-Organic-Vitamin-C-603573683740.jpg',
+  //   inStock: 200,
+  //   price: 13.5
+  // },
   {
     name: 'MULTI VITA•MIN™',
     brand: 'THE SYNERGY COMPANY™',
@@ -402,7 +402,7 @@ const products = [
     price: 49.99
   },
   {
-    name: '100% Pure Micronized L-Glutamine Powder',
+    name: 'Micronized L-Glutamine Powder',
     brand: 'Ora Organic',
     category: 'Supplements',
     description:
@@ -412,39 +412,39 @@ const products = [
     inStock: 200,
     price: 39.95
   },
-  {
-    name: 'Acetyl-L-Carnitine',
-    brand: 'Natural Factors',
-    category: 'Supplements',
-    description:
-      'Acetyl-L-Carnitine is a highly bioavailable form of L-Carnitine and is able to effectively cross the blood-brain barrier. Acetyl-L-Carnitine assists the critical conversion of choline into acetylcholine. Acetylcholine is a key chemical messenger in the brain and promotes normal and healthy brain function including memory and concentration. It also helps transform fats into energy and supports normal muscle movement. Natural Factors amino acids are the highest quality pharmaceutical grade products available. 500 mg - 60 Vegetarian Capsules, Serving Size: 2 Vegetarian Capsules. Servings per Container: 30',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Natural-Factors/Natural-Factors-Acetyl-L-Carnitine-068958028002.jpg',
-    inStock: 200,
-    price: 13.97
-  },
-  {
-    name: 'Vegan Multivitamin',
-    brand: 'Deva',
-    category: 'Supplements',
-    description:
-      '90 Coated Tablets, Serving Size: 1 Tablet, Servings per Container: 90. Free Of Yeast, wheat, gluten, milk, sugar, salt, starch, preservatives; animal products, byproducts or derivatives.',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Deva/Deva-Vegan-Multivitamin-And-Mineral-Supplement-895634000027.jpg',
-    inStock: 200,
-    price: 10.69
-  },
-  {
-    name: 'Taurine',
-    brand: 'NOW',
-    category: 'Supplements',
-    description:
-      '500 mg - 100 Capsules, Serving Size: 1 Capsule, Servings per Container: 100.Taurine is a conditionally essential amino acid which is not utilized in protein synthesis, but is mainly found free in most tissues, especially throughout the nervous system. It functions in tissues by stabilizing cell membranes, aiding the transport of potassium, sodium, calcium, and magnesium in and out of cells.',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/NOW-Foods/NOW-Foods-Taurine-733739001405.jpg',
-    inStock: 200,
-    price: 10.69
-  },
+  // {
+  //   name: 'Acetyl-L-Carnitine',
+  //   brand: 'Natural Factors',
+  //   category: 'Supplements',
+  //   description:
+  //     'Acetyl-L-Carnitine is a highly bioavailable form of L-Carnitine and is able to effectively cross the blood-brain barrier. Acetyl-L-Carnitine assists the critical conversion of choline into acetylcholine. Acetylcholine is a key chemical messenger in the brain and promotes normal and healthy brain function including memory and concentration. It also helps transform fats into energy and supports normal muscle movement. Natural Factors amino acids are the highest quality pharmaceutical grade products available. 500 mg - 60 Vegetarian Capsules, Serving Size: 2 Vegetarian Capsules. Servings per Container: 30',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/Natural-Factors/Natural-Factors-Acetyl-L-Carnitine-068958028002.jpg',
+  //   inStock: 200,
+  //   price: 13.97
+  // },
+  // {
+  //   name: 'Vegan Multivitamin',
+  //   brand: 'Deva',
+  //   category: 'Supplements',
+  //   description:
+  //     '90 Coated Tablets, Serving Size: 1 Tablet, Servings per Container: 90. Free Of Yeast, wheat, gluten, milk, sugar, salt, starch, preservatives; animal products, byproducts or derivatives.',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/Deva/Deva-Vegan-Multivitamin-And-Mineral-Supplement-895634000027.jpg',
+  //   inStock: 200,
+  //   price: 10.69
+  // },
+  // {
+  //   name: 'Taurine',
+  //   brand: 'NOW',
+  //   category: 'Supplements',
+  //   description:
+  //     '500 mg - 100 Capsules, Serving Size: 1 Capsule, Servings per Container: 100.Taurine is a conditionally essential amino acid which is not utilized in protein synthesis, but is mainly found free in most tissues, especially throughout the nervous system. It functions in tissues by stabilizing cell membranes, aiding the transport of potassium, sodium, calcium, and magnesium in and out of cells.',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/NOW-Foods/NOW-Foods-Taurine-733739001405.jpg',
+  //   inStock: 200,
+  //   price: 10.69
+  // },
 
   {
     name: 'One Daily Multi',
@@ -457,28 +457,28 @@ const products = [
     inStock: 200,
     price: 41.97
   },
-  {
-    name: 'Prostate 5LX',
-    brand: 'New Chapter',
-    category: 'Supplements',
-    description:
-      '180 Vegetarian Capsules, Serving Size: 2 Capsules, Servings per Container: 90. Non-GMO Verified Formula, Holistic Prostate Support, 100% Vegetarian, Gluten Free, Helps Support Normal Urine Flow and Prostate Health, Made in the USA.',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/New-Chapter/New-Chapter-Supercritical-Prostate-5LX-727783900692.jpg',
-    inStock: 200,
-    price: 50.37
-  },
-  {
-    name: 'GOLD Liquid Multi-Vitamin',
-    brand: "Nature's Plus",
-    category: 'Supplements',
-    description:
-      '30 fl oz, Serving Size: 2 Tablespoons 1 Capful (1 fl oz) (29.57 mL), Servings per Container: 30, Gluten Free, Vegetarian, Hypo-Allergenic',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Natures-Plus/Natures-Plus-Source-of-Life-GOLD-Liquid-Multi-Vitamin-Supplement-Tropical-Fruit-097467307018.jpg',
-    inStock: 200,
-    price: 47.35
-  },
+  // {
+  //   name: 'Prostate 5LX',
+  //   brand: 'New Chapter',
+  //   category: 'Supplements',
+  //   description:
+  //     '180 Vegetarian Capsules, Serving Size: 2 Capsules, Servings per Container: 90. Non-GMO Verified Formula, Holistic Prostate Support, 100% Vegetarian, Gluten Free, Helps Support Normal Urine Flow and Prostate Health, Made in the USA.',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/New-Chapter/New-Chapter-Supercritical-Prostate-5LX-727783900692.jpg',
+  //   inStock: 200,
+  //   price: 50.37
+  // },
+  // {
+  //   name: 'GOLD Liquid Multi-Vitamin',
+  //   brand: "Nature's Plus",
+  //   category: 'Supplements',
+  //   description:
+  //     '30 fl oz, Serving Size: 2 Tablespoons 1 Capful (1 fl oz) (29.57 mL), Servings per Container: 30, Gluten Free, Vegetarian, Hypo-Allergenic',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/Natures-Plus/Natures-Plus-Source-of-Life-GOLD-Liquid-Multi-Vitamin-Supplement-Tropical-Fruit-097467307018.jpg',
+  //   inStock: 200,
+  //   price: 47.35
+  // },
   {
     name: 'Cap Sleeve Eco-Jersey Crew T-Shirt for Women',
     brand: 'Alternative Apparel',

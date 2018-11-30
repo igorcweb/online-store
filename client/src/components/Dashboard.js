@@ -200,7 +200,7 @@ class Dashboard extends Component {
                       <img
                         src={imgUrl}
                         alt={name}
-                        className="d-block mx-auto mb-1"
+                        className="d-block mx-auto mb-2"
                       />
                       <ReactStars
                         className="className= stars d-flex justify-content-center"
@@ -227,7 +227,7 @@ class Dashboard extends Component {
                               price
                             )
                           }
-                          className=" btn btn-success-custom-small ml-auto mt-3"
+                          className="btn btn-success-custom-small ml-auto mt-3"
                         >
                           <i className="fas fa-plus mr-2" />
                           Order again

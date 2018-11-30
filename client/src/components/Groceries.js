@@ -78,52 +78,55 @@ class Groceries extends Component {
             return (
               <div className="col-md col-lg-4 mt-2 mb-4 mx-auto" key={_id}>
                 <div className="card align-items-center products d-flex shadow-sm">
-                  <button
-                    className="btn btn-success-custom-small ml-auto mb-5"
-                    onClick={() =>
-                      this.addToCart(
-                        _id,
-                        name,
-                        brand,
-                        description,
-                        imgUrl,
-                        price
-                      )
-                    }
-                  >
-                    <i className="fas fa-plus mr-2" />
-                    Add to cart
-                  </button>
-                  <img src={imgUrl} alt={name} className="CardImg" />
-
-                  <div className="card-body text-center">
-                    <h6 className="name mb-1">{name}</h6>
-                    <p className="brand my-1 text-muted">{brand}</p>
-                    <p className="orange strong my-2">${price.toFixed(2)}</p>
-                    <ReactStars
-                      className="className= stars d-flex justify-content-center"
-                      count={5}
-                      size={20}
-                      color2={'#ffd700'}
-                      value={rating.total / rating.number}
-                      edit={false}
-                    />
+                  <div className="product-body">
                     <button
-                      className="btn btn-sm btn-outline-secondary d-block mx-auto  my-2"
-                      onClick={() => this.seeMore(_id)}
+                      className="btn btn-success-custom-small mb-5 d-block ml-auto"
+                      onClick={() =>
+                        this.addToCart(
+                          _id,
+                          name,
+                          brand,
+                          description,
+                          imgUrl,
+                          price
+                        )
+                      }
                     >
-                      {this.state.description === _id ? 'See Less' : 'See More'}
+                      <i className="fas fa-plus mr-2" />
+                      Add to cart
                     </button>
-                    <small
-                      className={classnames('text-gray isHidden', {
-                        isShown: this.state.description === _id
-                      })}
-                    >
-                      {' '}
-                      <hr />
-                      {description}
-                    </small>
+
+                    <img src={imgUrl} alt={name} className="CardImg mx-auto" />
+
+                    <div className="card-body text-center">
+                      <h6 className="name mb-1">{name}</h6>
+                      <p className="brand my-1 text-muted">{brand}</p>
+                      <p className="orange strong my-2">${price.toFixed(2)}</p>
+                      <ReactStars
+                        className="className= stars d-flex justify-content-center"
+                        count={5}
+                        size={20}
+                        color2={'#ffd700'}
+                        value={rating.total / rating.number}
+                        edit={false}
+                      />
+                    </div>
                   </div>
+                  <button
+                    className="btn btn-sm btn-outline-secondary d-block mx-auto my-2"
+                    onClick={() => this.seeMore(_id)}
+                  >
+                    {this.state.description === _id ? 'See Less' : 'See More'}
+                  </button>
+                  <small
+                    className={classnames('text-gray isHidden px-4 pb-2', {
+                      isShown: this.state.description === _id
+                    })}
+                  >
+                    {' '}
+                    <hr />
+                    {description}
+                  </small>
                 </div>
               </div>
             );

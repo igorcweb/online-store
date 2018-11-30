@@ -86,9 +86,9 @@ a {
 }
 
 .products {
-  width: 98%;
+  width: 90%;
   margin: 0 auto;
-  max-width: 380px;
+  max-width: 335px;
 }
 
 .card {
@@ -446,12 +446,16 @@ button,
 // ---- 9. PRODUCTS ---- //
 
 .products {
+  .product-body {
+    height: 28.5rem;
+  }
   .orange {
     color: #ff332b;
   }
 
   .CardImg {
-    height: 225px;
+    width: 100px;
+    height: auto;
     width: 50%;
     display: block;
   }
