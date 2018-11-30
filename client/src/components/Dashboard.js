@@ -97,18 +97,23 @@ class Dashboard extends Component {
     if (!user.name) {
       dashboardContent = <Spinner />;
     } else {
-      const { name, email, date, prime, orders } = user;
+      const { date, prime, orders } = user;
       if (user.address) {
         const { street, city, state, zipcode } = user.address;
         addressMessage = (
-          <div className="">
-            <p className="">
-              {street}, {city} {state}, {zipcode}
+          <div className="address-msg text-center">
+            <h5 className="heading-address mb-1">
+              <i className="fas fa-address-book mr-2" />
+              Shipping Address
+            </h5>
+            <p className="address-subtext my-0">{street}</p>
+            <p className="address-subtext mt-0 mb-2">
+              {city} {state}, {zipcode}
             </p>
 
             <button
               onClick={this.onUpdateAddress}
-              className="btn bt-block btn-success-custom text-caps"
+              className="btn btn-brown-custom btn-sm btn-address mt-1"
             >
               Update Address
             </button>
@@ -116,40 +121,44 @@ class Dashboard extends Component {
         );
       } else {
         addressMessage = (
-          <button
-            onClick={this.onUpdateAddress}
-            className="btn btn-block btn-brown-custom mt-4"
-          >
-            Add Address
-          </button>
+          <div className="address-msg text-center">
+            <h5 className="heading-address mb-2">
+              <i className="fas fa-address-book mr-2" />
+              Shipping Address
+            </h5>
+            <button
+              onClick={this.onUpdateAddress}
+              className="btn btn-brown-custom btn-sm btn-address mt-2"
+            >
+              Add Address
+            </button>
+          </div>
         );
       }
       if (prime.member) {
         primeMessage = (
-          <div className="mt-0 pt-0 text-center mt-3 ">
-            <div className="p-2 thisj">
-              <i className="fas mt-2 fa-certificate"> Prime Member</i>
-            </div>
-            <div className="">
-              <small className="">
-                {' '}
-                Your next prime membership payment of ${prime.fee} is due on{' '}
-                {prime.nextPayment}.
-              </small>
-            </div>
+          <div className="mt-0 pt-0 text-center prime">
+            <h4 className="heading-prime mb-1">
+              <i className="fas fa-certificate mr-2"> </i>Prime Member
+            </h4>
+
+            <p className="subheading-prime mx-auto">
+              {' '}
+              Your next prime membership payment of ${prime.fee} is due on{' '}
+              {prime.nextPayment}
+            </p>
           </div>
         );
       } else {
         primeMessage = (
-          <div className="mt-0 pt-0 text-center mt-3 ">
-            <div className="p-2 thisj">
-              <i className="fas fa-award" />
-              <h5 className="d-inline card-title ml-2 prime-title">
-                {' '}
-                Become a Prime Member!
-              </h5>
-            </div>
-            <p className="sub-text">
+          <div className="mt-0 pt-0 text-center prime">
+            <i className="fas fa-award" />
+            <h5 className="d-inline card-title ml-2 prime-title mb-1">
+              {' '}
+              Become a Prime Member!
+            </h5>
+
+            <p className="subheading-prime mx-auto">
               Get free U.S shipping! Become a prime member for only $59.99 a
               year!
             </p>
@@ -167,28 +176,25 @@ class Dashboard extends Component {
       if (user.orders.length) {
         const uniqueOrders = removeDuplicates(orders, '_id');
         orderMessage = (
-          <div className="orders py-3">
-            <div className="pt-3 mt-3 mb-5 text-center">
-              <h5>Resent purchases:</h5>
-            </div>
-            <div className="mb-5">
-              {uniqueOrders.map(order => {
-                const {
-                  _id,
-                  name,
-                  brand,
-                  description,
-                  imgUrl,
-                  price,
-                  rating
-                } = order;
-                return (
+          <div className="mb-5">
+            {uniqueOrders.map(order => {
+              const {
+                _id,
+                name,
+                brand,
+                description,
+                imgUrl,
+                price,
+                rating
+              } = order;
+              return (
+                <div>
                   <div
                     key={_id}
                     onClick={() => {
                       this.passId(_id);
                     }}
-                    className="d-flex flex-row border pb-4 pt-4 px-3 mb-4"
+                    className="d-flex flex-row pb-1 pt-4 px-3 mb-4"
                   >
                     <div className="div-modal-img mr-5">
                       <img src={imgUrl} alt={name} />
@@ -224,72 +230,42 @@ class Dashboard extends Component {
                       </div>
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                  <hr />
+                </div>
+              );
+            })}
           </div>
         );
       } else {
         orderMessage = '';
       }
       dashboardContent = (
-        <div className="container my-5 padding-container">
+        <div className="container my-4">
           <div className="row">
-            <div className="col">
-              <h4 className="heading-dashboard text-center text-lg-left">
+            <div className="col-xl-4 col-md-6 offset-xl-0  offset-lg-4 offset-md-3">
+              <h4 className="heading-dashboard text-center text-lg-left mb-1">
                 <i className="fas fa-user-alt mr-2" />
                 Welcome {user.name}!
               </h4>
               <p className="text-center text-lg-left subheading">
                 Member since {date}
               </p>
-              <div className="tab-content">
-                <div className="d-flex flex-column">
-                  <div className="card my-3">
-                    <div className="card-body mt-0 pt-0">
-                      <div className="row">
-                        <div className="col-sm-12 col-lg-3 mt-3">
-                          {primeMessage}
-                        </div>
-                        <div className="col-sm-12 col-md-12 col-lg-9 text-center">
-                          <table className="table mt-5">
-                            <thead className="no-border">
-                              <tr>
-                                <th scope="col" className="pt-3 pb-0">
-                                  <p className="small-heading-1">Name</p>
-                                </th>
-                                <th scope="col" className="pt-3 pb-0">
-                                  <p className="small-heading-1">Email</p>
-                                </th>
-                                <th scope="col" className="pt-3 pb-0">
-                                  <p className="small-heading-1">
-                                    Shipping Address
-                                  </p>
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody className="border">
-                              <tr className="firstly">
-                                <td className="">
-                                  <h6>{name}</h6>
-                                  <small>Member since {date}</small>
-                                </td>
-                                <td className="">
-                                  <small>{email}</small>
-                                </td>
+            </div>
+            <div className="col-xl-4 col-lg-5 offset-xl-0 offset-lg-1 prime-message mt-4 my-xl-0">
+              {primeMessage}
+            </div>
+            <div className="col-xl-3 col-lg-6 mt-4 my-xl-0 offset ml-auto">
+              {addressMessage}
+            </div>
+          </div>
 
-                                <td>
-                                  <small>{addressMessage}</small>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+          <div className="container purchases px-0 shadow-sm">
+            <h5 class="heading-orders text-center mt-5 mb-0">
+              <i className="fas fa-box mr-2" />
+              Recent Purchases
+            </h5>
+            <div className="orders mt-0">
+              <div className="col-sm-12 col-md-12 col-lg-9 text-center">
                 <div className="col-sm-12">{orderMessage}</div>
               </div>
             </div>

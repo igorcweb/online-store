@@ -357,32 +357,36 @@ button,
     color: $lightgray;
   }
 
+  .heading-orders {
+    background-color: #badbdf;
+  }
+
   .prime-title,
-  .sub-text {
+  .sub-text,
+  .address-subtext {
     color: $darkgray;
   }
 
-  .btn-prime {
+  .btn-prime,
+  .btn-address {
     font-size: 0.9rem;
-  }
-
-  .no-border {
-    th {
-      border: none;
-    }
   }
 
   .text-green {
     color: #badbdf;
   }
 
-  .firstly {
-    border-left: #badbdf 10px solid;
-  }
-
   .fa-user-alt {
     font-size: 1.2rem;
     color: lighten(#31c082, 4%);
+  }
+
+  p.subheading {
+    margin-left: 1.8rem;
+  }
+
+  p.subheading-prime {
+    max-width: 300px;
   }
 
   .toggle-nav {
@@ -397,28 +401,41 @@ button,
     font-size: 1.4rem;
     color: $lightgray;
   }
+
+  .heading-prime {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #afa381;
+  }
+  .prime-title,
+  .heading-address {
+    color: $lightgray;
+    font-weight: 600;
+  }
+
+  .heading-orders {
+    color: $darkgray;
+    font-weight: 600;
+    padding: 0.8rem 0;
+  }
   .btn-warning {
     background: rgb(250, 198, 103);
   }
 
-  .table > tbody > tr > td,
-  .table > tbody > tr > th,
-  .table > tfoot > tr > td,
-  .table > tfoot > tr > th,
-  .table > thead > tr > td,
-  .table > thead > tr > th {
-    display: block;
-    min-width: 100%;
-  }
-  .table > thead > tr > th {
-    display: none;
+  .fa-certificate {
+    font-size: 1.3rem;
   }
 
-  .table .filterBody span {
-    display: block;
+  .orders {
+    background-color: #fff;
+    min-height: 4rem;
   }
-  .fa-certificate {
-    font-size: 1.7rem;
+  .purchases {
+    max-width: 800px;
+  }
+
+  .fa-box {
+    font-size: 1.1rem;
   }
 
   .text-caps {
@@ -485,7 +502,8 @@ p.brand {
 // ---- 11. OTHER MODAL STYLES ---- //
 
 .div-modal-img > img {
-  width: 55px;
+  width: 45px;
+  height: 60px;
 }
 
 .modal {
@@ -551,22 +569,6 @@ button.proceed {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .dashboard {
-    .table > tbody > tr > td,
-    .table > tbody > tr > th,
-    .table > tfoot > tr > td,
-    .table > tfoot > tr > th,
-    .table > thead > tr > td,
-    .table > thead > tr > th {
-      display: table-cell;
-      min-width: 100%;
-    }
-    .table > thead > tr > th {
-      display: table-cell;
-    }
-
-    .table .filterBody span {
-      display: table;
-    }
     .padding-container {
       padding: 0px 50px 0px 50px;
     }
@@ -622,9 +624,12 @@ button.proceed {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  p.subheading {
-    margin-left: 1.8rem;
+  .dashboard {
+    p.subheading-prime {
+      max-width: 17.2rem;
+    }
   }
+
   img.groceries,
   img.supplements {
     height: 19rem;
