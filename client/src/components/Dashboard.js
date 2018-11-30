@@ -185,7 +185,8 @@ class Dashboard extends Component {
                 description,
                 imgUrl,
                 price,
-                rating
+                rating,
+                inStock
               } = order;
               return (
                 <div>
@@ -216,22 +217,31 @@ class Dashboard extends Component {
                       <h6 className="pb-0 mb-0">{name}</h6>
                       <small className="text-muted pt-0 mt-0">{brand}</small>
                       <div>
-                        <button
-                          onClick={() =>
-                            this.addToCart(
-                              _id,
-                              name,
-                              brand,
-                              description,
-                              imgUrl,
-                              price
-                            )
-                          }
-                          className="btn btn-success-custom-small ml-auto mt-3"
-                        >
-                          <i className="fas fa-plus mr-2" />
-                          Order again
-                        </button>
+                        {inStock > 0 ? (
+                          <button
+                            onClick={() =>
+                              this.addToCart(
+                                _id,
+                                name,
+                                brand,
+                                description,
+                                imgUrl,
+                                price
+                              )
+                            }
+                            className="btn btn-success-custom-small mt-3"
+                          >
+                            <i className="fas fa-plus mr-2" />
+                            Order again
+                          </button>
+                        ) : (
+                          <button
+                            className="btn btn-secondary mt-3"
+                            disabled="true"
+                          >
+                            Out of Stock
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>
