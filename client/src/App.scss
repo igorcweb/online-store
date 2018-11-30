@@ -428,7 +428,7 @@ button,
 
   .orders {
     background-color: #fff;
-    min-height: 4rem;
+    min-height: 5rem;
   }
   .purchases {
     max-width: 800px;
@@ -628,6 +628,10 @@ button.proceed {
     p.subheading-prime {
       max-width: 17.2rem;
     }
+    .prime-message {
+      position: relative;
+      right: 60px;
+    }
   }
 
   img.groceries,
@@ -678,6 +682,12 @@ button.proceed {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .dashboard {
+    .prime-message {
+      position: static;
+    }
+  }
+
   img.groceries,
   img.supplements {
     height: 22.8rem;

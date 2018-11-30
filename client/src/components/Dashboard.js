@@ -241,8 +241,8 @@ class Dashboard extends Component {
       }
       dashboardContent = (
         <div className="container my-4">
-          <div className="row">
-            <div className="col-xl-4 col-md-6 offset-xl-0  offset-lg-4 offset-md-3">
+          <div className="row account">
+            <div className="col-xl-4 col-lg-5 col-md-6 offset-md-3 offset-lg-0 px-lg-0 mx-lg-0">
               <h4 className="heading-dashboard text-center text-lg-left mb-1">
                 <i className="fas fa-user-alt mr-2" />
                 Welcome {user.name}!
@@ -251,10 +251,10 @@ class Dashboard extends Component {
                 Member since {date}
               </p>
             </div>
-            <div className="col-xl-4 col-lg-5 offset-xl-0 offset-lg-1 prime-message mt-4 my-xl-0">
+            <div className="col-xl-4 col-lg-4 offset-xl-0 offset-lg-0 prime-message mt-4 my-lg-0">
               {primeMessage}
             </div>
-            <div className="col-xl-3 col-lg-6 mt-4 my-xl-0 offset ml-auto">
+            <div className="col-xl-3 col-lg-3 mt-5 my-lg-0 ml-auto">
               {addressMessage}
             </div>
           </div>
