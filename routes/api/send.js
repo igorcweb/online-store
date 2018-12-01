@@ -43,7 +43,7 @@ router.post('/welcome', (req, res) => {
               path: '/v3/mail/send',
               body: mail.toJSON()
             });
-            sg.API(request, function(error, response) {
+            sg.API(request, (error, response) => {
               console.log('SendGrid');
               if (error) {
                 console.log('Error response received');
@@ -57,7 +57,7 @@ router.post('/welcome', (req, res) => {
           callback(null, true);
         }
       ],
-      function(err, results) {
+      (err, results) => {
         if (err) {
           console.log(err);
         } else {
@@ -72,7 +72,7 @@ router.post('/welcome', (req, res) => {
   }
   async.parallel(
     [
-      function(callback) {
+      callback => {
         sendEmail(
           callback,
           'organicfitnessworld@gmail.com',
@@ -173,7 +173,7 @@ router.post('/welcome', (req, res) => {
         </td>
         <td
           class="container"
-          style="font-family: sans-serif; font-size: 14px;  display: block; Margin: 0 auto; max-width: 580px; padding: 10px; width: 580px;"
+          style="font-family: sans-serif; font-size: 14px;  display: block; margin: 0; max-width: 580px; padding: 10px; width: 580px;"
         >
           <div
             class="content"
@@ -263,7 +263,7 @@ router.post('/welcome', (req, res) => {
         );
       }
     ],
-    function(err, results) {
+    (err, results) => {
       res.send({
         success: true,
         message: 'Emails sent',
@@ -315,7 +315,7 @@ router.post('/order/:id', (req, res) => {
           const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
           async.parallel(
             [
-              function(callback) {
+              callback => {
                 // Add to emails
                 for (let i = 0; i < toEmails.length; i += 1) {
                   // Add from emails
@@ -335,7 +335,7 @@ router.post('/order/:id', (req, res) => {
                     path: '/v3/mail/send',
                     body: mail.toJSON()
                   });
-                  sg.API(request, function(error, response) {
+                  sg.API(request, (error, response) => {
                     console.log('SendGrid');
                     if (error) {
                       console.log('Error response received');
@@ -349,7 +349,7 @@ router.post('/order/:id', (req, res) => {
                 callback(null, true);
               }
             ],
-            function(err, results) {
+            (err, results) => {
               if (err) {
                 console.log(err);
               } else {
@@ -364,7 +364,7 @@ router.post('/order/:id', (req, res) => {
         }
         async.parallel(
           [
-            function(callback) {
+            callback => {
               sendEmail(
                 callback,
                 'organicfitnessworld@gmail.com',
@@ -465,7 +465,7 @@ router.post('/order/:id', (req, res) => {
         </td>
         <td
           class="container"
-          style="font-family: sans-serif; font-size: 14px;  display: block; Margin: 0 auto; max-width: 580px; padding: 10px; width: 580px;"
+          style="font-family: sans-serif; font-size: 14px;  display: block; margin: 0; max-width: 580px; padding: 10px; width: 580px;"
         >
           <div
             class="content"
@@ -567,7 +567,7 @@ router.post('/order/:id', (req, res) => {
               );
             }
           ],
-          function(err, results) {
+          (err, results) => {
             res.send({
               success: true,
               message: 'Emails sent',
