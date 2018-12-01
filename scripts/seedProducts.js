@@ -16,13 +16,13 @@ mongoose
 
 const products = [
   {
-    name: 'Vitacost Shirataki Rice',
+    name: 'Organic Gluten Free Quinoa Flour',
     brand: 'Vitacost',
     category: 'Groceries',
     description:
-      'Non-GMO and Gluten Free, Vegan, plant-based noodles, Serving Size: 3 oz (85 g), Servings per Container: 2.3',
+      'Non-GMO and Gluten Free, Vegan. Serving Size: 1/4 cup (Approx 28g), Servings per Container: 16',
     imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Shirataki-Rice-Non-GMO-and-Gluten-Free-844197023622.jpg',
+      'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Certified-Organic-Gluten-Free-Quinoa-Flour-844197026364.jpg',
     inStock: 20,
     price: 1.58
   },
@@ -193,15 +193,15 @@ const products = [
     price: 6.45
   },
   {
-    name: 'Real Yogurt Starter Culture Greek',
-    brand: 'Cultures For Health',
+    name: 'Vitacost Quick Oats Gluten Free - Non-GMO -- 32 oz (907 g)',
+    brand: 'Vitacost',
     category: 'Groceries',
     description:
-      '2 Packets of Starter Culture, Non-GMO,Gluten-Free, Serving Size: 0.6 g, Servings per Container: 2',
+      'Quick-cooking oats – ready to eat in just 5 minutes. Also great in no-bake cookies & goodies. Wholesome, nutty flavor + chewy texture. Non-GMO Project Verified. Certified gluten-free by the Gluten Intolerance Group (GIG). No artificial flavors, colors or preservatives. High in fiber + 5 grams of protein per serving. Vegan',
     imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Cultures-For-Health/Cultures-For-Health-Real-Yogurt-Starter-Culture-Greek-814598020285.jpg',
+      'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Quick-Oats-Gluten-Free-Non-GMO-844197026289.jpg',
     inStock: 20,
-    price: 12.99
+    price: 5.22
   },
   {
     name: 'French Agen Mini Plums',
@@ -219,20 +219,20 @@ const products = [
     brand: 'Vitacost',
     category: 'Groceries',
     description:
-      'Whole food, non-GMO quinoa, No additives or preservatives, Certified organic, Naturally, gluten free, 6 grams of protein + 3 grams fiber per quarter-cup serving, 12 oz (340 g), Serving Size: 1/4 Cup (Approx 45 g)Servings per Container: 8',
+      'Whole food, non-GMO quinoa, No additives or preservatives, Certified organic, Naturally, gluten free, 6 grams of protein + 3 grams fiber per quarter-cup serving, 12 oz (340 g), Serving Size: 1/4 Cup (Approx 45 g). Servings per Container: 8',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Fruit-Bliss/Fruit-Bliss-Organic-French-Agen-Mini-Plums-811406020031.jpg',
     inStock: 20,
     price: 3.99
   },
   {
-    name: 'Silken Tofu Firm',
-    brand: 'Mori-Nu',
+    name: 'Vitacost Organic Dark Chocolate Covered Almonds -- 7 oz (199 g)',
+    brand: 'Vitacost',
     category: 'Groceries',
     description:
-      'For Entrees, Salads and Desserts,Certified Gluten Free, Kosher, Non-GMO Project Verified, No Perservatives, 12.3 oz, Serving Size: 3 oz, Servings per Container: About 4',
+      'Organic almonds covered in rich, decadent dark chocolate are the perfect healthy indulgence! Vitacost Dark Chocolate Almonds are a great-tasting, all-natural snack you can enjoy anytime, anywhere! Snack healthy with Vitacost – bringing nature’s best to you.  Serving Size: 13 Pieces (40g). Servings per Container: About 5',
     imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Mori-Nu/Mori-Nu-Organic-Silken-Tofu-Firm-085696609201.jpg',
+      'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Organic-Dark-Chocolate-Covered-Almonds-844197012169.jpg',
     inStock: 20,
     price: 1.93
   },
@@ -259,15 +259,15 @@ const products = [
   //   price: 1.99
   // },
   {
-    name: 'Sunflower Seed Bread',
-    brand: 'Mestemacher',
+    name: 'Vitacost Garbanzo Beans',
+    brand: 'Vitacost',
     category: 'Groceries',
     description:
-      "With Whole Rye Kernels, Also Delicious Toasted, Ideal for cholesterol conscious diet. Freshly ground in their own Mestemacher's own mill from whole grains. Kosher, No Preservatives. High Fiber, Cholesterol Free. Natural Ingredients. Long Shelf Life. Wheat Free, 17.6 oz, Serving Size: 1 Piece (72 g),Servings per Container: 7",
+      'Hailed for their starring role in hummus, garbanzo beans—also called chickpeas—add a creamy texture and mild, nutty flavor to your favorite salads, soups and spreads. Non-GMO project Verified. No additives or preservatives. Gluten free & vegan. 8 grams of protein + 14 grams of dietary fiber per ¼ cup. No cholesterol.',
     imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Mestemacher/Mestemacher-Sunflower-Seed-Bread-084213000743.jpg',
+      'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Garbanzo-Beans-Non-GMO-and-Gluten-Free-844197024865.jpg',
     inStock: 20,
-    price: 2.81
+    price: 5.81
   },
   {
     name: 'Long Grain Brown Rice',
