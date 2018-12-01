@@ -506,8 +506,9 @@ p.brand {
 // ---- 11. OTHER MODAL STYLES ---- //
 
 .div-modal-img > img {
+  margin-top: 5px;
   width: 45px;
-  height: 60px;
+  height: auto;
 }
 
 .modal {
