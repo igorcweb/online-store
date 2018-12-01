@@ -236,7 +236,7 @@ class Dashboard extends Component {
                         ) : (
                           <button
                             className="btn btn-secondary mt-3"
-                            disabled="true"
+                            disabled={true}
                           >
                             Out of Stock
                           </button>

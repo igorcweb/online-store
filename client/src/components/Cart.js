@@ -26,13 +26,11 @@ class Cart extends Component {
   }
 
   onCheckout = subtotal => {
-    console.log('onCheckout');
     if (!this.props.auth.isAuthenticated) {
       this.props.toggleCart();
       this.props.history.push('/login');
     } else {
       const { id } = this.props.auth.user;
-      console.log(id);
       API.getUser(id).then(response => {
         if (!response.data.address) {
           const checkout = true;
@@ -54,7 +52,6 @@ class Cart extends Component {
   };
 
   onPlus = (_id, cart, cartItems, inStock) => {
-    console.log(inStock);
     const newCart = cart.map(item => {
       if (item._id === _id) {
         if (item.quantity !== inStock) {

@@ -43,8 +43,10 @@ class Clothing extends Component {
     if (cart.length) {
       cart.forEach(stored => {
         if (stored._id === item._id) {
-          stored.quantity += 1;
-          item.quantity += 1;
+          if (stored.quantity !== inStock) {
+            stored.quantity += 1;
+            item.quantity += 1;
+          }
         }
       });
     }
@@ -102,7 +104,7 @@ class Clothing extends Component {
                     ) : (
                       <button
                         className="btn btn-secondary d-block ml-auto mb-4"
-                        disabled="true"
+                        disabled={true}
                       >
                         Out of Stock
                       </button>
