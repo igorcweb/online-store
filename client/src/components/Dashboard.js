@@ -55,7 +55,7 @@ class Dashboard extends Component {
     this.props.toggleAddressModal(checkout);
   };
 
-  addToCart = (_id, name, brand, description, imgUrl, price) => {
+  addToCart = (_id, name, brand, description, imgUrl, price, inStock) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = {
       _id,
@@ -64,13 +64,16 @@ class Dashboard extends Component {
       description,
       imgUrl,
       price,
+      inStock,
       quantity: 1
     };
     if (cart.length) {
       cart.forEach(stored => {
         if (stored._id === item._id) {
-          stored.quantity += 1;
-          item.quantity += 1;
+          if (stored.quantity !== inStock) {
+            stored.quantity += 1;
+            item.quantity += 1;
+          }
         }
       });
     }
@@ -225,7 +228,8 @@ class Dashboard extends Component {
                                 brand,
                                 description,
                                 imgUrl,
-                                price
+                                price,
+                                inStock
                               )
                             }
                             className="btn btn-success-custom-small mt-3"
