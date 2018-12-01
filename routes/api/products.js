@@ -60,7 +60,7 @@ router.get('/:id', (req, res) => {
     .catch(err => res.render({ err }));
 });
 
-// @route PUR api/products/:id
+// @route PUT api/products/:id
 // @desc update product inStock value
 router.put('/instock/:id', (req, res) => {
   const id = req.params.id;
@@ -72,7 +72,7 @@ router.put('/instock/:id', (req, res) => {
     .catch(err => res.json(err));
 });
 
-// @route Put api/products/rating/:id
+// @route PUT api/products/rating/:id
 // @desc rate a product
 router.put('/rating/:id', (req, res) => {
   const id = req.params.id;
