@@ -26,17 +26,17 @@ const products = [
     inStock: 20,
     price: 1.58
   },
-  {
-    name: 'Brown Rice Pasta',
-    brand: 'Jovial',
-    category: 'Groceries',
-    description:
-      'Authentic, artisan crafted, traditional pasta from Tuscany that is worry free in every way. Made in a dedicated facility free of gluten, milk, eggs, tree nuts and peanuts, Jovial pasta is made with only one wholesome ingredient -100% organic whole grain rice grown exclusively in Italy. Serving Size: 2 oz (57 g), Servings per Container: 6',
-    imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Jovial/Jovial-Brown-Rice-Pasta-Spaghetti-Gluten-Free-815421011203.jpg',
-    inStock: 20,
-    price: 4.01
-  },
+  // {
+  //   name: 'Brown Rice Pasta',
+  //   brand: 'Jovial',
+  //   category: 'Groceries',
+  //   description:
+  //     'Authentic, artisan crafted, traditional pasta from Tuscany that is worry free in every way. Made in a dedicated facility free of gluten, milk, eggs, tree nuts and peanuts, Jovial pasta is made with only one wholesome ingredient -100% organic whole grain rice grown exclusively in Italy. Serving Size: 2 oz (57 g), Servings per Container: 6',
+  //   imgUrl:
+  //     'https://www.vitacost.com/Images/Products/500/Jovial/Jovial-Brown-Rice-Pasta-Spaghetti-Gluten-Free-815421011203.jpg',
+  //   inStock: 20,
+  //   price: 4.01
+  // },
 
   // {
   //   name: 'Stevia Extract',
@@ -76,7 +76,7 @@ const products = [
     brand: 'Simple Truth®',
     category: 'Groceries',
     description:
-      'Organically Grown. No Preservatives., Kosher, USDA Organic, Non-GMO, Serving Size: 1 Tablespoon (15 mL)Servings per Container: About 34',
+      'Organically Grown. No Preservatives., Kosher, USDA Organic, Non-GMO, Serving Size: 1 Tablespoon (15 mL), Servings per Container: About 34',
     imgUrl:
       'https://www.vitacost.com/Images/Products/500/Simple-Truth-Organic/Simple-Truth-Organic-Italian-Extra-Virgin-Olive-Oil-011110841155.jpg',
     inStock: 20,
@@ -192,17 +192,17 @@ const products = [
     inStock: 20,
     price: 6.45
   },
-  // {
-  //   name: 'Real Yogurt Starter Culture Greek',
-  //   brand: 'Cultures For Health',
-  //   category: 'Groceries',
-  //   description:
-  //     '2 Packets of Starter Culture, Non-GMO,Gluten-Free, Serving Size: 0.6 g, Servings per Container: 2',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/Cultures-For-Health/Cultures-For-Health-Real-Yogurt-Starter-Culture-Greek-814598020285.jpg',
-  //   inStock: 20,
-  //   price: 12.99
-  // },
+  {
+    name: 'Real Yogurt Starter Culture Greek',
+    brand: 'Cultures For Health',
+    category: 'Groceries',
+    description:
+      '2 Packets of Starter Culture, Non-GMO,Gluten-Free, Serving Size: 0.6 g, Servings per Container: 2',
+    imgUrl:
+      'https://www.vitacost.com/Images/Products/500/Cultures-For-Health/Cultures-For-Health-Real-Yogurt-Starter-Culture-Greek-814598020285.jpg',
+    inStock: 20,
+    price: 12.99
+  },
   {
     name: 'French Agen Mini Plums',
     brand: 'Fruit Bliss',
@@ -291,17 +291,17 @@ const products = [
   //   inStock: 20,
   //   price: 13.5
   // },
-  {
-    name: 'MULTI VITA•MIN™',
-    brand: 'THE SYNERGY COMPANY™',
-    category: 'Supplements',
-    description:
-      'Multi Vita•Min offers a complete and balanced blend of essential nutrients made with organic ingredients — 200% of your RDA for vitamins and 100% for minerals. What’s more, each tablet not only contains vitamins and minerals, but also an assortment of natural enzymes, flavonoids, proteins, and other co-factors that coexist in living whole food. 60 Tablets',
-    imgUrl:
-      'https://magento-sxob1kexeiozpac.netdna-ssl.com/media/catalog/product/cache/1/thumbnail/645x425/9df78eab33525d08d6e5fb8d27136e95/m/u/multi_topcarousel_bottle_022118.jpg',
-    inStock: 20,
-    price: 24.95
-  },
+  // {
+  //   name: 'MULTI VITA•MIN™',
+  //   brand: 'THE SYNERGY COMPANY™',
+  //   category: 'Supplements',
+  //   description:
+  //     'Multi Vita•Min offers a complete and balanced blend of essential nutrients made with organic ingredients — 200% of your RDA for vitamins and 100% for minerals. What’s more, each tablet not only contains vitamins and minerals, but also an assortment of natural enzymes, flavonoids, proteins, and other co-factors that coexist in living whole food. 60 Tablets',
+  //   imgUrl:
+  //     'https://magento-sxob1kexeiozpac.netdna-ssl.com/media/catalog/product/cache/1/thumbnail/645x425/9df78eab33525d08d6e5fb8d27136e95/m/u/multi_topcarousel_bottle_022118.jpg',
+  //   inStock: 20,
+  //   price: 24.95
+  // },
   {
     name: 'Protein Powder, Chocolate',
     brand: 'Ora Organic',
@@ -468,6 +468,17 @@ const products = [
   //   inStock: 20,
   //   price: 50.37
   // },
+  {
+    name: 'Zyflamend™ Nighttime',
+    brand: 'New Chapter',
+    category: 'Supplements',
+    description:
+      'Zyflamend Nighttime is designed to help you enjoy a deep and restful sleep through a combination of multiple time-tested herbs such as Lemon Balm, Hops, Chamomile, and Valerian. The whole-food antioxidants in Zyflamend Nighttime can also quench free radicals and support healthy aging',
+    imgUrl:
+      'https://cdn8.bigcommerce.com/s-zsd73psd0i/images/stencil/1280x1280/products/595/823/ZYPM-F01-BotBox-FR-644x616px__77186.1538592266.png?c=2&imbypass=on&imbypass=on',
+    inStock: 20,
+    price: 50.37
+  },
   // {
   //   name: 'GOLD Liquid Multi-Vitamin',
   //   brand: "Nature's Plus",
@@ -508,7 +519,7 @@ const products = [
     description:
       "A men's inspired baseball tee crafted in our soft Eco Jersey™ for ultimate comfort & a casual look. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported",
     imgUrl:
-      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/6/1/61352ea_slcmo_w_1.jpg',
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/6/1/61352ea_eitrs_w_1_1.jpg',
     inStock: 20,
     price: 42.0
   },
@@ -557,15 +568,15 @@ const products = [
     price: 34.0
   },
   {
-    name: 'Cropped Eco-Jersey Stars T-Shirt for Women',
+    name: 'Ramble Vintage Thermal Tunic',
     brand: 'Alternative Apparel',
     category: 'Clothing',
     description:
-      'Stand out with this irresistably soft tri-blend that encourages you to express yourself. Cropped and ready to pair with those high-waisted pants. Eco-Jersey ™ 50% Polyester, 38% Cotton, 12% Rayon, Contains organic & recycled materials, Cuffed sleeves, Cropped, Imported',
+      'Crafted for all-day comfort during cooler months, this thermal tunic features a dropped shoulder, raglan sleeves & a high-low shirttail curved hem.',
     imgUrl:
-      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66282EA1.jpg',
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43129BZ0.jpg',
     inStock: 20,
-    price: 34.0
+    price: 58.0
   },
   {
     name: 'Everyday Printed Cotton Modal V-Neck T-Shirt for Women',
@@ -596,7 +607,7 @@ const products = [
     description:
       'Our skim version of a classic tee. Crafted from our soft and lightweight Rayon Challis in a relaxed silhouette. 100% Rayon, Imported',
     imgUrl:
-      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66199TH0.jpg',
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/c/6/c66199th_gy_w_1.jpg',
     inStock: 20,
     price: 48.0
   },
@@ -629,7 +640,7 @@ const products = [
     description:
       'Our Jogger Pant in super soft Eco-Fleece is a sustainable staple for a casual-comfy look and feel. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Elastic waistband with drawstrings, Top applied back patch pocket, Ribbed cuffs & waistband, Front pockets, Imported',
     imgUrl:
-      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/3/1/31082fb_egpd_w_1.jpg',
+      'https://media.alternativeapparel.com/media/catalog/product/3/1/31082FBSTRM0.jpg',
     inStock: 20,
     price: 58.0
   },
@@ -640,7 +651,7 @@ const products = [
     description:
       'The ultimate sweat pant for ultimate comfort. Made from our signature Eco-Fleece, this pant features tailored pockets and a tapered leg opening. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Drawstring Waistband, Tapered Ankle, Ribbed Cuffs at Leg Opening Garment imported, made with U.S.A. fabric',
     imgUrl:
-      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/3/1/31082f2_tdpi_w_1.jpg',
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/3/1/31082f2_tdpi_w_3_1.jpg',
     inStock: 20,
     price: 54.0
   },
@@ -706,29 +717,29 @@ const products = [
     description:
       'Made for the ones who follow their own path & march to the beat of their own drum, our 100% cotton Outsider T-Shirt is crafted with heavier yarns, making it the perfect transitional piece. As unique as you, this garment has been hand-treated with intentional imperfections for authentically worn-in softness and style. Heavy Wash Jersey, 100% Cotton, Rib collar, The rich pigments may rub off and should be washed separately, 5.01 oz, Blind stitching on sleeves & hem, Garment-washed for softness, Imported',
     imgUrl:
-      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01010cg_rd_m_1.jpg',
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01010cg_sprgn_m_1.jpg',
     inStock: 20,
     price: 28.0
   },
   {
-    name: 'Keeper Garment Dyed Slub Long Sleeve T-Shirt for Men',
+    name: 'Keeper Vintage Jersey Graphic T-Shirt for Men',
     brand: 'Alternative Apparel',
     category: 'Clothing',
     description:
-      "It's called the Keeper for a reason - this time, crafted from our 100% Washed Slub for textural variations and color highs & lows. Our unique garment-dye process creates subtle variations, so no garment is exactly alike. Note that the rich pigments may rub off and should be washed separately. Garment Dyed Slub, 100% Cotton, Set-in sleeves, Bound collar, Imported",
+      "We took our 50/50 Keeper tee, known for softness & comfort, and made it a little more festive for the holiday season. Go ahead, pick your favorite - you can't go wrong.",
     imgUrl:
-      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05100J10_1.jpg',
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05050sp_vphap_m_1.jpg',
     inStock: 20,
-    price: 48.0
+    price: 7.0
   },
   {
-    name: 'Kickback Vintage Heavy Knit Pullover Sweatshirt for Men',
+    name: 'DugOut Vintage Jersey T-Shirt for Men',
     brand: 'Alternative Apparel',
     category: 'Clothing',
     description:
-      'We took our 50/50 yarn and doubled it for a sweater-knit feel. This relaxed pullover is double-dyed and features raglan sleeves, a rib cuff & a turned-back hem with a carefree vibe. 50% Cotton, 50% Polyester, Double-dyed, Raglan sleeves, Turned-back hem, Wide, cover-stitch collar, Imported',
+      'Our classic baseball tee gets a make under. Three-quarter length sleeves add a relaxed, modern touch, while our 50/50 fabric gives the Dugout Tee the softness of one youve worn a thousand times (which you very well might).',
     imgUrl:
-      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/7/07597bq_sprgn_m_1.jpg',
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05057bp_svn_m_1.jpg',
     inStock: 20,
     price: 31.0
   },
@@ -739,7 +750,7 @@ const products = [
     description:
       'Our signature zip hoodie in our super soft Eco-Fleece, the Rocky is sure to become your favorite hoodie. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Split kangaroo pocket, Ribbed hemband and sleeve cuffs, Set-in sleeves,Hoodie with drawstrings, YKK zipper, Garment imported, made with U.S.A. fabric',
     imgUrl:
-      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/9/09590f2_etmch_m_1.jpg',
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66162F20_2.jpg',
     inStock: 20,
     price: 58.0
   },
@@ -750,7 +761,7 @@ const products = [
     description:
       'Looking cool has never been easier (or more comfortable). Made with our super-soft Burnout French Terry, this contemporary jogger features a rib ankle, natural drawstrings & a back yoke pocket. Burnout French Terry, 65% Cotton, 35% Polyester, Ribbed ankles, waistband, Natural drawstrings, Back pocket along yoke seam, Side seams with cover-stitching, Imported',
     imgUrl:
-      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/8/08625fh_sprgn_m_1.jpg',
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/8/08625FJ2.jpg',
     inStock: 20,
     price: 58.0
   },

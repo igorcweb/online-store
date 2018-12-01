@@ -49,7 +49,11 @@ const UserSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'products'
     }
-  ]
+  ],
+  admin: {
+    type: Boolean,
+    default: false
+  }
 });
 
 module.exports = User = mongoose.model('users', UserSchema);
