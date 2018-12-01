@@ -9,10 +9,38 @@ router.get('/', (req, res) => {
     if (err) {
       throw err;
     } else {
-      res.json(products);
+      res.json({ products });
     }
   });
 });
+
+// @route POST api/products/
+// @access Private
+// @desc add new product
+router.post('/', (req, res) => {
+  db.Product.collection
+    .insertOne(req.body)
+    .then(data => {
+      console.log(data.insertedCount + ' record inserted!');
+      res.json({ message: 'success' });
+      process.exit(0);
+    })
+    .catch(err => {
+      res.json({ err });
+      process.exit(1);
+    });
+});
+
+// @route GET api/products/:id
+// @access Private
+// @desc delete product
+router.delete('/product/:id', (req, res) => {
+  const id = req.params.id;
+  db.Product.findByIdAndDelete(id)
+    .then(() => res.json({ message: 'success' }))
+    .catch(err => res.json({ err }));
+});
+
 // @route GET api/products/:category
 // @access Public
 router.get('/:category', (req, res) => {
@@ -29,7 +57,6 @@ router.get('/:category', (req, res) => {
 
 // @route GET api/products/:query
 // @access Public
-
 router.get('/search/:query', (req, res) => {
   const query = req.params.query;
   db.Product.find({})
@@ -51,7 +78,7 @@ router.get('/search/:query', (req, res) => {
 
 // @route GET api/products/:id
 // @access Public
-router.get('/:id', (req, res) => {
+router.get('/product/:id', (req, res) => {
   const id = req.params.id;
   db.Product.findById(id)
     .populate('ratings')
