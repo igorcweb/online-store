@@ -28,7 +28,7 @@ class Groceries extends Component {
       : this.setState({ description: _id });
   };
 
-  addToCart = (_id, name, brand, description, imgUrl, price) => {
+  addToCart = (_id, name, brand, description, imgUrl, price, inStock) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = {
       _id,
@@ -37,6 +37,7 @@ class Groceries extends Component {
       description,
       imgUrl,
       price,
+      inStock,
       quantity: 1
     };
     if (cart.length) {
@@ -90,7 +91,8 @@ class Groceries extends Component {
                             brand,
                             description,
                             imgUrl,
-                            price
+                            price,
+                            inStock
                           )
                         }
                       >
@@ -107,6 +109,7 @@ class Groceries extends Component {
                     )}
 
                     <img src={imgUrl} alt={name} className="CardImg mx-auto" />
+
                     <div className="card-body text-center">
                       <h6 className="name mb-1">{name}</h6>
                       <p className="brand my-1 text-muted">{brand}</p>

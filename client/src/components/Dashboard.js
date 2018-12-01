@@ -189,9 +189,8 @@ class Dashboard extends Component {
                 inStock
               } = order;
               return (
-                <div>
+                <div key={_id}>
                   <div
-                    key={_id}
                     onClick={() => {
                       this.passId(_id);
                     }}
@@ -275,7 +274,7 @@ class Dashboard extends Component {
           </div>
 
           <div className="container purchases px-0 shadow-sm">
-            <h5 class="heading-orders text-center mt-5 mb-0">
+            <h5 className="heading-orders text-center mt-5 mb-0">
               <i className="fas fa-box mr-2" />
               Recent Purchases
             </h5>

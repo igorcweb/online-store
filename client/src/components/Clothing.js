@@ -28,7 +28,7 @@ class Clothing extends Component {
       : this.setState({ description: _id });
   };
 
-  addToCart = (_id, name, brand, description, imgUrl, price) => {
+  addToCart = (_id, name, brand, description, imgUrl, price, inStock) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = {
       _id,
@@ -37,6 +37,7 @@ class Clothing extends Component {
       description,
       imgUrl,
       price,
+      inStock,
       quantity: 1
     };
     if (cart.length) {
@@ -90,7 +91,8 @@ class Clothing extends Component {
                             brand,
                             description,
                             imgUrl,
-                            price
+                            price,
+                            inStock
                           )
                         }
                       >

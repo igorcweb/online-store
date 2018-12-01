@@ -16,7 +16,6 @@ import {
 } from '../actions/modalActions';
 import classnames from 'classnames';
 import API from '../utils/API';
-// import API from '../utils/API';
 
 class Cart extends Component {
   componentDidMount() {
@@ -54,17 +53,20 @@ class Cart extends Component {
     }
   };
 
-  onPlus = (_id, cart, cartItems) => {
+  onPlus = (_id, cart, cartItems, inStock) => {
+    console.log(inStock);
     const newCart = cart.map(item => {
       if (item._id === _id) {
-        item.quantity++;
+        if (item.quantity !== inStock) {
+          item.quantity++;
+          localStorage.setItem('cartItems', parseInt(cartItems) + 1);
+          this.props.updateCartItems(localStorage.getItem('cartItems'));
+        }
       }
       return item;
     });
     localStorage.setItem('cart', JSON.stringify(newCart));
     this.props.updateCart(JSON.parse(localStorage.getItem('cart')));
-    localStorage.setItem('cartItems', parseInt(cartItems) + 1);
-    this.props.updateCartItems(localStorage.getItem('cartItems'));
   };
   onMinus = (_id, cart, cartItems) => {
     let newCart = cart.map(item => {
@@ -104,8 +106,6 @@ class Cart extends Component {
   };
 
   render() {
-    // const { user } = this.props;
-    // console.log('user:', user);
     const cart = JSON.parse(localStorage.getItem('cart'));
     const cartItems = localStorage.getItem('cartItems');
     let subtotal;
@@ -151,7 +151,14 @@ class Cart extends Component {
               <div className="pl-0 ml-0 mb-1 pb-2 cart-content">
                 {cart
                   ? cart.map(item => {
-                      const { _id, name, brand, imgUrl, quantity } = item;
+                      const {
+                        _id,
+                        name,
+                        brand,
+                        imgUrl,
+                        quantity,
+                        inStock
+                      } = item;
                       if (quantity > 0) {
                         return (
                           <div
@@ -179,7 +186,7 @@ class Cart extends Component {
                                 <i
                                   className="fas fa-plus ml-2"
                                   onClick={() =>
-                                    this.onPlus(_id, cart, cartItems)
+                                    this.onPlus(_id, cart, cartItems, inStock)
                                   }
                                 />
                                 <i
