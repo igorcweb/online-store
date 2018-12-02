@@ -127,13 +127,13 @@ const products = [
     price: 7.91
   },
   {
-    name: 'Green Tea Strawberry Rose',
-    brand: 'St. Dalfour',
+    name: 'Organic Sprouted Green Lentils -- 10oz',
+    brand: 'TruRoots',
     category: 'Groceries',
     description:
-      'Premium Certified Organic Green Tea, Selected And Blended Under The Direction Of The Tea Experts Of St. Dalford France,Enhanced By The Natural Flavour Of Strawberry & Rose,Individually Sealed In Envelopes, 25 Tea Bags, Serving Size: 1 Tea Bag Servings per Container: 25',
+      'Lentils are an important protein source for vegetarian diet.  Rehydrate truRoots Sprouted Lentils to use as a fresh salad topping or cook them into a soup or main dish.  They can be a great addition to rice and pasta. Serving Size: 0.25 Cup. Servings per Container: Approx 7.',
     imgUrl:
-      'https://www.vitacost.com/Images/Products/500/St-Dalfour/St-Dalfour-Organic-Green-Tea-Strawberry-Rose-084380969744.jpg',
+      'https://www.vitacost.com/Images/Products/500/TruRoots/TruRoots-Organic-Sprouted-Green-Lentils-185814000252.jpg',
     inStock: 20,
     price: 2.96
   },
@@ -216,12 +216,12 @@ const products = [
   },
   {
     name: 'Certified Organic Quinoa',
-    brand: 'Vitacost',
+    brand: 'TruRoots',
     category: 'Groceries',
     description:
       'Whole food, non-GMO quinoa, No additives or preservatives, Certified organic, Naturally, gluten free, 6 grams of protein + 3 grams fiber per quarter-cup serving, 12 oz (340 g), Serving Size: 1/4 Cup (Approx 45 g). Servings per Container: 8',
     imgUrl:
-      'https://www.vitacost.com/Images/Products/500/Fruit-Bliss/Fruit-Bliss-Organic-French-Agen-Mini-Plums-811406020031.jpg',
+      'https://www.vitacost.com/Images/Products/500/TruRoots/TruRoots-Organic-Quinoa-185814000184.jpg',
     inStock: 20,
     price: 3.99
   },
@@ -380,13 +380,13 @@ const products = [
     price: 18.99
   },
   {
-    name: 'Vitamin C Powder for Immunity',
-    brand: 'Ora Organic',
+    name: 'Organic Plant Protein',
+    brand: 'Garden of Life',
     category: 'Supplements',
     description:
-      'Organic vitamin C powder is made from organic acerola berry extract and includes 5 billion CFUs of 3 probiotic strains: lactobacillus rhamnosus GG, lactobacillus acidophilus and lactobacillus paracasei. These probiotic strains have been clinically studied for their ability to boost the immune system* and have even been known to help fight respiratory infections and illnesses.* No artificial ingredients or fillers. 1 box = 10 servings.',
+      'Organic Plant Protein is made with a unique blend of seven nutritious plant proteins from five organic American seed proteins—organic pea seed, organic flaxseed, organic cranberry seed, organic chia seed, and organic pumpkin seed. It also contains the organic African superfood baobab (which we purchase through the African Hub to guarantee Fair Trade), plus 13 enzymes and 1 Billion CFU of probiotics.',
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0767/1029/products/VITC-PWD-PIN_1500x1500_a7ee7db3-4237-4a31-9e85-23f6610e7583.png?v=1528073237',
+      'https://www.gardenoflife.com/product-data/files/images/products/full/658010118026-.png',
     inStock: 20,
     price: 18.99
   },

@@ -82,34 +82,33 @@ class Supplements extends Component {
             return (
               <div className="col-md col-lg-4 mt-2 mb-4 mx-auto" key={_id}>
                 <div className="card align-items-center products d-flex shadow-sm">
+                  {inStock > 0 ? (
+                    <button
+                      className="btn btn-success-custom-small mb-5 d-block ml-auto"
+                      onClick={() =>
+                        this.addToCart(
+                          _id,
+                          name,
+                          brand,
+                          description,
+                          imgUrl,
+                          price,
+                          inStock
+                        )
+                      }
+                    >
+                      <i className="fas fa-plus mr-2" />
+                      Add to cart
+                    </button>
+                  ) : (
+                    <button
+                      className="btn btn-secondary d-block ml-auto mb-4"
+                      disabled={true}
+                    >
+                      Out of Stock
+                    </button>
+                  )}
                   <div className="product-body">
-                    {inStock > 0 ? (
-                      <button
-                        className="btn btn-success-custom-small mb-5 d-block ml-auto"
-                        onClick={() =>
-                          this.addToCart(
-                            _id,
-                            name,
-                            brand,
-                            description,
-                            imgUrl,
-                            price,
-                            inStock
-                          )
-                        }
-                      >
-                        <i className="fas fa-plus mr-2" />
-                        Add to cart
-                      </button>
-                    ) : (
-                      <button
-                        className="btn btn-secondary d-block ml-auto mb-4"
-                        disabled={true}
-                      >
-                        Out of Stock
-                      </button>
-                    )}
-
                     <img src={imgUrl} alt={name} className="CardImg mx-auto" />
 
                     <div className="card-body text-center">
