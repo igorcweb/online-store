@@ -108,7 +108,13 @@ class Groceries extends Component {
                     </button>
                   )}
                   <div className="product-body">
-                    <img src={imgUrl} alt={name} className="CardImg mx-auto" />
+                    <a href={imgUrl} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={imgUrl}
+                        alt={name}
+                        className="CardImg mx-auto"
+                      />
+                    </a>
 
                     <div className="card-body text-center">
                       <h6 className="name mb-1">{name}</h6>

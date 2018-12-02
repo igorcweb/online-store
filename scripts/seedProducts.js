@@ -314,15 +314,15 @@ const products = [
     price: 49.99
   },
   {
-    name: 'Protein Powder, Vanilla',
-    brand: 'Ora Organic',
+    name: 'SPORT Organic Plant-Based Recovery',
+    brand: 'Garden of Life',
     category: 'Supplements',
     description:
-      'A USDA Organic plant-based protein powder made from over 20 organic superfoods and deliver a complete amino acid profile. 20 servings | 22.9oz | 650g, 22g of protein with just 1g of sugar per serving. It comes packed with two servings of organic greens in every shake, adding crucial macro & micronutrients for proper cognitive and muscle function',
+      'Muscle repair is critical after your workout and Organic Plant-Based Recovery provides the clean nutrients necessary to recover after exertion.† Being Certified USDA Organic and Non-GMO Project Verified, as well as NSF Certified for Sport and Informed-Choice for Sport Certified, Organic Plant-Based Recovery is the cleanest post-workout formula available ensuring the product is free of any banned athletic substances.',
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0767/1029/products/prtn-pwd-ch-front_512x512.png?v=1540581808',
+      'https://www.gardenoflife.com/product-data/files/images/products/full/658010119474-.png',
     inStock: 20,
-    price: 49.99
+    price: 31.96
   },
   {
     name: 'Pre-Workout Powder',
@@ -358,13 +358,13 @@ const products = [
     price: 34.99
   },
   {
-    name: 'Vegan Vitamin D Supplement',
-    brand: 'Ora Organic',
+    name: 'RAW Protein & greens',
+    brand: 'Garden of Life',
     category: 'Supplements',
     description:
-      'A USDA Organic and Vegan Vitamin D Tablets made from lichen! Each serving contains 2,000 IU of vegan vitamin D3 and includes organic sunflower lecithin to enhance absorption. 30 tablets, 30 servings (1 month supply).',
+      'RAW Protein & greens are CLEAN—Certified USDA Organic and Non-GMO Project Verified—and we think that CLEAN tastes better! Now you have even more choices with your protein: RAW Protein & greens—in a variety of available flavors, including Real RAW Vanilla, Chocolate Cacao, and Lightly Sweet. Offering 20 grams of smooth, raw organic plant protein per serving from organic sprouted brown rice, organic peas, organic chia, organic navy beans, organic lentil beans and organic garbanzo beans and 6 organic greens and veggies—organic alfalfa grass juice, organic spinach, organic kale, and organic broccoli, carrots and beets—1.5 billion CFU probiotics, 13 non-GMO enzymes, 3 grams of organic fiber and less than 1 gram of naturally occurring sugar, RAW Protein & greens is a delish way to get your protein and greens in one serving.',
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0767/1029/products/solfood_front.png?v=1541113166',
+      'https://www.gardenoflife.com/product-data/files/images/products/full/658010118729-.png',
     inStock: 20,
     price: 29.99
   },
@@ -391,15 +391,15 @@ const products = [
     price: 18.99
   },
   {
-    name: 'Organic Greens Powder',
-    brand: 'Ora Organic',
+    name: 'Raw Organic Fit Protein Powder Chocolate Cacao',
+    brand: 'Garden of Life',
     category: 'Supplements',
     description:
-      'Certified USDA Organic delicious greens powder made from over 20 veggies, grasses, herbs, algae and superfoods. 30 servings, 8.5oz (240g)',
+      'Raw Organic Fit is a Certified USDA Organic, Raw, plant-based, vegan, high-protein powder specifically designed for weight loss† and is made with 13 raw sprouted organic ingredients. It differs from our other proteins because it has several additional clinically studied ingredients, including Svetol® Green Coffee Bean Extract, Raw Food Created Chromium and Organic Cinnamon to help you burn fat, maintain healthy blood sugar, boost your energy, lose weight and look great! 35oz (922g)',
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0767/1029/products/grn-pwd-cit-front.png?v=1540579300',
+      'https://www.gardenoflife.com/media/catalog/product/cache/1/small_image/230x/9df78eab33525d08d6e5fb8d27136e95/6/5/658010119849-.png',
     inStock: 20,
-    price: 49.99
+    price: 47.96
   },
   {
     name: 'Micronized L-Glutamine Powder',
@@ -651,7 +651,7 @@ const products = [
     description:
       'The ultimate sweat pant for ultimate comfort. Made from our signature Eco-Fleece, this pant features tailored pockets and a tapered leg opening. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Drawstring Waistband, Tapered Ankle, Ribbed Cuffs at Leg Opening Garment imported, made with U.S.A. fabric',
     imgUrl:
-      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/3/1/31082f2_tdpi_w_3_1.jpg',
+      'https://lh3.googleusercontent.com/proxy/bS9gr90jYwzEyqFM1QOpXFokHiwH_0ASSOLAsRW2x1LyM6qbF8Wqg1owfpgtDMTisUSpL2Vh-siG_S-c5veuLy6PV83J-3xqm6Hs7_XXcEyictHXzJ31WupriBi_7TzVzvhJS8oYtJgVLc-L8MeLcB4-Gbg6ee29Zw2WNb5WeLsK1rkQF5jJOwogYGZ9ZZOfyu3apq7iot7l2YIqCNiD=s1000-pd-e365-rw-pc0xffffff',
     inStock: 20,
     price: 54.0
   },
@@ -754,17 +754,17 @@ const products = [
     inStock: 20,
     price: 58.0
   },
-  {
-    name: 'Campus Burnout French Terry Jogger Pants for Men',
-    brand: 'Alternative Apparel',
-    category: 'Clothing',
-    description:
-      'Looking cool has never been easier (or more comfortable). Made with our super-soft Burnout French Terry, this contemporary jogger features a rib ankle, natural drawstrings & a back yoke pocket. Burnout French Terry, 65% Cotton, 35% Polyester, Ribbed ankles, waistband, Natural drawstrings, Back pocket along yoke seam, Side seams with cover-stitching, Imported',
-    imgUrl:
-      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/8/08625FJ2.jpg',
-    inStock: 20,
-    price: 58.0
-  },
+  // {
+  //   name: 'Campus Burnout French Terry Jogger Pants for Men',
+  //   brand: 'Alternative Apparel',
+  //   category: 'Clothing',
+  //   description:
+  //     'Looking cool has never been easier (or more comfortable). Made with our super-soft Burnout French Terry, this contemporary jogger features a rib ankle, natural drawstrings & a back yoke pocket. Burnout French Terry, 65% Cotton, 35% Polyester, Ribbed ankles, waistband, Natural drawstrings, Back pocket along yoke seam, Side seams with cover-stitching, Imported',
+  //   imgUrl:
+  //     'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/8/08625FJ2.jpg',
+  //   inStock: 20,
+  //   price: 58.0
+  // },
   {
     name: 'Victory Printed Burnout French Terry Shorts for Men',
     brand: 'Alternative Apparel',
@@ -817,6 +817,17 @@ const products = [
       'The ultimate sweat pant for ultimate comfort. Made from our signature Eco Fleece, this pant features side pockets and ribbed cuffs. co-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Ribbed waistband with drawstring, Ribbed cuff at leg opening, Garment imported, made with U.S.A. fabric',
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66164F20.jpg',
+    inStock: 20,
+    price: 54.0
+  },
+  {
+    name: 'Marathon Heavy Wash Pullover Hoodie',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "A soft, lightweight hoodie made to be easily thrown over any outfit, featuring visible color variations as unique as you. We've worn it in, so you can wear it out. 100% Cotton. Imported.",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/1/2/12365CG0.jpg',
     inStock: 20,
     price: 54.0
   },
