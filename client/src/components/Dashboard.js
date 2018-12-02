@@ -280,7 +280,7 @@ class Dashboard extends Component {
           <div className="container purchases px-0 shadow-sm">
             <h5 className="heading-orders text-center mt-5 mb-0">
               <i className="fas fa-box mr-2" />
-              Recent Purchases
+              Order History
             </h5>
             <div className="orders mt-0">
               <div className="col-sm-12">{orderMessage}</div>
