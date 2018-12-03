@@ -46,7 +46,7 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="container-fluid my-5 pt-2 content">
+      <div className="container-fluid my-4 my-xl-5 pt-2 content">
         <div className="row">
           <div className="card mb-5 px-1 pt-5 pb-5 col-md mr-md-3 login off-white shadow-sm">
             <h5 className="card-title ml-2">
