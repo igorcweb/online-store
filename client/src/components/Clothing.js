@@ -5,6 +5,7 @@ import { getProductsByCategory } from '../actions/productActions';
 import { getCurrentUser } from '../actions/userActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
 import { updateCartItems } from '../actions/cartActions';
+import { toggleSizeModal } from '../actions/modalActions';
 import ReactStars from 'react-stars';
 import classnames from 'classnames';
 
@@ -17,9 +18,19 @@ class Clothing extends Component {
       this.props.getCurrentUser(id);
     }
   }
-
   state = {
-    description: ''
+    description: '',
+    size: ''
+  };
+
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  addSize = product => {
+    setTimeout(() => {
+      product.size = this.state.size;
+    }, 10);
   };
 
   seeMore = _id => {
@@ -29,46 +40,60 @@ class Clothing extends Component {
   };
 
   addToCart = (_id, name, brand, description, imgUrl, price, inStock) => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const item = {
-      _id,
-      name,
-      brand,
-      description,
-      imgUrl,
-      price,
-      inStock,
-      quantity: 1
-    };
-    if (cart.length) {
-      cart.forEach(stored => {
-        if (stored._id === item._id) {
-          if (stored.quantity !== inStock) {
-            stored.quantity += 1;
-            item.quantity += 1;
+    const size = this.state.size;
+    if (this.state.size === '') {
+      this.props.toggleSizeModal();
+    } else {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const item = {
+        _id,
+        name,
+        brand,
+        description,
+        imgUrl,
+        price,
+        inStock,
+        size,
+        quantity: 1
+      };
+      // console.log(item);
+      if (cart.length) {
+        cart.forEach(stored => {
+          if (stored._id === item._id) {
+            if (stored.quantity !== inStock) {
+              stored.quantity += 1;
+              item.quantity += 1;
+            }
           }
-        }
-      });
-    }
+        });
+      }
 
-    cart.push(item);
-    //Remove duplicates
-    const newCart = removeDuplicates(cart, '_id');
-    const cartItems = newCart.reduce((acc, item) => {
-      return acc + item.quantity;
-    }, 0);
-    localStorage.setItem('cartItems', cartItems);
-    this.props.updateCartItems(cartItems);
-    const serializedCart = JSON.stringify(newCart);
-    localStorage.setItem('cart', serializedCart);
+      cart.push(item);
+      console.log(cart);
+      //Remove duplicates
+      const newCart = removeDuplicates(cart, '_id');
+      const cartItems = newCart.reduce((acc, item) => {
+        return acc + item.quantity;
+      }, 0);
+      localStorage.setItem('cartItems', cartItems);
+      this.props.updateCartItems(cartItems);
+      const serializedCart = JSON.stringify(newCart);
+      localStorage.setItem('cart', serializedCart);
+      this.props.history.push('/loading');
+      setTimeout(() => {
+        this.props.history.push('/clothing');
+      }, 1);
+    }
   };
 
   render() {
+    // console.log(this.props.products);
     const { products } = this.props;
     return (
       <div className="my-4 content mx-xl-5">
         <div className="row">
           {products.map(product => {
+            product.size = this.props.size;
             const {
               _id,
               name,
@@ -108,6 +133,22 @@ class Clothing extends Component {
                       Out of Stock
                     </button>
                   )}
+                  <div className="form-group size">
+                    <select
+                      className="form-control form-control-lg"
+                      name="size"
+                      // value={}
+                      onChange={this.onChange}
+                      onMouseLeave={() => this.addSize(product)}
+                    >
+                      <option value="">Size</option>
+                      <option value="XS">XS</option>
+                      <option value="S">S</option>
+                      <option value="M">M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                    </select>
+                  </div>
                   <div className="product-body">
                     <a href={imgUrl} target="_blank" rel="noopener noreferrer">
                       <img
@@ -159,7 +200,8 @@ class Clothing extends Component {
 Clothing.propTypes = {
   auth: PropTypes.object.isRequired,
   getProductsByCategory: PropTypes.func.isRequired,
-  getCurrentUser: PropTypes.func.isRequired
+  getCurrentUser: PropTypes.func.isRequired,
+  toggleSizeModal: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -171,5 +213,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getProductsByCategory, getCurrentUser, updateCartItems }
+  { getProductsByCategory, getCurrentUser, updateCartItems, toggleSizeModal }
 )(Clothing);

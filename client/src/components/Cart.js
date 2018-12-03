@@ -154,7 +154,8 @@ class Cart extends Component {
                         brand,
                         imgUrl,
                         quantity,
-                        inStock
+                        inStock,
+                        size
                       } = item;
                       if (quantity > 0) {
                         return (
@@ -167,7 +168,9 @@ class Cart extends Component {
                             </div>
                             <div className="align-self-end">
                               <small className="text-muted">{brand}</small>
-                              <h6>{name}</h6>
+                              <h6>
+                                {name}, {size ? `size: ${size}` : ''}
+                              </h6>
 
                               <div className="quantity text-muted mt-2">
                                 Qty:

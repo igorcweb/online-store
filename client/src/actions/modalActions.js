@@ -1,7 +1,8 @@
 import {
   TOGGLE_CHECKOUT_MODAL,
   TOGGLE_PRIME_MODAL,
-  TOGGLE_ADDRESS_MODAL
+  TOGGLE_ADDRESS_MODAL,
+  TOGGLE_SIZE_MODAL
 } from './types';
 
 export const toggleCheckoutModal = () => {
@@ -12,6 +13,11 @@ export const toggleCheckoutModal = () => {
 export const togglePrimeModal = () => {
   return {
     type: TOGGLE_PRIME_MODAL
+  };
+};
+export const toggleSizeModal = () => {
+  return {
+    type: TOGGLE_SIZE_MODAL
   };
 };
 export const toggleAddressModal = payload => {

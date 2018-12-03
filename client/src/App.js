@@ -19,6 +19,7 @@ import Search from './components/Search';
 import Cart from './components/Cart';
 import Checkout from './components/modals/Checkout';
 import Prime from './components/modals/Prime';
+import Size from './components/modals/Size';
 import Spinner from './components/Spinner';
 import NoResults from './components/NoResults';
 import './App.scss';
@@ -49,6 +50,7 @@ class App extends Component {
             <Route path="/" component={Cart} />
             <Route path="/" component={Checkout} />
             <Route path="/" component={Prime} />
+            <Route path="/" component={Size} />
             <Route exact path="/" component={Landing} />
             <div className="container-fluid">
               <Route exact path="/register" component={Register} />
