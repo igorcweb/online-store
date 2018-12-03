@@ -105,8 +105,10 @@ class Checkout extends Component {
                 <tbody>
                   {order.map(item => (
                     <tr key={item._id} className="table">
-                      <td className="text-center dark-gray medium-height">
-                        <small>{item.name}</small>
+                      <td className="dark-gray medium-height">
+                        <small>
+                          {item.name}, {item.size ? `Size: ${item.size}` : ''}
+                        </small>
                       </td>
                       <td className="text-center dark-gray medium-heigh">
                         <small>{item.quantity}</small>

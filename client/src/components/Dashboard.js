@@ -191,6 +191,7 @@ class Dashboard extends Component {
                 rating,
                 inStock
               } = order;
+              console.log('order', order);
               return (
                 <div key={_id}>
                   <div
