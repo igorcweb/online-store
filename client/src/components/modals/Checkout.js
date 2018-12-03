@@ -107,7 +107,8 @@ class Checkout extends Component {
                     <tr key={item._id} className="table">
                       <td className="dark-gray medium-height">
                         <small>
-                          {item.name}, {item.size ? `Size: ${item.size}` : ''}
+                          {item.name}
+                          {item.size ? `, Size: ${item.size}` : ''}
                         </small>
                       </td>
                       <td className="text-center dark-gray medium-heigh">
