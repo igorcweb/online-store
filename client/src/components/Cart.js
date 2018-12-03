@@ -171,7 +171,8 @@ class Cart extends Component {
                             <div className="align-self-end">
                               <small className="text-muted">{brand}</small>
                               <h6>
-                                {name}, {size ? `Size: ${size}` : ''}
+                                {name}
+                                {size ? `, Size: ${size}` : ''}
                               </h6>
 
                               <div className="quantity text-muted mt-2">
