@@ -79,6 +79,7 @@ class Cart extends Component {
     this.props.updateCartItems(localStorage.getItem('cartItems'));
     setTimeout(() => {
       if (this.props.cart.cartItems === '0') {
+        localStorage.removeItem('cart');
         this.props.toggleCart();
       }
     }, 1);
@@ -97,6 +98,7 @@ class Cart extends Component {
     this.props.updateCartItems(localStorage.getItem('cartItems'));
     setTimeout(() => {
       if (this.props.cart.cartItems === '0') {
+        localStorage.removeItem('cart');
         this.props.toggleCart();
       }
     }, 1);

@@ -25,7 +25,6 @@ class Size extends Component {
 }
 
 Size.propTypes = {
-  auth: PropTypes.object.isRequired,
   toggleSizeModal: PropTypes.func.isRequired
 };
 
