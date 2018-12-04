@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, ModalHeader, ModalFooter } from 'reactstrap';
+import { Modal, ModalBody, ModalFooter } from 'reactstrap';
 import { toggleSizeModal } from '../../actions/modalActions';
 
 import { PropTypes } from 'prop-types';
@@ -12,10 +12,22 @@ class Size extends Component {
 
   render() {
     return (
-      <Modal isOpen={this.props.modal.sizeModal} toggle={this.toggle}>
-        <ModalHeader>Please select size.</ModalHeader>
-        <ModalFooter>
-          <button class="btn btn-success-custom-small" onClick={this.toggle}>
+      <Modal
+        className="modal-sm  modal-size text-center"
+        isOpen={this.props.modal.sizeModal}
+        toggle={this.toggle}
+      >
+        <ModalBody className="modalAlert-body light-gray ">
+          <p>
+            <i class="fas fa-exclamation-circle mr-2" />
+            Please select size
+          </p>
+        </ModalBody>
+        <ModalFooter className="bg-gray">
+          <button
+            class="btn btn-sm btn-brown-custom btn-block"
+            onClick={this.toggle}
+          >
             Ok
           </button>
         </ModalFooter>
