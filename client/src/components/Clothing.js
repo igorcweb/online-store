@@ -30,7 +30,7 @@ class Clothing extends Component {
   addSize = product => {
     setTimeout(() => {
       product.size = this.state.size;
-    }, 10);
+    }, 1);
   };
 
   seeMore = _id => {
