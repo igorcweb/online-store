@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import { getProductsByCategory } from '../actions/productActions';
+import { getUniqueClothing } from '../actions/productActions';
 import { getCurrentUser } from '../actions/userActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
 import { updateCartItems } from '../actions/cartActions';
@@ -11,8 +11,7 @@ import classnames from 'classnames';
 
 class Clothing extends Component {
   componentDidMount() {
-    const category = this.props.location.pathname.replace('/', '');
-    this.props.getProductsByCategory(category);
+    this.props.getUniqueClothing();
     if (this.props.auth.isAuthenticated) {
       const { id } = this.props.auth.user;
       this.props.getCurrentUser(id);
@@ -199,7 +198,7 @@ class Clothing extends Component {
 
 Clothing.propTypes = {
   auth: PropTypes.object.isRequired,
-  getProductsByCategory: PropTypes.func.isRequired,
+  getUniqueClothing: PropTypes.func.isRequired,
   getCurrentUser: PropTypes.func.isRequired,
   toggleSizeModal: PropTypes.func.isRequired
 };
@@ -213,5 +212,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getProductsByCategory, getCurrentUser, updateCartItems, toggleSizeModal }
+  { getUniqueClothing, getCurrentUser, updateCartItems, toggleSizeModal }
 )(Clothing);

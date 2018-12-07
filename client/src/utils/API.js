@@ -10,6 +10,7 @@ export default {
   getProduct: id => axios.get('/api/products/' + id),
   rateProduct: (id, body) => axios.put('/api/products/rating/' + id, body),
   getProducts: () => axios.get('/api/products'),
+  getUniqueClothing: () => axios.get('/api/products/xs'),
   getProductsByCategory: category => axios.get('/api/products/' + category),
   searchProducts: query => axios.get('/api/products/search/' + query),
   sendWelcome: userData => axios.post('/api/send/welcome', userData),

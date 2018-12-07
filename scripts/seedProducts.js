@@ -5,7 +5,10 @@ const Product = require('../models/Product');
 mongoose.Promise = global.Promise;
 
 // This file empties the products collection and inserts the products below
-const db = process.env.MONGODB_URI || 'mongodb://localhost/online-store';
+// const db = process.env.MONGODB_URI || 'mongodb://localhost/online-store';
+
+const db = 'mongodb://localhost/online-store';
+
 mongoose
   .connect(
     db,
@@ -26,29 +29,7 @@ const products = [
     inStock: 20,
     price: 1.58
   },
-  // {
-  //   name: 'Brown Rice Pasta',
-  //   brand: 'Jovial',
-  //   category: 'Groceries',
-  //   description:
-  //     'Authentic, artisan crafted, traditional pasta from Tuscany that is worry free in every way. Made in a dedicated facility free of gluten, milk, eggs, tree nuts and peanuts, Jovial pasta is made with only one wholesome ingredient -100% organic whole grain rice grown exclusively in Italy. Serving Size: 2 oz (57 g), Servings per Container: 6',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/Jovial/Jovial-Brown-Rice-Pasta-Spaghetti-Gluten-Free-815421011203.jpg',
-  //   inStock: 20,
-  //   price: 4.01
-  // },
 
-  // {
-  //   name: 'Stevia Extract',
-  //   brand: 'Vitacost',
-  //   category: 'Groceries',
-  //   description:
-  //     '4 fl oz, Serving Size: 7 Drops, Servings per Container: 590. Stevia is an all-natural sweetener that comes from the sweetest, most wholesome part of the stevia leaf, providing a pure, fresh taste that is twice as sweet as sugar. Add it to your favorite beverage, sprinkle it on your morning cereal or use it as a sugar substitute in your favorite recipes for guilt-free flavor you can enjoy any time.',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Stevia-Extract-835003006861.jpg',
-  //   inStock: 20,
-  //   price: 11.99
-  // },
   {
     name: 'Coconut Sugar Unrefined',
     brand: 'Nutiva Organic',
@@ -60,17 +41,6 @@ const products = [
     inStock: 20,
     price: 4.69
   },
-  // {
-  //   name: 'Organic Coffee',
-  //   brand: 'Mount Hagen',
-  //   category: 'Groceries',
-  //   description:
-  //     "3.53 oz, Freeze Dried, USDA Organic. It might sound simple, but that is precisely our goal: perfect coffee. To us, it's far more than a matter of tasting great. We already take care of that as a matter of principle, since nothing but fresh Arabica beans from the best high-altitude regions, gently roasted, cultivated and refined, make it into our packages. To us, perfection means that we only procure ecologically cultivated coffees in their countries of origin from small-scale farmers at Fairtrade conditions.",
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/Mount-Hagen/Mount-Hagen-Organic-Fair-Trade-Instant-Coffee-819385023319.jpg',
-  //   inStock: 20,
-  //   price: 9.49
-  // },
   {
     name: 'Italian Extra Virgin Olive Oil',
     brand: 'Simple Truth®',
@@ -82,17 +52,6 @@ const products = [
     inStock: 20,
     price: 5.99
   },
-  // {
-  //   name: 'Extra Virgin Coconut Oil',
-  //   brand: 'Vitacost',
-  //   category: 'Groceries',
-  //   description:
-  //     'Certified organic, unrefined, non-GMO coconut oil. Cold pressed without the use of heat or chemicals and packaged in BPA-free jars., Nutrition Facts Serving Size: 1 Tablespoon (15 mL), Servings per Container: 108',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/Vitacost/Vitacost-Extra-Virgin-Certified-Organic-Coconut-Oil-Non-GMO-844197011568.jpg',
-  //   inStock: 20,
-  //   price: 19.99
-  // },
   {
     name: '100% Cranberry Juice',
     brand: 'Simple Truth®',
@@ -104,17 +63,6 @@ const products = [
     inStock: 20,
     price: 3.99
   },
-  // {
-  //   name: 'Dark Chocolate 88% Cocoa Bar',
-  //   brand: 'Endangered Species',
-  //   category: 'Groceries',
-  //   description:
-  //     'With 88% Cocoa Rainforest Alliance Certified Cocoa, Non-GMO verified, Certified Gluten Free, Natural, 3 oz, Serving Size: 1/2 Bar (43 g), Servings per Container: About 2',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/200/Endangered-Species/Endangered-Species-Dark-Chocolate-88-Cocoa-Bar-Vegan-Gluten-Free-037014242478.jpg',
-  //   inStock: 20,
-  //   price: 2.84
-  // },
   {
     name: 'Organic Raw Almonds',
     brand: 'Vitacost',
@@ -247,17 +195,6 @@ const products = [
     inStock: 20,
     price: 16.74
   },
-  // {
-  //   name: 'Coconut Water Original',
-  //   brand: 'Simple Truth®',
-  //   category: 'Groceries',
-  //   description:
-  //     'Not From Concentrate, 16.9 fl oz, Serving Size: 1 Container (500 mL), Organically Grown, No Preservatives,Original, USDA, Organic, Non-GMO, Fair Trade, Certified, Kosher',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/Simple-Truth-Organic/Simple-Truth-Organic-Coconut-Water-Original-011110854865.jpg',
-  //   inStock: 20,
-  //   price: 1.99
-  // },
   {
     name: 'Vitacost Garbanzo Beans',
     brand: 'Vitacost',
@@ -280,28 +217,6 @@ const products = [
     inStock: 20,
     price: 3.19
   },
-  // {
-  //   name: 'Organic Vitamin C',
-  //   brand: 'Healthy Origins ',
-  //   category: 'Supplements',
-  //   description:
-  //     'Non-GMO, Natural • Whole Food, Soy-Free, USDA, Organic, With Natural Bioflavonoids, Easy on the Stomach, Suitable for Vegetarians & Vegans, 250 mg - 60 Tablets, Serving Size: 1 Tablet Servings per Container: 60',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/Healthy-Origins/Healthy-Origins-Organic-Vitamin-C-603573683740.jpg',
-  //   inStock: 20,
-  //   price: 13.5
-  // },
-  // {
-  //   name: 'MULTI VITA•MIN™',
-  //   brand: 'THE SYNERGY COMPANY™',
-  //   category: 'Supplements',
-  //   description:
-  //     'Multi Vita•Min offers a complete and balanced blend of essential nutrients made with organic ingredients — 200% of your RDA for vitamins and 100% for minerals. What’s more, each tablet not only contains vitamins and minerals, but also an assortment of natural enzymes, flavonoids, proteins, and other co-factors that coexist in living whole food. 60 Tablets',
-  //   imgUrl:
-  //     'https://magento-sxob1kexeiozpac.netdna-ssl.com/media/catalog/product/cache/1/thumbnail/645x425/9df78eab33525d08d6e5fb8d27136e95/m/u/multi_topcarousel_bottle_022118.jpg',
-  //   inStock: 20,
-  //   price: 24.95
-  // },
   {
     name: 'Protein Powder, Chocolate',
     brand: 'Ora Organic',
@@ -412,40 +327,6 @@ const products = [
     inStock: 20,
     price: 39.95
   },
-  // {
-  //   name: 'Acetyl-L-Carnitine',
-  //   brand: 'Natural Factors',
-  //   category: 'Supplements',
-  //   description:
-  //     'Acetyl-L-Carnitine is a highly bioavailable form of L-Carnitine and is able to effectively cross the blood-brain barrier. Acetyl-L-Carnitine assists the critical conversion of choline into acetylcholine. Acetylcholine is a key chemical messenger in the brain and promotes normal and healthy brain function including memory and concentration. It also helps transform fats into energy and supports normal muscle movement. Natural Factors amino acids are the highest quality pharmaceutical grade products available. 500 mg - 60 Vegetarian Capsules, Serving Size: 2 Vegetarian Capsules. Servings per Container: 30',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/Natural-Factors/Natural-Factors-Acetyl-L-Carnitine-068958028002.jpg',
-  //   inStock: 20,
-  //   price: 13.97
-  // },
-  // {
-  //   name: 'Vegan Multivitamin',
-  //   brand: 'Deva',
-  //   category: 'Supplements',
-  //   description:
-  //     '90 Coated Tablets, Serving Size: 1 Tablet, Servings per Container: 90. Free Of Yeast, wheat, gluten, milk, sugar, salt, starch, preservatives; animal products, byproducts or derivatives.',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/Deva/Deva-Vegan-Multivitamin-And-Mineral-Supplement-895634000027.jpg',
-  //   inStock: 20,
-  //   price: 10.69
-  // },
-  // {
-  //   name: 'Taurine',
-  //   brand: 'NOW',
-  //   category: 'Supplements',
-  //   description:
-  //     '500 mg - 100 Capsules, Serving Size: 1 Capsule, Servings per Container: 100.Taurine is a conditionally essential amino acid which is not utilized in protein synthesis, but is mainly found free in most tissues, especially throughout the nervous system. It functions in tissues by stabilizing cell membranes, aiding the transport of potassium, sodium, calcium, and magnesium in and out of cells.',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/NOW-Foods/NOW-Foods-Taurine-733739001405.jpg',
-  //   inStock: 20,
-  //   price: 10.69
-  // },
-
   {
     name: 'One Daily Multi',
     brand: 'New Chapter',
@@ -457,17 +338,6 @@ const products = [
     inStock: 20,
     price: 41.97
   },
-  // {
-  //   name: 'Prostate 5LX',
-  //   brand: 'New Chapter',
-  //   category: 'Supplements',
-  //   description:
-  //     '180 Vegetarian Capsules, Serving Size: 2 Capsules, Servings per Container: 90. Non-GMO Verified Formula, Holistic Prostate Support, 100% Vegetarian, Gluten Free, Helps Support Normal Urine Flow and Prostate Health, Made in the USA.',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/New-Chapter/New-Chapter-Supercritical-Prostate-5LX-727783900692.jpg',
-  //   inStock: 20,
-  //   price: 50.37
-  // },
   {
     name: 'Zyflamend™ Nighttime',
     brand: 'New Chapter',
@@ -479,17 +349,6 @@ const products = [
     inStock: 20,
     price: 50.37
   },
-  // {
-  //   name: 'GOLD Liquid Multi-Vitamin',
-  //   brand: "Nature's Plus",
-  //   category: 'Supplements',
-  //   description:
-  //     '30 fl oz, Serving Size: 2 Tablespoons 1 Capful (1 fl oz) (29.57 mL), Servings per Container: 30, Gluten Free, Vegetarian, Hypo-Allergenic',
-  //   imgUrl:
-  //     'https://www.vitacost.com/Images/Products/500/Natures-Plus/Natures-Plus-Source-of-Life-GOLD-Liquid-Multi-Vitamin-Supplement-Tropical-Fruit-097467307018.jpg',
-  //   inStock: 20,
-  //   price: 47.35
-  // },
   {
     name: 'Cap Sleeve Eco-Jersey Crew T-Shirt for Women',
     brand: 'Alternative Apparel',
@@ -499,7 +358,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04013E10_3.jpg',
     inStock: 20,
-    price: 38.0
+    price: 38.0,
+    size: 'XS'
+  },
+  {
+    name: 'Cap Sleeve Eco-Jersey Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Elegant in its simplicity, this versatile top features a femine cap sleeve in our soft Eco Jersey™ for a tee with ultimate comfort & effortless style. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04013E10_3.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'S'
+  },
+  {
+    name: 'Cap Sleeve Eco-Jersey Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Elegant in its simplicity, this versatile top features a femine cap sleeve in our soft Eco Jersey™ for a tee with ultimate comfort & effortless style. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04013E10_3.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'M'
+  },
+  {
+    name: 'Cap Sleeve Eco-Jersey Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Elegant in its simplicity, this versatile top features a femine cap sleeve in our soft Eco Jersey™ for a tee with ultimate comfort & effortless style. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04013E10_3.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'L'
+  },
+  {
+    name: 'Cap Sleeve Eco-Jersey Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Elegant in its simplicity, this versatile top features a femine cap sleeve in our soft Eco Jersey™ for a tee with ultimate comfort & effortless style. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04013E10_3.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'XL'
   },
   {
     name: 'Cap Sleeve Printed Eco-Jersey Crew T-Shirt for Women',
@@ -510,7 +418,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04013EA0_1.jpg',
     inStock: 20,
-    price: 42.0
+    price: 42.0,
+    size: 'XS'
+  },
+  {
+    name: 'Cap Sleeve Printed Eco-Jersey Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Elegant in its simplicity, this versatile top features a femine cap sleeve in our soft Eco Jersey™ for a tee with ultimate comfort & effortless style. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04013EA0_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'S'
+  },
+  {
+    name: 'Cap Sleeve Printed Eco-Jersey Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Elegant in its simplicity, this versatile top features a femine cap sleeve in our soft Eco Jersey™ for a tee with ultimate comfort & effortless style. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04013EA0_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'M'
+  },
+  {
+    name: 'Cap Sleeve Printed Eco-Jersey Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Elegant in its simplicity, this versatile top features a femine cap sleeve in our soft Eco Jersey™ for a tee with ultimate comfort & effortless style. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04013EA0_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'L'
+  },
+  {
+    name: 'Cap Sleeve Printed Eco-Jersey Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Elegant in its simplicity, this versatile top features a femine cap sleeve in our soft Eco Jersey™ for a tee with ultimate comfort & effortless style. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04013EA0_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'XL'
   },
   {
     name: 'Baseball Printed Eco-Jersey T-Shirt for Women',
@@ -521,7 +478,56 @@ const products = [
     imgUrl:
       'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/6/1/61352ea_eitrs_w_1_1.jpg',
     inStock: 20,
-    price: 42.0
+    price: 42.0,
+    size: 'XS'
+  },
+  {
+    name: 'Baseball Printed Eco-Jersey T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "A men's inspired baseball tee crafted in our soft Eco Jersey™ for ultimate comfort & a casual look. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/6/1/61352ea_eitrs_w_1_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'S'
+  },
+  {
+    name: 'Baseball Printed Eco-Jersey T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "A men's inspired baseball tee crafted in our soft Eco Jersey™ for ultimate comfort & a casual look. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/6/1/61352ea_eitrs_w_1_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'M'
+  },
+  {
+    name: 'Baseball Printed Eco-Jersey T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "A men's inspired baseball tee crafted in our soft Eco Jersey™ for ultimate comfort & a casual look. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/6/1/61352ea_eitrs_w_1_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'L'
+  },
+  {
+    name: 'Baseball Printed Eco-Jersey T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "A men's inspired baseball tee crafted in our soft Eco Jersey™ for ultimate comfort & a casual look. Eco-Jersey ™, 50% Polyester, 38% Cotton, 12% Rayon, Slight shirttail hemlin,e Cap sleeve detail, Scoop neckline, Imported",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/6/1/61352ea_eitrs_w_1_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'XL'
   },
   {
     name: 'Slinky Jersey V-Neck T-Shirt for Women',
@@ -532,7 +538,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02894B20_4.jpg',
     inStock: 20,
-    price: 34.0
+    price: 34.0,
+    size: 'XS'
+  },
+  {
+    name: 'Slinky Jersey V-Neck T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This alluring deep-V top goes beyond the typical tee, with its smooth, silky drape and irresistible worn-softness. Slinky Jersey, 50% Cotton, 50% Rayon ,Slightly high-low hem, Fitted silhouette, V-Neck, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02894B20_4.jpg',
+    inStock: 20,
+    price: 34.0,
+    size: 'S'
+  },
+  {
+    name: 'Slinky Jersey V-Neck T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This alluring deep-V top goes beyond the typical tee, with its smooth, silky drape and irresistible worn-softness. Slinky Jersey, 50% Cotton, 50% Rayon ,Slightly high-low hem, Fitted silhouette, V-Neck, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02894B20_4.jpg',
+    inStock: 20,
+    price: 34.0,
+    size: 'M'
+  },
+  {
+    name: 'Slinky Jersey V-Neck T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This alluring deep-V top goes beyond the typical tee, with its smooth, silky drape and irresistible worn-softness. Slinky Jersey, 50% Cotton, 50% Rayon ,Slightly high-low hem, Fitted silhouette, V-Neck, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02894B20_4.jpg',
+    inStock: 20,
+    price: 34.0,
+    size: 'L'
+  },
+  {
+    name: 'Slinky Jersey V-Neck T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This alluring deep-V top goes beyond the typical tee, with its smooth, silky drape and irresistible worn-softness. Slinky Jersey, 50% Cotton, 50% Rayon ,Slightly high-low hem, Fitted silhouette, V-Neck, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02894B20_4.jpg',
+    inStock: 20,
+    price: 34.0,
+    size: 'XL'
   },
   {
     name: 'Vintage Garment Dyed Distressed T-Shirt for Women',
@@ -543,7 +598,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04860CV0_1.jpg',
     inStock: 20,
-    price: 38.0
+    price: 38.0,
+    size: 'XS'
+  },
+  {
+    name: 'Vintage Garment Dyed Distressed T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "Here's our Vintage tee with subtle distressing along the neckline and sleeve hem for a truly vintage look. Cotton, 100% Cotton, Distressed detailing, Blind hem stitching detail, Slightly open neckline Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04860CV0_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'S'
+  },
+  {
+    name: 'Vintage Garment Dyed Distressed T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "Here's our Vintage tee with subtle distressing along the neckline and sleeve hem for a truly vintage look. Cotton, 100% Cotton, Distressed detailing, Blind hem stitching detail, Slightly open neckline Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04860CV0_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'M'
+  },
+  {
+    name: 'Vintage Garment Dyed Distressed T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "Here's our Vintage tee with subtle distressing along the neckline and sleeve hem for a truly vintage look. Cotton, 100% Cotton, Distressed detailing, Blind hem stitching detail, Slightly open neckline Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04860CV0_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'L'
+  },
+  {
+    name: 'Vintage Garment Dyed Distressed T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "Here's our Vintage tee with subtle distressing along the neckline and sleeve hem for a truly vintage look. Cotton, 100% Cotton, Distressed detailing, Blind hem stitching detail, Slightly open neckline Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/4/04860CV0_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'XL'
   },
   {
     name: 'Ideal Printed Eco-Jersey T-Shirt for Women',
@@ -554,7 +658,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01940ea_egpd_w_1.jpg',
     inStock: 20,
-    price: 36.0
+    price: 36.0,
+    size: 'XS'
+  },
+  {
+    name: 'Ideal Printed Eco-Jersey T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made in soft Eco-Jersey ™ in our best prints, this lightweight crew neck tee is a simple, everyday basic with a flattering, feminine fit. Eco-Jersey ™ 50% Polyester, 38% Cotton, 12% Rayon, Contains organic & recycled materials, Blind hem stitching detail, Bound neckband Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01940ea_egpd_w_1.jpg',
+    inStock: 20,
+    price: 36.0,
+    size: 'S'
+  },
+  {
+    name: 'Ideal Printed Eco-Jersey T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made in soft Eco-Jersey ™ in our best prints, this lightweight crew neck tee is a simple, everyday basic with a flattering, feminine fit. Eco-Jersey ™ 50% Polyester, 38% Cotton, 12% Rayon, Contains organic & recycled materials, Blind hem stitching detail, Bound neckband Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01940ea_egpd_w_1.jpg',
+    inStock: 20,
+    price: 36.0,
+    size: 'M'
+  },
+  {
+    name: 'Ideal Printed Eco-Jersey T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made in soft Eco-Jersey ™ in our best prints, this lightweight crew neck tee is a simple, everyday basic with a flattering, feminine fit. Eco-Jersey ™ 50% Polyester, 38% Cotton, 12% Rayon, Contains organic & recycled materials, Blind hem stitching detail, Bound neckband Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01940ea_egpd_w_1.jpg',
+    inStock: 20,
+    price: 36.0,
+    size: 'LG'
+  },
+  {
+    name: 'Ideal Printed Eco-Jersey T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made in soft Eco-Jersey ™ in our best prints, this lightweight crew neck tee is a simple, everyday basic with a flattering, feminine fit. Eco-Jersey ™ 50% Polyester, 38% Cotton, 12% Rayon, Contains organic & recycled materials, Blind hem stitching detail, Bound neckband Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01940ea_egpd_w_1.jpg',
+    inStock: 20,
+    price: 36.0,
+    size: 'XL'
   },
   {
     name: 'Headliner Vintage Jersey Cropped T-Shirt for Women',
@@ -565,7 +718,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05114BP0.jpg',
     inStock: 20,
-    price: 34.0
+    price: 34.0,
+    size: 'XS'
+  },
+  {
+    name: 'Headliner Vintage Jersey Cropped T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "This softer-than-ever Vintage Jersey tee comes in a cropped silhouette. Pair with high-waisted pants, and you're good to go. Vintage Jersey, 50% Cotton, 50% Polyester, Set-in ribbed neckband, Double needle stitching at sleeve & bottom hem, Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05114BP0.jpg',
+    inStock: 20,
+    price: 34.0,
+    size: 'S'
+  },
+  {
+    name: 'Headliner Vintage Jersey Cropped T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "This softer-than-ever Vintage Jersey tee comes in a cropped silhouette. Pair with high-waisted pants, and you're good to go. Vintage Jersey, 50% Cotton, 50% Polyester, Set-in ribbed neckband, Double needle stitching at sleeve & bottom hem, Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05114BP0.jpg',
+    inStock: 20,
+    price: 34.0,
+    size: 'M'
+  },
+  {
+    name: 'Headliner Vintage Jersey Cropped T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "This softer-than-ever Vintage Jersey tee comes in a cropped silhouette. Pair with high-waisted pants, and you're good to go. Vintage Jersey, 50% Cotton, 50% Polyester, Set-in ribbed neckband, Double needle stitching at sleeve & bottom hem, Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05114BP0.jpg',
+    inStock: 20,
+    price: 34.0,
+    size: 'L'
+  },
+  {
+    name: 'Headliner Vintage Jersey Cropped T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "This softer-than-ever Vintage Jersey tee comes in a cropped silhouette. Pair with high-waisted pants, and you're good to go. Vintage Jersey, 50% Cotton, 50% Polyester, Set-in ribbed neckband, Double needle stitching at sleeve & bottom hem, Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05114BP0.jpg',
+    inStock: 20,
+    price: 34.0,
+    size: 'XL'
   },
   {
     name: 'Ramble Vintage Thermal Tunic',
@@ -576,7 +778,56 @@ const products = [
     imgUrl:
       'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43129BZ0.jpg',
     inStock: 20,
-    price: 58.0
+    price: 58.0,
+    size: 'XS'
+  },
+  {
+    name: 'Ramble Vintage Thermal Tunic',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Crafted for all-day comfort during cooler months, this thermal tunic features a dropped shoulder, raglan sleeves & a high-low shirttail curved hem.',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43129BZ0.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'S'
+  },
+  {
+    name: 'Ramble Vintage Thermal Tunic',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Crafted for all-day comfort during cooler months, this thermal tunic features a dropped shoulder, raglan sleeves & a high-low shirttail curved hem.',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43129BZ0.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'M'
+  },
+  {
+    name: 'Ramble Vintage Thermal Tunic',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Crafted for all-day comfort during cooler months, this thermal tunic features a dropped shoulder, raglan sleeves & a high-low shirttail curved hem.',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43129BZ0.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'LG'
+  },
+  {
+    name: 'Ramble Vintage Thermal Tunic',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Crafted for all-day comfort during cooler months, this thermal tunic features a dropped shoulder, raglan sleeves & a high-low shirttail curved hem.',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43129BZ0.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'XL'
   },
   {
     name: 'Everyday Printed Cotton Modal V-Neck T-Shirt for Women',
@@ -587,7 +838,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02840MQ0.jpg',
     inStock: 20,
-    price: 42.0
+    price: 42.0,
+    size: 'XS'
+  },
+  {
+    name: 'Everyday Printed Cotton Modal V-Neck T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made with our Cotton Modal Jersey for extra softness, the Everyday V-Neck is perfect for just thatyour everyday. A fuss-free go-to shirt that lives up to its namesake. Crafted with Lenzing™, a sustainable cellulose fiber derived from beechwood pulp thats twice as soft as conventional cotton. Cotton Modal 60% Cotton, 40% Modal, Crafted sustainably from beechwood pulp, Deeper V neckline Set-in self neckband, Double needle stitching detail, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02840MQ0.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'S'
+  },
+  {
+    name: 'Everyday Printed Cotton Modal V-Neck T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made with our Cotton Modal Jersey for extra softness, the Everyday V-Neck is perfect for just thatyour everyday. A fuss-free go-to shirt that lives up to its namesake. Crafted with Lenzing™, a sustainable cellulose fiber derived from beechwood pulp thats twice as soft as conventional cotton. Cotton Modal 60% Cotton, 40% Modal, Crafted sustainably from beechwood pulp, Deeper V neckline Set-in self neckband, Double needle stitching detail, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02840MQ0.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'M'
+  },
+  {
+    name: 'Everyday Printed Cotton Modal V-Neck T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made with our Cotton Modal Jersey for extra softness, the Everyday V-Neck is perfect for just thatyour everyday. A fuss-free go-to shirt that lives up to its namesake. Crafted with Lenzing™, a sustainable cellulose fiber derived from beechwood pulp thats twice as soft as conventional cotton. Cotton Modal 60% Cotton, 40% Modal, Crafted sustainably from beechwood pulp, Deeper V neckline Set-in self neckband, Double needle stitching detail, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02840MQ0.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'L'
+  },
+  {
+    name: 'Everyday Printed Cotton Modal V-Neck T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made with our Cotton Modal Jersey for extra softness, the Everyday V-Neck is perfect for just thatyour everyday. A fuss-free go-to shirt that lives up to its namesake. Crafted with Lenzing™, a sustainable cellulose fiber derived from beechwood pulp thats twice as soft as conventional cotton. Cotton Modal 60% Cotton, 40% Modal, Crafted sustainably from beechwood pulp, Deeper V neckline Set-in self neckband, Double needle stitching detail, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02840MQ0.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'XL'
   },
   {
     name: 'Cap Sleeve Organic Crew T-Shirt for Women',
@@ -598,7 +898,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/1/C12382C20_1.jpg',
     inStock: 20,
-    price: 38.0
+    price: 38.0,
+    size: 'XS'
+  },
+  {
+    name: 'Cap Sleeve Organic Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This wear-with-anything tee gets instant approval. Featuring a scoop neckline with a soft-curve hem & cap sleeve for a simple & effortless look. 100% Organic Cotton, Scoop neckline, Thin binding at neck, Soft-curve hem, Cap sleeve, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/1/C12382C20_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'S'
+  },
+  {
+    name: 'Cap Sleeve Organic Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This wear-with-anything tee gets instant approval. Featuring a scoop neckline with a soft-curve hem & cap sleeve for a simple & effortless look. 100% Organic Cotton, Scoop neckline, Thin binding at neck, Soft-curve hem, Cap sleeve, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/1/C12382C20_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'M'
+  },
+  {
+    name: 'Cap Sleeve Organic Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This wear-with-anything tee gets instant approval. Featuring a scoop neckline with a soft-curve hem & cap sleeve for a simple & effortless look. 100% Organic Cotton, Scoop neckline, Thin binding at neck, Soft-curve hem, Cap sleeve, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/1/C12382C20_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'L'
+  },
+  {
+    name: 'Cap Sleeve Organic Crew T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This wear-with-anything tee gets instant approval. Featuring a scoop neckline with a soft-curve hem & cap sleeve for a simple & effortless look. 100% Organic Cotton, Scoop neckline, Thin binding at neck, Soft-curve hem, Cap sleeve, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/1/C12382C20_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'XL'
   },
   {
     name: 'Rayon Challis Boxy T-Shirt for Women',
@@ -609,7 +958,56 @@ const products = [
     imgUrl:
       'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/c/6/c66199th_gy_w_1.jpg',
     inStock: 20,
-    price: 48.0
+    price: 48.0,
+    size: 'XS'
+  },
+  {
+    name: 'Rayon Challis Boxy T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our skim version of a classic tee. Crafted from our soft and lightweight Rayon Challis in a relaxed silhouette. 100% Rayon, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/c/6/c66199th_gy_w_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'S'
+  },
+  {
+    name: 'Rayon Challis Boxy T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our skim version of a classic tee. Crafted from our soft and lightweight Rayon Challis in a relaxed silhouette. 100% Rayon, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/c/6/c66199th_gy_w_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'M'
+  },
+  {
+    name: 'Rayon Challis Boxy T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our skim version of a classic tee. Crafted from our soft and lightweight Rayon Challis in a relaxed silhouette. 100% Rayon, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/c/6/c66199th_gy_w_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'L'
+  },
+  {
+    name: 'Rayon Challis Boxy T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our skim version of a classic tee. Crafted from our soft and lightweight Rayon Challis in a relaxed silhouette. 100% Rayon, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/c/6/c66199th_gy_w_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'XL'
   },
   {
     name: 'Inside Out Garment Dyed Slub Sleeveless T-Shirt for Women',
@@ -620,7 +1018,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02898j1_vwre_w_1.jpg',
     inStock: 20,
-    price: 38.0
+    price: 38.0,
+    size: 'XS'
+  },
+  {
+    name: 'Inside Out Garment Dyed Slub Sleeveless T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "This muscle tee has the broken-in charm of that mens tee you DIY'ed back in the day, but with a loose and flowy fit perfected for your shape. Garment Dyed Slub, 100% Cotton, Slight raw edge, Inside-out detailing, Bra-friendly, Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02898j1_vwre_w_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'S'
+  },
+  {
+    name: 'Inside Out Garment Dyed Slub Sleeveless T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "This muscle tee has the broken-in charm of that mens tee you DIY'ed back in the day, but with a loose and flowy fit perfected for your shape. Garment Dyed Slub, 100% Cotton, Slight raw edge, Inside-out detailing, Bra-friendly, Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02898j1_vwre_w_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'M'
+  },
+  {
+    name: 'Inside Out Garment Dyed Slub Sleeveless T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "This muscle tee has the broken-in charm of that mens tee you DIY'ed back in the day, but with a loose and flowy fit perfected for your shape. Garment Dyed Slub, 100% Cotton, Slight raw edge, Inside-out detailing, Bra-friendly, Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02898j1_vwre_w_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'L'
+  },
+  {
+    name: 'Inside Out Garment Dyed Slub Sleeveless T-Shirt for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "This muscle tee has the broken-in charm of that mens tee you DIY'ed back in the day, but with a loose and flowy fit perfected for your shape. Garment Dyed Slub, 100% Cotton, Slight raw edge, Inside-out detailing, Bra-friendly, Imported",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/2/02898j1_vwre_w_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'XL'
   },
   {
     name: 'Slow Vintage Heavy Knit Jogger Pants for Women',
@@ -631,7 +1078,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/7/07600bq_smk_w_1.jpg',
     inStock: 20,
-    price: 48.0
+    price: 48.0,
+    size: 'XS'
+  },
+  {
+    name: 'Slow Vintage Heavy Knit Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Somewhere between a jogger and a yoga pant, our Slow Jogger features a fold-over waistband for extra comfort. 50% Cotton, 50% Polyester, Self drawstring, Ribbed cuff, Rib cuff, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/7/07600bq_smk_w_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'S'
+  },
+  {
+    name: 'Slow Vintage Heavy Knit Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Somewhere between a jogger and a yoga pant, our Slow Jogger features a fold-over waistband for extra comfort. 50% Cotton, 50% Polyester, Self drawstring, Ribbed cuff, Rib cuff, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/7/07600bq_smk_w_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'M'
+  },
+  {
+    name: 'Slow Vintage Heavy Knit Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Somewhere between a jogger and a yoga pant, our Slow Jogger features a fold-over waistband for extra comfort. 50% Cotton, 50% Polyester, Self drawstring, Ribbed cuff, Rib cuff, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/7/07600bq_smk_w_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'L'
+  },
+  {
+    name: 'Slow Vintage Heavy Knit Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Somewhere between a jogger and a yoga pant, our Slow Jogger features a fold-over waistband for extra comfort. 50% Cotton, 50% Polyester, Self drawstring, Ribbed cuff, Rib cuff, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/7/07600bq_smk_w_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'XL'
   },
   {
     name: 'Printed Eco-Fleece Jogger Pants for Women',
@@ -642,7 +1138,56 @@ const products = [
     imgUrl:
       'https://media.alternativeapparel.com/media/catalog/product/3/1/31082FBSTRM0.jpg',
     inStock: 20,
-    price: 58.0
+    price: 58.0,
+    size: 'XS'
+  },
+  {
+    name: 'Printed Eco-Fleece Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our Jogger Pant in super soft Eco-Fleece is a sustainable staple for a casual-comfy look and feel. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Elastic waistband with drawstrings, Top applied back patch pocket, Ribbed cuffs & waistband, Front pockets, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/3/1/31082FBSTRM0.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'S'
+  },
+  {
+    name: 'Printed Eco-Fleece Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our Jogger Pant in super soft Eco-Fleece is a sustainable staple for a casual-comfy look and feel. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Elastic waistband with drawstrings, Top applied back patch pocket, Ribbed cuffs & waistband, Front pockets, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/3/1/31082FBSTRM0.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'M'
+  },
+  {
+    name: 'Printed Eco-Fleece Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our Jogger Pant in super soft Eco-Fleece is a sustainable staple for a casual-comfy look and feel. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Elastic waistband with drawstrings, Top applied back patch pocket, Ribbed cuffs & waistband, Front pockets, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/3/1/31082FBSTRM0.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'L'
+  },
+  {
+    name: 'Printed Eco-Fleece Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our Jogger Pant in super soft Eco-Fleece is a sustainable staple for a casual-comfy look and feel. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Elastic waistband with drawstrings, Top applied back patch pocket, Ribbed cuffs & waistband, Front pockets, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/3/1/31082FBSTRM0.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'XL'
   },
   {
     name: 'Eco-Fleece Jogger Pants for Women',
@@ -653,7 +1198,56 @@ const products = [
     imgUrl:
       'https://lh3.googleusercontent.com/proxy/bS9gr90jYwzEyqFM1QOpXFokHiwH_0ASSOLAsRW2x1LyM6qbF8Wqg1owfpgtDMTisUSpL2Vh-siG_S-c5veuLy6PV83J-3xqm6Hs7_XXcEyictHXzJ31WupriBi_7TzVzvhJS8oYtJgVLc-L8MeLcB4-Gbg6ee29Zw2WNb5WeLsK1rkQF5jJOwogYGZ9ZZOfyu3apq7iot7l2YIqCNiD=s1000-pd-e365-rw-pc0xffffff',
     inStock: 20,
-    price: 54.0
+    price: 54.0,
+    size: 'XS'
+  },
+  {
+    name: 'Eco-Fleece Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'The ultimate sweat pant for ultimate comfort. Made from our signature Eco-Fleece, this pant features tailored pockets and a tapered leg opening. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Drawstring Waistband, Tapered Ankle, Ribbed Cuffs at Leg Opening Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://lh3.googleusercontent.com/proxy/bS9gr90jYwzEyqFM1QOpXFokHiwH_0ASSOLAsRW2x1LyM6qbF8Wqg1owfpgtDMTisUSpL2Vh-siG_S-c5veuLy6PV83J-3xqm6Hs7_XXcEyictHXzJ31WupriBi_7TzVzvhJS8oYtJgVLc-L8MeLcB4-Gbg6ee29Zw2WNb5WeLsK1rkQF5jJOwogYGZ9ZZOfyu3apq7iot7l2YIqCNiD=s1000-pd-e365-rw-pc0xffffff',
+    inStock: 20,
+    price: 54.0,
+    size: 'S'
+  },
+  {
+    name: 'Eco-Fleece Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'The ultimate sweat pant for ultimate comfort. Made from our signature Eco-Fleece, this pant features tailored pockets and a tapered leg opening. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Drawstring Waistband, Tapered Ankle, Ribbed Cuffs at Leg Opening Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://lh3.googleusercontent.com/proxy/bS9gr90jYwzEyqFM1QOpXFokHiwH_0ASSOLAsRW2x1LyM6qbF8Wqg1owfpgtDMTisUSpL2Vh-siG_S-c5veuLy6PV83J-3xqm6Hs7_XXcEyictHXzJ31WupriBi_7TzVzvhJS8oYtJgVLc-L8MeLcB4-Gbg6ee29Zw2WNb5WeLsK1rkQF5jJOwogYGZ9ZZOfyu3apq7iot7l2YIqCNiD=s1000-pd-e365-rw-pc0xffffff',
+    inStock: 20,
+    price: 54.0,
+    size: 'M'
+  },
+  {
+    name: 'Eco-Fleece Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'The ultimate sweat pant for ultimate comfort. Made from our signature Eco-Fleece, this pant features tailored pockets and a tapered leg opening. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Drawstring Waistband, Tapered Ankle, Ribbed Cuffs at Leg Opening Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://lh3.googleusercontent.com/proxy/bS9gr90jYwzEyqFM1QOpXFokHiwH_0ASSOLAsRW2x1LyM6qbF8Wqg1owfpgtDMTisUSpL2Vh-siG_S-c5veuLy6PV83J-3xqm6Hs7_XXcEyictHXzJ31WupriBi_7TzVzvhJS8oYtJgVLc-L8MeLcB4-Gbg6ee29Zw2WNb5WeLsK1rkQF5jJOwogYGZ9ZZOfyu3apq7iot7l2YIqCNiD=s1000-pd-e365-rw-pc0xffffff',
+    inStock: 20,
+    price: 54.0,
+    size: 'L'
+  },
+  {
+    name: 'Eco-Fleece Jogger Pants for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'The ultimate sweat pant for ultimate comfort. Made from our signature Eco-Fleece, this pant features tailored pockets and a tapered leg opening. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Drawstring Waistband, Tapered Ankle, Ribbed Cuffs at Leg Opening Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://lh3.googleusercontent.com/proxy/bS9gr90jYwzEyqFM1QOpXFokHiwH_0ASSOLAsRW2x1LyM6qbF8Wqg1owfpgtDMTisUSpL2Vh-siG_S-c5veuLy6PV83J-3xqm6Hs7_XXcEyictHXzJ31WupriBi_7TzVzvhJS8oYtJgVLc-L8MeLcB4-Gbg6ee29Zw2WNb5WeLsK1rkQF5jJOwogYGZ9ZZOfyu3apq7iot7l2YIqCNiD=s1000-pd-e365-rw-pc0xffffff',
+    inStock: 20,
+    price: 54.0,
+    size: 'XL'
   },
   {
     name: 'Cozy Eco-Fleece Shorts for Women',
@@ -664,7 +1258,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C62752F20_1.jpg',
     inStock: 20,
-    price: 25.0
+    price: 25.0,
+    size: 'XS'
+  },
+  {
+    name: 'Cozy Eco-Fleece Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'These are called the Cozy Shorts for a reason - designed for a relaxed, longer fit, to keep you cozy and comfortable. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C62752F20_1.jpg',
+    inStock: 20,
+    price: 25.0,
+    size: 'S'
+  },
+  {
+    name: 'Cozy Eco-Fleece Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'These are called the Cozy Shorts for a reason - designed for a relaxed, longer fit, to keep you cozy and comfortable. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C62752F20_1.jpg',
+    inStock: 20,
+    price: 25.0,
+    size: 'M'
+  },
+  {
+    name: 'Cozy Eco-Fleece Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'These are called the Cozy Shorts for a reason - designed for a relaxed, longer fit, to keep you cozy and comfortable. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C62752F20_1.jpg',
+    inStock: 20,
+    price: 25.0,
+    size: 'L'
+  },
+  {
+    name: 'Cozy Eco-Fleece Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'These are called the Cozy Shorts for a reason - designed for a relaxed, longer fit, to keep you cozy and comfortable. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C62752F20_1.jpg',
+    inStock: 20,
+    price: 25.0,
+    size: 'XL'
   },
   {
     name: 'Lounge Burnout French Terry Shorts for Women',
@@ -675,7 +1318,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/8/08630fh_dn_w_1_1.jpg',
     inStock: 20,
-    price: 48.0
+    price: 48.0,
+    size: 'XS'
+  },
+  {
+    name: 'Lounge Burnout French Terry Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Finally, a pair of shorts that are both cute and comfortable. With an authentically worn-in look, relaxed fit and a rolled hem that stays put, lounging has never been more enjoyable. 65% Cotton, 35% Polyester, Rolled hem, Single-needle stitching along pockets, Elastic waistband with drawstrings, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/8/08630fh_dn_w_1_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'S'
+  },
+  {
+    name: 'Lounge Burnout French Terry Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Finally, a pair of shorts that are both cute and comfortable. With an authentically worn-in look, relaxed fit and a rolled hem that stays put, lounging has never been more enjoyable. 65% Cotton, 35% Polyester, Rolled hem, Single-needle stitching along pockets, Elastic waistband with drawstrings, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/8/08630fh_dn_w_1_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'M'
+  },
+  {
+    name: 'Lounge Burnout French Terry Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Finally, a pair of shorts that are both cute and comfortable. With an authentically worn-in look, relaxed fit and a rolled hem that stays put, lounging has never been more enjoyable. 65% Cotton, 35% Polyester, Rolled hem, Single-needle stitching along pockets, Elastic waistband with drawstrings, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/8/08630fh_dn_w_1_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'L'
+  },
+  {
+    name: 'Lounge Burnout French Terry Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Finally, a pair of shorts that are both cute and comfortable. With an authentically worn-in look, relaxed fit and a rolled hem that stays put, lounging has never been more enjoyable. 65% Cotton, 35% Polyester, Rolled hem, Single-needle stitching along pockets, Elastic waistband with drawstrings, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/8/08630fh_dn_w_1_1.jpg',
+    inStock: 20,
+    price: 48.0,
+    size: 'XL'
   },
   {
     name: 'Track Vintage French Terry Shorts for Women',
@@ -686,7 +1378,56 @@ const products = [
     imgUrl:
       'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05078bt_vnn_w_1.jpg',
     inStock: 20,
-    price: 42.0
+    price: 42.0,
+    size: 'XS'
+  },
+  {
+    name: 'Track Vintage French Terry Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "We’ve replicated the look of 70s track shorts in our soft, sporty French Terry for a grown-up comfort and fit. For the days you feel like working out...and the days you don't. Vintage French Terry, 50% Cotton, 50% Polyester, Piece Dyed, Fabric Washed, Side pockets, Back pocket, Banded waist with drawstring, Ribbing at pockets, Pilling resistant, Imported",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05078bt_vnn_w_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'S'
+  },
+  {
+    name: 'Track Vintage French Terry Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "We’ve replicated the look of 70s track shorts in our soft, sporty French Terry for a grown-up comfort and fit. For the days you feel like working out...and the days you don't. Vintage French Terry, 50% Cotton, 50% Polyester, Piece Dyed, Fabric Washed, Side pockets, Back pocket, Banded waist with drawstring, Ribbing at pockets, Pilling resistant, Imported",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05078bt_vnn_w_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'M'
+  },
+  {
+    name: 'Track Vintage French Terry Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "We’ve replicated the look of 70s track shorts in our soft, sporty French Terry for a grown-up comfort and fit. For the days you feel like working out...and the days you don't. Vintage French Terry, 50% Cotton, 50% Polyester, Piece Dyed, Fabric Washed, Side pockets, Back pocket, Banded waist with drawstring, Ribbing at pockets, Pilling resistant, Imported",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05078bt_vnn_w_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'L'
+  },
+  {
+    name: 'Track Vintage French Terry Shorts for Women',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "We’ve replicated the look of 70s track shorts in our soft, sporty French Terry for a grown-up comfort and fit. For the days you feel like working out...and the days you don't. Vintage French Terry, 50% Cotton, 50% Polyester, Piece Dyed, Fabric Washed, Side pockets, Back pocket, Banded waist with drawstring, Ribbing at pockets, Pilling resistant, Imported",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05078bt_vnn_w_1.jpg',
+    inStock: 20,
+    price: 42.0,
+    size: 'XL'
   },
   {
     name: 'Home Team Garment Dyed Slub Henley Shirt for Men',
@@ -697,7 +1438,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/6/06897j1_mdpi_m_1_9.jpg',
     inStock: 20,
-    price: 44.0
+    price: 44.0,
+    size: 'XS'
+  },
+  {
+    name: 'Home Team Garment Dyed Slub Henley Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This classic Henley tee takes softness and style to the next level with inside-out raw edges and a de-saturated hue produced through our garment-dye process for a versatile, vintage look. As unique as you, this garment has been hand-treated with intentional imperfections for authentically worn-in softness and style no other item is exactly like it. Washed Slub, 100% Cotton, Shirttail hem, Raw edging, Garment-dyed, 2-button placket, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/6/06897j1_mdpi_m_1_9.jpg',
+    inStock: 20,
+    price: 44.0,
+    size: 'S'
+  },
+  {
+    name: 'Home Team Garment Dyed Slub Henley Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This classic Henley tee takes softness and style to the next level with inside-out raw edges and a de-saturated hue produced through our garment-dye process for a versatile, vintage look. As unique as you, this garment has been hand-treated with intentional imperfections for authentically worn-in softness and style no other item is exactly like it. Washed Slub, 100% Cotton, Shirttail hem, Raw edging, Garment-dyed, 2-button placket, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/6/06897j1_mdpi_m_1_9.jpg',
+    inStock: 20,
+    price: 44.0,
+    size: 'M'
+  },
+  {
+    name: 'Home Team Garment Dyed Slub Henley Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This classic Henley tee takes softness and style to the next level with inside-out raw edges and a de-saturated hue produced through our garment-dye process for a versatile, vintage look. As unique as you, this garment has been hand-treated with intentional imperfections for authentically worn-in softness and style no other item is exactly like it. Washed Slub, 100% Cotton, Shirttail hem, Raw edging, Garment-dyed, 2-button placket, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/6/06897j1_mdpi_m_1_9.jpg',
+    inStock: 20,
+    price: 44.0,
+    size: 'L'
+  },
+  {
+    name: 'Home Team Garment Dyed Slub Henley Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'This classic Henley tee takes softness and style to the next level with inside-out raw edges and a de-saturated hue produced through our garment-dye process for a versatile, vintage look. As unique as you, this garment has been hand-treated with intentional imperfections for authentically worn-in softness and style no other item is exactly like it. Washed Slub, 100% Cotton, Shirttail hem, Raw edging, Garment-dyed, 2-button placket, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/6/06897j1_mdpi_m_1_9.jpg',
+    inStock: 20,
+    price: 44.0,
+    size: 'XL'
   },
   {
     name: 'Printed Eco-Jersey Crew T-Shirt for Men',
@@ -708,7 +1498,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01973ea_slcmo_m_1.jpg',
     inStock: 20,
-    price: 38.0
+    price: 38.0,
+    size: 'XS'
+  },
+  {
+    name: 'Printed Eco-Jersey Crew T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Crafted from our signature Eco-Jersey triblend, the Eco Crew T-Shirt is a perfect go-to tee comfortable enough for the everyday. Eco-Jersey ™ 50% Polyester, 38% Cotton, 12% Rayon, Contains organic & recycled materials, Bound self neckband, Blind hem stitching detail, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01973ea_slcmo_m_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'S'
+  },
+  {
+    name: 'Printed Eco-Jersey Crew T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Crafted from our signature Eco-Jersey triblend, the Eco Crew T-Shirt is a perfect go-to tee comfortable enough for the everyday. Eco-Jersey ™ 50% Polyester, 38% Cotton, 12% Rayon, Contains organic & recycled materials, Bound self neckband, Blind hem stitching detail, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01973ea_slcmo_m_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'M'
+  },
+  {
+    name: 'Printed Eco-Jersey Crew T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Crafted from our signature Eco-Jersey triblend, the Eco Crew T-Shirt is a perfect go-to tee comfortable enough for the everyday. Eco-Jersey ™ 50% Polyester, 38% Cotton, 12% Rayon, Contains organic & recycled materials, Bound self neckband, Blind hem stitching detail, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01973ea_slcmo_m_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'L'
+  },
+  {
+    name: 'Printed Eco-Jersey Crew T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Crafted from our signature Eco-Jersey triblend, the Eco Crew T-Shirt is a perfect go-to tee comfortable enough for the everyday. Eco-Jersey ™ 50% Polyester, 38% Cotton, 12% Rayon, Contains organic & recycled materials, Bound self neckband, Blind hem stitching detail, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01973ea_slcmo_m_1.jpg',
+    inStock: 20,
+    price: 38.0,
+    size: 'XL'
   },
   {
     name: 'The Outsider Heavy Wash Jersey T-Shirt for Men',
@@ -719,7 +1558,56 @@ const products = [
     imgUrl:
       'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01010cg_sprgn_m_1.jpg',
     inStock: 20,
-    price: 28.0
+    price: 28.0,
+    size: 'XS'
+  },
+  {
+    name: 'The Outsider Heavy Wash Jersey T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made for the ones who follow their own path & march to the beat of their own drum, our 100% cotton Outsider T-Shirt is crafted with heavier yarns, making it the perfect transitional piece. As unique as you, this garment has been hand-treated with intentional imperfections for authentically worn-in softness and style. Heavy Wash Jersey, 100% Cotton, Rib collar, The rich pigments may rub off and should be washed separately, 5.01 oz, Blind stitching on sleeves & hem, Garment-washed for softness, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01010cg_sprgn_m_1.jpg',
+    inStock: 20,
+    price: 28.0,
+    size: 'S'
+  },
+  {
+    name: 'The Outsider Heavy Wash Jersey T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made for the ones who follow their own path & march to the beat of their own drum, our 100% cotton Outsider T-Shirt is crafted with heavier yarns, making it the perfect transitional piece. As unique as you, this garment has been hand-treated with intentional imperfections for authentically worn-in softness and style. Heavy Wash Jersey, 100% Cotton, Rib collar, The rich pigments may rub off and should be washed separately, 5.01 oz, Blind stitching on sleeves & hem, Garment-washed for softness, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01010cg_sprgn_m_1.jpg',
+    inStock: 20,
+    price: 28.0,
+    size: 'M'
+  },
+  {
+    name: 'The Outsider Heavy Wash Jersey T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made for the ones who follow their own path & march to the beat of their own drum, our 100% cotton Outsider T-Shirt is crafted with heavier yarns, making it the perfect transitional piece. As unique as you, this garment has been hand-treated with intentional imperfections for authentically worn-in softness and style. Heavy Wash Jersey, 100% Cotton, Rib collar, The rich pigments may rub off and should be washed separately, 5.01 oz, Blind stitching on sleeves & hem, Garment-washed for softness, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01010cg_sprgn_m_1.jpg',
+    inStock: 20,
+    price: 28.0,
+    size: 'L'
+  },
+  {
+    name: 'The Outsider Heavy Wash Jersey T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made for the ones who follow their own path & march to the beat of their own drum, our 100% cotton Outsider T-Shirt is crafted with heavier yarns, making it the perfect transitional piece. As unique as you, this garment has been hand-treated with intentional imperfections for authentically worn-in softness and style. Heavy Wash Jersey, 100% Cotton, Rib collar, The rich pigments may rub off and should be washed separately, 5.01 oz, Blind stitching on sleeves & hem, Garment-washed for softness, Imported',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/1/01010cg_sprgn_m_1.jpg',
+    inStock: 20,
+    price: 28.0,
+    size: 'XL'
   },
   {
     name: 'Keeper Vintage Jersey Graphic T-Shirt for Men',
@@ -730,7 +1618,56 @@ const products = [
     imgUrl:
       'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05050sp_vphap_m_1.jpg',
     inStock: 20,
-    price: 7.0
+    price: 7.0,
+    size: 'XS'
+  },
+  {
+    name: 'Keeper Vintage Jersey Graphic T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "We took our 50/50 Keeper tee, known for softness & comfort, and made it a little more festive for the holiday season. Go ahead, pick your favorite - you can't go wrong.",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05050sp_vphap_m_1.jpg',
+    inStock: 20,
+    price: 7.0,
+    size: 'S'
+  },
+  {
+    name: 'Keeper Vintage Jersey Graphic T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "We took our 50/50 Keeper tee, known for softness & comfort, and made it a little more festive for the holiday season. Go ahead, pick your favorite - you can't go wrong.",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05050sp_vphap_m_1.jpg',
+    inStock: 20,
+    price: 7.0,
+    size: 'M'
+  },
+  {
+    name: 'Keeper Vintage Jersey Graphic T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "We took our 50/50 Keeper tee, known for softness & comfort, and made it a little more festive for the holiday season. Go ahead, pick your favorite - you can't go wrong.",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05050sp_vphap_m_1.jpg',
+    inStock: 20,
+    price: 7.0,
+    size: 'L'
+  },
+  {
+    name: 'Keeper Vintage Jersey Graphic T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "We took our 50/50 Keeper tee, known for softness & comfort, and made it a little more festive for the holiday season. Go ahead, pick your favorite - you can't go wrong.",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05050sp_vphap_m_1.jpg',
+    inStock: 20,
+    price: 7.0,
+    size: 'XL'
   },
   {
     name: 'DugOut Vintage Jersey T-Shirt for Men',
@@ -741,7 +1678,56 @@ const products = [
     imgUrl:
       'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05057bp_svn_m_1.jpg',
     inStock: 20,
-    price: 31.0
+    price: 31.0,
+    size: 'XS'
+  },
+  {
+    name: 'DugOut Vintage Jersey T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our classic baseball tee gets a make under. Three-quarter length sleeves add a relaxed, modern touch, while our 50/50 fabric gives the Dugout Tee the softness of one youve worn a thousand times (which you very well might).',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05057bp_svn_m_1.jpg',
+    inStock: 20,
+    price: 31.0,
+    size: 'S'
+  },
+  {
+    name: 'DugOut Vintage Jersey T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our classic baseball tee gets a make under. Three-quarter length sleeves add a relaxed, modern touch, while our 50/50 fabric gives the Dugout Tee the softness of one youve worn a thousand times (which you very well might).',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05057bp_svn_m_1.jpg',
+    inStock: 20,
+    price: 31.0,
+    size: 'M'
+  },
+  {
+    name: 'DugOut Vintage Jersey T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our classic baseball tee gets a make under. Three-quarter length sleeves add a relaxed, modern touch, while our 50/50 fabric gives the Dugout Tee the softness of one youve worn a thousand times (which you very well might).',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05057bp_svn_m_1.jpg',
+    inStock: 20,
+    price: 31.0,
+    size: 'L'
+  },
+  {
+    name: 'DugOut Vintage Jersey T-Shirt for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our classic baseball tee gets a make under. Three-quarter length sleeves add a relaxed, modern touch, while our 50/50 fabric gives the Dugout Tee the softness of one youve worn a thousand times (which you very well might).',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05057bp_svn_m_1.jpg',
+    inStock: 20,
+    price: 31.0,
+    size: 'XL'
   },
   {
     name: 'Rocky Eco-Fleece Zip Hoodie for Men',
@@ -752,19 +1738,57 @@ const products = [
     imgUrl:
       'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66162F20_2.jpg',
     inStock: 20,
-    price: 58.0
+    price: 58.0,
+    size: 'XS'
   },
-  // {
-  //   name: 'Campus Burnout French Terry Jogger Pants for Men',
-  //   brand: 'Alternative Apparel',
-  //   category: 'Clothing',
-  //   description:
-  //     'Looking cool has never been easier (or more comfortable). Made with our super-soft Burnout French Terry, this contemporary jogger features a rib ankle, natural drawstrings & a back yoke pocket. Burnout French Terry, 65% Cotton, 35% Polyester, Ribbed ankles, waistband, Natural drawstrings, Back pocket along yoke seam, Side seams with cover-stitching, Imported',
-  //   imgUrl:
-  //     'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/8/08625FJ2.jpg',
-  //   inStock: 20,
-  //   price: 58.0
-  // },
+  {
+    name: 'Rocky Eco-Fleece Zip Hoodie for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our signature zip hoodie in our super soft Eco-Fleece, the Rocky is sure to become your favorite hoodie. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Split kangaroo pocket, Ribbed hemband and sleeve cuffs, Set-in sleeves,Hoodie with drawstrings, YKK zipper, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66162F20_2.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'S'
+  },
+  {
+    name: 'Rocky Eco-Fleece Zip Hoodie for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our signature zip hoodie in our super soft Eco-Fleece, the Rocky is sure to become your favorite hoodie. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Split kangaroo pocket, Ribbed hemband and sleeve cuffs, Set-in sleeves,Hoodie with drawstrings, YKK zipper, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66162F20_2.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'M'
+  },
+  {
+    name: 'Rocky Eco-Fleece Zip Hoodie for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our signature zip hoodie in our super soft Eco-Fleece, the Rocky is sure to become your favorite hoodie. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Split kangaroo pocket, Ribbed hemband and sleeve cuffs, Set-in sleeves,Hoodie with drawstrings, YKK zipper, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66162F20_2.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'L'
+  },
+  {
+    name: 'Rocky Eco-Fleece Zip Hoodie for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Our signature zip hoodie in our super soft Eco-Fleece, the Rocky is sure to become your favorite hoodie. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Split kangaroo pocket, Ribbed hemband and sleeve cuffs, Set-in sleeves,Hoodie with drawstrings, YKK zipper, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66162F20_2.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'XL'
+  },
   {
     name: 'Victory Printed Burnout French Terry Shorts for Men',
     brand: 'Alternative Apparel',
@@ -774,7 +1798,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05284fj_slcmo_m_1.jpg',
     inStock: 20,
-    price: 52.0
+    price: 52.0,
+    size: 'XS'
+  },
+  {
+    name: 'Victory Printed Burnout French Terry Shorts for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made from our super-soft Burnout French Terry, these casual shorts are a perfect warm-weather alternative to your favorite sweatpants. Burnout French Terry, 65% Cotton, 35% Polyester, Elastic waist with drawstrings, Contrast stitching at hem, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05284fj_slcmo_m_1.jpg',
+    inStock: 20,
+    price: 52.0,
+    size: 'S'
+  },
+  {
+    name: 'Victory Printed Burnout French Terry Shorts for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made from our super-soft Burnout French Terry, these casual shorts are a perfect warm-weather alternative to your favorite sweatpants. Burnout French Terry, 65% Cotton, 35% Polyester, Elastic waist with drawstrings, Contrast stitching at hem, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05284fj_slcmo_m_1.jpg',
+    inStock: 20,
+    price: 52.0,
+    size: 'M'
+  },
+  {
+    name: 'Victory Printed Burnout French Terry Shorts for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made from our super-soft Burnout French Terry, these casual shorts are a perfect warm-weather alternative to your favorite sweatpants. Burnout French Terry, 65% Cotton, 35% Polyester, Elastic waist with drawstrings, Contrast stitching at hem, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05284fj_slcmo_m_1.jpg',
+    inStock: 20,
+    price: 52.0,
+    size: 'L'
+  },
+  {
+    name: 'Victory Printed Burnout French Terry Shorts for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Made from our super-soft Burnout French Terry, these casual shorts are a perfect warm-weather alternative to your favorite sweatpants. Burnout French Terry, 65% Cotton, 35% Polyester, Elastic waist with drawstrings, Contrast stitching at hem, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/5/05284fj_slcmo_m_1.jpg',
+    inStock: 20,
+    price: 52.0,
+    size: 'XL'
   },
   {
     name: 'Hustle Eco-Fleece Open Bottom Sweatpants for Men',
@@ -785,7 +1858,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/3/03500f2_tdpi_m_1.jpg',
     inStock: 20,
-    price: 40.0
+    price: 40.0,
+    size: 'XS'
+  },
+  {
+    name: 'Hustle Eco-Fleece Open Bottom Sweatpants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "These no-frills, easygoing sweatpants are a closet staple. The open bottom creates a straight-leg look that's fitted but roomy, so you can be casual but never sloppy. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Open bottom at ankles, Natural drawstring, Side pockets, Banded waist, Garment imported, made with U.S.A. fabric",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/3/03500f2_tdpi_m_1.jpg',
+    inStock: 20,
+    price: 40.0,
+    size: 'S'
+  },
+  {
+    name: 'Hustle Eco-Fleece Open Bottom Sweatpants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "These no-frills, easygoing sweatpants are a closet staple. The open bottom creates a straight-leg look that's fitted but roomy, so you can be casual but never sloppy. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Open bottom at ankles, Natural drawstring, Side pockets, Banded waist, Garment imported, made with U.S.A. fabric",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/3/03500f2_tdpi_m_1.jpg',
+    inStock: 20,
+    price: 40.0,
+    size: 'M'
+  },
+  {
+    name: 'Hustle Eco-Fleece Open Bottom Sweatpants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "These no-frills, easygoing sweatpants are a closet staple. The open bottom creates a straight-leg look that's fitted but roomy, so you can be casual but never sloppy. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Open bottom at ankles, Natural drawstring, Side pockets, Banded waist, Garment imported, made with U.S.A. fabric",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/3/03500f2_tdpi_m_1.jpg',
+    inStock: 20,
+    price: 40.0,
+    size: 'LG'
+  },
+  {
+    name: 'Hustle Eco-Fleece Open Bottom Sweatpants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "These no-frills, easygoing sweatpants are a closet staple. The open bottom creates a straight-leg look that's fitted but roomy, so you can be casual but never sloppy. Eco-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Open bottom at ankles, Natural drawstring, Side pockets, Banded waist, Garment imported, made with U.S.A. fabric",
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/3/03500f2_tdpi_m_1.jpg',
+    inStock: 20,
+    price: 40.0,
+    size: 'XL'
   },
   {
     name: 'Side Panel Vintage French Terry Track Pant for Men',
@@ -796,7 +1918,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43123bt_bkwh_m_2.jpg',
     inStock: 20,
-    price: 58.0
+    price: 58.0,
+    size: 'XS'
+  },
+  {
+    name: 'Side Panel Vintage French Terry Track Pant for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Vintage athletic-inspired, these track pants feature a contrasting white side stripes, a drawstring closure & unbeatable comfort. Vintage French Terry, 50% Cotton, 50% Polyester, Elastic waistband with drawstrings, Set-in side stripe, Double Needle stitching at bottom hem, Front pockets, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43123bt_bkwh_m_2.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'S'
+  },
+  {
+    name: 'Side Panel Vintage French Terry Track Pant for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Vintage athletic-inspired, these track pants feature a contrasting white side stripes, a drawstring closure & unbeatable comfort. Vintage French Terry, 50% Cotton, 50% Polyester, Elastic waistband with drawstrings, Set-in side stripe, Double Needle stitching at bottom hem, Front pockets, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43123bt_bkwh_m_2.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'M'
+  },
+  {
+    name: 'Side Panel Vintage French Terry Track Pant for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Vintage athletic-inspired, these track pants feature a contrasting white side stripes, a drawstring closure & unbeatable comfort. Vintage French Terry, 50% Cotton, 50% Polyester, Elastic waistband with drawstrings, Set-in side stripe, Double Needle stitching at bottom hem, Front pockets, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43123bt_bkwh_m_2.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'L'
+  },
+  {
+    name: 'Side Panel Vintage French Terry Track Pant for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Vintage athletic-inspired, these track pants feature a contrasting white side stripes, a drawstring closure & unbeatable comfort. Vintage French Terry, 50% Cotton, 50% Polyester, Elastic waistband with drawstrings, Set-in side stripe, Double Needle stitching at bottom hem, Front pockets, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/4/3/43123bt_bkwh_m_2.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'XL'
   },
   {
     name: 'Standard Issue Sweatpants for Men',
@@ -807,7 +1978,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/9/09507f2_ny_m_1_1.jpg',
     inStock: 20,
-    price: 58.0
+    price: 58.0,
+    size: 'XS'
+  },
+  {
+    name: 'Standard Issue Sweatpants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Cozy up in these retro French Terry sweatpants with an Alternative jock tag sewn into one of the back pockets. Or, pair with a muscle tee and head to the gym. These versatile pants are both breathable and comfy. Lightweight French Terry, 100% Cotton, Cuff ankle, Drawstring waist, Thick, banded waist and side pockets, Back right pocket with woven jock tag, Alternative, Exclusive, Heather Grey is 67% Polyester, 33% Cotton, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/9/09507f2_ny_m_1_1.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'S'
+  },
+  {
+    name: 'Standard Issue Sweatpants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Cozy up in these retro French Terry sweatpants with an Alternative jock tag sewn into one of the back pockets. Or, pair with a muscle tee and head to the gym. These versatile pants are both breathable and comfy. Lightweight French Terry, 100% Cotton, Cuff ankle, Drawstring waist, Thick, banded waist and side pockets, Back right pocket with woven jock tag, Alternative, Exclusive, Heather Grey is 67% Polyester, 33% Cotton, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/9/09507f2_ny_m_1_1.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'M'
+  },
+  {
+    name: 'Standard Issue Sweatpants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Cozy up in these retro French Terry sweatpants with an Alternative jock tag sewn into one of the back pockets. Or, pair with a muscle tee and head to the gym. These versatile pants are both breathable and comfy. Lightweight French Terry, 100% Cotton, Cuff ankle, Drawstring waist, Thick, banded waist and side pockets, Back right pocket with woven jock tag, Alternative, Exclusive, Heather Grey is 67% Polyester, 33% Cotton, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/9/09507f2_ny_m_1_1.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'L'
+  },
+  {
+    name: 'Standard Issue Sweatpants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'Cozy up in these retro French Terry sweatpants with an Alternative jock tag sewn into one of the back pockets. Or, pair with a muscle tee and head to the gym. These versatile pants are both breathable and comfy. Lightweight French Terry, 100% Cotton, Cuff ankle, Drawstring waist, Thick, banded waist and side pockets, Back right pocket with woven jock tag, Alternative, Exclusive, Heather Grey is 67% Polyester, 33% Cotton, Imported',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/0/9/09507f2_ny_m_1_1.jpg',
+    inStock: 20,
+    price: 58.0,
+    size: 'XL'
   },
   {
     name: 'Dodgeball Eco-Fleece Pants for Men',
@@ -818,7 +2038,56 @@ const products = [
     imgUrl:
       'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66164F20.jpg',
     inStock: 20,
-    price: 54.0
+    price: 54.0,
+    size: 'XS'
+  },
+  {
+    name: 'Dodgeball Eco-Fleece Pants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'The ultimate sweat pant for ultimate comfort. Made from our signature Eco Fleece, this pant features side pockets and ribbed cuffs. co-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Ribbed waistband with drawstring, Ribbed cuff at leg opening, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66164F20.jpg',
+    inStock: 20,
+    price: 54.0,
+    size: 'S'
+  },
+  {
+    name: 'Dodgeball Eco-Fleece Pants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'The ultimate sweat pant for ultimate comfort. Made from our signature Eco Fleece, this pant features side pockets and ribbed cuffs. co-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Ribbed waistband with drawstring, Ribbed cuff at leg opening, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66164F20.jpg',
+    inStock: 20,
+    price: 54.0,
+    size: 'M'
+  },
+  {
+    name: 'Dodgeball Eco-Fleece Pants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'The ultimate sweat pant for ultimate comfort. Made from our signature Eco Fleece, this pant features side pockets and ribbed cuffs. co-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Ribbed waistband with drawstring, Ribbed cuff at leg opening, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66164F20.jpg',
+    inStock: 20,
+    price: 54.0,
+    size: 'L'
+  },
+  {
+    name: 'Dodgeball Eco-Fleece Pants for Men',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      'The ultimate sweat pant for ultimate comfort. Made from our signature Eco Fleece, this pant features side pockets and ribbed cuffs. co-Fleece, 50% Polyester, 46% Cotton, 4% Rayon, Contains organic & recycled materials, Ribbed waistband with drawstring, Ribbed cuff at leg opening, Garment imported, made with U.S.A. fabric',
+    imgUrl:
+      'https://www.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/C/6/C66164F20.jpg',
+    inStock: 20,
+    price: 54.0,
+    size: 'XL'
   },
   {
     name: 'Marathon Heavy Wash Pullover Hoodie',
@@ -829,18 +2098,56 @@ const products = [
     imgUrl:
       'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/1/2/12365CG0.jpg',
     inStock: 20,
-    price: 54.0
+    price: 54.0,
+    size: 'XS'
   },
   {
-    name: 'Vegan Omega-3 Spray',
-    brand: 'Natural Factors',
-    category: 'Holistic Health',
+    name: 'Marathon Heavy Wash Pullover Hoodie',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
     description:
-      'The first ever omega-3 spray, delivering 600mg of vegan omega-3 per serving. One bottle of Nothing Fishy Here has the equivalent omega-3 as 6 pounds of high quality salmon.',
+      "A soft, lightweight hoodie made to be easily thrown over any outfit, featuring visible color variations as unique as you. We've worn it in, so you can wear it out. 100% Cotton. Imported.",
     imgUrl:
-      'https://cdn.shopify.com/s/files/1/0767/1029/products/omeg-spy-org-front.png?v=1540584278',
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/1/2/12365CG0.jpg',
     inStock: 20,
-    price: 44.99
+    price: 54.0,
+    size: 'S'
+  },
+  {
+    name: 'Marathon Heavy Wash Pullover Hoodie',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "A soft, lightweight hoodie made to be easily thrown over any outfit, featuring visible color variations as unique as you. We've worn it in, so you can wear it out. 100% Cotton. Imported.",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/1/2/12365CG0.jpg',
+    inStock: 20,
+    price: 54.0,
+    size: 'M'
+  },
+  {
+    name: 'Marathon Heavy Wash Pullover Hoodie',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "A soft, lightweight hoodie made to be easily thrown over any outfit, featuring visible color variations as unique as you. We've worn it in, so you can wear it out. 100% Cotton. Imported.",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/1/2/12365CG0.jpg',
+    inStock: 20,
+    price: 54.0,
+    size: 'L'
+  },
+  {
+    name: 'Marathon Heavy Wash Pullover Hoodie',
+    brand: 'Alternative Apparel',
+    category: 'Clothing',
+    description:
+      "A soft, lightweight hoodie made to be easily thrown over any outfit, featuring visible color variations as unique as you. We've worn it in, so you can wear it out. 100% Cotton. Imported.",
+    imgUrl:
+      'https://media.alternativeapparel.com/media/catalog/product/cache/1/image/585x/8d6882b137b3069e8cea9e13e57aa14a/1/2/12365CG0.jpg',
+    inStock: 20,
+    price: 54.0,
+    size: 'XL'
   }
 ];
 

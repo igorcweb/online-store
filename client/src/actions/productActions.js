@@ -2,6 +2,7 @@ import API from '../utils/API';
 
 import {
   GET_PRODUCTS_BY_CATEGORY,
+  GET_UNIQUE_CLOTHING,
   GET_PRODUCTS,
   SEARCH_PRODUCTS
 } from './types';
@@ -13,6 +14,16 @@ export const getProductsByCategory = category => dispatch => {
     .then(response =>
       dispatch({
         type: GET_PRODUCTS_BY_CATEGORY,
+        payload: response.data
+      })
+    )
+    .catch(err => console.log(err));
+};
+export const getUniqueClothing = () => dispatch => {
+  API.getUniqueClothing()
+    .then(response =>
+      dispatch({
+        type: GET_UNIQUE_CLOTHING,
         payload: response.data
       })
     )

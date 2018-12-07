@@ -2,16 +2,19 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../models/');
 
-// @route GET api/products/
+// @route GET api/products
 // @access Public
 router.get('/', (req, res) => {
-  db.Product.find({}, (err, products) => {
-    if (err) {
-      throw err;
-    } else {
-      res.json({ products });
-    }
-  });
+  db.Product.find({})
+    .then(products => res.json(products))
+    .catch(err => res.json(err));
+});
+
+// @route Get api/products/xs
+router.get('/xs', (req, res) => {
+  db.Product.find({ size: 'XS' })
+    .then(products => res.json(products))
+    .catch(err => res.json(err));
 });
 
 // @route POST api/products/
