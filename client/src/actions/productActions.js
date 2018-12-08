@@ -8,7 +8,6 @@ import {
 } from './types';
 
 //Get Products
-
 export const getProductsByCategory = category => dispatch => {
   API.getProductsByCategory(category)
     .then(response =>

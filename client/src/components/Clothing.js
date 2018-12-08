@@ -84,7 +84,7 @@ class Clothing extends Component {
         this.props.history.push('/loading');
         setTimeout(() => {
           this.props.history.push('/clothing');
-        }, 1);
+        }, 0.1);
       });
     }
   };

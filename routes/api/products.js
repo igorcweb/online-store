@@ -26,7 +26,6 @@ router.get('/:name/:size', (req, res) => {
   console.log('name, size');
   db.Product.find({ name, size })
     .then(product => {
-      console.log(product);
       res.json(product);
     })
     .catch(err => res.json({ err }));
