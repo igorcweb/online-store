@@ -55,7 +55,16 @@ class Dashboard extends Component {
     this.props.toggleAddressModal(checkout);
   };
 
-  addToCart = (_id, name, brand, description, imgUrl, price, inStock) => {
+  addToCart = (
+    _id,
+    name,
+    brand,
+    description,
+    imgUrl,
+    price,
+    inStock,
+    size = ''
+  ) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = {
       _id,
@@ -65,6 +74,7 @@ class Dashboard extends Component {
       imgUrl,
       price,
       inStock,
+      size,
       quantity: 1
     };
     if (cart.length) {
@@ -189,7 +199,8 @@ class Dashboard extends Component {
                 imgUrl,
                 price,
                 rating,
-                inStock
+                inStock,
+                size
               } = order;
               console.log('order', order);
               return (
@@ -217,7 +228,10 @@ class Dashboard extends Component {
                       />
                     </div>
                     <div>
-                      <h6 className="pb-0 mb-0">{name}</h6>
+                      <h6 className="pb-0 mb-0">
+                        {name}
+                        {size ? `, Size: ${size}` : ''}
+                      </h6>
                       <small className="text-muted pt-0 mt-0">{brand}</small>
                       <div>
                         {inStock > 0 ? (
@@ -230,7 +244,8 @@ class Dashboard extends Component {
                                 description,
                                 imgUrl,
                                 price,
-                                inStock
+                                inStock,
+                                size
                               )
                             }
                             className="btn btn-success-custom-small mt-3"
