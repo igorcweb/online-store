@@ -63,12 +63,8 @@ router.delete('/product/:id', (req, res) => {
 router.get('/:category', (req, res) => {
   let category = req.params.category;
   category = category.charAt(0).toUpperCase() + category.slice(1);
-  db.Product.find({ category }, (err, products) => {
-    if (err) {
-      throw err;
-    } else {
-      res.json(products);
-    }
+  db.Product.find({ category }).then(products => {
+    res.json(products).catch(err => res.json({ err }));
   });
 });
 

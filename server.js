@@ -21,11 +21,8 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/public'));
 }
 
-// // DB Config
-// const db = process.env.MONGODB_URI || 'mongodb://localhost/online-store';
-
 // DB Config
-const db = 'mongodb://localhost/online-store';
+const db = process.env.MONGODB_URI || 'mongodb://localhost/online-store';
 
 // Connect to MongoDB
 mongoose
