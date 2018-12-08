@@ -10,11 +10,26 @@ router.get('/', (req, res) => {
     .catch(err => res.json(err));
 });
 
-// @route Get api/products/xs
+// @route GET api/products/xs
+// @desc get unique clothing items
 router.get('/xs', (req, res) => {
   db.Product.find({ size: 'XS' })
     .then(products => res.json(products))
-    .catch(err => res.json(err));
+    .catch(err => res.json({ err }));
+});
+
+// @route GET api/products/:name/:size
+//dexc get product by name and size
+router.get('/:name/:size', (req, res) => {
+  const name = req.params.name.replace(/\+/g, ' ');
+  const size = req.params.size;
+  console.log('name, size');
+  db.Product.find({ name, size })
+    .then(product => {
+      console.log(product);
+      res.json(product);
+    })
+    .catch(err => res.json({ err }));
 });
 
 // @route POST api/products/

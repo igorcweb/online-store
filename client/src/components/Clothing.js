@@ -8,6 +8,7 @@ import { updateCartItems } from '../actions/cartActions';
 import { toggleSizeModal } from '../actions/modalActions';
 import ReactStars from 'react-stars';
 import classnames from 'classnames';
+import API from '../utils/API';
 
 class Clothing extends Component {
   componentDidMount() {
@@ -40,53 +41,55 @@ class Clothing extends Component {
 
   addToCart = (_id, name, brand, description, imgUrl, price, inStock) => {
     const size = this.state.size;
-    if (this.state.size === '') {
+    if (size === '') {
       this.props.toggleSizeModal();
     } else {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const item = {
-        _id,
-        name,
-        brand,
-        description,
-        imgUrl,
-        price,
-        inStock,
-        size,
-        quantity: 1
-      };
-      // console.log(item);
-      if (cart.length) {
-        cart.forEach(stored => {
-          if (stored._id === item._id) {
-            if (stored.quantity !== inStock) {
-              stored.quantity += 1;
-              item.quantity += 1;
+      name = name.replace(/ /g, '+');
+      API.getProductByNameSize(name, size).then(response => {
+        const { data } = response;
+        _id = data[0]._id;
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const item = {
+          _id,
+          name,
+          brand,
+          description,
+          imgUrl,
+          price,
+          inStock,
+          size,
+          quantity: 1
+        };
+        if (cart.length) {
+          cart.forEach(stored => {
+            if (stored._id === item._id) {
+              if (stored.quantity !== inStock) {
+                stored.quantity += 1;
+                item.quantity += 1;
+              }
             }
-          }
-        });
-      }
+          });
+        }
 
-      cart.push(item);
-      console.log(cart);
-      //Remove duplicates
-      const newCart = removeDuplicates(cart, '_id');
-      const cartItems = newCart.reduce((acc, item) => {
-        return acc + item.quantity;
-      }, 0);
-      localStorage.setItem('cartItems', cartItems);
-      this.props.updateCartItems(cartItems);
-      const serializedCart = JSON.stringify(newCart);
-      localStorage.setItem('cart', serializedCart);
-      this.props.history.push('/loading');
-      setTimeout(() => {
-        this.props.history.push('/clothing');
-      }, 1);
+        cart.push(item);
+        //Remove duplicates
+        const newCart = removeDuplicates(cart, '_id');
+        const cartItems = newCart.reduce((acc, item) => {
+          return acc + item.quantity;
+        }, 0);
+        localStorage.setItem('cartItems', cartItems);
+        this.props.updateCartItems(cartItems);
+        const serializedCart = JSON.stringify(newCart);
+        localStorage.setItem('cart', serializedCart);
+        this.props.history.push('/loading');
+        setTimeout(() => {
+          this.props.history.push('/clothing');
+        }, 1);
+      });
     }
   };
 
   render() {
-    // console.log(this.props.products);
     const { products } = this.props;
     return (
       <div className="my-4 content mx-xl-5">
@@ -212,5 +215,10 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getUniqueClothing, getCurrentUser, updateCartItems, toggleSizeModal }
+  {
+    getUniqueClothing,
+    getCurrentUser,
+    updateCartItems,
+    toggleSizeModal
+  }
 )(Clothing);

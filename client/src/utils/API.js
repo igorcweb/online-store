@@ -12,6 +12,8 @@ export default {
   getProducts: () => axios.get('/api/products'),
   getUniqueClothing: () => axios.get('/api/products/xs'),
   getProductsByCategory: category => axios.get('/api/products/' + category),
+  getProductByNameSize: (name, size) =>
+    axios.get('/api/products/' + name + '/' + size),
   searchProducts: query => axios.get('/api/products/search/' + query),
   sendWelcome: userData => axios.post('/api/send/welcome', userData),
   sendOrder: (id, body) => axios.post('/api/send/order/' + id, body)

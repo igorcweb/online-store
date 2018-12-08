@@ -29,6 +29,7 @@ export const getUniqueClothing = () => dispatch => {
     )
     .catch(err => console.log(err));
 };
+
 export const getProducts = () => dispatch => {
   API.getProducts()
     .then(response =>

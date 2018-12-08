@@ -19,13 +19,13 @@ class Size extends Component {
       >
         <ModalBody className="modalAlert-body light-gray ">
           <p>
-            <i class="fas fa-exclamation-circle mr-2" />
+            <i className="fas fa-exclamation-circle mr-2" />
             Please select size
           </p>
         </ModalBody>
         <ModalFooter className="bg-gray">
           <button
-            class="btn btn-sm btn-brown-custom btn-block"
+            className="btn btn-sm btn-brown-custom btn-block"
             onClick={this.toggle}
           >
             Ok
