@@ -114,19 +114,40 @@ router.put('/instock/:id', (req, res) => {
 
 // @route PUT api/products/rating/:id
 // @desc rate a product
-router.put('/rating/:id', (req, res) => {
-  const id = req.params.id;
+// router.put('/rating/:id', (req, res) => {
+//   const id = req.params.id;
+//   const rating = req.body.rating;
+//   db.Product.findById(id).then(response => {
+//     const total = response.rating.total;
+//     db.Product.findByIdAndUpdate(id, {
+//       $inc: { 'rating.number': 1 },
+//       $set: {
+//         'rating.total': parseInt(total) + parseInt(rating)
+//       }
+//     })
+//       .then(() => res.json({ msg: 'success' }))
+//       .catch(err => res.json(err));
+//   });
+// });
+
+// @route PUT api/products/rating/:name
+// @desc rate a product
+router.put('/rating/:name', (req, res) => {
+  const name = req.params.name.replace(/\+/g, ' ').replace(/percent/g, '%');
   const rating = req.body.rating;
-  db.Product.findById(id).then(response => {
-    const total = response.rating.total;
-    db.Product.findByIdAndUpdate(id, {
-      $inc: { 'rating.number': 1 },
-      $set: {
-        'rating.total': parseInt(total) + parseInt(rating)
-      }
-    })
-      .then(() => res.json({ msg: 'success' }))
-      .catch(err => res.json(err));
+  db.Product.find({ name }).then(response => {
+    response.forEach(product => {
+      const id = product.id;
+      const total = product.rating.total;
+      db.Product.findByIdAndUpdate(id, {
+        $inc: { 'rating.number': 1 },
+        $set: {
+          'rating.total': parseInt(total) + parseInt(rating)
+        }
+      })
+        .then(() => res.json({ msg: 'success' }))
+        .catch(err => res.json({ err }));
+    });
   });
 });
 

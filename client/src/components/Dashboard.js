@@ -11,7 +11,7 @@ import API from '../utils/API';
 class Dashboard extends Component {
   state = {
     rating: 0,
-    id: ''
+    name: ''
   };
   componentDidMount() {
     if (!this.props.auth.isAuthenticated) {
@@ -28,15 +28,15 @@ class Dashboard extends Component {
       rating: newRating
     });
   };
-  passId = id => {
-    this.setState({ id });
+  passName = name => {
+    this.setState({ name: name.replace(/ /g, '+').replace(/%/g, 'percent') });
     this.rateProduct();
   };
   rateProduct = () => {
     const rate = () => {
-      const { id, rating } = this.state;
+      const { name, rating } = this.state;
       if (rating > 0) {
-        API.rateProduct(id, { rating })
+        API.rateProduct(name, { rating })
           .then(() => {
             this.props.history.push('/');
           })
@@ -207,7 +207,7 @@ class Dashboard extends Component {
                 <div key={_id}>
                   <div
                     onClick={() => {
-                      this.passId(_id);
+                      this.passName(name);
                     }}
                     className="d-flex pb-1 pt-4 px-3 mb-4"
                   >
@@ -219,7 +219,7 @@ class Dashboard extends Component {
                       />
                       <ReactStars
                         className="className= stars d-flex justify-content-center"
-                        passId={_id}
+                        passName={name}
                         count={5}
                         size={20}
                         color2={'#ffd700'}

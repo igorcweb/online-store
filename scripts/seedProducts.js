@@ -5,7 +5,6 @@ const Product = require('../models/Product');
 mongoose.Promise = global.Promise;
 
 // This file empties the products collection and inserts the products below
-
 const db = process.env.MONGODB_URI || 'mongodb://localhost/online-store';
 
 mongoose
