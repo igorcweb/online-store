@@ -18,6 +18,27 @@ router.get('/xs', (req, res) => {
     .catch(err => res.json({ err }));
 });
 
+// @route GET api/products/search/:query
+// @access Public
+router.get('/search/:query', (req, res) => {
+  const query = req.params.query;
+  db.Product.find({})
+    .then(products => {
+      const results = [];
+      products.forEach(product => {
+        if (
+          product.name.toLowerCase().includes(query) ||
+          product.category.toLowerCase().includes(query) ||
+          product.brand.toLowerCase().includes(query)
+        ) {
+          results.push(product);
+        }
+      });
+      res.json(results);
+    })
+    .catch(err => res.json({ err }));
+});
+
 // @route GET api/products/:name/:size
 //dexc get product by name and size
 router.get('/:name/:size', (req, res) => {
@@ -68,27 +89,6 @@ router.get('/:category', (req, res) => {
   });
 });
 
-// @route GET api/products/:query
-// @access Public
-router.get('/search/:query', (req, res) => {
-  const query = req.params.query;
-  db.Product.find({})
-    .then(products => {
-      const results = [];
-      products.forEach(product => {
-        if (
-          product.name.toLowerCase().includes(query) ||
-          product.category.toLowerCase().includes(query) ||
-          product.brand.toLowerCase().includes(query)
-        ) {
-          results.push(product);
-        }
-      });
-      res.json(results);
-    })
-    .catch(err => res.json({ err }));
-});
-
 // @route GET api/products/:id
 // @access Public
 router.get('/product/:id', (req, res) => {
@@ -112,26 +112,6 @@ router.put('/instock/:id', (req, res) => {
     .catch(err => res.json(err));
 });
 
-// @route PUT api/products/rating/:id
-// @desc rate a product
-// router.put('/rating/:id', (req, res) => {
-//   const id = req.params.id;
-//   const rating = req.body.rating;
-//   db.Product.findById(id).then(response => {
-//     const total = response.rating.total;
-//     db.Product.findByIdAndUpdate(id, {
-//       $inc: { 'rating.number': 1 },
-//       $set: {
-//         'rating.total': parseInt(total) + parseInt(rating)
-//       }
-//     })
-//       .then(() => res.json({ msg: 'success' }))
-//       .catch(err => res.json(err));
-//   });
-// });
-
-// @route PUT api/products/rating/:name
-// @desc rate a product
 router.put('/rating/:name', (req, res) => {
   const name = req.params.name.replace(/\+/g, ' ').replace(/percent/g, '%');
   const rating = req.body.rating;
