@@ -118,7 +118,7 @@ button,
   border: none;
 }
 
-.btn-success-custom-small:hover {
+.btn-success-custom-small:not([disabled]):hover {
   background: lighten(#31c082, 4%);
   color: white;
 }
@@ -137,7 +137,7 @@ button,
   text-transform: uppercase;
 }
 
-.btn-success-custom:hover {
+.btn-success-custom:not([disabled]):hover {
   background: lighten(#31c082, 4%);
   color: white;
 }
