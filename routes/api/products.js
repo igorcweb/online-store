@@ -84,9 +84,11 @@ router.delete('/product/:id', (req, res) => {
 router.get('/:category', (req, res) => {
   let category = req.params.category;
   category = category.charAt(0).toUpperCase() + category.slice(1);
-  db.Product.find({ category }).then(products => {
-    res.json(products).catch(err => res.json({ err }));
-  });
+  db.Product.find({ category })
+    .then(products => {
+      res.json(products).catch(err => res.json({ err }));
+    })
+    .catch(err => res.json({ err }));
 });
 
 // @route GET api/products/:id
@@ -115,20 +117,22 @@ router.put('/instock/:id', (req, res) => {
 router.put('/rating/:name', (req, res) => {
   const name = req.params.name.replace(/\+/g, ' ').replace(/percent/g, '%');
   const rating = req.body.rating;
-  db.Product.find({ name }).then(response => {
-    response.forEach(product => {
-      const id = product.id;
-      const total = product.rating.total;
-      db.Product.findByIdAndUpdate(id, {
-        $inc: { 'rating.number': 1 },
-        $set: {
-          'rating.total': parseInt(total) + parseInt(rating)
-        }
-      })
-        .then(() => res.json({ msg: 'success' }))
-        .catch(err => res.json({ err }));
-    });
-  });
+  db.Product.find({ name })
+    .then(response => {
+      response.forEach(product => {
+        const id = product.id;
+        const total = product.rating.total;
+        db.Product.findByIdAndUpdate(id, {
+          $inc: { 'rating.number': 1 },
+          $set: {
+            'rating.total': parseInt(total) + parseInt(rating)
+          }
+        })
+          .then(() => res.json({ msg: 'success' }))
+          .catch(err => res.json({ err }));
+      });
+    })
+    .catch(err => res.json({ err }));
 });
 
 module.exports = router;
