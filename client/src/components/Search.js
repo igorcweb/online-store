@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/userActions';
 import { searchProducts } from '../actions/productActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
-import { updateCartItems } from '../actions/cartActions';
+import { updateCartItems, toggleCart } from '../actions/cartActions';
 import ReactStars from 'react-stars';
 import classnames from 'classnames';
 
@@ -31,6 +31,9 @@ class Search extends Component {
   };
 
   addToCart = (_id, name, brand, description, imgUrl, price, inStock) => {
+    if (!this.props.cart.cartShowing) {
+      this.props.toggleCart();
+    }
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = {
       _id,
@@ -161,7 +164,8 @@ class Search extends Component {
 Search.propTypes = {
   auth: PropTypes.object.isRequired,
   getCurrentUser: PropTypes.func.isRequired,
-  searchProducts: PropTypes.func.isRequired
+  searchProducts: PropTypes.func.isRequired,
+  toggleCart: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -173,5 +177,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCurrentUser, searchProducts, updateCartItems }
+  { getCurrentUser, searchProducts, updateCartItems, toggleCart }
 )(Search);

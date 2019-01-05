@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getUniqueClothing } from '../actions/productActions';
 import { getCurrentUser } from '../actions/userActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
-import { updateCartItems } from '../actions/cartActions';
+import { updateCartItems, toggleCart } from '../actions/cartActions';
 import { toggleSizeModal } from '../actions/modalActions';
 import ReactStars from 'react-stars';
 import classnames from 'classnames';
@@ -44,6 +44,9 @@ class Clothing extends Component {
     if (size === '') {
       this.props.toggleSizeModal();
     } else {
+      if (!this.props.cart.cartShowing) {
+        this.props.toggleCart();
+      }
       name = name.replace(/ /g, '+');
       API.getProductByNameSize(name, size).then(response => {
         const { data } = response;
@@ -203,7 +206,8 @@ Clothing.propTypes = {
   auth: PropTypes.object.isRequired,
   getUniqueClothing: PropTypes.func.isRequired,
   getCurrentUser: PropTypes.func.isRequired,
-  toggleSizeModal: PropTypes.func.isRequired
+  toggleSizeModal: PropTypes.func.isRequired,
+  toggleCart: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -219,6 +223,7 @@ export default connect(
     getUniqueClothing,
     getCurrentUser,
     updateCartItems,
-    toggleSizeModal
+    toggleSizeModal,
+    toggleCart
   }
 )(Clothing);

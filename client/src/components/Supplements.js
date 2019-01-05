@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getProductsByCategory } from '../actions/productActions';
 import { getCurrentUser } from '../actions/userActions';
 import { removeDuplicates } from '../utils/removeDuplicates';
-import { updateCartItems } from '../actions/cartActions';
+import { updateCartItems, toggleCart } from '../actions/cartActions';
 import ReactStars from 'react-stars';
 import classnames from 'classnames';
 
@@ -29,6 +29,9 @@ class Supplements extends Component {
   };
 
   addToCart = (_id, name, brand, description, imgUrl, price, inStock) => {
+    if (!this.props.cart.cartShowing) {
+      this.props.toggleCart();
+    }
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = {
       _id,
@@ -50,7 +53,6 @@ class Supplements extends Component {
         }
       });
     }
-
     cart.push(item);
     //Remove duplicates
     const newCart = removeDuplicates(cart, '_id');
@@ -159,7 +161,8 @@ class Supplements extends Component {
 Supplements.propTypes = {
   auth: PropTypes.object.isRequired,
   getProductsByCategory: PropTypes.func.isRequired,
-  getCurrentUser: PropTypes.func.isRequired
+  getCurrentUser: PropTypes.func.isRequired,
+  toggleCart: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -171,5 +174,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getProductsByCategory, getCurrentUser, updateCartItems }
+  { getProductsByCategory, getCurrentUser, updateCartItems, toggleCart }
 )(Supplements);
