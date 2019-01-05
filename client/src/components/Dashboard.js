@@ -5,7 +5,7 @@ import { getCurrentUser } from '../actions/userActions';
 import { togglePrimeModal, toggleAddressModal } from '../actions/modalActions';
 import Spinner from './Spinner';
 import { removeDuplicates } from '../utils/removeDuplicates';
-import { updateCartItems } from '../actions/cartActions';
+import { updateCartItems, toggleCart } from '../actions/cartActions';
 import ReactStars from 'react-stars';
 import API from '../utils/API';
 class Dashboard extends Component {
@@ -65,6 +65,9 @@ class Dashboard extends Component {
     inStock,
     size = ''
   ) => {
+    if (!this.props.cart.cartShowing) {
+      this.props.toggleCart();
+    }
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const item = {
       _id,
@@ -315,7 +318,8 @@ Dashboard.propTypes = {
   getCurrentUser: PropTypes.func.isRequired,
   togglePrimeModal: PropTypes.func.isRequired,
   toggleAddressModal: PropTypes.func.isRequired,
-  updateCartItems: PropTypes.func.isRequired
+  updateCartItems: PropTypes.func.isRequired,
+  toggleCart: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -326,5 +330,11 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCurrentUser, togglePrimeModal, toggleAddressModal, updateCartItems }
+  {
+    getCurrentUser,
+    togglePrimeModal,
+    toggleAddressModal,
+    updateCartItems,
+    toggleCart
+  }
 )(Dashboard);
